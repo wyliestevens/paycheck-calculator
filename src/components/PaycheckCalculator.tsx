@@ -188,8 +188,9 @@ export default function PaycheckCalculator({ state }: Props) {
       {/* Take Home Pay Hero */}
       <div
         style={{
-          background: 'linear-gradient(135deg, #0f2b1a 0%, #1a2235 100%)',
-          border: '1px solid rgba(16, 185, 129, 0.2)',
+          background: 'var(--green-bg)',
+          border: '1px solid #a7f3d0',
+          boxShadow: 'var(--shadow-md)',
           borderRadius: '12px',
           padding: '2rem',
           textAlign: 'center',

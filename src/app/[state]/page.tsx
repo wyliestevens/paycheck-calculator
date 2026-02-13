@@ -68,7 +68,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
             display: 'inline-block',
             padding: '0.25rem 0.75rem',
             background: state.hasStateTax ? 'var(--red-bg)' : 'var(--green-bg)',
-            border: `1px solid ${state.hasStateTax ? 'rgba(239,68,68,0.2)' : 'rgba(16,185,129,0.2)'}`,
+            border: `1px solid ${state.hasStateTax ? '#fecaca' : '#a7f3d0'}`,
             borderRadius: '999px',
             fontSize: '0.75rem',
             fontWeight: 600,

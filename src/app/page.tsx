@@ -69,7 +69,7 @@ export default function HomePage() {
                 display: 'block',
                 padding: '1rem 1.25rem',
                 background: 'var(--green-bg)',
-                border: '1px solid rgba(16, 185, 129, 0.2)',
+                border: '1px solid #a7f3d0',
                 borderRadius: '8px',
                 color: 'var(--text-primary)',
                 textDecoration: 'none',
