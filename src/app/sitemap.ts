@@ -2,7 +2,7 @@ import { states } from '@/data/states'
 import type { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://paycheckcalc.com' // Replace with your actual domain
+  const baseUrl = 'https://paycheck.center' // Replace with your actual domain
 
   const statePages = states.map((state) => ({
     url: `${baseUrl}/${state.slug}`,
