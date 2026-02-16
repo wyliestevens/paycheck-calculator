@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import RotatingBanner from '@/components/RotatingBanner'
 
 export const metadata: Metadata = {
   title: 'Free Paycheck Calculator by State | Estimate Your Take-Home Pay 2026',
@@ -45,7 +46,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
         </nav>
         <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '2rem' }}>
+          <RotatingBanner />
           {children}
+          <RotatingBanner />
         </main>
         <footer
           style={{
@@ -60,6 +63,34 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         >
           <p>PaycheckCalc provides estimates for informational purposes only. Tax calculations are based on 2026 federal and state rates for single filers. Consult a tax professional for precise figures.</p>
+          <div
+            style={{
+              marginTop: '1rem',
+              display: 'flex',
+              justifyContent: 'center',
+              gap: '1.5rem',
+              flexWrap: 'wrap',
+              fontSize: '0.8125rem',
+            }}
+          >
+            <a
+              href="https://www.aipeakbiz.com"
+              target="_blank"
+              rel="noopener"
+              style={{ color: 'var(--accent)' }}
+            >
+              AI Peak Biz
+            </a>
+            <span style={{ color: 'var(--border)' }}>|</span>
+            <a
+              href="https://www.frontlinelegalnurse.com"
+              target="_blank"
+              rel="noopener"
+              style={{ color: 'var(--accent)' }}
+            >
+              Frontline Legal Nurse Consulting
+            </a>
+          </div>
           <p style={{ marginTop: '0.5rem' }}>&copy; {new Date().getFullYear()} PaycheckCalc. All rights reserved.</p>
         </footer>
       </body>
