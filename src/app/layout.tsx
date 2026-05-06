@@ -90,6 +90,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             >
               Frontline Legal Nurse Consulting
             </a>
+            <span style={{ color: 'var(--border)' }}>|</span>
+            <a
+              href="https://www.usedslotshop.com"
+              target="_blank"
+              rel="noopener"
+              style={{ color: 'var(--accent)' }}
+            >
+              Used Slot Shop
+            </a>
           </div>
           <p style={{ marginTop: '0.5rem' }}>&copy; {new Date().getFullYear()} PaycheckCalc. All rights reserved.</p>
         </footer>
