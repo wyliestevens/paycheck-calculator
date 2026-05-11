@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import './globals.css'
 import RotatingBanner from '@/components/RotatingBanner'
 
@@ -12,7 +13,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731434749249918" crossOrigin="anonymous"></script>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731434749249918"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
       </head>
       <body>
         <nav
@@ -66,6 +72,24 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div
             style={{
               marginTop: '1rem',
+              display: 'flex',
+              justifyContent: 'center',
+              gap: '1.5rem',
+              flexWrap: 'wrap',
+              fontSize: '0.8125rem',
+            }}
+          >
+            <a href="/about" style={{ color: 'var(--accent)' }}>About</a>
+            <span style={{ color: 'var(--border)' }}>|</span>
+            <a href="/contact" style={{ color: 'var(--accent)' }}>Contact</a>
+            <span style={{ color: 'var(--border)' }}>|</span>
+            <a href="/privacy" style={{ color: 'var(--accent)' }}>Privacy Policy</a>
+            <span style={{ color: 'var(--border)' }}>|</span>
+            <a href="/terms" style={{ color: 'var(--accent)' }}>Terms of Service</a>
+          </div>
+          <div
+            style={{
+              marginTop: '0.75rem',
               display: 'flex',
               justifyContent: 'center',
               gap: '1.5rem',
