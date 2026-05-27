@@ -1,8 +1,13 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'About | PaycheckCalc',
+  title: 'About',
   description: 'Learn about PaycheckCalc — a free paycheck calculator providing take-home pay estimates for all 50 US states with 2026 tax rates.',
+  alternates: { canonical: '/about' },
+  openGraph: {
+    title: 'About PaycheckCalc',
+    description: 'Learn about PaycheckCalc — a free paycheck calculator for all 50 US states.',
+  },
 }
 
 export default function AboutPage() {

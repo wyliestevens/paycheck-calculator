@@ -1,0 +1,33 @@
+# PaycheckCalc
+
+> Free paycheck calculator for all 50 US states. Calculate take-home pay after federal, state, Social Security, and Medicare taxes with 2026 rates.
+
+## About
+
+PaycheckCalc is a free online tool that helps employees and job seekers estimate their take-home pay in any US state. All calculations run in the browser — no financial data is transmitted or stored. Operated by AI Peak Biz.
+
+## Pages
+
+- [Home](https://paycheck.center): State listing with links to all 50 state calculators
+- [About](https://paycheck.center/about): Mission and methodology
+- [Contact](https://paycheck.center/contact): FAQ and contact information
+
+## State Calculators
+
+Each state has a dedicated calculator page at `https://paycheck.center/{state-slug}` (e.g., `/california`, `/texas`, `/new-york`).
+
+### What Each Calculator Covers
+- Federal income tax (2026 brackets, 10%-37%, $15,000 standard deduction)
+- State income tax (flat, progressive, or none depending on state)
+- Social Security (6.2% on first $168,600)
+- Medicare (1.45% on all earnings)
+- Pay frequency options: annual, monthly, semi-monthly, bi-weekly, weekly
+
+### No-Income-Tax States
+Alaska, Florida, Nevada, New Hampshire, South Dakota, Tennessee, Texas, Washington, Wyoming
+
+## Limitations
+- Single filer only (married filing jointly not yet supported)
+- Does not account for pre-tax deductions (401k, health insurance)
+- Does not include local/city taxes
+- Estimates only — consult a tax professional for precise figures

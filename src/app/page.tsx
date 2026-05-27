@@ -1,9 +1,15 @@
 import { states } from '@/data/states'
 import type { Metadata } from 'next'
+import { webApplicationSchema } from '@/lib/seo'
 
 export const metadata: Metadata = {
-  title: 'Free Paycheck Calculator by State | 2026 Tax Rates | PaycheckCalc',
+  title: 'Free Paycheck Calculator by State | 2026 Tax Rates',
   description: 'Calculate your take-home pay in any US state. Free paycheck calculator with 2026 federal and state tax rates, Social Security, and Medicare deductions.',
+  alternates: { canonical: '/' },
+  openGraph: {
+    title: 'Free Paycheck Calculator by State | 2026 Tax Rates',
+    description: 'Calculate your take-home pay in any US state. Free paycheck calculator with 2026 federal and state tax rates.',
+  },
 }
 
 export default function HomePage() {
@@ -12,6 +18,11 @@ export default function HomePage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationSchema()) }}
+      />
+
       <div className="ad-slot ad-slot-horizontal">Advertisement</div>
 
       <div style={{ textAlign: 'center', marginBottom: '3rem' }}>

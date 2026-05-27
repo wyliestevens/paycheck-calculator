@@ -1,0 +1,77 @@
+export interface BlogPost {
+  title: string
+  slug: string
+  publishDate: string
+  excerpt: string
+  keywords: string
+  readingTime: string
+  heroColor: string
+  heroIcon: string
+}
+
+export const blogPosts: BlogPost[] = [
+  {
+    title: 'What Are Paycheck Deductions? A Complete Breakdown for 2026',
+    slug: 'paycheck-deductions-explained',
+    publishDate: '2026-05-26',
+    excerpt: 'Your gross pay and take-home pay are two very different numbers. Learn exactly what gets taken out of your paycheck and why.',
+    keywords: 'paycheck deductions explained, what comes out of my paycheck, paycheck deductions 2026',
+    readingTime: '8 min read',
+    heroColor: '#2563eb',
+    heroIcon: '$',
+  },
+  {
+    title: 'FICA Taxes Explained: Social Security and Medicare in 2026',
+    slug: 'fica-taxes-explained',
+    publishDate: '2026-05-29',
+    excerpt: 'FICA takes 7.65% of every paycheck. Here\'s exactly where that money goes and what you get back for it.',
+    keywords: 'FICA tax 2026, Social Security tax rate, Medicare tax rate, FICA withholding',
+    readingTime: '6 min read',
+    heroColor: '#059669',
+    heroIcon: '%',
+  },
+  {
+    title: 'The 9 States With No Income Tax in 2026 (Ranked by Total Tax Burden)',
+    slug: 'states-with-no-income-tax',
+    publishDate: '2026-06-01',
+    excerpt: 'Nine states don\'t tax your income — but that doesn\'t always mean you\'ll pay less in taxes overall. Here\'s the full picture.',
+    keywords: 'states with no income tax 2026, no state tax states, tax-free states',
+    readingTime: '9 min read',
+    heroColor: '#059669',
+    heroIcon: '0',
+  },
+  {
+    title: 'Highest and Lowest State Income Tax Rates in 2026',
+    slug: 'state-income-tax-rates-ranked',
+    publishDate: '2026-06-04',
+    excerpt: 'From California\'s 13.3% to North Dakota\'s 1.95%, here\'s every state\'s income tax rate ranked from highest to lowest.',
+    keywords: 'state income tax rates 2026, state tax rates ranked, highest state taxes',
+    readingTime: '7 min read',
+    heroColor: '#dc2626',
+    heroIcon: '#',
+  },
+  {
+    title: 'How to Compare Job Offers Across States: A Take-Home Pay Guide',
+    slug: 'compare-job-offers-across-states',
+    publishDate: '2026-06-08',
+    excerpt: 'A $90K offer in Texas might beat a $100K offer in California. Learn how to compare job offers by what you actually keep.',
+    keywords: 'compare salary across states, job offer different state, relocate for work taxes',
+    readingTime: '8 min read',
+    heroColor: '#7c3aed',
+    heroIcon: '?',
+  },
+  {
+    title: 'What Is a Good Salary in Each US State? (2026 Cost-Adjusted)',
+    slug: 'good-salary-by-state',
+    publishDate: '2026-06-11',
+    excerpt: '$75,000 goes a lot further in Mississippi than in Hawaii. Here\'s what counts as a good salary in every state when you factor in taxes and cost of living.',
+    keywords: 'good salary by state 2026, average salary by state, livable wage by state',
+    readingTime: '10 min read',
+    heroColor: '#d97706',
+    heroIcon: '~',
+  },
+]
+
+export function getBlogPostBySlug(slug: string): BlogPost | undefined {
+  return blogPosts.find((p) => p.slug === slug)
+}

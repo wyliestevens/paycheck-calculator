@@ -58,7 +58,7 @@ export default function RotatingBanner() {
             key={ad.url}
             href={ad.url}
             target="_blank"
-            rel="noopener"
+            rel="noopener nofollow sponsored"
             style={{
               display: 'block',
               textDecoration: 'none',

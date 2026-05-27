@@ -2,11 +2,28 @@ import type { Metadata } from 'next'
 import Script from 'next/script'
 import './globals.css'
 import RotatingBanner from '@/components/RotatingBanner'
+import { canonicalUrl, organizationSchema } from '@/lib/seo'
 
 export const metadata: Metadata = {
-  title: 'Free Paycheck Calculator by State | Estimate Your Take-Home Pay 2026',
+  title: {
+    default: 'Free Paycheck Calculator by State | Estimate Your Take-Home Pay 2026',
+    template: '%s | PaycheckCalc',
+  },
   description: 'Calculate your take-home pay after federal, state, Social Security, and Medicare taxes. Free paycheck calculator for all 50 US states with 2026 tax rates.',
   keywords: 'paycheck calculator, take home pay calculator, salary calculator, tax calculator, paycheck after taxes, net pay calculator, 2026 tax calculator',
+  metadataBase: new URL('https://paycheck.center'),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    type: 'website',
+    siteName: 'PaycheckCalc',
+    locale: 'en_US',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -21,6 +38,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema()) }}
+        />
         <nav
           style={{
             borderBottom: '1px solid var(--border)',
@@ -49,6 +70,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </a>
           <div style={{ display: 'flex', gap: '1.5rem', fontSize: '0.875rem' }}>
             <a href="/" style={{ color: 'var(--text-secondary)' }}>All States</a>
+            <a href="/blog" style={{ color: 'var(--text-secondary)' }}>Blog</a>
           </div>
         </nav>
         <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '2rem' }}>
@@ -100,7 +122,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <a
               href="https://www.aipeakbiz.com"
               target="_blank"
-              rel="noopener"
+              rel="noopener nofollow"
               style={{ color: 'var(--accent)' }}
             >
               AI Peak Biz
@@ -109,7 +131,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <a
               href="https://www.frontlinelegalnurse.com"
               target="_blank"
-              rel="noopener"
+              rel="noopener nofollow"
               style={{ color: 'var(--accent)' }}
             >
               Frontline Legal Nurse Consulting
@@ -118,7 +140,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <a
               href="https://www.usedslotshop.com"
               target="_blank"
-              rel="noopener"
+              rel="noopener nofollow"
               style={{ color: 'var(--accent)' }}
             >
               Used Slot Shop

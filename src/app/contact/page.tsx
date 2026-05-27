@@ -1,13 +1,38 @@
 import type { Metadata } from 'next'
+import { faqSchema } from '@/lib/seo'
 
 export const metadata: Metadata = {
-  title: 'Contact Us | PaycheckCalc',
+  title: 'Contact Us',
   description: 'Get in touch with PaycheckCalc for questions, feedback, or support.',
+  alternates: { canonical: '/contact' },
+  openGraph: {
+    title: 'Contact PaycheckCalc',
+    description: 'Get in touch with PaycheckCalc for questions, feedback, or support.',
+  },
 }
+
+const faqs = [
+  {
+    question: 'Are these calculations accurate?',
+    answer: 'Our estimates are based on 2026 federal and state tax rates for single filers using the standard deduction. They do not account for pre-tax deductions, local taxes, or individual tax situations. For exact figures, consult a tax professional.',
+  },
+  {
+    question: 'I found an error in a state\'s tax rate.',
+    answer: 'Please email us at contact@aipeakbiz.com with the state name and the correct rate, along with a source, and we\'ll update it promptly.',
+  },
+  {
+    question: 'Can I use PaycheckCalc for married filing jointly?',
+    answer: 'Currently, PaycheckCalc calculates taxes for single filers only. We plan to add additional filing statuses in the future.',
+  },
+]
 
 export default function ContactPage() {
   return (
     <div style={{ maxWidth: '720px', margin: '0 auto' }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(faqs)) }}
+      />
       <h1 style={{ fontSize: '2rem', fontWeight: 700, marginBottom: '1.5rem' }}>Contact Us</h1>
 
       <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', lineHeight: 1.7 }}>
@@ -61,7 +86,7 @@ export default function ContactPage() {
       </div>
 
       <p style={{ color: 'var(--text-muted)', fontSize: '0.875rem' }}>
-        PaycheckCalc is operated by <a href="https://www.aipeakbiz.com" target="_blank" rel="noopener" style={{ color: 'var(--accent)' }}>AI Peak Biz</a>.
+        PaycheckCalc is operated by <a href="https://www.aipeakbiz.com" target="_blank" rel="noopener nofollow" style={{ color: 'var(--accent)' }}>AI Peak Biz</a>.
       </p>
     </div>
   )

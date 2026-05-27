@@ -2,6 +2,7 @@ import { states, getStateBySlug } from '@/data/states'
 import PaycheckCalculator from '@/components/PaycheckCalculator'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import { breadcrumbSchema, stateCalculatorSchema, canonicalUrl } from '@/lib/seo'
 
 export function generateStaticParams() {
   return states.map((state) => ({ state: state.slug }))
@@ -22,9 +23,11 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
     title: `${state.name} Paycheck Calculator 2026 | ${state.abbreviation} Take-Home Pay`,
     description: state.metaDescription,
     keywords: `${state.name} paycheck calculator, ${state.abbreviation} salary calculator, ${state.name} take home pay, ${state.name} income tax calculator, ${state.name} tax rate ${topRate}, paycheck calculator ${state.name} 2026`,
+    alternates: { canonical: `/${state.slug}` },
     openGraph: {
       title: `${state.name} Paycheck Calculator 2026`,
       description: state.metaDescription,
+      url: `/${state.slug}`,
     },
   }
 }
@@ -52,8 +55,23 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
     states[(stateIndex + 2) % states.length],
   ]
 
+  const breadcrumbs = breadcrumbSchema([
+    { name: 'Home', url: canonicalUrl() },
+    { name: `${state.name} Paycheck Calculator`, url: canonicalUrl(`/${state.slug}`) },
+  ])
+  const calculatorLd = stateCalculatorSchema(state.name, state.slug)
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(calculatorLd) }}
+      />
+
       <div className="ad-slot ad-slot-horizontal">Advertisement</div>
 
       <div style={{ marginBottom: '1.5rem' }}>

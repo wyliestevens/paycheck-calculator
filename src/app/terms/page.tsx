@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Terms of Service | PaycheckCalc',
+  title: 'Terms of Service',
   description: 'Terms of service for PaycheckCalc — rules and guidelines for using our paycheck calculator.',
+  alternates: { canonical: '/terms' },
+  robots: { index: false, follow: true },
 }
 
 export default function TermsPage() {
