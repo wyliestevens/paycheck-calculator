@@ -70,6 +70,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#d97706',
     heroIcon: '~',
   },
+  {
+    title: 'Tax Brackets Explained: Why a Raise Won\'t Make You Poorer',
+    slug: 'tax-brackets-explained',
+    publishDate: '2026-05-28',
+    excerpt: 'Getting a raise won\'t push all your income into a higher tax bracket. Here\'s how marginal taxation actually works — with real numbers.',
+    keywords: 'tax brackets explained 2026, marginal tax rate, effective tax rate, higher tax bracket raise, does a raise increase taxes',
+    readingTime: '7 min read',
+    heroColor: '#0891b2',
+    heroIcon: '%',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
