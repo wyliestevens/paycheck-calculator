@@ -80,6 +80,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#0891b2',
     heroIcon: '%',
   },
+  {
+    title: 'How 401(k) Contributions Affect Your Paycheck in 2026',
+    slug: 'how-401k-contributions-affect-your-paycheck',
+    publishDate: '2026-05-29',
+    excerpt: 'Contributing $4,500 to a 401(k) only costs you $3,510 in take-home pay — the government covers the rest through lower taxes. Here\'s the exact math.',
+    keywords: '401k paycheck, how 401k affects take home pay, 401k contribution 2026, 401k tax savings, pre-tax 401k',
+    readingTime: '8 min read',
+    heroColor: '#7c3aed',
+    heroIcon: 'k',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
