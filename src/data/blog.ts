@@ -90,6 +90,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#7c3aed',
     heroIcon: 'k',
   },
+  {
+    title: 'How Bonuses Are Taxed: The 22% Rule Explained (2026)',
+    slug: 'how-bonuses-are-taxed',
+    publishDate: '2026-06-01',
+    excerpt: 'Your employer withholds 22% from most bonuses — but that\'s just an estimate, not your final tax bill. Here\'s exactly how bonus taxation works.',
+    keywords: 'how bonuses are taxed, bonus tax rate 2026, 22 percent bonus tax, supplemental wage withholding, bonus take home pay',
+    readingTime: '8 min read',
+    heroColor: '#ea580c',
+    heroIcon: '$',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
