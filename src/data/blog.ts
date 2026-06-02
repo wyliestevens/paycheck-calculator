@@ -100,6 +100,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#ea580c',
     heroIcon: '$',
   },
+  {
+    title: 'Understanding Your W-4: How to Fill It Out Correctly (2026)',
+    slug: 'understanding-your-w4',
+    publishDate: '2026-06-02',
+    excerpt: 'The W-4 controls how much federal tax comes out of every paycheck. Here\'s a step-by-step guide to filling it out correctly — with real dollar examples.',
+    keywords: 'how to fill out W-4, W-4 2026, W-4 instructions, federal tax withholding form, W-4 multiple jobs, W-4 dependents',
+    readingTime: '8 min read',
+    heroColor: '#2563eb',
+    heroIcon: 'W',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
