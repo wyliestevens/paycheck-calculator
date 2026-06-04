@@ -110,6 +110,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#2563eb',
     heroIcon: 'W',
   },
+  {
+    title: 'W-2 vs 1099: How Your Taxes Are Different (2026)',
+    slug: 'w2-vs-1099-taxes',
+    publishDate: '2026-06-04',
+    excerpt: 'W-2 employees and 1099 contractors pay taxes very differently. Learn what self-employment tax costs and which setup nets more take-home pay.',
+    keywords: 'W-2 vs 1099 taxes, 1099 contractor taxes, self-employment tax 2026, W-2 employee vs contractor, 1099 take-home pay',
+    readingTime: '9 min read',
+    heroColor: '#0f766e',
+    heroIcon: 'C',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
