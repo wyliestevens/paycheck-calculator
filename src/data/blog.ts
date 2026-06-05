@@ -120,6 +120,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#0f766e',
     heroIcon: 'C',
   },
+  {
+    title: 'How Overtime Pay Is Taxed in 2026',
+    slug: 'how-overtime-pay-is-taxed',
+    publishDate: '2026-06-05',
+    excerpt: 'Overtime is not taxed at a special rate — it is ordinary income. Here is exactly how overtime gets taxed, why withholding looks higher, and a worked dollar example at $20/hr.',
+    keywords: 'how overtime is taxed, overtime tax rate 2026, overtime pay taxes, overtime withholding, is overtime taxed more',
+    readingTime: '8 min read',
+    heroColor: '#d97706',
+    heroIcon: '+',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
