@@ -130,6 +130,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#d97706',
     heroIcon: '+',
   },
+  {
+    title: 'How to Read Your Pay Stub Line by Line (2026 Guide)',
+    slug: 'how-to-read-your-pay-stub',
+    publishDate: '2026-06-08',
+    excerpt: 'Confused by the numbers on your pay stub? This guide walks through every line — gross pay, FICA, withholding, YTD totals — in plain English with real examples.',
+    keywords: 'how to read a pay stub, pay stub explained, paycheck stub lines, OASDI on pay stub, YTD pay stub, pay stub deductions 2026',
+    readingTime: '9 min read',
+    heroColor: '#0369a1',
+    heroIcon: 'P',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
