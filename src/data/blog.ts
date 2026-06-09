@@ -140,6 +140,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#0369a1',
     heroIcon: 'P',
   },
+  {
+    title: 'Hourly vs Salary: How Pay Structure Affects Your Take-Home Pay',
+    slug: 'hourly-vs-salary-taxes',
+    publishDate: '2026-06-09',
+    excerpt: 'A $20/hr job and a $41,600 salary pay the same gross amount — but overtime rights, employer benefits, and income stability create real differences in what you actually keep.',
+    keywords: 'hourly vs salary taxes, hourly vs salary take home pay, overtime tax hourly worker, exempt vs nonexempt FLSA, salary take home pay 2026',
+    readingTime: '8 min read',
+    heroColor: '#0891b2',
+    heroIcon: 'H',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
