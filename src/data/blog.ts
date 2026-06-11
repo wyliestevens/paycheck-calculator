@@ -150,6 +150,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#0891b2',
     heroIcon: 'H',
   },
+  {
+    title: 'How Marriage Changes Your Tax Bracket (2026 Guide)',
+    slug: 'how-marriage-changes-your-taxes',
+    publishDate: '2026-06-11',
+    excerpt: 'Getting married changes your filing status, doubles your standard deduction, and may save you thousands. Here\'s exactly how your taxes change when you say "I do."',
+    keywords: 'how marriage changes taxes, married filing jointly 2026, marriage tax bonus, marriage tax penalty, married tax brackets 2026, W-4 after marriage',
+    readingTime: '8 min read',
+    heroColor: '#db2777',
+    heroIcon: '&',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
