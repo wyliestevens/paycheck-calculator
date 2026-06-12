@@ -160,6 +160,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#db2777',
     heroIcon: '&',
   },
+  {
+    title: 'Pre-Tax vs Post-Tax Deductions: What\'s the Difference? (2026)',
+    slug: 'pre-tax-vs-post-tax-deductions',
+    publishDate: '2026-06-12',
+    excerpt: 'Pre-tax deductions reduce your taxable income before the IRS takes its cut — post-tax ones don\'t. Here\'s exactly how each type works, with a worked example showing $714 in annual tax savings.',
+    keywords: 'pre-tax deductions, post-tax deductions, pre-tax vs post-tax 2026, 401k pre-tax, HSA pre-tax, Section 125 cafeteria plan',
+    readingTime: '8 min read',
+    heroColor: '#0891b2',
+    heroIcon: '±',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
