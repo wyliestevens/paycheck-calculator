@@ -170,6 +170,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#0891b2',
     heroIcon: '±',
   },
+  {
+    title: 'How to Calculate Your Hourly Rate from a Salary (2026 Guide)',
+    slug: 'how-to-calculate-hourly-rate-from-salary',
+    publishDate: '2026-06-15',
+    excerpt: 'Divide your annual salary by 2,080 to get your gross hourly rate — but your real after-tax hourly pay can be 25–35% lower. Here\'s the full formula, a quick reference table, and real examples.',
+    keywords: 'how to calculate hourly rate from salary, salary to hourly calculator, annual salary to hourly, salary divided by 2080, convert salary to hourly',
+    readingTime: '8 min read',
+    heroColor: '#0891b2',
+    heroIcon: '÷',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
