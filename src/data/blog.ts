@@ -180,6 +180,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#0891b2',
     heroIcon: '÷',
   },
+  {
+    title: 'HSA and FSA: How They Affect Your Paycheck (2026 Guide)',
+    slug: 'hsa-fsa-how-they-affect-your-paycheck',
+    publishDate: '2026-06-16',
+    excerpt: 'HSAs and FSAs let you pay for medical expenses with pre-tax dollars — cutting your tax bill by $500 to $1,500 or more each year. Here\'s exactly how they work, with 2026 limits and a worked dollar example.',
+    keywords: 'HSA paycheck 2026, FSA paycheck 2026, health savings account contribution limit 2026, flexible spending account 2026, HSA vs FSA, pre-tax health benefits',
+    readingTime: '8 min read',
+    heroColor: '#be185d',
+    heroIcon: '+',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
