@@ -190,6 +190,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#be185d',
     heroIcon: '+',
   },
+  {
+    title: 'How Student Loan Payments Affect Your Take-Home Pay (2026 Guide)',
+    slug: 'student-loan-payments-and-your-paycheck',
+    publishDate: '2026-06-18',
+    excerpt: 'Student loan payments come out after taxes — so a $400/month payment costs you far more than $400 in gross pay. Here\'s the full picture, with IDR strategies and worked examples.',
+    keywords: 'student loan payments take-home pay, student loans paycheck 2026, income-driven repayment paycheck, student loan interest deduction 2026, employer student loan repayment',
+    readingTime: '8 min read',
+    heroColor: '#4f46e5',
+    heroIcon: 'S',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
