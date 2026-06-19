@@ -200,6 +200,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#4f46e5',
     heroIcon: 'S',
   },
+  {
+    title: 'State vs Federal Tax: A Simple Explanation (2026)',
+    slug: 'state-vs-federal-tax',
+    publishDate: '2026-06-19',
+    excerpt: 'Federal income tax goes to the IRS and is the same everywhere. State income tax goes to your state — and varies from 0% to 13.3%. Here\'s exactly how both systems work, with a side-by-side comparison and real dollar examples.',
+    keywords: 'state vs federal tax, state income tax vs federal income tax, federal tax 2026, state tax 2026, how state and federal taxes work, two income taxes paycheck',
+    readingTime: '8 min read',
+    heroColor: '#2563eb',
+    heroIcon: 'F',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
