@@ -210,6 +210,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#2563eb',
     heroIcon: 'F',
   },
+  {
+    title: 'Self-Employment Tax: What Freelancers Pay in 2026',
+    slug: 'self-employment-tax-freelancers',
+    publishDate: '2026-06-22',
+    excerpt: 'Freelancers pay 15.3% self-employment tax on top of income taxes — because they cover both the employee and employer share of FICA. Here\'s the full breakdown with a worked example at $75,000 in freelance income.',
+    keywords: 'self-employment tax 2026, freelancer taxes, self-employment tax rate, SE tax calculator, quarterly estimated taxes, 1099 self-employment tax, freelance tax rate 2026',
+    readingTime: '9 min read',
+    heroColor: '#7c3aed',
+    heroIcon: 'F',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
