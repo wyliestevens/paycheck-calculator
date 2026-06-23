@@ -220,6 +220,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#7c3aed',
     heroIcon: 'F',
   },
+  {
+    title: 'Weekly vs Biweekly vs Monthly Pay: How Frequency Affects Your Taxes (2026)',
+    slug: 'weekly-vs-biweekly-vs-monthly-pay',
+    publishDate: '2026-06-23',
+    excerpt: 'Your annual tax bill is identical whether you get paid weekly, biweekly, or monthly — but pay frequency changes your withholding per check and your cash flow. Full breakdown with worked examples at $65,000.',
+    keywords: 'weekly vs biweekly pay, pay frequency taxes, biweekly vs semimonthly, paycheck frequency 2026, biweekly extra paycheck, pay period withholding',
+    readingTime: '8 min read',
+    heroColor: '#0891b2',
+    heroIcon: '~',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
