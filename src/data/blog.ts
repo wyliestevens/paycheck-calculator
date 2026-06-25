@@ -230,6 +230,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#0891b2',
     heroIcon: '~',
   },
+  {
+    title: 'Moving for a Job? Tax Implications of Relocating States (2026)',
+    slug: 'moving-for-a-job-state-tax-implications',
+    publishDate: '2026-06-25',
+    excerpt: 'Moving to a new state for work means filing part-year returns in two states, dealing with residency rules, and potentially paying taxes to your old state longer than you expect. Here\'s the full guide.',
+    keywords: 'moving to another state taxes, relocating for a job taxes, part-year resident tax return, state tax when moving, domicile vs residency taxes, remote work state taxes 2026',
+    readingTime: '9 min read',
+    heroColor: '#0f766e',
+    heroIcon: '>',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
