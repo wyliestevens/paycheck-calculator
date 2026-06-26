@@ -240,6 +240,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#0f766e',
     heroIcon: '>',
   },
+  {
+    title: 'Understanding Your W-2: A Box-by-Box Guide (2026)',
+    slug: 'understanding-your-w2',
+    publishDate: '2026-06-26',
+    excerpt: 'Your W-2 has up to 20 numbered boxes — and most people only check a few. Here\'s what every box means, why Box 1 differs from your gross pay, and a complete worked example at $75,000.',
+    keywords: 'W-2 form explained, W-2 box by box, how to read W-2, W-2 2026, Box 12 W-2 codes, Box 1 wages, W-2 withholding',
+    readingTime: '9 min read',
+    heroColor: '#2563eb',
+    heroIcon: '2',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
