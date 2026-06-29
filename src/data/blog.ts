@@ -250,6 +250,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#2563eb',
     heroIcon: '2',
   },
+  {
+    title: 'Gross Pay vs Net Pay: What\'s the Difference? (2026 Guide)',
+    slug: 'gross-pay-vs-net-pay',
+    publishDate: '2026-06-29',
+    excerpt: 'Gross pay is what your employer agrees to pay you. Net pay is what lands in your bank account. Here\'s exactly what happens between those two numbers — with a full worked example.',
+    keywords: 'gross pay vs net pay, what is gross pay, what is net pay, gross income vs net income, difference between gross and net pay, take-home pay 2026',
+    readingTime: '7 min read',
+    heroColor: '#059669',
+    heroIcon: '=',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
