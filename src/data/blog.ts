@@ -260,6 +260,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#059669',
     heroIcon: '=',
   },
+  {
+    title: 'Tax Withholding: How to Make Sure You\'re Not Overpaying (or Underpaying)',
+    slug: 'tax-withholding-overpaying',
+    publishDate: '2026-06-30',
+    excerpt: 'A big tax refund means the IRS held your money interest-free all year. Here\'s how to check your withholding, spot common mistakes, and use your W-4 to keep more money in every paycheck.',
+    keywords: 'tax withholding 2026, how to check tax withholding, am I withholding too much, IRS withholding estimator, W-4 withholding, underpayment penalty 2026, adjust tax withholding',
+    readingTime: '8 min read',
+    heroColor: '#7c3aed',
+    heroIcon: '~',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
