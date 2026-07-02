@@ -270,6 +270,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#7c3aed',
     heroIcon: '~',
   },
+  {
+    title: 'Payroll Tax vs Income Tax: What\'s the Difference? (2026)',
+    slug: 'payroll-tax-vs-income-tax',
+    publishDate: '2026-07-02',
+    excerpt: 'Payroll taxes and income taxes both come out of your paycheck — but they work completely differently. Here\'s the clear breakdown, with a $70,000 worked example.',
+    keywords: 'payroll tax vs income tax, what is payroll tax, FICA vs income tax, Social Security tax vs income tax, payroll taxes explained 2026',
+    readingTime: '8 min read',
+    heroColor: '#4338ca',
+    heroIcon: '=',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
