@@ -280,6 +280,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#4338ca',
     heroIcon: '=',
   },
+  {
+    title: 'Remote Work and State Taxes: What You Need to Know (2026)',
+    slug: 'remote-work-and-state-taxes',
+    publishDate: '2026-07-03',
+    excerpt: 'Working remotely for a company in another state could mean filing two state tax returns — or more. Here\'s how the convenience of the employer rule, reciprocity agreements, and California\'s residency rules affect remote workers.',
+    keywords: 'remote work state taxes, work from home state taxes 2026, convenience of employer rule, reciprocity agreements taxes, two state taxes remote work, telecommute tax 2026',
+    readingTime: '9 min read',
+    heroColor: '#0891b2',
+    heroIcon: '>',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
