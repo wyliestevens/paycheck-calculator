@@ -290,6 +290,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#0891b2',
     heroIcon: '>',
   },
+  {
+    title: 'What Happens to Your Taxes When You Get a Raise? (2026 Guide)',
+    slug: 'what-happens-to-taxes-when-you-get-a-raise',
+    publishDate: '2026-07-06',
+    excerpt: 'A raise always increases your take-home pay — but how much? See the exact math with a worked example going from $55,000 to $70,000.',
+    keywords: 'what happens to taxes when you get a raise, does a raise increase taxes, raise tax bracket, salary increase take home pay, marginal tax rate raise 2026',
+    readingTime: '8 min read',
+    heroColor: '#059669',
+    heroIcon: '↑',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
