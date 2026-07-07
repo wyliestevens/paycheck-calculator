@@ -300,6 +300,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#059669',
     heroIcon: '↑',
   },
+  {
+    title: 'Military Pay and Taxes: A Complete Guide (2026)',
+    slug: 'military-pay-and-taxes',
+    publishDate: '2026-07-07',
+    excerpt: 'Military compensation includes taxable basic pay plus tax-free allowances like BAH and BAS. See how an E-5 sergeant pays just 5% in federal taxes on $65,000 in total compensation — and how combat zone deployments can eliminate income tax entirely.',
+    keywords: 'military pay taxes 2026, military tax exemption, BAH taxable, combat zone tax exclusion, armed forces taxes, military pay guide, military TSP',
+    readingTime: '9 min read',
+    heroColor: '#2563eb',
+    heroIcon: '★',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
