@@ -310,6 +310,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#2563eb',
     heroIcon: '★',
   },
+  {
+    title: 'Part-Time vs Full-Time: How Your Tax Bill Changes (2026 Guide)',
+    slug: 'part-time-vs-full-time-taxes',
+    publishDate: '2026-07-09',
+    excerpt: 'Part-time and full-time workers pay the same tax rates — but fewer hours means lower income, a smaller bracket footprint, and often no employer benefits. Here\'s exactly what changes.',
+    keywords: 'part-time vs full-time taxes, part-time work taxes 2026, do part-time workers pay taxes, two part-time jobs taxes, part-time tax bracket, part-time employee benefits taxes',
+    readingTime: '8 min read',
+    heroColor: '#0f766e',
+    heroIcon: 'P',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
