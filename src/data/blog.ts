@@ -320,6 +320,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#0f766e',
     heroIcon: 'P',
   },
+  {
+    title: 'How Tips Are Taxed: A Guide for Service Workers (2026)',
+    slug: 'how-tips-are-taxed',
+    publishDate: '2026-07-10',
+    excerpt: 'Every dollar in tips is taxable income — cash, credit card, and tip pool shares alike. Here\'s how tip income is taxed, how your employer withholds, and a full worked example at $35,000.',
+    keywords: 'how tips are taxed 2026, tip income taxes, tipped worker taxes, reporting tip income IRS, tip withholding, server taxes, restaurant worker taxes, FICA on tips',
+    readingTime: '8 min read',
+    heroColor: '#d97706',
+    heroIcon: 'T',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
