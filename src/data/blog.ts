@@ -330,6 +330,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#d97706',
     heroIcon: 'T',
   },
+  {
+    title: 'Child Tax Credit 2026: How It Works, Who Qualifies, and How to Claim It',
+    slug: 'child-tax-credit-explained',
+    publishDate: '2026-07-13',
+    excerpt: 'The Child Tax Credit gives parents up to $2,000 per child under 17 — and up to $1,700 is refundable. Here\'s who qualifies and how to claim it on your W-4 to boost every paycheck.',
+    keywords: 'child tax credit 2026, child tax credit amount, who qualifies for child tax credit, additional child tax credit, child tax credit W-4, child tax credit income limit',
+    readingTime: '9 min read',
+    heroColor: '#7c3aed',
+    heroIcon: 'K',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
