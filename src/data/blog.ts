@@ -340,6 +340,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#7c3aed',
     heroIcon: 'K',
   },
+  {
+    title: 'Minimum Wage Take-Home Pay by State in 2026',
+    slug: 'minimum-wage-take-home-pay-by-state',
+    publishDate: '2026-07-14',
+    excerpt: 'The federal minimum wage is $7.25/hr — but after FICA and taxes, workers keep just $6.69/hr. See what minimum wage workers actually take home in every major state, with worked examples and a full comparison table.',
+    keywords: 'minimum wage take home pay 2026, minimum wage after taxes, state minimum wage 2026, minimum wage net pay, federal minimum wage paycheck, minimum wage by state',
+    readingTime: '9 min read',
+    heroColor: '#0891b2',
+    heroIcon: '$',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
