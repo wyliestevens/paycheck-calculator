@@ -350,6 +350,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#0891b2',
     heroIcon: '$',
   },
+  {
+    title: 'Best States for Remote Workers: Tax Edition (2026)',
+    slug: 'best-states-for-remote-workers-taxes',
+    publishDate: '2026-07-16',
+    excerpt: 'Where you live as a remote worker can save you $4,000–$6,500 per year in state taxes. Here are the 10 best states ranked by tax burden, with a full $80,000 salary comparison.',
+    keywords: 'best states for remote workers taxes, low tax states remote work 2026, no income tax states remote workers, where to live as remote worker taxes, remote worker state tax comparison 2026',
+    readingTime: '9 min read',
+    heroColor: '#0891b2',
+    heroIcon: 'R',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
