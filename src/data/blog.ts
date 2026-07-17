@@ -360,6 +360,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#0891b2',
     heroIcon: 'R',
   },
+  {
+    title: 'Dual Income Household Tax Planning for 2026',
+    slug: 'dual-income-household-tax-planning',
+    publishDate: '2026-07-17',
+    excerpt: 'Two incomes can create a $5,000+ tax surprise if your W-4s aren\'t coordinated. Here\'s how dual-income couples avoid under-withholding, maximize their tax benefits, and file correctly in 2026.',
+    keywords: 'dual income household taxes 2026, two income tax planning, married filing jointly two jobs, under-withholding dual income, W-4 married both work, spouse works W-4, dual income tax bracket 2026',
+    readingTime: '9 min read',
+    heroColor: '#7c3aed',
+    heroIcon: 'D',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
