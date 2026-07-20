@@ -370,6 +370,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#7c3aed',
     heroIcon: 'D',
   },
+  {
+    title: 'How Multiple Jobs Affect Your Taxes in 2026',
+    slug: 'two-jobs-tax-withholding',
+    publishDate: '2026-07-20',
+    excerpt: 'Working two jobs can leave you owing thousands at tax time if your withholding isn\'t adjusted. Here\'s the exact math — and how to fix it with your W-4.',
+    keywords: 'two jobs taxes 2026, multiple jobs withholding, second job tax rate, two jobs W-4, working two jobs taxes owe money, how two jobs affect taxes',
+    readingTime: '8 min read',
+    heroColor: '#d97706',
+    heroIcon: '+',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
