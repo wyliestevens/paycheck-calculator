@@ -380,6 +380,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#d97706',
     heroIcon: '+',
   },
+  {
+    title: 'Cost of Living vs Salary: A State-by-State Comparison (2026)',
+    slug: 'cost-of-living-vs-salary-by-state',
+    publishDate: '2026-07-21',
+    excerpt: 'A $70,000 salary in Mississippi buys nearly twice what it buys in Hawaii. See how purchasing power varies by state — with a full comparison table and worked dollar examples.',
+    keywords: 'cost of living vs salary by state 2026, purchasing power by state, salary comparison by state, cost of living salary adjustment, real salary by state',
+    readingTime: '9 min read',
+    heroColor: '#0891b2',
+    heroIcon: '≈',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
