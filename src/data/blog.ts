@@ -390,6 +390,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#0891b2',
     heroIcon: '≈',
   },
+  {
+    title: 'State Sales Tax Rates Ranked for 2026: Where You Pay the Most (and Least)',
+    slug: 'state-sales-tax-rates-2026',
+    publishDate: '2026-07-23',
+    excerpt: 'Five states charge zero sales tax. Louisiana tops the list at nearly 10%. Here are all 50 states ranked by combined sales tax rate — and what it means for your wallet.',
+    keywords: 'state sales tax rates 2026, highest sales tax states, no sales tax states, combined sales tax rate by state, sales tax comparison 2026',
+    readingTime: '8 min read',
+    heroColor: '#16a34a',
+    heroIcon: 'S',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
