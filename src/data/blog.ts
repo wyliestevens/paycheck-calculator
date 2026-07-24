@@ -400,6 +400,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#16a34a',
     heroIcon: 'S',
   },
+  {
+    title: 'Earned Income Tax Credit (EITC) 2026: Who Qualifies and How Much You Can Get',
+    slug: 'earned-income-tax-credit-2026',
+    publishDate: '2026-07-24',
+    excerpt: 'The EITC can put up to $8,250 back in your pocket in 2026 — but only if you claim it. Here\'s who qualifies, the income limits, and a full worked example at $28,000 with two qualifying children.',
+    keywords: 'earned income tax credit 2026, EITC 2026, who qualifies for EITC, EITC income limit 2026, earned income credit amount 2026, EITC refund',
+    readingTime: '9 min read',
+    heroColor: '#059669',
+    heroIcon: 'E',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
