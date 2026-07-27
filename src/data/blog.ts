@@ -410,6 +410,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#059669',
     heroIcon: 'E',
   },
+  {
+    title: 'Side Hustle Taxes: What Gig Workers Need to Know in 2026',
+    slug: 'side-hustle-taxes-gig-workers',
+    publishDate: '2026-07-27',
+    excerpt: 'Gig workers pay 15.3% self-employment tax plus income tax on every dollar earned — with no employer withholding. Here\'s exactly what you owe, how quarterly taxes work, and which expenses you can deduct.',
+    keywords: 'side hustle taxes 2026, gig worker taxes, 1099 gig economy, self-employment tax gig work, quarterly estimated taxes, DoorDash taxes, Uber taxes',
+    readingTime: '9 min read',
+    heroColor: '#7c3aed',
+    heroIcon: 'G',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
