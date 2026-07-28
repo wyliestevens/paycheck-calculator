@@ -420,6 +420,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#7c3aed',
     heroIcon: 'G',
   },
+  {
+    title: 'Federal Tax Brackets Explained for 2026 (All 7 Rates)',
+    slug: 'federal-tax-brackets-2026',
+    publishDate: '2026-07-28',
+    excerpt: 'The US has 7 federal income tax brackets in 2026, from 10% to 37% — but you never pay any single rate on all your income. Here\'s exactly how brackets work, with a full $75,000 worked example and a complete rate table.',
+    keywords: 'federal tax brackets 2026, income tax brackets 2026, tax rates 2026, IRS tax brackets, marginal tax rate 2026, federal income tax 2026, 22 percent tax bracket',
+    readingTime: '9 min read',
+    heroColor: '#dc2626',
+    heroIcon: '%',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
