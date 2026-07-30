@@ -430,6 +430,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#dc2626',
     heroIcon: '%',
   },
+  {
+    title: 'Standard Deduction vs. Itemized Deductions: Which Saves You More? (2026)',
+    slug: 'standard-deduction-vs-itemized-deductions',
+    publishDate: '2026-07-30',
+    excerpt: 'The standard deduction is $15,000 for single filers in 2026. Most people take it — but homeowners and high earners may save more by itemizing. Here\'s how to decide.',
+    keywords: 'standard deduction 2026, itemized deductions 2026, standard vs itemized deductions, should I itemize, schedule A deductions, SALT deduction, mortgage interest deduction',
+    readingTime: '8 min read',
+    heroColor: '#4f46e5',
+    heroIcon: '≡',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
