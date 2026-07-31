@@ -440,6 +440,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#4f46e5',
     heroIcon: '≡',
   },
+  {
+    title: 'Unemployment Benefits and Taxes: What You Need to Know in 2026',
+    slug: 'unemployment-benefits-and-taxes',
+    publishDate: '2026-07-31',
+    excerpt: 'Unemployment benefits are fully taxable as federal income — but exempt from FICA. Learn how UI is taxed, how to use Form W-4V to avoid a surprise bill, and see a full worked example at $35,000 wages + $11,700 in UI.',
+    keywords: 'unemployment benefits taxable 2026, are unemployment benefits taxed, unemployment tax rate, 1099-G form, Form W-4V withholding, unemployment income tax, UI benefits federal tax',
+    readingTime: '9 min read',
+    heroColor: '#0891b2',
+    heroIcon: 'U',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
