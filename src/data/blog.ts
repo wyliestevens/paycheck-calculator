@@ -450,6 +450,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#0891b2',
     heroIcon: 'U',
   },
+  {
+    title: 'Severance Pay and Taxes: What You Need to Know (2026)',
+    slug: 'severance-pay-and-taxes',
+    publishDate: '2026-08-03',
+    excerpt: 'Severance pay is taxed as ordinary income — federal, state, and FICA all apply. Here\'s exactly how withholding works, what else may be in your package, and strategies to manage your tax bill.',
+    keywords: 'severance pay taxes 2026, is severance taxable, how severance is taxed, severance package taxes, severance withholding, severance pay federal income tax',
+    readingTime: '8 min read',
+    heroColor: '#0f766e',
+    heroIcon: 'S',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
