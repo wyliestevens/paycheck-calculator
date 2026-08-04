@@ -460,6 +460,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#0f766e',
     heroIcon: 'S',
   },
+  {
+    title: 'Health Insurance Premiums and Your Paycheck: What You Actually Pay in 2026',
+    slug: 'health-insurance-premiums-and-your-paycheck',
+    publishDate: '2026-08-04',
+    excerpt: 'The average worker pays $1,400/year for single health coverage — and it\'s pre-tax. Here\'s exactly how employer health insurance affects your take-home pay, with a full worked example at $65,000.',
+    keywords: 'health insurance premium paycheck 2026, employer health insurance deduction, pre-tax health insurance, average health insurance cost 2026, Section 125 cafeteria plan',
+    readingTime: '9 min read',
+    heroColor: '#be185d',
+    heroIcon: 'H',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
