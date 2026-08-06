@@ -470,6 +470,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#be185d',
     heroIcon: 'H',
   },
+  {
+    title: 'Roth 401(k) vs. Traditional 401(k): Which Is Better for Your Paycheck? (2026)',
+    slug: 'roth-401k-vs-traditional-401k',
+    publishDate: '2026-08-06',
+    excerpt: 'Traditional 401(k) saves you money now. Roth 401(k) saves you money in retirement. Here\'s exactly how each affects your paycheck — with a full worked example at $70,000.',
+    keywords: 'Roth 401k vs Traditional 401k, Roth 401k 2026, Traditional 401k paycheck, 401k comparison, Roth vs traditional tax savings, 401k contribution limit 2026',
+    readingTime: '9 min read',
+    heroColor: '#6366f1',
+    heroIcon: 'R',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
