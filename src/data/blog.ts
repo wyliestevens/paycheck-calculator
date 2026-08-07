@@ -480,6 +480,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#6366f1',
     heroIcon: 'R',
   },
+  {
+    title: 'How RSUs Are Taxed in 2026: A Complete Guide',
+    slug: 'how-rsus-are-taxed',
+    publishDate: '2026-08-07',
+    excerpt: 'RSUs are taxed as ordinary income when they vest — not when they\'re granted. Here\'s exactly how RSU taxation works at vesting and at sale, with a full worked example showing what you actually keep.',
+    keywords: 'how RSUs are taxed, RSU taxation 2026, restricted stock units taxes, RSU vesting tax, RSU withholding, RSU capital gains, stock compensation taxes 2026',
+    readingTime: '9 min read',
+    heroColor: '#7c3aed',
+    heroIcon: 'R',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
