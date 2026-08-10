@@ -490,6 +490,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#7c3aed',
     heroIcon: 'R',
   },
+  {
+    title: 'Dependent Care FSA: How to Save on Childcare Taxes in 2026',
+    slug: 'dependent-care-fsa-childcare-taxes',
+    publishDate: '2026-08-10',
+    excerpt: 'A Dependent Care FSA lets working parents pay for daycare with pre-tax dollars — saving up to $1,020+ per year in federal taxes alone. Here\'s how it works, 2026 limits, and a full worked example.',
+    keywords: 'dependent care FSA 2026, DCFSA, childcare tax savings, dependent care flexible spending account, childcare pre-tax, dependent care tax credit vs FSA, Form 2441',
+    readingTime: '8 min read',
+    heroColor: '#f59e0b',
+    heroIcon: 'C',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
