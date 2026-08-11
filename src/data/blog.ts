@@ -500,6 +500,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#f59e0b',
     heroIcon: 'C',
   },
+  {
+    title: 'How Social Security Benefits Are Taxed in 2026',
+    slug: 'how-social-security-benefits-are-taxed',
+    publishDate: '2026-08-11',
+    excerpt: 'Up to 85% of your Social Security benefits can be taxable — depending on your combined income. Here\'s exactly how the three-tier system works, with worked examples and strategies to reduce your tax bill.',
+    keywords: 'Social Security benefits taxable 2026, how is Social Security taxed, Social Security income tax, combined income Social Security, provisional income, 85 percent Social Security taxable, IRS Publication 915',
+    readingTime: '9 min read',
+    heroColor: '#2563eb',
+    heroIcon: 'S',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
