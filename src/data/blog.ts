@@ -510,6 +510,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#2563eb',
     heroIcon: 'S',
   },
+  {
+    title: 'Roth IRA vs Traditional IRA: How Each Affects Your Taxes in 2026',
+    slug: 'roth-ira-vs-traditional-ira-2026',
+    publishDate: '2026-08-13',
+    excerpt: 'A Traditional IRA may cut your tax bill today. A Roth IRA gives you tax-free money in retirement. Here\'s exactly how each type works, the 2026 limits, and a full worked example at $65,000.',
+    keywords: 'Roth IRA vs Traditional IRA 2026, IRA contribution limits 2026, traditional IRA tax deduction, Roth IRA income limit 2026, IRA vs 401k, open IRA 2026',
+    readingTime: '9 min read',
+    heroColor: '#4f46e5',
+    heroIcon: 'I',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
