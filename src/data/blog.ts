@@ -520,6 +520,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#4f46e5',
     heroIcon: 'I',
   },
+  {
+    title: 'Commuter Benefits: How Transit and Parking Deductions Save You Money (2026)',
+    slug: 'commuter-benefits-and-your-paycheck',
+    publishDate: '2026-08-14',
+    excerpt: 'Commuter benefits let you pay for transit passes and parking with pre-tax dollars — saving you income tax, FICA, and state tax on every dollar. Here\'s how the 2026 limits work, with a full worked example showing $1,200+ in annual savings.',
+    keywords: 'commuter benefits 2026, transit benefit pre-tax, qualified transportation fringe benefit, pre-tax parking, Section 132 commuter benefit, transit pass tax savings 2026, commuter benefit limit 2026',
+    readingTime: '8 min read',
+    heroColor: '#0891b2',
+    heroIcon: 'C',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
