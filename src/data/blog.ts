@@ -530,6 +530,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#0891b2',
     heroIcon: 'C',
   },
+  {
+    title: 'Tax Filing Status Explained: Single, Married, Head of Household (2026)',
+    slug: 'tax-filing-status-explained',
+    publishDate: '2026-08-17',
+    excerpt: 'Your filing status controls your tax brackets and standard deduction — the difference between Single and Married Filing Jointly is worth $3,700 at $80,000. Here\'s how all 5 statuses work.',
+    keywords: 'tax filing status 2026, single vs married filing jointly, head of household filing status, married filing separately, which filing status to choose, W-4 filing status 2026',
+    readingTime: '8 min read',
+    heroColor: '#6d28d9',
+    heroIcon: '5',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
