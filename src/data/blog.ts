@@ -540,6 +540,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#6d28d9',
     heroIcon: '5',
   },
+  {
+    title: 'Tax Credits vs. Tax Deductions: What\'s the Difference? (2026 Guide)',
+    slug: 'tax-credits-vs-tax-deductions',
+    publishDate: '2026-08-18',
+    excerpt: 'A $1,000 tax credit saves you exactly $1,000. A $1,000 deduction saves you $120 to $370, depending on your bracket. Here\'s the full breakdown with worked examples at $60,000.',
+    keywords: 'tax credits vs tax deductions, difference between tax credit and deduction, how tax credits work 2026, how tax deductions work 2026, refundable tax credits, nonrefundable credits',
+    readingTime: '8 min read',
+    heroColor: '#d97706',
+    heroIcon: 'D',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
