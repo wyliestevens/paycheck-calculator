@@ -550,6 +550,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#d97706',
     heroIcon: 'D',
   },
+  {
+    title: 'Capital Gains Tax Explained: Short-Term vs Long-Term in 2026',
+    slug: 'capital-gains-tax-2026',
+    publishDate: '2026-08-20',
+    excerpt: 'Short-term capital gains are taxed like ordinary income. Long-term gains get lower rates — 0%, 15%, or 20%. Here\'s exactly how capital gains tax works with real examples.',
+    keywords: 'capital gains tax 2026, short-term capital gains, long-term capital gains, capital gains tax rate 2026, investment taxes, crypto capital gains, stock tax 2026',
+    readingTime: '9 min read',
+    heroColor: '#15803d',
+    heroIcon: '↑',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
