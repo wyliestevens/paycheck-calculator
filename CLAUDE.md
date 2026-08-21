@@ -1,5 +1,5 @@
 # Paycheck Calculator — Project CLAUDE.md
-# LAST UPDATED: 2026-05-27
+# LAST UPDATED: 2026-08-21
 
 ## PROJECT OVERVIEW
 - **Site:** paycheck.center
@@ -45,6 +45,7 @@
   - `/blog/state-income-tax-rates-ranked`
   - `/blog/good-salary-by-state`
   - `/blog/compare-job-offers-across-states`
+  - `/blog/alternative-minimum-tax-2026` (2026-08-21)
 
 ### Salary-Specific Pages (2026-05-27)
 - `/[state]/[salary]` dynamic route for salary-specific paycheck breakdowns
