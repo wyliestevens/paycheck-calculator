@@ -560,6 +560,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#15803d',
     heroIcon: '↑',
   },
+  {
+    title: 'The Alternative Minimum Tax (AMT): Do You Owe It in 2026?',
+    slug: 'alternative-minimum-tax-2026',
+    publishDate: '2026-08-21',
+    excerpt: 'The AMT is a parallel tax system ensuring high earners pay a minimum amount. Here\'s who owes it in 2026, how to calculate it, and strategies to reduce your exposure — including the ISO trap that catches tech employees off guard.',
+    keywords: 'alternative minimum tax 2026, AMT tax, who pays AMT, AMT exemption 2026, AMT calculation, ISO and AMT, AMTI, how to avoid AMT',
+    readingTime: '9 min read',
+    heroColor: '#7c3aed',
+    heroIcon: 'A',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
