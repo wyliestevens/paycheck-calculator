@@ -570,6 +570,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#7c3aed',
     heroIcon: 'A',
   },
+  {
+    title: 'Education Tax Credits 2026: American Opportunity vs. Lifetime Learning',
+    slug: 'education-tax-credits-2026',
+    publishDate: '2026-08-24',
+    excerpt: 'The American Opportunity Credit saves up to $2,500 per student per year — and 40% is refundable. Here\'s who qualifies for each credit and how to claim them.',
+    keywords: 'education tax credits 2026, American Opportunity Credit, Lifetime Learning Credit, college tax credit, tuition tax credit, Form 8863',
+    readingTime: '9 min read',
+    heroColor: '#0369a1',
+    heroIcon: 'L',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
