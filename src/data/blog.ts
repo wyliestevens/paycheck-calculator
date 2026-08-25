@@ -580,6 +580,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#0369a1',
     heroIcon: 'L',
   },
+  {
+    title: 'Year-End Tax Planning Checklist for 2026: 10 Steps Before December 31',
+    slug: 'year-end-tax-planning-2026',
+    publishDate: '2026-08-25',
+    excerpt: 'Ten actionable steps to cut your 2026 tax bill before December 31 — from maxing out retirement accounts to harvesting investment losses. Includes a worked example saving $3,848 in federal tax.',
+    keywords: 'year end tax planning 2026, tax planning checklist, reduce taxes before December 31, max 401k 2026, tax loss harvesting, year end financial checklist, lower tax bill 2026',
+    readingTime: '10 min read',
+    heroColor: '#059669',
+    heroIcon: '✓',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
