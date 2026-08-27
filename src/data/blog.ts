@@ -590,6 +590,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#059669',
     heroIcon: '✓',
   },
+  {
+    title: 'Home Office Deduction 2026: Who Can Claim It (and Who Cannot)',
+    slug: 'home-office-deduction-2026',
+    publishDate: '2026-08-27',
+    excerpt: 'The home office deduction saves self-employed workers up to $1,500+ per year — but W-2 employees cannot claim it since 2018. Here\'s who qualifies, both calculation methods, and a full worked example.',
+    keywords: 'home office deduction 2026, can I deduct home office, home office tax deduction, self-employed home office, Form 8829, simplified home office method, remote work tax deduction 2026',
+    readingTime: '9 min read',
+    heroColor: '#0f766e',
+    heroIcon: 'H',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
