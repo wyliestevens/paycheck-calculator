@@ -600,6 +600,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#0f766e',
     heroIcon: 'H',
   },
+  {
+    title: 'Paycheck Garnishment: What It Is, How It Works, and Your Rights (2026)',
+    slug: 'paycheck-garnishment-explained',
+    publishDate: '2026-08-28',
+    excerpt: 'Wage garnishment lets creditors take up to 25% of your disposable earnings — child support can take up to 65%. Here\'s exactly how federal limits work, with a full worked example at $50,000.',
+    keywords: 'wage garnishment 2026, paycheck garnishment, how much can be garnished from paycheck, wage garnishment limits, IRS levy paycheck, child support garnishment, student loan garnishment',
+    readingTime: '9 min read',
+    heroColor: '#dc2626',
+    heroIcon: '!',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
