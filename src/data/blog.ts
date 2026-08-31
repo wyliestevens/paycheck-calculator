@@ -610,6 +610,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#dc2626',
     heroIcon: '!',
   },
+  {
+    title: 'Signing Bonus Taxes: How Much Will You Actually Keep? (2026)',
+    slug: 'signing-bonus-taxes',
+    publishDate: '2026-08-31',
+    excerpt: 'A $10,000 signing bonus is not $10,000 in your pocket. Here\'s exactly how signing bonuses are taxed, how clawback clauses work, and strategies to keep more.',
+    keywords: 'signing bonus taxes, how is a signing bonus taxed, signing bonus tax rate 2026, signing bonus take home, signing bonus clawback taxes',
+    readingTime: '9 min read',
+    heroColor: '#0369a1',
+    heroIcon: '$',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {

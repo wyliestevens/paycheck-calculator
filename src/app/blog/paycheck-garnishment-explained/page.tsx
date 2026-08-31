@@ -293,8 +293,8 @@ export default function PaycheckGarnishmentExplained() {
               ['Medicare tax (1.45%)', '−$27.88', false],
               ['Total legally required deductions', '−$299.48', false],
               ['Disposable earnings', '$1,623.60', true],
-            ].map(([label, amount, bold]) => (
-              <tr key={label} style={{ background: bold ? '#fef2f2' : '#ffffff' }}>
+            ].map(([label, amount, bold], i) => (
+              <tr key={i} style={{ background: bold ? '#fef2f2' : '#ffffff' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#1e293b', fontWeight: bold ? 700 : 400 }}>{label}</td>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: bold ? '#dc2626' : '#475569', fontWeight: bold ? 700 : 400 }}>{amount}</td>
               </tr>
