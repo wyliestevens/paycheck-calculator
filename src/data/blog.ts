@@ -620,6 +620,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#0369a1',
     heroIcon: '$',
   },
+  {
+    title: 'Quarterly Estimated Taxes 2026: Who Owes Them and How to Pay',
+    slug: 'quarterly-estimated-taxes-2026',
+    publishDate: '2026-09-01',
+    excerpt: 'Freelancers, gig workers, and anyone with untaxed income must make quarterly estimated tax payments in 2026 — or face an underpayment penalty. Here are the four deadlines, safe harbor rules, and a full worked example at $80,000.',
+    keywords: 'quarterly estimated taxes 2026, quarterly tax payments, IRS estimated taxes, self-employed estimated taxes, Form 1040-ES, safe harbor tax rule, underpayment penalty 2026, when to pay quarterly taxes',
+    readingTime: '9 min read',
+    heroColor: '#2563eb',
+    heroIcon: 'Q',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
