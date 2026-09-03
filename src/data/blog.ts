@@ -630,6 +630,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#2563eb',
     heroIcon: 'Q',
   },
+  {
+    title: 'Lottery Winnings and Taxes: How Much Do You Actually Keep? (2026)',
+    slug: 'lottery-winnings-taxes',
+    publishDate: '2026-09-03',
+    excerpt: 'Win $1 million in the lottery and you might keep $425,000 — or less. Here\'s exactly how federal and state taxes hit your jackpot, with a full worked example and a state-by-state comparison.',
+    keywords: 'lottery winnings taxes 2026, how much tax on lottery winnings, lottery lump sum tax, Powerball tax rate, Mega Millions taxes, state lottery tax, jackpot take-home pay',
+    readingTime: '9 min read',
+    heroColor: '#d97706',
+    heroIcon: '$',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
