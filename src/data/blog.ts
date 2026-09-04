@@ -640,6 +640,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#d97706',
     heroIcon: '$',
   },
+  {
+    title: 'What Is Adjusted Gross Income (AGI)? A Plain-English Guide (2026)',
+    slug: 'what-is-adjusted-gross-income',
+    publishDate: '2026-09-04',
+    excerpt: 'AGI is the number that controls your tax brackets, deduction limits, and credit eligibility. Here\'s exactly how it\'s calculated — with a full worked example at $84,000 gross income.',
+    keywords: 'adjusted gross income, what is AGI, AGI 2026, how to calculate AGI, AGI vs gross income, AGI vs taxable income, above the line deductions, modified adjusted gross income MAGI',
+    readingTime: '9 min read',
+    heroColor: '#2563eb',
+    heroIcon: 'A',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
