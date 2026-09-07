@@ -650,6 +650,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#2563eb',
     heroIcon: 'A',
   },
+  {
+    title: 'How 401(k) and IRA Withdrawals Are Taxed in Retirement (2026)',
+    slug: 'retirement-withdrawal-taxes-2026',
+    publishDate: '2026-09-07',
+    excerpt: 'Traditional 401(k) and IRA withdrawals are taxed as ordinary income in retirement. Here\'s how RMDs, early withdrawal penalties, Roth rules, and state taxes all work — with a full worked example.',
+    keywords: 'retirement withdrawal taxes 2026, 401k withdrawal tax, IRA withdrawal taxes, RMD taxes, early withdrawal penalty, Roth IRA withdrawal tax-free, retirement income tax 2026',
+    readingTime: '9 min read',
+    heroColor: '#4f46e5',
+    heroIcon: '↗',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
