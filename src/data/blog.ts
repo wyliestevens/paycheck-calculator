@@ -660,6 +660,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#4f46e5',
     heroIcon: '↗',
   },
+  {
+    title: 'Gift Tax Rules 2026: Annual Exclusion, Lifetime Exemption, and Who Pays',
+    slug: 'gift-tax-rules-2026',
+    publishDate: '2026-09-08',
+    excerpt: 'The IRS lets you give up to $19,000 per person tax-free in 2026 — and most gifts never owe a dollar of gift tax. Here\'s exactly how the annual exclusion, lifetime exemption, gift splitting, and Form 709 work.',
+    keywords: 'gift tax 2026, annual gift tax exclusion 2026, lifetime gift tax exemption, gift tax rules, Form 709, who pays gift tax, gift splitting, tax-free gifts',
+    readingTime: '9 min read',
+    heroColor: '#d97706',
+    heroIcon: 'G',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
