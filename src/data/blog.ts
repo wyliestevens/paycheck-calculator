@@ -670,6 +670,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#d97706',
     heroIcon: 'G',
   },
+  {
+    title: 'How Rental Income Is Taxed: A Landlord\'s Guide for 2026',
+    slug: 'rental-income-taxes-2026',
+    publishDate: '2026-09-10',
+    excerpt: 'Rental income is taxable — but landlords can deduct mortgage interest, depreciation, repairs, and more. Here\'s exactly how rental income is taxed in 2026, with a full worked example.',
+    keywords: 'rental income taxes 2026, how is rental income taxed, landlord taxes 2026, Schedule E, rental property tax deductions, passive income tax, depreciation rental property',
+    readingTime: '9 min read',
+    heroColor: '#0f766e',
+    heroIcon: 'R',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
