@@ -680,6 +680,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#0f766e',
     heroIcon: 'R',
   },
+  {
+    title: 'Net Investment Income Tax (NIIT) 2026: Do You Owe the Extra 3.8%?',
+    slug: 'net-investment-income-tax-2026',
+    publishDate: '2026-09-11',
+    excerpt: 'The NIIT adds a 3.8% surtax on investment income for earners above $200K — on top of regular income tax. Here\'s who owes it, what counts as investment income, and 7 strategies to minimize it.',
+    keywords: 'net investment income tax 2026, NIIT, 3.8 percent investment tax, NIIT threshold, Form 8960, capital gains surtax, passive income tax, investment income surtax',
+    readingTime: '9 min read',
+    heroColor: '#0891b2',
+    heroIcon: 'N',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
