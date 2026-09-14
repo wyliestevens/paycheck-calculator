@@ -690,6 +690,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#0891b2',
     heroIcon: 'N',
   },
+  {
+    title: 'How Disability Income Is Taxed in 2026',
+    slug: 'disability-income-taxes-2026',
+    publishDate: '2026-09-14',
+    excerpt: 'Short-term and long-term disability benefits may be fully taxable, partly taxable, or completely tax-free — it all depends on who paid the premiums. Full guide with worked examples.',
+    keywords: 'disability income taxes 2026, is short-term disability taxable, is long-term disability taxable, SSDI taxes, workers compensation taxable, disability insurance tax, STD LTD taxes',
+    readingTime: '9 min read',
+    heroColor: '#4f46e5',
+    heroIcon: 'D',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
