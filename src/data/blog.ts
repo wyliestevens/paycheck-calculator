@@ -700,6 +700,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#4f46e5',
     heroIcon: 'D',
   },
+  {
+    title: 'State Disability Insurance (SDI): What It Is and How It Affects Your Paycheck (2026)',
+    slug: 'state-disability-insurance-sdi-paycheck',
+    publishDate: '2026-09-15',
+    excerpt: 'See "CASDI" or "SDI" on your pay stub and wonder what it means? State Disability Insurance is a mandatory payroll deduction in 7+ states. Here\'s exactly how it works, what it costs, and what you get back.',
+    keywords: 'state disability insurance, SDI paycheck, CASDI pay stub, what is SDI, California SDI 2026, New Jersey TDI, state disability tax, SDI deduction paycheck 2026',
+    readingTime: '8 min read',
+    heroColor: '#0891b2',
+    heroIcon: 'D',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
