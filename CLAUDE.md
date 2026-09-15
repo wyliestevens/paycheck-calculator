@@ -1,5 +1,5 @@
 # Paycheck Calculator — Project CLAUDE.md
-# LAST UPDATED: 2026-09-14
+# LAST UPDATED: 2026-09-15
 
 ## PROJECT OVERVIEW
 - **Site:** paycheck.center
@@ -49,6 +49,7 @@
   - `/blog/gift-tax-rules-2026` (2026-09-08)
   - `/blog/rental-income-taxes-2026` (2026-09-10)
   - `/blog/disability-income-taxes-2026` (2026-09-14)
+  - `/blog/state-disability-insurance-sdi-paycheck` (2026-09-15)
 
 ### Salary-Specific Pages (2026-05-27)
 - `/[state]/[salary]` dynamic route for salary-specific paycheck breakdowns
