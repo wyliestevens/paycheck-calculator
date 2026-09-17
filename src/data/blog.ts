@@ -710,6 +710,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#0891b2',
     heroIcon: 'D',
   },
+  {
+    title: "The Saver's Credit: The Tax Credit Most Low-Income Workers Miss (2026)",
+    slug: 'savers-credit-2026',
+    publishDate: '2026-09-17',
+    excerpt: "Contribute to a 401(k) or IRA and earn under $39,500 (single)? The IRS will give you up to $1,000 back as a tax credit. Most eligible workers never claim it.",
+    keywords: "saver's credit 2026, retirement savings credit, Form 8880, saver's credit income limit, IRA tax credit, 401k tax credit low income, retirement savings contributions credit",
+    readingTime: '8 min read',
+    heroColor: '#16a34a',
+    heroIcon: 'S',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
