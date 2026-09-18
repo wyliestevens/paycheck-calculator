@@ -700,6 +700,36 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#4f46e5',
     heroIcon: 'D',
   },
+  {
+    title: 'State Disability Insurance (SDI): What It Is and How It Affects Your Paycheck (2026)',
+    slug: 'state-disability-insurance-sdi-paycheck',
+    publishDate: '2026-09-15',
+    excerpt: 'See "CASDI" or "SDI" on your pay stub and wonder what it means? State Disability Insurance is a mandatory payroll deduction in 7+ states. Here\'s exactly how it works, what it costs, and what you get back.',
+    keywords: 'state disability insurance, SDI paycheck, CASDI pay stub, what is SDI, California SDI 2026, New Jersey TDI, state disability tax, SDI deduction paycheck 2026',
+    readingTime: '8 min read',
+    heroColor: '#0891b2',
+    heroIcon: 'D',
+  },
+  {
+    title: "The Saver's Credit: The Tax Credit Most Low-Income Workers Miss (2026)",
+    slug: 'savers-credit-2026',
+    publishDate: '2026-09-17',
+    excerpt: "Contribute to a 401(k) or IRA and earn under $39,500 (single)? The IRS will give you up to $1,000 back as a tax credit. Most eligible workers never claim it.",
+    keywords: "saver's credit 2026, retirement savings credit, Form 8880, saver's credit income limit, IRA tax credit, 401k tax credit low income, retirement savings contributions credit",
+    readingTime: '8 min read',
+    heroColor: '#16a34a',
+    heroIcon: 'S',
+  },
+  {
+    title: 'How to Calculate Federal Income Tax Withholding Step by Step (2026)',
+    slug: 'how-to-calculate-federal-tax-withholding',
+    publishDate: '2026-09-18',
+    excerpt: "Your employer uses IRS Publication 15-T's Percentage Method to figure out exactly how much federal income tax to take from each paycheck. Here's the five-step formula with a full worked example at $65,000.",
+    keywords: 'how to calculate federal tax withholding, federal income tax withholding calculation, IRS withholding 2026, Publication 15-T, paycheck withholding formula, percentage method withholding, how much federal tax is withheld from paycheck',
+    readingTime: '9 min read',
+    heroColor: '#2563eb',
+    heroIcon: 'W',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
