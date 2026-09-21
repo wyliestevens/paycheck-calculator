@@ -730,6 +730,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#2563eb',
     heroIcon: 'W',
   },
+  {
+    title: 'How to Reduce Your Taxable Income: 10 Legal Strategies for 2026',
+    slug: 'reduce-taxable-income-2026',
+    publishDate: '2026-09-21',
+    excerpt: '10 legal ways to lower your taxable income in 2026 — from maxing your 401(k) to HSA contributions, above-the-line deductions, and tax-loss harvesting. With worked dollar examples.',
+    keywords: 'reduce taxable income 2026, lower taxable income, how to pay less taxes, tax reduction strategies, 401k tax savings, HSA tax deduction, ways to reduce taxes legally',
+    readingTime: '9 min read',
+    heroColor: '#059669',
+    heroIcon: '↓',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
