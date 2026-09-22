@@ -740,6 +740,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#059669',
     heroIcon: '↓',
   },
+  {
+    title: 'Home Sale Tax Exclusion 2026: How to Avoid Capital Gains When You Sell',
+    slug: 'home-sale-tax-exclusion-2026',
+    publishDate: '2026-09-22',
+    excerpt: "Sell your home for a $300,000 profit and pay zero federal capital gains tax — if you qualify for the Section 121 exclusion. Here's exactly how it works, who qualifies, and full worked examples.",
+    keywords: 'home sale tax exclusion 2026, capital gains on home sale, Section 121 exclusion, sell house tax free, primary residence capital gains, $250000 exclusion home sale, $500000 exclusion married',
+    readingTime: '9 min read',
+    heroColor: '#059669',
+    heroIcon: 'H',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
