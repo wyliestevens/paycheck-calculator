@@ -750,6 +750,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#059669',
     heroIcon: 'H',
   },
+  {
+    title: '529 Plan Tax Benefits: How to Save for College and Cut Your Taxes in 2026',
+    slug: '529-plan-tax-benefits-2026',
+    publishDate: '2026-09-24',
+    excerpt: '529 plans grow completely tax-free — and withdrawals for college are tax-free too. Here\'s how the federal and state tax benefits work, contribution limits, and a full worked example.',
+    keywords: '529 plan tax benefits 2026, 529 college savings plan, 529 state tax deduction, 529 plan contribution limit, qualified education expenses, 529 plan rules 2026',
+    readingTime: '9 min read',
+    heroColor: '#4f46e5',
+    heroIcon: '9',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
