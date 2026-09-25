@@ -760,6 +760,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#4f46e5',
     heroIcon: '9',
   },
+  {
+    title: 'Cryptocurrency Taxes 2026: How Crypto Is Taxed (Plain-English Guide)',
+    slug: 'cryptocurrency-taxes-2026',
+    publishDate: '2026-09-25',
+    excerpt: 'The IRS taxes crypto as property — so every sale, trade, or payment triggers a capital gain or loss. Here\'s exactly how crypto taxes work in 2026, with a full worked example and rate table.',
+    keywords: 'cryptocurrency taxes 2026, how is crypto taxed, bitcoin taxes, crypto capital gains, crypto tax rate 2026, Form 8949 crypto, staking taxes, mining taxes, crypto income tax',
+    readingTime: '9 min read',
+    heroColor: '#7c3aed',
+    heroIcon: '₿',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
