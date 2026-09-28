@@ -770,6 +770,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#7c3aed',
     heroIcon: '₿',
   },
+  {
+    title: 'Stock Options Taxes: How NSOs and ISOs Are Taxed in 2026',
+    slug: 'stock-options-taxes-nso-iso-2026',
+    publishDate: '2026-09-28',
+    excerpt: 'NSOs are taxed as ordinary income when you exercise them. ISOs get preferential capital gains treatment — but can trigger the AMT. Full guide with worked examples.',
+    keywords: 'stock options taxes 2026, NSO taxes, ISO taxes, non-qualified stock options, incentive stock options, how stock options are taxed, exercise stock options tax, AMT stock options',
+    readingTime: '9 min read',
+    heroColor: '#0f766e',
+    heroIcon: '$',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
