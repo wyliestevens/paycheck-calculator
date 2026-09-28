@@ -1,5 +1,5 @@
 # Paycheck Calculator — Project CLAUDE.md
-# LAST UPDATED: 2026-09-25
+# LAST UPDATED: 2026-09-28
 
 ## PROJECT OVERVIEW
 - **Site:** paycheck.center
@@ -55,6 +55,7 @@
   - `/blog/reduce-taxable-income-2026` (2026-09-21)
   - `/blog/home-sale-tax-exclusion-2026` (2026-09-22)
   - `/blog/cryptocurrency-taxes-2026` (2026-09-25)
+  - `/blog/stock-options-taxes-nso-iso-2026` (2026-09-28)
 
 ### Salary-Specific Pages (2026-05-27)
 - `/[state]/[salary]` dynamic route for salary-specific paycheck breakdowns
