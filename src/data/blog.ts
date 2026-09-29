@@ -780,6 +780,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#0f766e',
     heroIcon: '$',
   },
+  {
+    title: 'How to File Your Taxes for the First Time: A Step-by-Step Guide (2026)',
+    slug: 'how-to-file-taxes-first-time-2026',
+    publishDate: '2026-09-29',
+    excerpt: 'Filing taxes for the first time? This step-by-step guide covers what documents you need, how to choose your filing status, free filing options, and a worked example at $42,000.',
+    keywords: 'how to file taxes for the first time, first time tax filer 2026, how to do your taxes, IRS Free File 2026, filing taxes step by step, first job taxes, W-2 first time filing',
+    readingTime: '10 min read',
+    heroColor: '#d97706',
+    heroIcon: '1',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
