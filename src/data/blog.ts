@@ -790,6 +790,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#d97706',
     heroIcon: '1',
   },
+  {
+    title: 'Form 1099-K Explained: Venmo, PayPal, and Cash App Taxes in 2026',
+    slug: 'form-1099-k-venmo-paypal-taxes-2026',
+    publishDate: '2026-10-01',
+    excerpt: 'Received a 1099-K from Venmo, PayPal, or Cash App? Here\'s exactly what it means, what you owe, and how to report it — under the new $600 reporting rule.',
+    keywords: 'form 1099-K 2026, Venmo taxes, PayPal taxes, Cash App taxes, 1099-K $600 rule, third party payment taxes, gig worker 1099-K, marketplace payments taxes',
+    readingTime: '8 min read',
+    heroColor: '#0369a1',
+    heroIcon: 'K',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
