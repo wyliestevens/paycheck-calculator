@@ -800,6 +800,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#0369a1',
     heroIcon: 'K',
   },
+  {
+    title: 'Imputed Income: What It Is and How It Affects Your Paycheck (2026)',
+    slug: 'imputed-income-explained-2026',
+    publishDate: '2026-10-02',
+    excerpt: 'Imputed income is the taxable value of non-cash benefits — like group-term life insurance over $50,000 or domestic partner health coverage. Here\'s exactly what it is, how to calculate it, and why your W-2 wages may be higher than your paychecks.',
+    keywords: 'imputed income 2026, what is imputed income, imputed income paycheck, group-term life insurance imputed income, imputed income W-2, Box 12 Code C, IRS Publication 15-B',
+    readingTime: '9 min read',
+    heroColor: '#d97706',
+    heroIcon: 'I',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
