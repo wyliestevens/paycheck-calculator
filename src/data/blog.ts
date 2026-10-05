@@ -810,6 +810,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#d97706',
     heroIcon: 'I',
   },
+  {
+    title: 'Tax Extension 2026: How to Get More Time to File Your Federal Taxes',
+    slug: 'tax-extension-how-to-file-2026',
+    publishDate: '2026-10-05',
+    excerpt: 'Need more time to file? Form 4868 gives you an automatic 6-month extension to October 15 — but you must still pay by April 15 to avoid penalties. Full guide with worked examples.',
+    keywords: 'tax extension 2026, how to file tax extension, Form 4868, IRS extension deadline, October 15 tax deadline, automatic tax extension, state tax extension 2026',
+    readingTime: '8 min read',
+    heroColor: '#0369a1',
+    heroIcon: '→',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
