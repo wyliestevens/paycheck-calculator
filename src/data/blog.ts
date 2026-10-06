@@ -820,6 +820,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#0369a1',
     heroIcon: '→',
   },
+  {
+    title: 'How Interest Income Is Taxed in 2026: Savings Accounts, CDs, and Bonds',
+    slug: 'interest-income-taxes-2026',
+    publishDate: '2026-10-06',
+    excerpt: 'Interest from savings accounts, CDs, and bonds is taxed as ordinary income at your marginal rate — but Treasuries are state-exempt and municipal bonds are often federally tax-free. Full 2026 guide.',
+    keywords: 'interest income taxes 2026, how is interest income taxed, savings account tax, CD interest tax, Form 1099-INT, municipal bond tax-free, Treasury interest state exempt, I bond taxes',
+    readingTime: '9 min read',
+    heroColor: '#0891b2',
+    heroIcon: '%',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
