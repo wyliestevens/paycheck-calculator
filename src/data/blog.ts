@@ -830,6 +830,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#0891b2',
     heroIcon: '%',
   },
+  {
+    title: 'How ESPP (Employee Stock Purchase Plans) Are Taxed in 2026',
+    slug: 'espp-employee-stock-purchase-plan-taxes-2026',
+    publishDate: '2026-10-08',
+    excerpt: 'ESPPs let you buy company stock at a 15% discount — but the tax rules are complicated. Here\'s exactly how qualifying and disqualifying dispositions are taxed, with a full worked example.',
+    keywords: 'ESPP taxes 2026, employee stock purchase plan taxes, ESPP qualifying disposition, ESPP disqualifying disposition, how ESPP is taxed, ESPP ordinary income, ESPP capital gains',
+    readingTime: '9 min read',
+    heroColor: '#0f766e',
+    heroIcon: 'E',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
