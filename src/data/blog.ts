@@ -840,6 +840,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#0f766e',
     heroIcon: 'E',
   },
+  {
+    title: 'How Investment Dividends Are Taxed in 2026: Qualified vs. Ordinary',
+    slug: 'how-dividends-are-taxed-2026',
+    publishDate: '2026-10-09',
+    excerpt: 'Qualified dividends are taxed at 0%, 15%, or 20% — far below ordinary income rates. Here\'s exactly how dividend taxation works in 2026, with a full worked example and rate table.',
+    keywords: 'how dividends are taxed 2026, qualified dividends tax rate, ordinary dividends tax, dividend income taxes, 1099-DIV, qualified dividend holding period, investment income taxes 2026',
+    readingTime: '9 min read',
+    heroColor: '#0891b2',
+    heroIcon: '$',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
