@@ -850,6 +850,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#0891b2',
     heroIcon: '$',
   },
+  {
+    title: 'How PTO Payout Is Taxed When You Leave a Job (2026 Guide)',
+    slug: 'pto-payout-taxes-2026',
+    publishDate: '2026-10-12',
+    excerpt: 'When you quit or get laid off, your unused PTO payout is taxed as ordinary income — with 22% federal withholding, FICA, and state taxes. Full guide with a worked example.',
+    keywords: 'PTO payout taxes, how is PTO payout taxed, vacation payout taxes 2026, accrued PTO taxable, unused vacation pay taxes, PTO withholding rate, leave payout tax',
+    readingTime: '8 min read',
+    heroColor: '#e11d48',
+    heroIcon: 'V',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
