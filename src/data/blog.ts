@@ -860,6 +860,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#e11d48',
     heroIcon: 'V',
   },
+  {
+    title: 'How to Claim Dependents on Your Taxes: 2026 Guide',
+    slug: 'how-to-claim-dependents-on-taxes-2026',
+    publishDate: '2026-10-13',
+    excerpt: 'Claiming a dependent can cut your federal tax bill by $2,000 or more — and boost every paycheck through your W-4. Here\'s exactly who qualifies and how to claim them.',
+    keywords: 'how to claim dependents 2026, qualifying child, qualifying relative, dependent tax credit, child tax credit 2026, W-4 dependents, claim dependent taxes',
+    readingTime: '9 min read',
+    heroColor: '#7c3aed',
+    heroIcon: 'D',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
