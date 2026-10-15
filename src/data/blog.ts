@@ -870,6 +870,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#7c3aed',
     heroIcon: 'D',
   },
+  {
+    title: 'Estate Tax vs. Inheritance Tax: Who Pays, What\'s Exempt, and What You Owe (2026)',
+    slug: 'estate-tax-vs-inheritance-tax-2026',
+    publishDate: '2026-10-15',
+    excerpt: 'Most heirs pay zero tax on inherited money. Here\'s how the federal estate tax, state estate taxes, and inheritance taxes actually work in 2026 — with real examples.',
+    keywords: 'estate tax vs inheritance tax, do I pay taxes on inherited money, inheritance tax 2026, federal estate tax exemption 2026, estate tax states, inheritance tax states, inherited IRA taxes',
+    readingTime: '9 min read',
+    heroColor: '#4f46e5',
+    heroIcon: 'E',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
