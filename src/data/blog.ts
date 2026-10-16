@@ -880,6 +880,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#4f46e5',
     heroIcon: 'E',
   },
+  {
+    title: 'How Pension Income Is Taxed in 2026: A Complete Guide',
+    slug: 'how-pension-income-is-taxed-2026',
+    publishDate: '2026-10-16',
+    excerpt: 'Pension income is taxed as ordinary income — but with no FICA, an extra senior standard deduction, and partial state exemptions in many states. Full guide with a worked example at $36,000/year.',
+    keywords: 'how is pension income taxed, pension income taxes 2026, defined benefit pension tax, Form 1099-R, pension withholding, W-4P, state pension tax exemption, railroad retirement taxes 2026',
+    readingTime: '9 min read',
+    heroColor: '#2563eb',
+    heroIcon: 'P',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
