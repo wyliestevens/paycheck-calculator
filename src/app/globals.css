@@ -348,7 +348,10 @@ section,
   margin-left: 0.5rem;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 720px) {
+  .site-header .container {
+    height: 60px;
+  }
   .nav-links a:not(.btn) {
     padding: 0.5rem 0.6rem;
     font-size: 0.875rem;
@@ -358,6 +361,23 @@ section,
   }
   .brand-domain {
     display: none;
+  }
+  .brand {
+    font-size: 1.05rem;
+  }
+  .brand-mark {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* Phone widths: the brand plus two links fill the bar, so the CTA goes below the fold of the nav */
+@media (max-width: 480px) {
+  .nav-links .btn {
+    display: none;
+  }
+  .nav-links {
+    gap: 0;
   }
 }
 
@@ -387,7 +407,7 @@ section,
 
 .btn-ink {
   background: var(--ink);
-  color: var(--text-on-ink);
+  color: #ffffff;
   box-shadow: var(--shadow-sm);
 }
 
@@ -398,14 +418,14 @@ section,
 }
 
 .btn-money {
-  background: var(--money);
-  color: #04281b;
-  box-shadow: 0 8px 20px -8px rgba(14, 159, 110, 0.6);
+  background: var(--money-deep);
+  color: #ffffff;
+  box-shadow: 0 8px 20px -8px rgba(10, 122, 84, 0.7);
 }
 
 .btn-money:hover {
-  background: #15b57e;
-  color: #04281b;
+  background: var(--money);
+  color: #ffffff;
   transform: translateY(-1px);
   box-shadow: 0 12px 24px -8px rgba(14, 159, 110, 0.7);
 }
