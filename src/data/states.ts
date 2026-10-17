@@ -17,22 +17,36 @@ export interface StateData {
   metaDescription: string
 }
 
-// 2026 Federal tax brackets (single filer)
+// ---------------------------------------------------------------------------
+// FEDERAL TAX CONSTANTS — tax year 2026, single filer.
+// Sources: IRS Rev. Proc. 2025-32 (https://www.irs.gov/pub/irs-drop/rp-25-32.pdf),
+// IRS newsroom 2026 inflation adjustments, SSA 2026 COLA fact sheet.
+// Every page and the llms.txt feed read from these; never hard-code figures elsewhere.
+// ---------------------------------------------------------------------------
+export const taxYear = 2026
+export const taxDataUpdated = '2026-10-17'
+
 export const federalBrackets: TaxBracket[] = [
-  { min: 0, max: 11925, rate: 0.10 },
-  { min: 11925, max: 48475, rate: 0.12 },
-  { min: 48475, max: 103350, rate: 0.22 },
-  { min: 103350, max: 197300, rate: 0.24 },
-  { min: 197300, max: 250525, rate: 0.32 },
-  { min: 250525, max: 626350, rate: 0.35 },
-  { min: 626350, max: null, rate: 0.37 },
+  { min: 0, max: 12400, rate: 0.10 },
+  { min: 12400, max: 50400, rate: 0.12 },
+  { min: 50400, max: 105700, rate: 0.22 },
+  { min: 105700, max: 201775, rate: 0.24 },
+  { min: 201775, max: 256225, rate: 0.32 },
+  { min: 256225, max: 640600, rate: 0.35 },
+  { min: 640600, max: null, rate: 0.37 },
 ]
 
-export const federalStandardDeduction = 15000
+export const federalStandardDeduction = 16100
 
-// Social Security rate: 6.2% on first $168,600
+// Social Security: 6.2% on wages up to the 2026 wage base
 export const socialSecurityRate = 0.062
-export const socialSecurityWageCap = 168600
+export const socialSecurityWageCap = 184500
+
+// Additional Medicare Tax applies above this (not indexed; informational)
+export const additionalMedicareThreshold = 200000
+
+/** "$184,500" style formatting for prose that quotes a constant. */
+export const usd = (n: number) => '$' + n.toLocaleString('en-US')
 
 // Medicare rate: 1.45%
 export const medicareRate = 0.0145

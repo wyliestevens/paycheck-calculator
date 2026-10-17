@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { federalStandardDeduction, socialSecurityWageCap, taxYear, taxDataUpdated, usd } from '@/data/states'
 
 export const metadata: Metadata = {
   title: 'About',
@@ -27,11 +28,13 @@ export default function AboutPage() {
 
       <h2 style={{ fontSize: '1.25rem', fontWeight: 600, marginTop: '2rem', marginBottom: '1rem' }}>What We Calculate</h2>
       <ul style={{ color: 'var(--text-secondary)', lineHeight: 1.8, paddingLeft: '1.5rem' }}>
-        <li>Federal income tax using 2026 progressive tax brackets</li>
+        <li>Federal income tax using {taxYear} progressive tax brackets and the {usd(federalStandardDeduction)} single-filer standard deduction (IRS Rev. Proc. 2025-32)</li>
         <li>State income tax (flat, progressive, or none — depending on the state)</li>
-        <li>Social Security tax (6.2% on the first $168,600 of earnings)</li>
+        <li>Social Security tax (6.2% on the first {usd(socialSecurityWageCap)} of earnings)</li>
         <li>Medicare tax (1.45% on all earnings)</li>
       </ul>
+
+      <p style={{ color: 'var(--text-muted)', fontSize: '0.875rem', marginTop: '1rem' }}>Tax tables last verified against IRS and SSA publications on {taxDataUpdated}.</p>
 
       <h2 style={{ fontSize: '1.25rem', fontWeight: 600, marginTop: '2rem', marginBottom: '1rem' }}>Disclaimer</h2>
       <p style={{ color: 'var(--text-secondary)', marginBottom: '1rem', lineHeight: 1.7 }}>

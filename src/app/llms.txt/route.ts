@@ -1,4 +1,4 @@
-import { states } from '@/data/states'
+import { states, federalBrackets, federalStandardDeduction, socialSecurityWageCap, additionalMedicareThreshold, taxYear, taxDataUpdated, usd } from '@/data/states'
 import { blogPosts } from '@/data/blog'
 import { salaryAmounts, salaryToSlug, formatSalary } from '@/lib/tax-calculator'
 import { canonicalUrl } from '@/lib/seo'
@@ -23,12 +23,15 @@ export function GET() {
     '',
     'PaycheckCalc is a free online tool that helps employees and job seekers estimate take-home pay in any US state. Calculations run in the browser; no financial data is transmitted or stored. Operated by AI Peak Biz (https://www.aipeakbiz.com). Contact: contact@aipeakbiz.com.',
     '',
-    '## Key facts (2026, single filer)',
+    `## Key facts (${taxYear}, single filer; verified ${taxDataUpdated})`,
     '',
-    '- Federal standard deduction: $15,000',
-    '- Federal brackets: 10% to $11,925; 12% to $48,475; 22% to $103,350; 24% to $197,300; 32% to $250,525; 35% to $626,350; 37% above',
-    '- Social Security tax: 6.2% on wages up to $168,600',
-    '- Medicare tax: 1.45% on all wages (plus 0.9% Additional Medicare Tax above $200,000)',
+    `- Federal standard deduction: ${usd(federalStandardDeduction)}`,
+    `- Federal brackets: ${federalBrackets
+      .map((b) => (b.max ? `${Math.round(b.rate * 100)}% to ${usd(b.max)}` : `${Math.round(b.rate * 100)}% above`))
+      .join('; ')}`,
+    `- Social Security tax: 6.2% on wages up to ${usd(socialSecurityWageCap)}`,
+    `- Medicare tax: 1.45% on all wages (plus 0.9% Additional Medicare Tax above ${usd(additionalMedicareThreshold)})`,
+    '- Sources: IRS Rev. Proc. 2025-32 (https://www.irs.gov/pub/irs-drop/rp-25-32.pdf); SSA 2026 COLA fact sheet (https://www.ssa.gov/news/press/factsheets/colafacts2026.pdf)',
     `- States with no income tax (${noTax.length}): ${noTax.map((s) => s.name).join(', ')}`,
     '',
     '## Main pages',

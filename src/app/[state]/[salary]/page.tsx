@@ -1,4 +1,4 @@
-import { states, getStateBySlug } from '@/data/states'
+import { states, getStateBySlug, federalStandardDeduction, socialSecurityWageCap, usd } from '@/data/states'
 import { calculateTakeHome, salaryAmounts, formatSalary, parseSalarySlug, salaryToSlug } from '@/lib/tax-calculator'
 import { breadcrumbSchema, canonicalUrl } from '@/lib/seo'
 import type { Metadata } from 'next'
@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
 
   const result = calculateTakeHome(amount, state)
   const formatted = formatSalary(amount)
-  const takeHome = formatSalary(result.takeHomePay)
+  const takeHome = formatSalary(Math.round(result.takeHomePay))
 
   return {
     title: `${formatted} Salary in ${state.name} After Taxes (2026)`,
@@ -277,9 +277,10 @@ export default async function SalaryPage({ params }: { params: Promise<{ state: 
           </h2>
           <p>{taxDescription}</p>
           <p>
-            Federal income tax on a {formatted} salary is ${fmt(result.federalTax)} per year (after the $15,000
-            standard deduction). Social Security tax is ${fmt(result.socialSecurity)} (6.2% on earnings up to
-            $168,600), and Medicare is ${fmt(result.medicare)} (1.45% on all earnings). After all deductions, your
+            Federal income tax on a {formatted} salary is ${fmt(result.federalTax)} per year (after the{' '}
+            {usd(federalStandardDeduction)} standard deduction). Social Security tax is ${fmt(result.socialSecurity)}{' '}
+            (6.2% on earnings up to {usd(socialSecurityWageCap)}), and Medicare is ${fmt(result.medicare)} (1.45% on
+            all earnings). After all deductions, your
             take-home pay is ${fmt(result.takeHomePay / 12)} per month or ${fmt(result.takeHomePay / 26)} per paycheck
             (bi-weekly).
           </p>

@@ -1,4 +1,4 @@
-import { states, getStateBySlug } from '@/data/states'
+import { states, getStateBySlug, federalBrackets, federalStandardDeduction, socialSecurityWageCap, taxYear, usd } from '@/data/states'
 import { blogPosts } from '@/data/blog'
 import { calculateTakeHome } from '@/lib/tax-calculator'
 import type { Metadata } from 'next'
@@ -224,20 +224,21 @@ export default function HomePage() {
             <h2 style={{ marginTop: '0.5rem' }}>How to calculate your take-home pay</h2>
             <p>
               Your take-home pay is your gross salary minus all tax withholdings. These include federal income tax,
-              state income tax (if your state levies one), Social Security tax at 6.2% on the first $168,600 of
-              earnings, and Medicare tax at 1.45% on all earnings.
+              state income tax (if your state levies one), Social Security tax at 6.2% on the first{' '}
+              {usd(socialSecurityWageCap)} of earnings, and Medicare tax at 1.45% on all earnings.
             </p>
             <p>
-              Federal income tax uses a progressive bracket system for 2026, ranging from 10% on the first $11,925 of
-              taxable income up to 37% on income above $626,350. Your taxable income is your gross income minus the
-              standard deduction of $15,000 for single filers.
+              Federal income tax uses a progressive bracket system for {taxYear}, ranging from 10% on the first{' '}
+              {usd(federalBrackets[0].max!)} of taxable income up to 37% on income above{' '}
+              {usd(federalBrackets[federalBrackets.length - 1].min)}. Your taxable income is your gross income minus
+              the standard deduction of {usd(federalStandardDeduction)} for single filers.
             </p>
             <p>
               State income taxes vary widely. Nine states charge no income tax at all: Alaska, Florida, Nevada, New
               Hampshire, South Dakota, Tennessee, Texas, Washington, and Wyoming. Others range from North Dakota at
               2.9% up to California at 13.3%.
             </p>
-            <h2>2026 federal tax brackets (single filer)</h2>
+            <h2>{taxYear} federal tax brackets (single filer)</h2>
           </div>
           <div className="table-card" style={{ marginTop: '1rem' }}>
             <div className="table-scroll">
@@ -249,18 +250,12 @@ export default function HomePage() {
                   </tr>
                 </thead>
                 <tbody>
-                  {[
-                    ['10%', '$0 – $11,925'],
-                    ['12%', '$11,925 – $48,475'],
-                    ['22%', '$48,475 – $103,350'],
-                    ['24%', '$103,350 – $197,300'],
-                    ['32%', '$197,300 – $250,525'],
-                    ['35%', '$250,525 – $626,350'],
-                    ['37%', '$626,350+'],
-                  ].map(([rate, range]) => (
-                    <tr key={rate}>
-                      <td className="rate">{rate}</td>
-                      <td style={{ color: 'var(--text-2)' }}>{range}</td>
+                  {federalBrackets.map((b) => (
+                    <tr key={b.rate}>
+                      <td className="rate">{Math.round(b.rate * 100)}%</td>
+                      <td style={{ color: 'var(--text-2)' }}>
+                        {b.max ? `${usd(b.min)} – ${usd(b.max)}` : `${usd(b.min)}+`}
+                      </td>
                     </tr>
                   ))}
                 </tbody>

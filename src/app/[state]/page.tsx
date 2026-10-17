@@ -1,4 +1,4 @@
-import { states, getStateBySlug } from '@/data/states'
+import { states, getStateBySlug, socialSecurityWageCap, usd } from '@/data/states'
 import { salaryAmounts, salaryToSlug, formatSalary, calculateTakeHome } from '@/lib/tax-calculator'
 import PaycheckCalculator from '@/components/PaycheckCalculator'
 import type { Metadata } from 'next'
@@ -191,7 +191,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
             {state.hasStateTax
               ? ` ${state.name} adds a ${state.taxType === 'flat' ? `flat ${(state.flatRate! * 100).toFixed(2)}%` : 'progressive'} state income tax on top of federal taxes.`
               : ` Since ${state.name} has no state income tax, your only deductions are federal taxes and FICA.`}{' '}
-            Social Security takes 6.2% of earnings up to $168,600, and Medicare takes 1.45% of all earnings.
+            Social Security takes 6.2% of earnings up to {usd(socialSecurityWageCap)}, and Medicare takes 1.45% of all earnings.
           </p>
         </div>
       </section>
