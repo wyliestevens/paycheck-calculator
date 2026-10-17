@@ -79,7 +79,11 @@
 - **Routine prompt fixed** to use the correct salary URL pattern and to rely on `ArticleFooter` for post schema.
 - **llms.txt is now generated** by `src/app/llms.txt/route.ts` from states + blog data (the static `public/llms.txt` was removed), so it lists every calculator and guide and never goes stale.
 - **Shipped 2026-10-17:** commit 5bb0bde pushed to main and verified live on www.paycheck.center within a minute (new layout, newest-first blog, www canonicals, BlogPosting schema). The first daily routine run (commission income post) landed the same morning and was converted to the new footer/breadcrumb before the push.
-- **SEO audit suite:** Wylie asked for every `/seo` skill to run against the live site; a task card "Full SEO audit suite on live paycheck.center" was proposed. Reports land in `seo-reports/` (git-ignored).
+- **SEO audit suite ran (2026-10-17):** every applicable `/seo` skill against the live site. SEO Health Score 70/100. 22 reports + screenshots in `seo-reports/2026-10-17/` (git-ignored); `SUMMARY.md` there holds the merged 31-item action plan. Skipped: `/seo google` (no API credentials), local/maps/ecommerce/hreflang (not applicable).
+- **CRITICAL finding fixed the same day:** the "2026" federal constants in `src/data/states.ts` were 2025 values (standard deduction $15,000, brackets from $11,925) and the Social Security wage base was the 2024 figure ($168,600). Corrected to tax year 2026 per IRS Rev. Proc. 2025-32 and the SSA 2026 fact sheet: standard deduction $16,100; brackets 10% to $12,400, 12% to $50,400, 22% to $105,700, 24% to $201,775, 32% to $256,225, 35% to $640,600, 37% above; SS wage base $184,500. Added `taxYear`, `taxDataUpdated`, `additionalMedicareThreshold`, and a `usd()` helper. Homepage, state, salary, about and llms.txt prose now READ these constants instead of hard-coding numbers. Effect: `/texas/75000-salary` take-home rises from $61,148 to about $61,593.
+- **Still stale:** ~50 blog posts quote the old figures in prose (16 say $168,600; 50 say $15,000 deduction; 30 cite the $11,925 bracket). A separate careful pass is needed (task card proposed). State tax tables in `states.ts` were not re-verified (several use $14,600, a 2024-linked figure).
+- **Routine prompt rewritten:** STEP 0 now requires reading constants from `src/data/states.ts`, forbids typing tax figures from memory, requires primary-source links next to any other figure, adds a summary paragraph and question-style H2s, steers topics to the paycheck core, and gives the agent WebFetch/WebSearch for verification.
+- **Mobile fixes from the visual audit:** header no longer overflows at phone width (CTA hidden under 480px), primary buttons now white-on-dark for contrast.
 
 ### Salary-Specific Pages (2026-05-27)
 - `/[state]/[salary]` dynamic route for salary-specific paycheck breakdowns
@@ -124,7 +128,10 @@
 - **Topic selection:** the prompt carries a long idea list plus permission to pick long-tail angles; it must check `blog.ts` for duplicates first.
 
 ## WHAT'S NEXT
-- Run the full `/seo` suite on the live site (task card proposed 2026-10-17) and act on SUMMARY.md
+- Work through `seo-reports/2026-10-17/SUMMARY.md` HIGH items: named author + Person schema + real `/about`, make the 1,200 salary pages genuinely unique (programmatic score 42/100), og:image on every page, 140-160 char meta descriptions, sitemap hygiene (drop noindex pages, real lastmod), `not-found.tsx`
+- Clean stale 2025/2024 figures out of ~50 blog posts (task card proposed)
+- Verify the site in Google Search Console + Bing Webmaster Tools (Wylie, ~30 min) and add a PageSpeed API key so `/seo google` works
+- Re-verify state tax tables in `states.ts` against each Department of Revenue
 - Spot-check www.paycheck.center on a real phone
 - Watch the first few daily routine runs for quality and duplicates
 - Consider a blog post layout wrapper so new posts no longer need inline styles
