@@ -1,4 +1,5 @@
 import { states, getStateBySlug } from '@/data/states'
+import { salaryAmounts, salaryToSlug, formatSalary, calculateTakeHome } from '@/lib/tax-calculator'
 import PaycheckCalculator from '@/components/PaycheckCalculator'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
@@ -8,16 +9,20 @@ export function generateStaticParams() {
   return states.map((state) => ({ state: state.slug }))
 }
 
+function topRateOf(state: (typeof states)[number]): string {
+  return state.taxType === 'flat'
+    ? `${(state.flatRate! * 100).toFixed(2)}%`
+    : state.taxType === 'none'
+    ? '0%'
+    : `${(state.brackets![state.brackets!.length - 1].rate * 100).toFixed(2)}%`
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ state: string }> }): Promise<Metadata> {
   const { state: slug } = await params
   const state = getStateBySlug(slug)
   if (!state) return {}
 
-  const topRate = state.taxType === 'flat'
-    ? `${(state.flatRate! * 100).toFixed(2)}%`
-    : state.taxType === 'none'
-    ? '0%'
-    : `${(state.brackets![state.brackets!.length - 1].rate * 100).toFixed(2)}%`
+  const topRate = topRateOf(state)
 
   return {
     title: `${state.name} Paycheck Calculator 2026 | ${state.abbreviation} Take-Home Pay`,
@@ -32,6 +37,8 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   }
 }
 
+const money0 = (n: number) => n.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 })
+
 export default async function StatePage({ params }: { params: Promise<{ state: string }> }) {
   const { state: slug } = await params
   const state = getStateBySlug(slug)
@@ -40,13 +47,9 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
     notFound()
   }
 
-  const topRate = state.taxType === 'flat'
-    ? `${(state.flatRate! * 100).toFixed(2)}%`
-    : state.taxType === 'none'
-    ? '0%'
-    : `${(state.brackets![state.brackets!.length - 1].rate * 100).toFixed(2)}%`
+  const topRate = topRateOf(state)
 
-  // Get neighboring states for internal linking
+  // Neighbouring states (alphabetically) for internal linking
   const stateIndex = states.findIndex((s) => s.slug === slug)
   const nearby = [
     states[(stateIndex - 2 + states.length) % states.length],
@@ -55,6 +58,10 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
     states[(stateIndex + 2) % states.length],
   ]
 
+  // Popular salary snapshots for this state
+  const snapshotAmounts = [40000, 50000, 60000, 75000, 100000, 120000, 150000, 200000]
+    .filter((a) => salaryAmounts.includes(a))
+
   const breadcrumbs = breadcrumbSchema([
     { name: 'Home', url: canonicalUrl() },
     { name: `${state.name} Paycheck Calculator`, url: canonicalUrl(`/${state.slug}`) },
@@ -62,7 +69,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
   const calculatorLd = stateCalculatorSchema(state.name, state.slug)
 
   return (
-    <>
+    <div className="container page stack-lg">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
@@ -72,154 +79,150 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
         dangerouslySetInnerHTML={{ __html: JSON.stringify(calculatorLd) }}
       />
 
-      <div className="ad-slot ad-slot-horizontal">Advertisement</div>
+      <div>
+        <div className="ad-slot ad-slot-horizontal" style={{ margin: '0 auto 1.5rem' }}>Advertisement</div>
 
-      <div style={{ marginBottom: '1.5rem' }}>
-        <a href="/" style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>
-          &larr; All States
-        </a>
-      </div>
+        <nav className="crumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span className="sep">/</span>
+          <a href="/#states">States</a>
+          <span className="sep">/</span>
+          <span className="here">{state.name}</span>
+        </nav>
 
-      <div style={{ marginBottom: '2rem' }}>
-        <div
-          style={{
-            display: 'inline-block',
-            padding: '0.25rem 0.75rem',
-            background: state.hasStateTax ? 'var(--red-bg)' : 'var(--green-bg)',
-            border: `1px solid ${state.hasStateTax ? '#fecaca' : '#a7f3d0'}`,
-            borderRadius: '999px',
-            fontSize: '0.75rem',
-            fontWeight: 600,
-            color: state.hasStateTax ? 'var(--red)' : 'var(--green)',
-            marginBottom: '0.75rem',
-          }}
-        >
-          {state.hasStateTax
-            ? `${state.taxType === 'flat' ? 'Flat' : 'Progressive'} Tax \u00b7 Top Rate: ${topRate}`
-            : 'No State Income Tax'}
-        </div>
-        <h1
-          style={{
-            fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)',
-            fontWeight: 700,
-            lineHeight: 1.15,
-            marginBottom: '0.75rem',
-          }}
-        >
-          {state.name} Paycheck Calculator
-          <span style={{ color: 'var(--text-muted)', fontSize: '0.6em', fontWeight: 400, marginLeft: '0.5rem' }}>
-            2026
+        <div className="page-head">
+          <span className={`badge ${state.hasStateTax ? 'badge-red' : 'badge-money'}`}>
+            {state.hasStateTax
+              ? `${state.taxType === 'flat' ? 'Flat' : 'Progressive'} tax · top rate ${topRate}`
+              : 'No state income tax'}
           </span>
-        </h1>
-        <p style={{ fontSize: '1.0625rem', color: 'var(--text-secondary)', maxWidth: '680px' }}>
-          Calculate your take-home pay in {state.name} ({state.abbreviation}) after federal, state, Social Security, and Medicare taxes.
-        </p>
+          <h1>
+            {state.name} paycheck calculator
+            <span className="year">2026</span>
+          </h1>
+          <p className="lede">
+            Calculate your take-home pay in {state.name} ({state.abbreviation}) after federal, state, Social Security,
+            and Medicare taxes.
+          </p>
+        </div>
+
+        <PaycheckCalculator state={state} />
       </div>
 
-      <PaycheckCalculator state={state} />
+      <div className="ad-slot ad-slot-horizontal" style={{ margin: 0 }}>Advertisement</div>
 
-      <div className="ad-slot ad-slot-horizontal">Advertisement</div>
+      {/* ---------------- Salary snapshots ---------------- */}
+      <section>
+        <div className="section-head">
+          <div>
+            <span className="eyebrow">Quick answers</span>
+            <h2>Common salaries in {state.name}</h2>
+            <p>Pre-calculated take-home pay for the salaries people search for most.</p>
+          </div>
+        </div>
+        <div className="stat-grid">
+          {snapshotAmounts.map((amount) => {
+            const r = calculateTakeHome(amount, state)
+            return (
+              <a key={amount} href={`/${state.slug}/${salaryToSlug(amount)}`} className="stat card-hover" style={{ display: 'block', color: 'inherit' }}>
+                <div className="label">{formatSalary(amount)} salary</div>
+                <div className="value" style={{ color: 'var(--money-deep)' }}>{money0(r.takeHomePay)}</div>
+                <div className="sub">
+                  take-home &middot; {(r.effectiveRate * 100).toFixed(1)}% taxes
+                </div>
+              </a>
+            )
+          })}
+        </div>
+      </section>
 
-      {/* State-specific info */}
-      <section style={{ marginTop: '2rem', maxWidth: '800px' }}>
-        <h2 style={{ fontSize: '1.375rem', fontWeight: 600, marginBottom: '1rem' }}>
-          {state.name} Income Tax Details
-        </h2>
-        <p style={{ color: 'var(--text-secondary)', marginBottom: '1rem' }}>
-          {state.additionalInfo}
-        </p>
+      {/* ---------------- Details ---------------- */}
+      <section className="container-narrow" style={{ paddingLeft: 0, paddingRight: 0 }}>
+        <div className="prose">
+          <span className="eyebrow">Tax details</span>
+          <h2 style={{ marginTop: '0.5rem' }}>{state.name} income tax, explained</h2>
+          <p>{state.additionalInfo}</p>
+
+          {state.hasStateTax && state.taxType === 'flat' && (
+            <p>
+              {state.name} uses a flat tax rate of {(state.flatRate! * 100).toFixed(2)}% applied to all taxable income
+              {state.standardDeduction > 0
+                ? ` after a standard deduction of $${state.standardDeduction.toLocaleString()}`
+                : ''}
+              .
+            </p>
+          )}
+        </div>
 
         {state.hasStateTax && state.brackets && state.taxType === 'progressive' && (
-          <>
-            <h3 style={{ fontSize: '1.125rem', fontWeight: 600, marginBottom: '0.75rem', marginTop: '1.5rem' }}>
-              {state.name} Tax Brackets (2026, Single Filer)
-            </h3>
-            <div
-              style={{
-                background: 'var(--bg-card)',
-                border: '1px solid var(--border)',
-                borderRadius: '8px',
-                overflow: 'hidden',
-              }}
-            >
-              <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+          <div className="table-card" style={{ marginTop: '1.5rem' }}>
+            <div className="table-title">
+              <h3>{state.name} tax brackets</h3>
+              <span className="badge badge-gold">2026 · single filer</span>
+            </div>
+            <div className="table-scroll">
+              <table className="ledger">
                 <thead>
-                  <tr style={{ borderBottom: '1px solid var(--border)' }}>
-                    <th style={{ textAlign: 'left', padding: '0.75rem 1.5rem', fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Rate</th>
-                    <th style={{ textAlign: 'left', padding: '0.75rem 1.5rem', fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Income Range</th>
+                  <tr>
+                    <th>Rate</th>
+                    <th>Taxable income</th>
                   </tr>
                 </thead>
                 <tbody>
                   {state.brackets.map((bracket, i) => (
-                    <tr key={i} style={{ borderBottom: '1px solid var(--border)' }}>
-                      <td style={{ padding: '0.625rem 1.5rem', fontFamily: 'var(--font-mono)', fontWeight: 600, color: 'var(--accent)' }}>
-                        {(bracket.rate * 100).toFixed(2)}%
-                      </td>
-                      <td style={{ padding: '0.625rem 1.5rem', color: 'var(--text-secondary)' }}>
-                        ${bracket.min.toLocaleString()} - {bracket.max ? `$${bracket.max.toLocaleString()}` : 'and above'}
+                    <tr key={i}>
+                      <td className="rate">{(bracket.rate * 100).toFixed(2)}%</td>
+                      <td style={{ color: 'var(--text-2)' }}>
+                        ${bracket.min.toLocaleString()} – {bracket.max ? `$${bracket.max.toLocaleString()}` : 'and above'}
                       </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
-          </>
+          </div>
         )}
 
-        {state.hasStateTax && state.taxType === 'flat' && (
-          <p style={{ color: 'var(--text-secondary)', marginTop: '1rem' }}>
-            {state.name} uses a flat tax rate of {(state.flatRate! * 100).toFixed(2)}% applied to all taxable income
-            {state.standardDeduction > 0 ? ` after a standard deduction of $${state.standardDeduction.toLocaleString()}` : ''}.
+        <div className="prose" style={{ marginTop: '1.5rem' }}>
+          <h3>How your {state.name} paycheck is calculated</h3>
+          <p>
+            Your paycheck in {state.name} is reduced by several mandatory deductions. Federal income tax follows a
+            progressive bracket system ranging from 10% to 37%.
+            {state.hasStateTax
+              ? ` ${state.name} adds a ${state.taxType === 'flat' ? `flat ${(state.flatRate! * 100).toFixed(2)}%` : 'progressive'} state income tax on top of federal taxes.`
+              : ` Since ${state.name} has no state income tax, your only deductions are federal taxes and FICA.`}{' '}
+            Social Security takes 6.2% of earnings up to $168,600, and Medicare takes 1.45% of all earnings.
           </p>
-        )}
-
-        <h3 style={{ fontSize: '1.125rem', fontWeight: 600, marginBottom: '0.75rem', marginTop: '2rem' }}>
-          How Your {state.name} Paycheck Is Calculated
-        </h3>
-        <p style={{ color: 'var(--text-secondary)', marginBottom: '1rem' }}>
-          Your paycheck in {state.name} is reduced by several mandatory deductions. Federal income tax follows a progressive bracket system ranging from 10% to 37%.
-          {state.hasStateTax
-            ? ` ${state.name} adds a ${state.taxType === 'flat' ? `flat ${(state.flatRate! * 100).toFixed(2)}%` : 'progressive'} state income tax on top of federal taxes.`
-            : ` Since ${state.name} has no state income tax, your only deductions are federal taxes and FICA.`}
-          {' '}Social Security takes 6.2% of earnings up to $168,600, and Medicare takes 1.45% of all earnings.
-        </p>
+        </div>
       </section>
 
-      {/* Internal Links */}
-      <section style={{ marginTop: '3rem' }}>
-        <h3 style={{ fontSize: '1rem', fontWeight: 600, marginBottom: '1rem', color: 'var(--text-muted)' }}>
-          Paycheck Calculators for Other States
-        </h3>
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
-            gap: '0.75rem',
-          }}
-        >
+      {/* ---------------- Other states ---------------- */}
+      <section>
+        <div className="section-head">
+          <div>
+            <span className="eyebrow">Compare</span>
+            <h2>Paycheck calculators for other states</h2>
+          </div>
+          <a href="/#states" className="text-link">
+            All 50 states
+          </a>
+        </div>
+        <div className="state-grid">
           {nearby.map((s) => (
-            <a
-              key={s.slug}
-              href={`/${s.slug}`}
-              style={{
-                display: 'block',
-                padding: '0.875rem 1.25rem',
-                background: 'var(--bg-card)',
-                border: '1px solid var(--border)',
-                borderRadius: '8px',
-                color: 'var(--text-primary)',
-                textDecoration: 'none',
-                fontSize: '0.9375rem',
-                fontWeight: 500,
-              }}
-            >
-              {s.abbreviation} &middot; {s.name}
+            <a key={s.slug} href={`/${s.slug}`} className={`state-tile ${s.hasStateTax ? '' : 'free'}`}>
+              <span className="abbr-bg" aria-hidden="true">
+                {s.abbreviation}
+              </span>
+              <span className="name">{s.name}</span>
+              <span className="meta">
+                {s.hasStateTax ? `${s.taxType === 'flat' ? 'Flat' : 'Progressive'} · top ${topRateOf(s)}` : '0% state tax'}
+              </span>
             </a>
           ))}
         </div>
       </section>
 
-      <div className="ad-slot ad-slot-horizontal" style={{ marginTop: '2rem' }}>Advertisement</div>
-    </>
+      <div className="ad-slot ad-slot-horizontal" style={{ margin: 0 }}>Advertisement</div>
+    </div>
   )
 }

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import ArticleFooter from '@/components/ArticleFooter'
 
 export const metadata: Metadata = {
   title: 'Tax Filing Status Explained: Single, Married, Head of Household (2026)',
@@ -17,6 +18,11 @@ export const metadata: Metadata = {
 export default function TaxFilingStatusExplained() {
   return (
     <article style={{ maxWidth: '800px', margin: '0 auto' }}>
+      <nav className="crumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span className="sep">/</span>
+        <a href="/blog">Guides</a>
+      </nav>
       {/* Hero SVG */}
       <div style={{ marginBottom: '2rem' }}>
         <svg
@@ -518,12 +524,7 @@ export default function TaxFilingStatusExplained() {
         </li>
       </ul>
 
-      {/* Back to blog */}
-      <div style={{ borderTop: '1px solid #e2e8f0', paddingTop: '1.5rem', marginBottom: '2rem' }}>
-        <a href="/blog" style={{ color: '#2563eb', textDecoration: 'underline', fontSize: '0.9375rem' }}>
-          &larr; Back to all articles
-        </a>
-      </div>
+      <ArticleFooter current="tax-filing-status-explained" />
     </article>
   )
 }

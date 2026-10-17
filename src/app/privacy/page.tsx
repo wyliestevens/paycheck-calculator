@@ -9,7 +9,8 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <div style={{ maxWidth: '720px', margin: '0 auto' }}>
+    <div className="container container-narrow page">
+      <div className="page-doc">
       <h1 style={{ fontSize: '2rem', fontWeight: 700, marginBottom: '0.5rem' }}>Privacy Policy</h1>
       <p style={{ color: 'var(--text-muted)', fontSize: '0.875rem', marginBottom: '2rem' }}>Last updated: May 11, 2026</p>
 
@@ -69,6 +70,7 @@ export default function PrivacyPage() {
         <p style={{ marginBottom: '1rem' }}>
           If you have questions about this Privacy Policy, please contact us at <a href="mailto:contact@aipeakbiz.com" style={{ color: 'var(--accent)' }}>contact@aipeakbiz.com</a>.
         </p>
+      </div>
       </div>
     </div>
   )

@@ -4,7 +4,7 @@ import { salaryAmounts, salaryToSlug } from '@/lib/tax-calculator'
 import type { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://paycheck.center'
+  const baseUrl = 'https://www.paycheck.center'
 
   const statePages = states.map((state) => ({
     url: `${baseUrl}/${state.slug}`,

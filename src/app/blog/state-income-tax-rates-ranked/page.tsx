@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import ArticleFooter from '@/components/ArticleFooter'
 
 export const metadata: Metadata = {
   title: 'Highest and Lowest State Income Tax Rates in 2026',
@@ -71,6 +72,11 @@ const allStates = [
 export default function StateIncomeTaxRatesRankedPost() {
   return (
     <article style={{ maxWidth: '800px', margin: '0 auto' }}>
+      <nav className="crumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span className="sep">/</span>
+        <a href="/blog">Guides</a>
+      </nav>
       {/* Hero SVG */}
       <div style={{ marginBottom: '2rem' }}>
         <svg
@@ -756,11 +762,7 @@ export default function StateIncomeTaxRatesRankedPost() {
       </div>
 
       {/* Back to blog */}
-      <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-        <a href="/blog" style={{ color: '#2563eb', fontSize: '0.9375rem' }}>
-          &larr; Back to all articles
-        </a>
-      </div>
+      <ArticleFooter current="state-income-tax-rates-ranked" />
     </article>
   )
 }

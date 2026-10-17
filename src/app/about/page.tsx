@@ -12,7 +12,8 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div style={{ maxWidth: '720px', margin: '0 auto' }}>
+    <div className="container container-narrow page">
+      <div className="page-doc">
       <h1 style={{ fontSize: '2rem', fontWeight: 700, marginBottom: '1.5rem' }}>About PaycheckCalc</h1>
 
       <p style={{ color: 'var(--text-secondary)', marginBottom: '1rem', lineHeight: 1.7 }}>
@@ -40,6 +41,7 @@ export default function AboutPage() {
       <p style={{ color: 'var(--text-secondary)', marginBottom: '1rem', lineHeight: 1.7 }}>
         PaycheckCalc is operated by AI Peak Biz. For questions or feedback, please visit our <a href="/contact" style={{ color: 'var(--accent)' }}>contact page</a>.
       </p>
+      </div>
     </div>
   )
 }

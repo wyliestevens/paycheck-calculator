@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useMemo, useState } from 'react'
 import {
   StateData,
   calculateFederalTax,
@@ -16,8 +16,8 @@ type PayFrequency = 'weekly' | 'biweekly' | 'semimonthly' | 'monthly' | 'annual'
 
 const frequencyLabels: Record<PayFrequency, string> = {
   weekly: 'Weekly',
-  biweekly: 'Bi-Weekly',
-  semimonthly: 'Semi-Monthly',
+  biweekly: 'Bi-weekly',
+  semimonthly: 'Semi-monthly',
   monthly: 'Monthly',
   annual: 'Annual',
 }
@@ -30,12 +30,14 @@ const frequencyMultipliers: Record<PayFrequency, number> = {
   annual: 1,
 }
 
+const quickAmounts = [40000, 55000, 75000, 100000, 150000]
+
 export default function PaycheckCalculator({ state }: Props) {
   const [salary, setSalary] = useState<string>('75000')
   const [frequency, setFrequency] = useState<PayFrequency>('biweekly')
 
-  const calculate = useCallback(() => {
-    const annualSalary = parseFloat(salary) || 0
+  const results = useMemo(() => {
+    const annualSalary = Math.max(0, parseFloat(salary) || 0)
     const periods = frequencyMultipliers[frequency]
 
     const federalTax = calculateFederalTax(annualSalary)
@@ -44,7 +46,7 @@ export default function PaycheckCalculator({ state }: Props) {
 
     const totalTaxes = federalTax + stateTax + socialSecurity + medicare
     const annualNet = annualSalary - totalTaxes
-    const perPeriod = annualNet / periods
+    const pct = (n: number) => (annualSalary > 0 ? (n / annualSalary) * 100 : 0)
 
     return {
       gross: annualSalary,
@@ -60,198 +62,169 @@ export default function PaycheckCalculator({ state }: Props) {
       totalTaxes,
       taxesPerPeriod: totalTaxes / periods,
       annualNet,
-      netPerPeriod: perPeriod,
-      effectiveRate: annualSalary > 0 ? (totalTaxes / annualSalary) * 100 : 0,
+      netPerPeriod: annualNet / periods,
+      effectiveRate: pct(totalTaxes),
+      share: {
+        net: pct(annualNet),
+        federal: pct(federalTax),
+        state: pct(stateTax),
+        ss: pct(socialSecurity),
+        medicare: pct(medicare),
+      },
     }
   }, [salary, frequency, state])
 
-  const results = calculate()
-
   const fmt = (n: number) =>
     n.toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2 })
-
+  const fmt0 = (n: number) =>
+    n.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 })
   const pct = (n: number) => n.toFixed(1) + '%'
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-      {/* Input Section */}
-      <div
-        style={{
-          background: 'var(--bg-card)',
-          border: '1px solid var(--border)',
-          borderRadius: '12px',
-          padding: '2rem',
-        }}
-      >
-        <h2
-          style={{
-            fontSize: '1.125rem',
-            fontWeight: 600,
-            marginBottom: '1.5rem',
-            color: 'var(--text-primary)',
-          }}
-        >
-          Your Income
-        </h2>
-        <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-          <div style={{ flex: '1 1 280px' }}>
-            <label
-              style={{
-                display: 'block',
-                fontSize: '0.8125rem',
-                color: 'var(--text-secondary)',
-                marginBottom: '0.5rem',
-                fontWeight: 500,
-              }}
-            >
-              Annual Gross Salary
-            </label>
-            <div style={{ position: 'relative' }}>
-              <span
-                style={{
-                  position: 'absolute',
-                  left: '1rem',
-                  top: '50%',
-                  transform: 'translateY(-50%)',
-                  color: 'var(--text-muted)',
-                  fontFamily: 'var(--font-mono)',
-                  fontSize: '1.125rem',
-                  fontWeight: 500,
-                }}
-              >
+    <div className="calc">
+      {/* ---------------- Inputs ---------------- */}
+      <div className="calc-inputs">
+        <div className="card card-pad">
+          <span className="eyebrow">Your income</span>
+          <div className="field" style={{ marginTop: '1rem' }}>
+            <label htmlFor="salary">Annual gross salary</label>
+            <div className="input-money">
+              <span className="prefix" aria-hidden="true">
                 $
               </span>
               <input
+                id="salary"
                 type="number"
+                inputMode="decimal"
+                min={0}
+                step={1000}
                 value={salary}
                 onChange={(e) => setSalary(e.target.value)}
                 placeholder="75000"
-                style={{
-                  width: '100%',
-                  padding: '0.875rem 1rem 0.875rem 2rem',
-                  background: 'var(--bg-input)',
-                  border: '1px solid var(--border)',
-                  borderRadius: '8px',
-                  color: 'var(--text-primary)',
-                  fontFamily: 'var(--font-mono)',
-                  fontSize: '1.125rem',
-                  fontWeight: 500,
-                  outline: 'none',
-                  transition: 'border-color 0.15s',
-                }}
-                onFocus={(e) => (e.target.style.borderColor = 'var(--border-focus)')}
-                onBlur={(e) => (e.target.style.borderColor = 'var(--border)')}
               />
             </div>
-          </div>
-          <div style={{ flex: '1 1 200px' }}>
-            <label
-              style={{
-                display: 'block',
-                fontSize: '0.8125rem',
-                color: 'var(--text-secondary)',
-                marginBottom: '0.5rem',
-                fontWeight: 500,
-              }}
-            >
-              Pay Frequency
-            </label>
-            <select
-              value={frequency}
-              onChange={(e) => setFrequency(e.target.value as PayFrequency)}
-              style={{
-                width: '100%',
-                padding: '0.875rem 1rem',
-                background: 'var(--bg-input)',
-                border: '1px solid var(--border)',
-                borderRadius: '8px',
-                color: 'var(--text-primary)',
-                fontFamily: 'var(--font-body)',
-                fontSize: '1rem',
-                outline: 'none',
-                cursor: 'pointer',
-                transition: 'border-color 0.15s',
-              }}
-              onFocus={(e) => (e.target.style.borderColor = 'var(--border-focus)')}
-              onBlur={(e) => (e.target.style.borderColor = 'var(--border)')}
-            >
-              {Object.entries(frequencyLabels).map(([key, label]) => (
-                <option key={key} value={key}>
-                  {label}
-                </option>
+            <div className="quick-amounts" aria-label="Quick salary presets">
+              {quickAmounts.map((a) => (
+                <button key={a} type="button" onClick={() => setSalary(String(a))}>
+                  {fmt0(a)}
+                </button>
               ))}
-            </select>
+            </div>
+          </div>
+
+          <div className="field">
+            <label id="freq-label">Pay frequency</label>
+            <div className="seg" role="group" aria-labelledby="freq-label">
+              {(Object.keys(frequencyLabels) as PayFrequency[]).map((key) => (
+                <button
+                  key={key}
+                  type="button"
+                  aria-pressed={frequency === key}
+                  onClick={() => setFrequency(key)}
+                >
+                  {frequencyLabels[key]}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <p className="muted" style={{ fontSize: '0.8125rem', marginTop: '1.25rem', lineHeight: 1.5 }}>
+            Estimates use 2026 rates for a single filer taking the standard deduction. Pre-tax benefits, local taxes,
+            and extra withholding are not included.
+          </p>
+        </div>
+      </div>
+
+      {/* ---------------- Results ---------------- */}
+      <div className="stack">
+        <div className="result-hero">
+          <span className="eyebrow">Your {frequencyLabels[frequency].toLowerCase()} take-home pay</span>
+          <div className="result-amount">{fmt(results.netPerPeriod)}</div>
+          <div className="result-sub">
+            <span>
+              <b>{fmt0(results.annualNet)}</b> per year
+            </span>
+            <span>
+              <b>{pct(results.effectiveRate)}</b> effective tax rate
+            </span>
+            <span>
+              <b>{fmt0(results.totalTaxes)}</b> total taxes
+            </span>
+          </div>
+
+          <div className="bar" aria-hidden="true">
+            <span className="c-money" style={{ width: `${results.share.net}%` }} />
+            <span className="c-federal" style={{ width: `${results.share.federal}%` }} />
+            {results.share.state > 0 && <span className="c-state" style={{ width: `${results.share.state}%` }} />}
+            <span className="c-ss" style={{ width: `${results.share.ss}%` }} />
+            <span className="c-medicare" style={{ width: `${results.share.medicare}%` }} />
+          </div>
+          <div className="legend">
+            <span>
+              <i className="c-money" /> Take-home <span className="mono">{pct(results.share.net)}</span>
+            </span>
+            <span>
+              <i className="c-federal" /> Federal <span className="mono">{pct(results.share.federal)}</span>
+            </span>
+            {results.share.state > 0 && (
+              <span>
+                <i className="c-state" /> {state.abbreviation} state <span className="mono">{pct(results.share.state)}</span>
+              </span>
+            )}
+            <span>
+              <i className="c-ss" /> Social Security <span className="mono">{pct(results.share.ss)}</span>
+            </span>
+            <span>
+              <i className="c-medicare" /> Medicare <span className="mono">{pct(results.share.medicare)}</span>
+            </span>
           </div>
         </div>
-      </div>
 
-      {/* Take Home Pay Hero */}
-      <div
-        style={{
-          background: 'var(--green-bg)',
-          border: '1px solid #a7f3d0',
-          boxShadow: 'var(--shadow-md)',
-          borderRadius: '12px',
-          padding: '2rem',
-          textAlign: 'center',
-        }}
-      >
-        <div style={{ fontSize: '0.8125rem', color: 'var(--green)', fontWeight: 500, letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
-          Your {frequencyLabels[frequency]} Take-Home Pay
+        <div className="table-card">
+          <div className="table-title">
+            <h2>Tax breakdown</h2>
+            <span className="badge badge-ink">{frequencyLabels[frequency]}</span>
+          </div>
+          <div className="table-scroll">
+            <table className="ledger">
+              <thead>
+                <tr>
+                  <th>Line item</th>
+                  <th className="num">Per period</th>
+                  <th className="num">Annual</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style={{ fontWeight: 600 }}>Gross pay</td>
+                  <td className="num">{fmt(results.grossPerPeriod)}</td>
+                  <td className="num">{fmt(results.gross)}</td>
+                </tr>
+                {[
+                  { label: 'Federal income tax', per: results.federalPerPeriod, annual: results.federalTax },
+                  { label: `${state.name} state tax`, per: results.statePerPeriod, annual: results.stateTax },
+                  { label: 'Social Security (6.2%)', per: results.ssPerPeriod, annual: results.socialSecurity },
+                  { label: 'Medicare (1.45%)', per: results.medicarePerPeriod, annual: results.medicare },
+                ].map((row) => (
+                  <tr key={row.label}>
+                    <td>{row.label}</td>
+                    <td className={`num ${row.annual > 0 ? 'neg' : ''}`} style={row.annual === 0 ? { color: 'var(--text-3)' } : undefined}>
+                      {row.annual > 0 ? `−${fmt(row.per)}` : fmt(0)}
+                    </td>
+                    <td className={`num ${row.annual > 0 ? 'neg' : ''}`} style={row.annual === 0 ? { color: 'var(--text-3)' } : undefined}>
+                      {row.annual > 0 ? `−${fmt(row.annual)}` : fmt(0)}
+                    </td>
+                  </tr>
+                ))}
+                <tr className="total">
+                  <td>Take-home pay</td>
+                  <td className="num">{fmt(results.netPerPeriod)}</td>
+                  <td className="num">{fmt(results.annualNet)}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-        <div style={{ fontFamily: 'var(--font-mono)', fontSize: '3rem', fontWeight: 700, color: 'var(--green)', lineHeight: 1.1 }}>
-          {fmt(results.netPerPeriod)}
-        </div>
-        <div style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', marginTop: '0.75rem' }}>
-          {fmt(results.annualNet)} per year &middot; Effective tax rate: {pct(results.effectiveRate)}
-        </div>
-      </div>
-
-      {/* Breakdown Table */}
-      <div
-        style={{
-          background: 'var(--bg-card)',
-          border: '1px solid var(--border)',
-          borderRadius: '12px',
-          overflow: 'hidden',
-        }}
-      >
-        <div style={{ padding: '1.5rem 2rem 1rem', borderBottom: '1px solid var(--border)' }}>
-          <h2 style={{ fontSize: '1.125rem', fontWeight: 600 }}>Tax Breakdown</h2>
-        </div>
-        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-          <thead>
-            <tr style={{ borderBottom: '1px solid var(--border)' }}>
-              <th style={{ textAlign: 'left', padding: '0.75rem 2rem', fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Category</th>
-              <th style={{ textAlign: 'right', padding: '0.75rem 2rem', fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Per Period</th>
-              <th style={{ textAlign: 'right', padding: '0.75rem 2rem', fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Annual</th>
-            </tr>
-          </thead>
-          <tbody>
-            {[
-              { label: 'Gross Pay', perPeriod: results.grossPerPeriod, annual: results.gross, isGross: true },
-              { label: 'Federal Tax', perPeriod: -results.federalPerPeriod, annual: -results.federalTax },
-              { label: `${state.name} State Tax`, perPeriod: -results.statePerPeriod, annual: -results.stateTax },
-              { label: 'Social Security (6.2%)', perPeriod: -results.ssPerPeriod, annual: -results.socialSecurity },
-              { label: 'Medicare (1.45%)', perPeriod: -results.medicarePerPeriod, annual: -results.medicare },
-            ].map((row, i) => (
-              <tr key={i} style={{ borderBottom: '1px solid var(--border)' }}>
-                <td style={{ padding: '0.875rem 2rem', fontSize: '0.9375rem', fontWeight: row.isGross ? 600 : 400 }}>{row.label}</td>
-                <td style={{ textAlign: 'right', padding: '0.875rem 2rem', fontFamily: 'var(--font-mono)', fontSize: '0.9375rem', color: row.isGross ? 'var(--text-primary)' : 'var(--red)' }}>
-                  {row.isGross ? fmt(row.perPeriod) : fmt(row.perPeriod)}
-                </td>
-                <td style={{ textAlign: 'right', padding: '0.875rem 2rem', fontFamily: 'var(--font-mono)', fontSize: '0.9375rem', color: row.isGross ? 'var(--text-primary)' : 'var(--red)' }}>
-                  {row.isGross ? fmt(row.annual) : fmt(row.annual)}
-                </td>
-              </tr>
-            ))}
-            <tr style={{ background: 'var(--green-bg)' }}>
-              <td style={{ padding: '1rem 2rem', fontSize: '1rem', fontWeight: 700, color: 'var(--green)' }}>Take-Home Pay</td>
-              <td style={{ textAlign: 'right', padding: '1rem 2rem', fontFamily: 'var(--font-mono)', fontSize: '1rem', fontWeight: 700, color: 'var(--green)' }}>{fmt(results.netPerPeriod)}</td>
-              <td style={{ textAlign: 'right', padding: '1rem 2rem', fontFamily: 'var(--font-mono)', fontSize: '1rem', fontWeight: 700, color: 'var(--green)' }}>{fmt(results.annualNet)}</td>
-            </tr>
-          </tbody>
-        </table>
       </div>
     </div>
   )

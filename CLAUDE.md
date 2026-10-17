@@ -1,12 +1,12 @@
 # Paycheck Calculator — Project CLAUDE.md
-# LAST UPDATED: 2026-10-05
+# LAST UPDATED: 2026-10-16
 
 ## PROJECT OVERVIEW
 - **Site:** paycheck.center
-- **Stack:** Next.js (App Router), TypeScript, Tailwind CSS
+- **Stack:** Next.js 16 (App Router), TypeScript, hand-written CSS design system in `src/app/globals.css` (no Tailwind)
 - **Repo:** github.com/wyliestevens/paycheck-calculator
 - **Deployment:** Vercel (auto-deploys from origin/main)
-- **Monetization:** Google AdSense (ca-pub-1449862684379914)
+- **Monetization:** Google AdSense. Publisher ID in code and `public/ads.txt` is `ca-pub-8731434749249918`. Do not change anything AdSense-related without Wylie asking.
 
 ## WHAT HAS BEEN DONE (chronological)
 
@@ -58,6 +58,26 @@
   - `/blog/stock-options-taxes-nso-iso-2026` (2026-09-28)
   - `/blog/tax-extension-how-to-file-2026` (2026-10-05)
 
+### Redesign + blog visibility fix + daily publishing (2026-10-16)
+- **Why:** Wylie got phone notices about new posts but the blog index listed posts in file order (oldest first), so the six May posts sat on top and 80+ newer posts were buried. Posts were always live; they were just hidden.
+- **Fix:** `/blog` now sorts by `publishDate` newest-first with a featured "Latest" card. Homepage shows the six newest guides.
+- **Full visual redesign ("The Ledger" look):** warm paper background, deep ink-navy hero/footer, money-green accent, Fraunces display font + Figtree body + JetBrains Mono for figures. All tokens and component classes live in `src/app/globals.css`.
+  - New sticky header + 4-column footer in `layout.tsx` (all backlinks preserved)
+  - Homepage hero with live state search (`src/components/StateFinder.tsx`) and an example pay stub panel
+  - Calculator rebuilt (`PaycheckCalculator.tsx`): segmented pay-frequency control, quick salary presets, dark result panel with breakdown bar
+  - State pages: salary snapshot cards linking to `/[state]/[salary]` pages
+  - Salary pages, blog index, about/contact/privacy/terms restyled
+  - `src/components/ArticleFooter.tsx`: shared "More paycheck guides" block; all 88 posts now end with `<ArticleFooter current="slug" />` and start with a Home / Guides breadcrumb (script-applied)
+  - `RotatingBanner.tsx` (house ads for AI Peak Biz / FLNC) restyled, same links and rotation
+  - **AdSense untouched:** script tag, publisher ID, `ads.txt`, and `.ad-slot` placeholder divs all left in place (placeholders restyled only)
+- **Scheduling:** two cloud routines were both publishing to this repo (Tue/Fri and Mon/Thu). Merged into ONE daily routine; the Mon/Thu one is paused. See AUTOMATED BLOG PUBLISHING below.
+- `.claude/launch.json` added for the in-app dev server preview (port 3000, host 127.0.0.1).
+- **Fonts:** self-hosted via `next/font/google` in `layout.tsx` (Fraunces display, Figtree body, JetBrains Mono figures). The CSS variables `--font-display/--font-body/--font-mono` come from there, not from a Google Fonts `@import`.
+- **Structured data (JSON-LD):** Organization (with logo) + WebSite on every page; WebApplication on home and state pages; BreadcrumbList on state, salary, and blog post pages; BlogPosting on every post (emitted by `ArticleFooter`); Blog list on `/blog`; FAQPage on `/contact` (pre-existing, commercial-site FAQ rich results are restricted by Google, left as-is). Helpers live in `src/lib/seo.ts`.
+- **Canonical host fixed:** the apex `paycheck.center` 307-redirects to `www.paycheck.center`, but canonicals, sitemap, robots, and schema URLs pointed at the apex. All now use `https://www.paycheck.center`.
+- **Salary page URL pattern** is `/[state]/[amount]-salary` (e.g. `/texas/75000-salary`). Plain `/texas/75000` is a 404 by design.
+- **Routine prompt fixed** to use the correct salary URL pattern and to rely on `ArticleFooter` for post schema.
+
 ### Salary-Specific Pages (2026-05-27)
 - `/[state]/[salary]` dynamic route for salary-specific paycheck breakdowns
 - Tax calculator library (`src/lib/tax-calculator.ts`)
@@ -75,7 +95,12 @@
 - `src/app/[state]/page.tsx` — State calculator pages
 - `src/app/[state]/[salary]/page.tsx` — Salary-specific pages
 - `src/app/blog/page.tsx` — Blog index
-- `src/components/RotatingBanner.tsx` — Ad rotation component
+- `src/components/RotatingBanner.tsx` — House ad rotation (AI Peak Biz / FLNC), not AdSense
+- `src/components/StateFinder.tsx` — Homepage state search (client component)
+- `src/components/PaycheckCalculator.tsx` — Interactive calculator (client component)
+- `src/components/ArticleFooter.tsx` — Related-guides footer used by every blog post
+- `src/app/globals.css` — Design tokens + all component classes (the whole visual system)
+- `src/app/blog/<slug>/page.tsx` — One folder per post, inline-styled body, must end with `<ArticleFooter />`
 - `src/lib/tax-calculator.ts` — Tax calculation logic
 - `src/lib/seo.ts` — SEO helpers
 - `src/data/states.ts` — State data
@@ -86,9 +111,20 @@
 - `cluster-plan.json` — Cluster data
 - `cluster-map.html` — Visual cluster map
 
+## AUTOMATED BLOG PUBLISHING
+- **Routine:** "Daily Blog Publisher — paycheck.center" (trig_013KLX1hcKWxpdk7YedCo8MA), cloud routine on claude.ai
+- **Schedule:** every day at 13:00 UTC (9am ET / 6am Phoenix), cron `0 13 * * *`
+- **Manage:** https://claude.ai/code/routines/trig_013KLX1hcKWxpdk7YedCo8MA
+- **How:** reads `src/data/blog.ts`, uses `src/app/blog/fica-taxes-explained/page.tsx` as the template, writes one new post, appends to `blog.ts`, runs `npx next build`, commits and pushes to main. Vercel deploys.
+- **Template rules baked into the prompt:** breadcrumb nav at top, inline-styled body, green calculator CTA, Sources list, `<ArticleFooter current="slug" />` at the end, never touch AdSense or existing files.
+- **Paused routine:** "Paycheck Blog Post Writer" (trig_01JVyH5eJ8RSJ5rq2satQGUG) ran Mon/Thu and is now disabled so there is exactly one post per day. Delete it at https://claude.ai/code/routines if desired.
+- **Topic selection:** the prompt carries a long idea list plus permission to pick long-tail angles; it must check `blog.ts` for duplicates first.
+
 ## WHAT'S NEXT
-- Monitor Vercel deployment for build errors
-- Add more blog content for SEO coverage
+- Confirm Vercel deploy of the redesign succeeded and spot-check www.paycheck.center on phone
+- Watch the first few daily routine runs for quality and duplicates
+- Consider a blog post layout wrapper so new posts no longer need inline styles
+- Replace `.ad-slot` placeholders with real AdSense `<ins>` units when Wylie is ready (ask first)
 - Consider adding structured data (JSON-LD) for rich snippets
 - Track AdSense performance and optimize ad placement
 - Potentially add more salary-specific pages for high-traffic keywords

@@ -41,6 +41,10 @@ function fmt(n: number): string {
   return n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
 }
 
+function fmt0(n: number): string {
+  return n.toLocaleString('en-US', { maximumFractionDigits: 0 })
+}
+
 function fmtPct(n: number): string {
   return (n * 100).toFixed(1) + '%'
 }
@@ -60,26 +64,27 @@ export default async function SalaryPage({ params }: { params: Promise<{ state: 
   const periods = [
     { label: 'Annual', divisor: 1 },
     { label: 'Monthly', divisor: 12 },
-    { label: 'Bi-Weekly', divisor: 26 },
+    { label: 'Bi-weekly', divisor: 26 },
     { label: 'Weekly', divisor: 52 },
   ]
 
-  const takeHomePct = result.grossSalary > 0 ? (result.takeHomePay / result.grossSalary) * 100 : 0
-  const federalPct = result.grossSalary > 0 ? (result.federalTax / result.grossSalary) * 100 : 0
-  const statePct = result.grossSalary > 0 ? (result.stateTax / result.grossSalary) * 100 : 0
-  const ssPct = result.grossSalary > 0 ? (result.socialSecurity / result.grossSalary) * 100 : 0
-  const medicarePct = result.grossSalary > 0 ? (result.medicare / result.grossSalary) * 100 : 0
+  const share = (n: number) => (result.grossSalary > 0 ? (n / result.grossSalary) * 100 : 0)
+  const takeHomePct = share(result.takeHomePay)
+  const federalPct = share(result.federalTax)
+  const statePct = share(result.stateTax)
+  const ssPct = share(result.socialSecurity)
+  const medicarePct = share(result.medicare)
 
-  // Pick 8 nearby salary links for this state (4 below, 4 above if possible)
+  // Nearby salary links for this state (4 below, 4 above where possible)
   const currentIndex = salaryAmounts.indexOf(amount)
   const otherSalaries = salaryAmounts.filter((_, i) => i !== currentIndex)
-  const belowSalaries = otherSalaries.filter(s => s < amount).slice(-4)
-  const aboveSalaries = otherSalaries.filter(s => s > amount).slice(0, 4)
+  const belowSalaries = otherSalaries.filter((s) => s < amount).slice(-4)
+  const aboveSalaries = otherSalaries.filter((s) => s > amount).slice(0, 4)
   const nearbySalaries = [...belowSalaries, ...aboveSalaries]
 
-  // Pick 8 other states for same salary
-  const noTaxStates = states.filter(s => !s.hasStateTax && s.slug !== state.slug).slice(0, 3)
-  const taxStates = states.filter(s => s.hasStateTax && s.slug !== state.slug)
+  // Same salary in other states
+  const noTaxStates = states.filter((s) => !s.hasStateTax && s.slug !== state.slug).slice(0, 3)
+  const taxStates = states.filter((s) => s.hasStateTax && s.slug !== state.slug)
   const otherStates = [...noTaxStates, ...taxStates.slice(0, 5)]
 
   const breadcrumbs = breadcrumbSchema([
@@ -95,192 +100,163 @@ export default async function SalaryPage({ params }: { params: Promise<{ state: 
     : `${state.name} uses a progressive income tax system${state.standardDeduction > 0 ? ` with a $${state.standardDeduction.toLocaleString()} standard deduction` : ''}. On a ${formatted} salary, state taxes come to $${fmt(result.stateTax)}, which combined with federal taxes and FICA gives you an effective tax rate of ${fmtPct(result.effectiveRate)}.`
 
   return (
-    <>
+    <div className="container page stack-lg">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
       />
 
-      <div className="ad-slot ad-slot-horizontal">Advertisement</div>
+      <div>
+        <div className="ad-slot ad-slot-horizontal" style={{ margin: '0 auto 1.5rem' }}>Advertisement</div>
 
-      {/* Breadcrumb navigation */}
-      <nav style={{ marginBottom: '1.5rem', fontSize: '0.875rem', color: 'var(--text-muted)' }}>
-        <a href="/" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>Home</a>
-        <span style={{ margin: '0 0.5rem' }}>/</span>
-        <a href={`/${state.slug}`} style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>{state.name}</a>
-        <span style={{ margin: '0 0.5rem' }}>/</span>
-        <span style={{ color: 'var(--text-secondary)' }}>{formatted} Salary</span>
-      </nav>
+        <nav className="crumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span className="sep">/</span>
+          <a href={`/${state.slug}`}>{state.name}</a>
+          <span className="sep">/</span>
+          <span className="here">{formatted} salary</span>
+        </nav>
 
-      {/* Page title */}
-      <div style={{ marginBottom: '2rem' }}>
-        <h1 style={{
-          fontSize: 'clamp(1.5rem, 3.5vw, 2.5rem)',
-          fontWeight: 700,
-          lineHeight: 1.15,
-          marginBottom: '0.75rem',
-        }}>
-          {formatted} Salary After Taxes in {state.name}
-        </h1>
-        <p style={{ fontSize: '1.0625rem', color: 'var(--text-secondary)', maxWidth: '680px' }}>
-          On a {formatted} salary in {state.name} ({state.abbreviation}), you can expect to take home{' '}
-          <strong style={{ color: 'var(--green)' }}>${fmt(result.takeHomePay)}</strong> per year after federal
-          {state.hasStateTax ? ', state,' : ''} and FICA taxes — that&#39;s{' '}
-          <strong>${fmt(result.takeHomePay / 12)}</strong> per month.
-        </p>
-      </div>
-
-      {/* Summary cards */}
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
-        gap: '1rem',
-        marginBottom: '2rem',
-      }}>
-        <div style={{
-          background: 'var(--green-bg)',
-          border: '1px solid #a7f3d0',
-          borderRadius: '12px',
-          padding: '1.25rem',
-        }}>
-          <div style={{ fontSize: '0.75rem', color: 'var(--green)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.25rem' }}>Take-Home Pay</div>
-          <div style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--green)', fontFamily: 'var(--font-mono)' }}>${fmt(result.takeHomePay)}</div>
-          <div style={{ fontSize: '0.8125rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>{fmtPct(takeHomePct / 100)} of gross</div>
+        <div className="page-head">
+          <span className="badge badge-ink">{state.abbreviation} &middot; 2026 rates</span>
+          <h1>
+            {formatted} salary after taxes in {state.name}
+          </h1>
+          <p className="lede">
+            On a {formatted} salary in {state.name} ({state.abbreviation}), you can expect to take home{' '}
+            <strong style={{ color: 'var(--money-deep)' }}>${fmt(result.takeHomePay)}</strong> per year after federal
+            {state.hasStateTax ? ', state,' : ''} and FICA taxes. That&rsquo;s{' '}
+            <strong>${fmt(result.takeHomePay / 12)}</strong> per month.
+          </p>
         </div>
-        <div style={{
-          background: 'var(--red-bg)',
-          border: '1px solid #fecaca',
-          borderRadius: '12px',
-          padding: '1.25rem',
-        }}>
-          <div style={{ fontSize: '0.75rem', color: 'var(--red)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.25rem' }}>Total Taxes</div>
-          <div style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--red)', fontFamily: 'var(--font-mono)' }}>${fmt(result.totalDeductions)}</div>
-          <div style={{ fontSize: '0.8125rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>{fmtPct(result.effectiveRate)} effective rate</div>
-        </div>
-      </div>
 
-      {/* Visual deduction bar */}
-      <div style={{
-        background: 'var(--bg-card)',
-        border: '1px solid var(--border)',
-        borderRadius: '12px',
-        padding: '1.5rem',
-        marginBottom: '2rem',
-      }}>
-        <h2 style={{ fontSize: '1rem', fontWeight: 600, marginBottom: '1rem' }}>Tax Breakdown</h2>
-        <div style={{
-          display: 'flex',
-          height: '32px',
-          borderRadius: '8px',
-          overflow: 'hidden',
-          marginBottom: '1rem',
-        }}>
-          <div style={{ width: `${takeHomePct}%`, background: '#059669', transition: 'width 0.3s' }} title={`Take-Home: ${fmtPct(takeHomePct / 100)}`} />
-          <div style={{ width: `${federalPct}%`, background: '#2563eb', transition: 'width 0.3s' }} title={`Federal Tax: ${fmtPct(federalPct / 100)}`} />
-          {statePct > 0 && (
-            <div style={{ width: `${statePct}%`, background: '#7c3aed', transition: 'width 0.3s' }} title={`State Tax: ${fmtPct(statePct / 100)}`} />
-          )}
-          <div style={{ width: `${ssPct}%`, background: '#d97706', transition: 'width 0.3s' }} title={`Social Security: ${fmtPct(ssPct / 100)}`} />
-          <div style={{ width: `${medicarePct}%`, background: '#dc2626', transition: 'width 0.3s' }} title={`Medicare: ${fmtPct(medicarePct / 100)}`} />
-        </div>
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', fontSize: '0.8125rem' }}>
-          <span style={{ display: 'flex', alignItems: 'center', gap: '0.375rem' }}>
-            <span style={{ width: '12px', height: '12px', borderRadius: '3px', background: '#059669', display: 'inline-block' }} />
-            Take-Home {fmtPct(takeHomePct / 100)}
-          </span>
-          <span style={{ display: 'flex', alignItems: 'center', gap: '0.375rem' }}>
-            <span style={{ width: '12px', height: '12px', borderRadius: '3px', background: '#2563eb', display: 'inline-block' }} />
-            Federal {fmtPct(federalPct / 100)}
-          </span>
-          {statePct > 0 && (
-            <span style={{ display: 'flex', alignItems: 'center', gap: '0.375rem' }}>
-              <span style={{ width: '12px', height: '12px', borderRadius: '3px', background: '#7c3aed', display: 'inline-block' }} />
-              State {fmtPct(statePct / 100)}
+        {/* Headline result */}
+        <div className="result-hero">
+          <span className="eyebrow">Annual take-home pay</span>
+          <div className="result-amount">${fmt0(result.takeHomePay)}</div>
+          <div className="result-sub">
+            <span>
+              <b>${fmt0(result.takeHomePay / 12)}</b> per month
             </span>
-          )}
-          <span style={{ display: 'flex', alignItems: 'center', gap: '0.375rem' }}>
-            <span style={{ width: '12px', height: '12px', borderRadius: '3px', background: '#d97706', display: 'inline-block' }} />
-            Social Security {fmtPct(ssPct / 100)}
-          </span>
-          <span style={{ display: 'flex', alignItems: 'center', gap: '0.375rem' }}>
-            <span style={{ width: '12px', height: '12px', borderRadius: '3px', background: '#dc2626', display: 'inline-block' }} />
-            Medicare {fmtPct(medicarePct / 100)}
-          </span>
+            <span>
+              <b>${fmt0(result.takeHomePay / 26)}</b> bi-weekly
+            </span>
+            <span>
+              <b>{fmtPct(result.effectiveRate)}</b> effective tax rate
+            </span>
+          </div>
+          <div className="bar" aria-hidden="true">
+            <span className="c-money" style={{ width: `${takeHomePct}%` }} />
+            <span className="c-federal" style={{ width: `${federalPct}%` }} />
+            {statePct > 0 && <span className="c-state" style={{ width: `${statePct}%` }} />}
+            <span className="c-ss" style={{ width: `${ssPct}%` }} />
+            <span className="c-medicare" style={{ width: `${medicarePct}%` }} />
+          </div>
+          <div className="legend">
+            <span>
+              <i className="c-money" /> Take-home <span className="mono">{fmtPct(takeHomePct / 100)}</span>
+            </span>
+            <span>
+              <i className="c-federal" /> Federal <span className="mono">{fmtPct(federalPct / 100)}</span>
+            </span>
+            {statePct > 0 && (
+              <span>
+                <i className="c-state" /> State <span className="mono">{fmtPct(statePct / 100)}</span>
+              </span>
+            )}
+            <span>
+              <i className="c-ss" /> Social Security <span className="mono">{fmtPct(ssPct / 100)}</span>
+            </span>
+            <span>
+              <i className="c-medicare" /> Medicare <span className="mono">{fmtPct(medicarePct / 100)}</span>
+            </span>
+          </div>
+        </div>
+
+        <div className="stat-grid" style={{ marginTop: '1rem' }}>
+          <div className="stat money">
+            <div className="label">Take-home pay</div>
+            <div className="value">${fmt0(result.takeHomePay)}</div>
+            <div className="sub">{fmtPct(takeHomePct / 100)} of gross</div>
+          </div>
+          <div className="stat red">
+            <div className="label">Total taxes</div>
+            <div className="value">${fmt0(result.totalDeductions)}</div>
+            <div className="sub">{fmtPct(result.effectiveRate)} effective rate</div>
+          </div>
+          <div className="stat">
+            <div className="label">Federal tax</div>
+            <div className="value">${fmt0(result.federalTax)}</div>
+            <div className="sub">{fmtPct(federalPct / 100)} of gross</div>
+          </div>
+          <div className="stat">
+            <div className="label">{state.abbreviation} state tax</div>
+            <div className="value">${fmt0(result.stateTax)}</div>
+            <div className="sub">{state.hasStateTax ? `${fmtPct(statePct / 100)} of gross` : 'No state income tax'}</div>
+          </div>
         </div>
       </div>
 
       {/* Breakdown table */}
-      <div style={{
-        background: 'var(--bg-card)',
-        border: '1px solid var(--border)',
-        borderRadius: '12px',
-        overflow: 'hidden',
-        marginBottom: '2rem',
-      }}>
-        <h2 style={{ fontSize: '1rem', fontWeight: 600, padding: '1.25rem 1.5rem 0' }}>
-          {formatted} Salary Breakdown — {state.name}
-        </h2>
-        <div style={{ overflowX: 'auto' }}>
-          <table style={{ width: '100%', borderCollapse: 'collapse', marginTop: '1rem' }}>
+      <div className="table-card">
+        <div className="table-title">
+          <h2>
+            {formatted} salary breakdown &mdash; {state.name}
+          </h2>
+          <span className="badge badge-gold">2026 · single filer</span>
+        </div>
+        <div className="table-scroll">
+          <table className="ledger">
             <thead>
-              <tr style={{ borderBottom: '1px solid var(--border)' }}>
-                <th style={{ textAlign: 'left', padding: '0.75rem 1.5rem', fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}></th>
-                {periods.map(p => (
-                  <th key={p.label} style={{ textAlign: 'right', padding: '0.75rem 1.5rem', fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{p.label}</th>
+              <tr>
+                <th></th>
+                {periods.map((p) => (
+                  <th key={p.label} className="num">
+                    {p.label}
+                  </th>
                 ))}
               </tr>
             </thead>
             <tbody>
+              <tr>
+                <td style={{ fontWeight: 600 }}>Gross pay</td>
+                {periods.map((p) => (
+                  <td key={p.label} className="num">
+                    ${fmt(result.grossSalary / p.divisor)}
+                  </td>
+                ))}
+              </tr>
               {[
-                { label: 'Gross Pay', value: result.grossSalary, color: 'var(--text-primary)', bold: true },
-                { label: 'Federal Tax', value: result.federalTax, color: 'var(--red)', bold: false },
-                { label: `${state.abbreviation} State Tax`, value: result.stateTax, color: 'var(--red)', bold: false },
-                { label: 'Social Security', value: result.socialSecurity, color: 'var(--red)', bold: false },
-                { label: 'Medicare', value: result.medicare, color: 'var(--red)', bold: false },
+                { label: 'Federal tax', value: result.federalTax },
+                { label: `${state.abbreviation} state tax`, value: result.stateTax },
+                { label: 'Social Security', value: result.socialSecurity },
+                { label: 'Medicare', value: result.medicare },
               ].map((row) => (
-                <tr key={row.label} style={{ borderBottom: '1px solid var(--border)' }}>
-                  <td style={{ padding: '0.625rem 1.5rem', fontSize: '0.9375rem', fontWeight: row.bold ? 600 : 400 }}>{row.label}</td>
-                  {periods.map(p => (
-                    <td key={p.label} style={{
-                      textAlign: 'right',
-                      padding: '0.625rem 1.5rem',
-                      fontFamily: 'var(--font-mono)',
-                      fontSize: '0.875rem',
-                      color: row.value === 0 ? 'var(--text-muted)' : (row.bold ? 'var(--text-primary)' : row.color),
-                    }}>
-                      {row.value === 0 && !row.bold ? '$0.00' : `$${fmt(row.value / p.divisor)}`}
+                <tr key={row.label}>
+                  <td>{row.label}</td>
+                  {periods.map((p) => (
+                    <td
+                      key={p.label}
+                      className={`num ${row.value > 0 ? 'neg' : ''}`}
+                      style={row.value === 0 ? { color: 'var(--text-3)' } : undefined}
+                    >
+                      {row.value > 0 ? `−$${fmt(row.value / p.divisor)}` : '$0.00'}
                     </td>
                   ))}
                 </tr>
               ))}
-              {/* Total deductions row */}
-              <tr style={{ borderBottom: '2px solid var(--border)', background: 'var(--red-bg)' }}>
-                <td style={{ padding: '0.625rem 1.5rem', fontSize: '0.9375rem', fontWeight: 600, color: 'var(--red)' }}>Total Deductions</td>
-                {periods.map(p => (
-                  <td key={p.label} style={{
-                    textAlign: 'right',
-                    padding: '0.625rem 1.5rem',
-                    fontFamily: 'var(--font-mono)',
-                    fontSize: '0.875rem',
-                    fontWeight: 600,
-                    color: 'var(--red)',
-                  }}>
-                    -${fmt(result.totalDeductions / p.divisor)}
+              <tr className="subtotal">
+                <td>Total deductions</td>
+                {periods.map((p) => (
+                  <td key={p.label} className="num">
+                    −${fmt(result.totalDeductions / p.divisor)}
                   </td>
                 ))}
               </tr>
-              {/* Take-home row */}
-              <tr style={{ background: 'var(--green-bg)' }}>
-                <td style={{ padding: '0.75rem 1.5rem', fontSize: '1rem', fontWeight: 700, color: 'var(--green)' }}>Take-Home Pay</td>
-                {periods.map(p => (
-                  <td key={p.label} style={{
-                    textAlign: 'right',
-                    padding: '0.75rem 1.5rem',
-                    fontFamily: 'var(--font-mono)',
-                    fontSize: '1rem',
-                    fontWeight: 700,
-                    color: 'var(--green)',
-                  }}>
+              <tr className="total">
+                <td>Take-home pay</td>
+                {periods.map((p) => (
+                  <td key={p.label} className="num">
                     ${fmt(result.takeHomePay / p.divisor)}
                   </td>
                 ))}
@@ -290,125 +266,105 @@ export default async function SalaryPage({ params }: { params: Promise<{ state: 
         </div>
       </div>
 
-      <div className="ad-slot ad-slot-horizontal">Advertisement</div>
+      <div className="ad-slot ad-slot-horizontal" style={{ margin: 0 }}>Advertisement</div>
 
-      {/* Explanation section */}
-      <section style={{ marginTop: '2rem', maxWidth: '800px' }}>
-        <h2 style={{ fontSize: '1.375rem', fontWeight: 600, marginBottom: '1rem' }}>
-          What Does a {formatted} Salary Look Like in {state.name}?
-        </h2>
-        <p style={{ color: 'var(--text-secondary)', marginBottom: '1rem', lineHeight: 1.7 }}>
-          {taxDescription}
-        </p>
-        <p style={{ color: 'var(--text-secondary)', marginBottom: '1rem', lineHeight: 1.7 }}>
-          Federal income tax on a {formatted} salary is ${fmt(result.federalTax)} per year (after the $15,000 standard deduction). Social Security tax is ${fmt(result.socialSecurity)} (6.2% on earnings up to $168,600), and Medicare is ${fmt(result.medicare)} (1.45% on all earnings). After all deductions, your take-home pay is ${fmt(result.takeHomePay / 12)} per month or ${fmt(result.takeHomePay / 26)} per paycheck (bi-weekly).
-        </p>
-        {state.additionalInfo && (
-          <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7 }}>
-            {state.additionalInfo}
+      {/* Explanation */}
+      <section className="container-narrow" style={{ paddingLeft: 0, paddingRight: 0 }}>
+        <div className="prose">
+          <span className="eyebrow">In plain English</span>
+          <h2 style={{ marginTop: '0.5rem' }}>
+            What does a {formatted} salary look like in {state.name}?
+          </h2>
+          <p>{taxDescription}</p>
+          <p>
+            Federal income tax on a {formatted} salary is ${fmt(result.federalTax)} per year (after the $15,000
+            standard deduction). Social Security tax is ${fmt(result.socialSecurity)} (6.2% on earnings up to
+            $168,600), and Medicare is ${fmt(result.medicare)} (1.45% on all earnings). After all deductions, your
+            take-home pay is ${fmt(result.takeHomePay / 12)} per month or ${fmt(result.takeHomePay / 26)} per paycheck
+            (bi-weekly).
           </p>
-        )}
-      </section>
+          {state.additionalInfo && <p>{state.additionalInfo}</p>}
+        </div>
 
-      {/* Use the full interactive calculator */}
-      <section style={{
-        marginTop: '2rem',
-        padding: '1.25rem 1.5rem',
-        background: 'var(--bg-card)',
-        border: '1px solid var(--border-focus)',
-        borderRadius: '12px',
-        textAlign: 'center',
-      }}>
-        <p style={{ fontSize: '1rem', marginBottom: '0.75rem' }}>
-          Want to calculate a custom salary amount?
-        </p>
-        <a
-          href={`/${state.slug}`}
+        <div
+          className="card card-pad"
           style={{
-            display: 'inline-block',
-            padding: '0.625rem 1.5rem',
-            background: 'var(--accent)',
-            color: '#ffffff',
-            borderRadius: '8px',
-            textDecoration: 'none',
-            fontWeight: 600,
-            fontSize: '0.9375rem',
+            marginTop: '1.5rem',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '1rem',
+            flexWrap: 'wrap',
+            background: 'linear-gradient(135deg, #fff, var(--paper-2))',
           }}
         >
-          Use {state.name} Paycheck Calculator
-        </a>
+          <div>
+            <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.2rem', fontWeight: 600 }}>
+              Not exactly {formatted}?
+            </div>
+            <div className="muted" style={{ fontSize: '0.9rem', marginTop: '0.2rem' }}>
+              Enter any salary and pay frequency in the full {state.name} calculator.
+            </div>
+          </div>
+          <a href={`/${state.slug}`} className="btn btn-ink">
+            Open {state.name} calculator
+          </a>
+        </div>
       </section>
 
       {/* Other salaries in this state */}
-      <section style={{ marginTop: '3rem' }}>
-        <h3 style={{ fontSize: '1rem', fontWeight: 600, marginBottom: '1rem', color: 'var(--text-muted)' }}>
-          Other Salaries in {state.name}
-        </h3>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))',
-          gap: '0.75rem',
-        }}>
+      <section>
+        <div className="section-head">
+          <div>
+            <span className="eyebrow">Nearby salaries</span>
+            <h2>Other salaries in {state.name}</h2>
+          </div>
+        </div>
+        <div className="state-pills">
           {nearbySalaries.map((s) => (
-            <a
-              key={s}
-              href={`/${state.slug}/${salaryToSlug(s)}`}
-              style={{
-                display: 'block',
-                padding: '0.75rem 1rem',
-                background: 'var(--bg-card)',
-                border: '1px solid var(--border)',
-                borderRadius: '8px',
-                color: 'var(--text-primary)',
-                textDecoration: 'none',
-                fontSize: '0.9375rem',
-                fontWeight: 500,
-              }}
-            >
-              {formatSalary(s)} Salary
+            <a key={s} href={`/${state.slug}/${salaryToSlug(s)}`} className="state-pill">
+              <span className="abbr">{state.abbreviation}</span>
+              {formatSalary(s)} salary
             </a>
           ))}
         </div>
       </section>
 
-      {/* Same salary in other states */}
-      <section style={{ marginTop: '2rem' }}>
-        <h3 style={{ fontSize: '1rem', fontWeight: 600, marginBottom: '1rem', color: 'var(--text-muted)' }}>
-          {formatted} Salary in Other States
-        </h3>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
-          gap: '0.75rem',
-        }}>
+      {/* Same salary elsewhere */}
+      <section>
+        <div className="section-head">
+          <div>
+            <span className="eyebrow">Compare states</span>
+            <h2>{formatted} salary in other states</h2>
+          </div>
+          <a href="/#states" className="text-link">
+            All 50 states
+          </a>
+        </div>
+        <div className="stat-grid">
           {otherStates.map((s) => {
             const otherResult = calculateTakeHome(amount, s)
             return (
               <a
                 key={s.slug}
                 href={`/${s.slug}/${salaryToSlug(amount)}`}
-                style={{
-                  display: 'block',
-                  padding: '0.875rem 1.25rem',
-                  background: 'var(--bg-card)',
-                  border: '1px solid var(--border)',
-                  borderRadius: '8px',
-                  color: 'var(--text-primary)',
-                  textDecoration: 'none',
-                  fontSize: '0.875rem',
-                }}
+                className={`stat card-hover ${s.hasStateTax ? '' : 'money'}`}
+                style={{ display: 'block', color: 'inherit' }}
               >
-                <div style={{ fontWeight: 600, marginBottom: '0.25rem' }}>{s.abbreviation} &middot; {s.name}</div>
-                <div style={{ color: 'var(--green)', fontFamily: 'var(--font-mono)', fontSize: '0.8125rem' }}>
-                  ${fmt(otherResult.takeHomePay)} take-home
+                <div className="label">
+                  {s.abbreviation} &middot; {s.name}
                 </div>
+                <div className="value" style={{ color: 'var(--money-deep)' }}>
+                  ${fmt0(otherResult.takeHomePay)}
+                </div>
+                <div className="sub">take-home &middot; {fmtPct(otherResult.effectiveRate)} taxes</div>
               </a>
             )
           })}
         </div>
       </section>
 
-      <div className="ad-slot ad-slot-horizontal" style={{ marginTop: '2rem' }}>Advertisement</div>
-    </>
+      <div className="ad-slot ad-slot-horizontal" style={{ margin: 0 }}>Advertisement</div>
+    </div>
   )
 }

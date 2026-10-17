@@ -1,5 +1,6 @@
 import { blogPosts } from '@/data/blog'
 import type { Metadata } from 'next'
+import { blogIndexSchema } from '@/lib/seo'
 
 export const metadata: Metadata = {
   title: 'Blog — Tax Tips, State Comparisons & Salary Guides',
@@ -11,75 +12,80 @@ export const metadata: Metadata = {
   },
 }
 
+function fmtDate(d: string) {
+  return new Date(d + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
+}
+
 export default function BlogPage() {
+  // Newest first. Posts are appended to the data file as they publish, so
+  // sort here rather than relying on array order.
+  const sorted = [...blogPosts].sort((a, b) => (a.publishDate < b.publishDate ? 1 : -1))
+  const [featured, ...rest] = sorted
+
   return (
-    <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-      <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-        <h1
-          style={{
-            fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)',
-            fontWeight: 700,
-            lineHeight: 1.15,
-            marginBottom: '0.75rem',
-          }}
-        >
-          Paycheck & Tax Guides
-        </h1>
-        <p style={{ fontSize: '1.0625rem', color: 'var(--text-secondary)', maxWidth: '560px', margin: '0 auto' }}>
-          Practical guides to help you understand your paycheck, compare salaries across states, and plan your finances for 2026.
+    <div className="container page stack-lg">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogIndexSchema(blogPosts)) }}
+      />
+      <div className="page-head center">
+        <span className="eyebrow eyebrow-plain">{blogPosts.length} guides and counting</span>
+        <h1>Paycheck &amp; tax guides</h1>
+        <p className="lede">
+          Practical, plain-English explainers on withholding, deductions, state taxes, and what really lands in your
+          account. New guides published regularly.
         </p>
       </div>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-        {blogPosts.map((post) => (
-          <a
-            key={post.slug}
-            href={`/blog/${post.slug}`}
-            style={{
-              display: 'block',
-              padding: '1.5rem',
-              background: 'var(--bg-card)',
-              border: '1px solid var(--border)',
-              borderRadius: '12px',
-              textDecoration: 'none',
-              color: 'inherit',
-              transition: 'border-color 0.15s, box-shadow 0.15s',
-            }}
-          >
-            <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start' }}>
-              <div
-                style={{
-                  width: '56px',
-                  height: '56px',
-                  borderRadius: '10px',
-                  background: post.heroColor,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: '24px',
-                  fontWeight: 700,
-                  color: '#fff',
-                  fontFamily: 'var(--font-mono)',
-                  flexShrink: 0,
-                }}
-              >
-                {post.heroIcon}
-              </div>
-              <div style={{ flex: 1 }}>
-                <h2 style={{ fontSize: '1.125rem', fontWeight: 600, marginBottom: '0.375rem', lineHeight: 1.3 }}>
-                  {post.title}
-                </h2>
-                <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '0.5rem' }}>
-                  {post.excerpt}
-                </p>
-                <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-                  {new Date(post.publishDate).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} · {post.readingTime}
-                </div>
-              </div>
+      {featured && (
+        <a href={`/blog/${featured.slug}`} className="featured">
+          <div className="featured-art" style={{ background: featured.heroColor }}>
+            <span className="glyph" aria-hidden="true">
+              {featured.heroIcon}
+            </span>
+          </div>
+          <div className="featured-body">
+            <span className="badge badge-gold">Latest</span>
+            <h2>{featured.title}</h2>
+            <p>{featured.excerpt}</p>
+            <div className="post-meta">
+              <span>{fmtDate(featured.publishDate)}</span>
+              <span className="dot" />
+              <span>{featured.readingTime}</span>
             </div>
-          </a>
-        ))}
-      </div>
+          </div>
+        </a>
+      )}
+
+      <section>
+        <div className="section-head">
+          <div>
+            <span className="eyebrow">All guides</span>
+            <h2>Newest to oldest</h2>
+          </div>
+        </div>
+        <div className="post-grid">
+          {rest.map((post) => (
+            <a
+              key={post.slug}
+              href={`/blog/${post.slug}`}
+              className="post-card"
+              style={{ ['--post-color' as string]: post.heroColor }}
+            >
+              <span className="glyph" aria-hidden="true">
+                {post.heroIcon}
+              </span>
+              <h3>{post.title}</h3>
+              <p>{post.excerpt}</p>
+              <div className="post-meta">
+                <span>{fmtDate(post.publishDate)}</span>
+                <span className="dot" />
+                <span>{post.readingTime}</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
     </div>
   )
 }

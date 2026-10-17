@@ -28,7 +28,8 @@ const faqs = [
 
 export default function ContactPage() {
   return (
-    <div style={{ maxWidth: '720px', margin: '0 auto' }}>
+    <div className="container container-narrow page">
+      <div className="page-doc">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(faqs)) }}
@@ -88,6 +89,7 @@ export default function ContactPage() {
       <p style={{ color: 'var(--text-muted)', fontSize: '0.875rem' }}>
         PaycheckCalc is operated by <a href="https://www.aipeakbiz.com" target="_blank" rel="noopener nofollow" style={{ color: 'var(--accent)' }}>AI Peak Biz</a>.
       </p>
+      </div>
     </div>
   )
 }

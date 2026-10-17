@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import ArticleFooter from '@/components/ArticleFooter'
 
 export const metadata: Metadata = {
   title: 'What Is a Good Salary in Each US State? (2026 Cost-Adjusted)',
@@ -71,6 +72,11 @@ const stateData: [string, string, string, string, string, string][] = [
 export default function GoodSalaryByStatePage() {
   return (
     <article style={{ maxWidth: '800px', margin: '0 auto' }}>
+      <nav className="crumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span className="sep">/</span>
+        <a href="/blog">Guides</a>
+      </nav>
       {/* Hero SVG */}
       <svg
         viewBox="0 0 600 200"
@@ -650,24 +656,7 @@ export default function GoodSalaryByStatePage() {
       </ul>
 
       {/* Back to blog */}
-      <div style={{ textAlign: 'center', paddingBottom: '2rem' }}>
-        <a
-          href="/blog"
-          style={{
-            display: 'inline-block',
-            padding: '0.75rem 1.5rem',
-            background: '#f8fafc',
-            border: '1px solid #e2e8f0',
-            borderRadius: '8px',
-            color: '#2563eb',
-            textDecoration: 'none',
-            fontSize: '0.9375rem',
-            fontWeight: 500,
-          }}
-        >
-          &larr; Back to all articles
-        </a>
-      </div>
+      <ArticleFooter current="good-salary-by-state" />
     </article>
   )
 }

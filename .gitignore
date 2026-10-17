@@ -2,3 +2,9 @@
 node_modules
 out
 *.tsbuildinfo
+
+# OS + local planning artifacts (see CLAUDE.md)
+.DS_Store
+cluster-plan.md
+cluster-plan.json
+cluster-map.html
