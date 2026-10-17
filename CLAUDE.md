@@ -1,5 +1,5 @@
 # Paycheck Calculator — Project CLAUDE.md
-# LAST UPDATED: 2026-10-16
+# LAST UPDATED: 2026-10-17
 
 ## PROJECT OVERVIEW
 - **Site:** paycheck.center
@@ -77,6 +77,9 @@
 - **Canonical host fixed:** the apex `paycheck.center` 307-redirects to `www.paycheck.center`, but canonicals, sitemap, robots, and schema URLs pointed at the apex. All now use `https://www.paycheck.center`.
 - **Salary page URL pattern** is `/[state]/[amount]-salary` (e.g. `/texas/75000-salary`). Plain `/texas/75000` is a 404 by design.
 - **Routine prompt fixed** to use the correct salary URL pattern and to rely on `ArticleFooter` for post schema.
+- **llms.txt is now generated** by `src/app/llms.txt/route.ts` from states + blog data (the static `public/llms.txt` was removed), so it lists every calculator and guide and never goes stale.
+- **Shipped 2026-10-17:** commit 5bb0bde pushed to main and verified live on www.paycheck.center within a minute (new layout, newest-first blog, www canonicals, BlogPosting schema). The first daily routine run (commission income post) landed the same morning and was converted to the new footer/breadcrumb before the push.
+- **SEO audit suite:** Wylie asked for every `/seo` skill to run against the live site; a task card "Full SEO audit suite on live paycheck.center" was proposed. Reports land in `seo-reports/` (git-ignored).
 
 ### Salary-Specific Pages (2026-05-27)
 - `/[state]/[salary]` dynamic route for salary-specific paycheck breakdowns
@@ -121,7 +124,8 @@
 - **Topic selection:** the prompt carries a long idea list plus permission to pick long-tail angles; it must check `blog.ts` for duplicates first.
 
 ## WHAT'S NEXT
-- Confirm Vercel deploy of the redesign succeeded and spot-check www.paycheck.center on phone
+- Run the full `/seo` suite on the live site (task card proposed 2026-10-17) and act on SUMMARY.md
+- Spot-check www.paycheck.center on a real phone
 - Watch the first few daily routine runs for quality and duplicates
 - Consider a blog post layout wrapper so new posts no longer need inline styles
 - Replace `.ad-slot` placeholders with real AdSense `<ins>` units when Wylie is ready (ask first)
