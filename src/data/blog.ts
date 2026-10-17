@@ -890,6 +890,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#2563eb',
     heroIcon: 'P',
   },
+  {
+    title: 'How Commission Income Is Taxed in 2026: Withholding, Rates & Worked Examples',
+    slug: 'how-commission-income-is-taxed',
+    publishDate: '2026-10-17',
+    excerpt: 'Commission income is ordinary income taxed at your marginal rate — but the 22% withholding on your check is just an estimate. Here\'s the exact math, both withholding methods, and a full $75,000 worked example.',
+    keywords: 'how commission income is taxed 2026, commission tax rate, commission withholding, supplemental wages, 22 percent commission tax, commission take home pay, sales commission taxes',
+    readingTime: '9 min read',
+    heroColor: '#ea580c',
+    heroIcon: '$',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
