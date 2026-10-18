@@ -900,6 +900,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#ea580c',
     heroIcon: '$',
   },
+  {
+    title: 'Tuition Reimbursement and Education Benefits: How the $5,250 Tax Break Works (2026)',
+    slug: 'tuition-reimbursement-taxes-2026',
+    publishDate: '2026-10-18',
+    excerpt: 'Your employer can give you up to $5,250/year in completely tax-free tuition reimbursement — saving you $1,557 in federal taxes at a $70,000 salary. Here\'s exactly how Section 127 works.',
+    keywords: 'tuition reimbursement taxes 2026, employer education assistance, Section 127, is tuition reimbursement taxable, tuition reimbursement tax-free, employer tuition assistance, educational assistance program paycheck',
+    readingTime: '9 min read',
+    heroColor: '#4f46e5',
+    heroIcon: 'T',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
