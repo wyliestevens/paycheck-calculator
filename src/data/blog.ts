@@ -910,6 +910,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#4f46e5',
     heroIcon: 'T',
   },
+  {
+    title: 'Relocation Bonus Taxes: How Much Will You Keep in 2026?',
+    slug: 'relocation-bonus-taxes-2026',
+    publishDate: '2026-10-19',
+    excerpt: 'A $10,000 relocation bonus puts about $6,900–$7,200 in your pocket after federal withholding, FICA, and state tax. Here\'s the exact math and how a gross-up can make you whole.',
+    keywords: 'relocation bonus taxes 2026, relocation assistance taxable, how is relocation bonus taxed, relocation package taxes, employer relocation gross-up, moving allowance taxes 2026',
+    readingTime: '9 min read',
+    heroColor: '#059669',
+    heroIcon: '→',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
