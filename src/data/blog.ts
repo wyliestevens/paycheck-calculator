@@ -920,6 +920,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#059669',
     heroIcon: '→',
   },
+  {
+    title: 'Local Income Taxes: How NYC, Philadelphia, and City Taxes Affect Your Paycheck (2026)',
+    slug: 'local-income-taxes-2026',
+    publishDate: '2026-10-20',
+    excerpt: 'NYC city tax costs up to $2,800 a year on a $70,000 salary — and Philadelphia\'s wage tax hits commuters too. Here\'s exactly how local income taxes work and how to find out if you owe them.',
+    keywords: 'local income tax 2026, NYC city tax, Philadelphia wage tax 2026, Ohio municipal income tax, city income tax paycheck, local tax withholding, city tax on paycheck',
+    readingTime: '9 min read',
+    heroColor: '#be185d',
+    heroIcon: 'L',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
