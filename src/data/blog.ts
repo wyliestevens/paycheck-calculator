@@ -930,6 +930,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#be185d',
     heroIcon: 'L',
   },
+  {
+    title: 'Per Diem Pay: What\'s Taxable and What\'s Not (2026)',
+    slug: 'per-diem-pay-taxes-2026',
+    publishDate: '2026-10-21',
+    excerpt: 'Per diem under a valid accountable plan is completely tax-free — but exceed the IRS daily rate and the excess becomes taxable wages. Full guide with 2026 GSA rates and a worked dollar example.',
+    keywords: 'per diem taxable 2026, is per diem income, per diem tax rules, accountable plan per diem, GSA per diem rates 2026, per diem W-2, high-low per diem method',
+    readingTime: '9 min read',
+    heroColor: '#0891b2',
+    heroIcon: '✈',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
