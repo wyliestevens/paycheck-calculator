@@ -115,8 +115,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <div>
                 <Brand light />
                 <p className="footer-blurb">
-                  Free take-home pay estimates for every US state, built on 2026 federal and state rates. Estimates
-                  assume a single filer with the standard deduction. Talk to a tax professional for precise figures.
+                  Free take-home pay estimates for every US state, built on 2026 federal and state rates, with filing
+                  status and pre-tax deductions. Written and maintained by Wylie Stevens. Talk to a tax professional for
+                  precise figures.
                 </p>
               </div>
               <div className="footer-col">

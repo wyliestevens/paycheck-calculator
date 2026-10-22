@@ -4,6 +4,8 @@ import PaycheckCalculator from '@/components/PaycheckCalculator'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { breadcrumbSchema, stateCalculatorSchema, canonicalUrl, ogImage, webPageSchema } from '@/lib/seo'
+import { neighbors as neighborMap } from '@/data/neighbors'
+import { rankState, neighborComparison } from '@/lib/salary-insights'
 
 export function generateStaticParams() {
   return states.map((state) => ({ state: state.slug }))
@@ -66,14 +68,18 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
 
   const topRate = topRateOf(state)
 
-  // Neighbouring states (alphabetically) for internal linking
-  const stateIndex = states.findIndex((s) => s.slug === slug)
-  const nearby = [
-    states[(stateIndex - 2 + states.length) % states.length],
-    states[(stateIndex - 1 + states.length) % states.length],
-    states[(stateIndex + 1) % states.length],
-    states[(stateIndex + 2) % states.length],
-  ]
+  // Bordering states for internal linking (no-tax states for Alaska and Hawaii)
+  const borderAbbrs = neighborMap[state.abbreviation] ?? []
+  const nearby = borderAbbrs.length
+    ? states.filter((s) => borderAbbrs.includes(s.abbreviation))
+    : states.filter((s) => !s.hasStateTax && s.slug !== state.slug).slice(0, 4)
+  const ranking = rankState(state, 75000)
+  const border = neighborComparison(state, 75000)
+  const ordinal = (n: number) => {
+    const s = ['th', 'st', 'nd', 'rd']
+    const v = n % 100
+    return n + (s[(v - 20) % 10] || s[v] || s[0])
+  }
 
   // Popular salary snapshots for this state
   const snapshotAmounts = [40000, 50000, 60000, 75000, 100000, 120000, 150000, 200000]
@@ -157,6 +163,42 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
             )
           })}
         </div>
+
+        <div className="table-card" style={{ marginTop: '1.5rem' }}>
+          <div className="table-title">
+            <h3>Every pre-calculated salary in {state.name}</h3>
+            <span className="badge badge-gold">{taxYear} · single filer</span>
+          </div>
+          <div className="table-scroll">
+            <table className="ledger">
+              <thead>
+                <tr>
+                  <th>Gross salary</th>
+                  <th className="num">Take-home / year</th>
+                  <th className="num">Per month</th>
+                  <th className="num">Bi-weekly</th>
+                  <th className="num">Effective rate</th>
+                </tr>
+              </thead>
+              <tbody>
+                {salaryAmounts.map((amount) => {
+                  const r = calculateTakeHome(amount, state)
+                  return (
+                    <tr key={amount}>
+                      <td>
+                        <a href={`/${state.slug}/${salaryToSlug(amount)}`}>{formatSalary(amount)}</a>
+                      </td>
+                      <td className="num" style={{ color: 'var(--money-deep)', fontWeight: 600 }}>{money0(r.takeHomePay)}</td>
+                      <td className="num">{money0(r.takeHomePay / 12)}</td>
+                      <td className="num">{money0(r.takeHomePay / 26)}</td>
+                      <td className="num">{(r.effectiveRate * 100).toFixed(1)}%</td>
+                    </tr>
+                  )
+                })}
+              </tbody>
+            </table>
+          </div>
+        </div>
       </section>
 
       {/* ---------------- Details ---------------- */}
@@ -216,6 +258,17 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
               : ` Since ${state.name} has no state income tax, your only deductions are federal taxes and FICA.`}{' '}
             Social Security takes 6.2% of earnings up to {usd(socialSecurityWageCap)}, and Medicare takes 1.45% of all earnings.
           </p>
+          <h3>How {state.name} compares</h3>
+          <p>
+            On a $75,000 salary, {state.name} ranks <strong>{ordinal(ranking.rank)} of 50 states</strong> for take-home pay
+            {ranking.tiedWith > 0 ? ` (tied with the other no-income-tax states)` : ''}: ${money0(ranking.best.result.takeHomePay).slice(1)} in{' '}
+            {ranking.best.state.name} at the top, {money0(ranking.worst.result.takeHomePay)} in {ranking.worst.state.name} at the
+            bottom, and {money0(calculateTakeHome(75000, state).takeHomePay)} here.{' '}
+            {border.length > 0 && borderAbbrs.length > 0
+              ? `Among neighbouring states, ${border[0].state.name} keeps the most (${money0(border[0].result.takeHomePay)}) and ${border[border.length - 1].state.name} the least (${money0(border[border.length - 1].result.takeHomePay)}).`
+              : ''}{' '}
+            See the full comparison on the <a href={`/${state.slug}/75000-salary`}>$75,000 in {state.name}</a> page.
+          </p>
         </div>
       </section>
 
@@ -224,7 +277,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
         <div className="section-head">
           <div>
             <span className="eyebrow">Compare</span>
-            <h2>Paycheck calculators for other states</h2>
+            <h2>{borderAbbrs.length ? `States bordering ${state.name}` : 'States with no income tax'}</h2>
           </div>
           <a href="/#states" className="text-link">
             All 50 states

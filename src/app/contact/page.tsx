@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     question: 'Are these calculations accurate?',
-    answer: 'Our estimates are based on 2026 federal and state tax rates for single filers using the standard deduction. They do not account for pre-tax deductions, local taxes, or individual tax situations. For exact figures, consult a tax professional.',
+    answer: 'Our estimates use 2026 federal and state tax rates with the standard deduction for your filing status, and can include 401(k) and health-plan deductions. They do not account for tax credits, local taxes, or extra withholding. For exact figures, consult a tax professional.',
   },
   {
     question: 'I found an error in a state\'s tax rate.',
@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     question: 'Can I use PaycheckCalc for married filing jointly?',
-    answer: 'Currently, PaycheckCalc calculates taxes for single filers only. We plan to add additional filing statuses in the future.',
+    answer: 'Yes. Every state calculator lets you choose single, married filing jointly, or head of household. The pre-calculated salary pages show the single-filer figure; open the calculator on any state page to change it.',
   },
 ]
 

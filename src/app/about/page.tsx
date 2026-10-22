@@ -93,21 +93,26 @@ export default function AboutPage() {
             Social Security tax: 6.2% of wages up to the <strong>{usd(socialSecurityWageCap)}</strong> wage base
           </li>
           <li>
-            Medicare tax: 1.45% of all wages, plus the 0.9% Additional Medicare Tax above {usd(additionalMedicareThreshold)}{' '}
-            (shown in guides; not applied by the calculator)
+            Medicare tax: 1.45% of all wages, plus the 0.9% Additional Medicare Tax on wages above{' '}
+            {usd(additionalMedicareThreshold)} (single) or $250,000 (married filing jointly)
           </li>
           <li>State income tax: each state&rsquo;s own flat rate or bracket table and standard deduction, applied to the same gross salary</li>
         </ul>
         <p>
-          Taxable income is gross salary minus the standard deduction. Tax is computed bracket by bracket, then Social
-          Security and Medicare are applied to gross wages. Take-home pay is what remains, divided by the number of pay
-          periods you choose.
+          Taxable income is gross salary minus any pre-tax deductions you enter and the standard deduction for your
+          filing status (single, married filing jointly, or head of household). Tax is computed bracket by bracket, then
+          Social Security and Medicare are applied to wages after Section 125 benefits (health, HSA, FSA). Take-home pay
+          is what remains, divided by the number of pay periods you choose. State tables are single-filer; for joint
+          filers the state deduction and bracket widths are doubled, which matches most states but not all.
+        </p>
+        <p>
+          The pre-calculated salary pages (for example <a href="/texas/75000-salary">$75,000 in Texas</a>) always show the
+          single-filer, no-deductions case so they are comparable across states.
         </p>
 
         <h3>What the estimate leaves out</h3>
         <ul>
-          <li>Pre-tax benefits such as 401(k) contributions, health premiums, HSA or FSA deposits</li>
-          <li>Filing statuses other than single, dependents, and credits</li>
+          <li>Dependents, tax credits (child tax credit, earned income credit) and itemized deductions</li>
           <li>City or county income taxes (for example New York City or Philadelphia)</li>
           <li>State disability, paid-leave and unemployment contributions withheld from employees in some states</li>
           <li>Extra withholding you request on Form W-4, bonuses taxed at the supplemental rate, and overtime</li>

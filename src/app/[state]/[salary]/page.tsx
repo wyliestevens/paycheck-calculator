@@ -1,6 +1,10 @@
 import { states, getStateBySlug, federalStandardDeduction, socialSecurityWageCap, taxYear, usd } from '@/data/states'
+import { neighbors as neighborMap } from '@/data/neighbors'
+
+const neighborsOf = (abbr: string) => neighborMap[abbr] ?? []
 import { calculateTakeHome, salaryAmounts, formatSalary, parseSalarySlug, salaryToSlug } from '@/lib/tax-calculator'
 import { breadcrumbSchema, canonicalUrl, ogImage, webPageSchema } from '@/lib/seo'
+import { hourlyRate, federalMarginal, stateMarginal, rankState, neighborComparison, nextStep, compareSet } from '@/lib/salary-insights'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
@@ -95,10 +99,24 @@ export default async function SalaryPage({ params }: { params: Promise<{ state: 
   const aboveSalaries = otherSalaries.filter((s) => s > amount).slice(0, 4)
   const nearbySalaries = [...belowSalaries, ...aboveSalaries]
 
-  // Same salary in other states
-  const noTaxStates = states.filter((s) => !s.hasStateTax && s.slug !== state.slug).slice(0, 3)
-  const taxStates = states.filter((s) => s.hasStateTax && s.slug !== state.slug)
-  const otherStates = [...noTaxStates, ...taxStates.slice(0, 5)]
+  // Same salary in other states: bordering states first, then the best and worst in the country
+  const otherStates = compareSet(state, amount)
+
+  // Computed context that differs on every page
+  const hourly = hourlyRate(amount)
+  const fed = federalMarginal(amount)
+  const stateRate = stateMarginal(amount, state)
+  const ranking = rankState(state, amount)
+  const border = neighborComparison(state, amount)
+  const step = nextStep(state, amount)
+  const hasBorder = (neighborsOf(state.abbreviation)).length > 0
+  const bestNeighbor = border[0]
+  const worstNeighbor = border[border.length - 1]
+  const ordinal = (n: number) => {
+    const s = ['th', 'st', 'nd', 'rd']
+    const v = n % 100
+    return n + (s[(v - 20) % 10] || s[v] || s[0])
+  }
 
   const breadcrumbs = breadcrumbSchema([
     { name: 'Home', url: canonicalUrl() },
@@ -303,6 +321,23 @@ export default async function SalaryPage({ params }: { params: Promise<{ state: 
             take-home pay is ${fmt(result.takeHomePay / 12)} per month or ${fmt(result.takeHomePay / 26)} per paycheck
             (bi-weekly).
           </p>
+          <p>
+            Your last dollar of income is taxed at the <strong>{Math.round(fed.rate * 100)}% federal bracket</strong> (taxable
+            income of ${fmt0(fed.taxable)} after the {usd(federalStandardDeduction)} deduction
+            {fed.ceiling ? `, which runs up to $${fmt0(fed.ceiling)}` : ''})
+            {state.hasStateTax ? ` plus ${(stateRate * 100).toFixed(2)}% ${state.abbreviation} state tax` : ''}, so each extra
+            dollar you earn keeps roughly {Math.round((1 - fed.rate - stateRate - 0.0765) * 100)} cents. Spread over a standard
+            2,080-hour year, {formatted} works out to <strong>${fmt(hourly)} an hour</strong> before tax and about{' '}
+            ${fmt(result.takeHomePay / 2080)} an hour after it.
+          </p>
+          {step && (
+            <p>
+              A raise to {formatSalary(step.amount)} would add ${fmt0(step.grossGain)} in gross pay but only{' '}
+              <strong>${fmt0(step.netGain)}</strong> in take-home ({Math.round(step.keptShare * 100)}% of the raise), because the
+              extra income is taxed at your marginal rate rather than your {fmtPct(result.effectiveRate)} average rate. See{' '}
+              <a href={`/${state.slug}/${salaryToSlug(step.amount)}`}>{formatSalary(step.amount)} in {state.name}</a>.
+            </p>
+          )}
           {state.additionalInfo && <p>{state.additionalInfo}</p>}
         </div>
 
@@ -332,6 +367,126 @@ export default async function SalaryPage({ params }: { params: Promise<{ state: 
         </div>
       </section>
 
+      {/* Where this state ranks */}
+      <section className="container-narrow" style={{ paddingLeft: 0, paddingRight: 0 }}>
+        <div className="prose">
+          <span className="eyebrow">Across the country</span>
+          <h2 style={{ marginTop: '0.5rem' }}>
+            Where {state.name} ranks for a {formatted} salary
+          </h2>
+          <p>
+            {state.name} ranks <strong>{ordinal(ranking.rank)} of 50 states</strong> for take-home pay on {formatted}
+            {ranking.tiedWith > 0 ? ` (tied with ${ranking.tiedWith} other no-income-tax state${ranking.tiedWith === 1 ? '' : 's'})` : ''}.{' '}
+            {ranking.keepMore > 0
+              ? `${ranking.keepMore} state${ranking.keepMore === 1 ? '' : 's'} let you keep more, and ${ranking.keepLess} keep less.`
+              : `No state lets you keep more at this salary.`}{' '}
+            The best is {ranking.best.state.name} at ${fmt0(ranking.best.result.takeHomePay)} and the lowest is{' '}
+            {ranking.worst.state.name} at ${fmt0(ranking.worst.result.takeHomePay)}, a spread of{' '}
+            ${fmt0(ranking.best.result.takeHomePay - ranking.worst.result.takeHomePay)} a year on the same gross pay.{' '}
+            {Math.abs(ranking.vsMedian) < 1
+              ? `${state.name} sits exactly at the national median.`
+              : ranking.vsMedian > 0
+              ? `${state.name} keeps $${fmt0(ranking.vsMedian)} more than the median state.`
+              : `${state.name} keeps $${fmt0(-ranking.vsMedian)} less than the median state.`}
+          </p>
+        </div>
+      </section>
+
+      {/* Neighbouring states */}
+      <section>
+        <div className="section-head">
+          <div>
+            <span className="eyebrow">{hasBorder ? 'Across the border' : 'Compare'}</span>
+            <h2>
+              {hasBorder ? `${formatted} in the states next to ${state.name}` : `${formatted} in states with no income tax`}
+            </h2>
+            <p>
+              {hasBorder
+                ? `Same salary, same federal taxes; only the state tax changes. ${bestNeighbor.delta > 0.5 ? `${bestNeighbor.state.name} keeps $${fmt0(bestNeighbor.delta)} more than ${state.name}` : `${state.name} matches or beats every neighbour`}${worstNeighbor.delta < -0.5 ? `, while ${worstNeighbor.state.name} keeps $${fmt0(-worstNeighbor.delta)} less.` : '.'}`
+                : `${state.name} has no land neighbours, so here is how ${formatted} compares with the no-income-tax states.`}
+            </p>
+          </div>
+        </div>
+        <div className="table-card">
+          <div className="table-scroll">
+            <table className="ledger">
+              <thead>
+                <tr>
+                  <th>State</th>
+                  <th className="num">State tax</th>
+                  <th className="num">Take-home</th>
+                  <th className="num">vs {state.abbreviation}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="total">
+                  <td>{state.name} (this page)</td>
+                  <td className="num">${fmt0(result.stateTax)}</td>
+                  <td className="num">${fmt0(result.takeHomePay)}</td>
+                  <td className="num">—</td>
+                </tr>
+                {border.map((row) => (
+                  <tr key={row.state.slug}>
+                    <td>
+                      <a href={`/${row.state.slug}/${salaryToSlug(amount)}`}>{row.state.name}</a>
+                    </td>
+                    <td className="num">${fmt0(row.result.stateTax)}</td>
+                    <td className="num">${fmt0(row.result.takeHomePay)}</td>
+                    <td className={`num ${row.delta < -0.5 ? 'neg' : ''}`} style={row.delta > 0.5 ? { color: 'var(--money-deep)' } : undefined}>
+                      {Math.abs(row.delta) < 0.5 ? 'same' : `${row.delta > 0 ? '+' : '−'}$${fmt0(Math.abs(row.delta))}`}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* Questions people ask */}
+      <section className="container-narrow" style={{ paddingLeft: 0, paddingRight: 0 }}>
+        <div className="prose">
+          <span className="eyebrow">Quick answers</span>
+          <h2 style={{ marginTop: '0.5rem' }}>
+            {formatted} in {state.name}: common questions
+          </h2>
+          <h3>How much is {formatted} after taxes in {state.name}?</h3>
+          <p>
+            About <strong>${fmt0(result.takeHomePay)} a year</strong>, or ${fmt0(result.takeHomePay / 12)} a month, for a single
+            filer taking the standard deduction in {taxYear}. Total taxes come to ${fmt0(result.totalDeductions)}, an effective
+            rate of {fmtPct(result.effectiveRate)}.
+          </p>
+          <h3>How much is {formatted} a year per paycheck?</h3>
+          <p>
+            Paid bi-weekly (26 checks), you would see about <strong>${fmt(result.takeHomePay / 26)}</strong> per check after taxes.
+            Paid twice a month (24 checks), ${fmt(result.takeHomePay / 24)}; weekly, ${fmt(result.takeHomePay / 52)}; monthly,{' '}
+            ${fmt(result.takeHomePay / 12)}.
+          </p>
+          <h3>What is {formatted} a year hourly?</h3>
+          <p>
+            {formatted} divided by 2,080 working hours is <strong>${fmt(hourly)} an hour</strong> gross. After {state.name} and
+            federal taxes it is about ${fmt(result.takeHomePay / 2080)} an hour.
+          </p>
+          <h3>What tax bracket is {formatted} in?</h3>
+          <p>
+            The {Math.round(fed.rate * 100)}% federal bracket for a single filer
+            {state.hasStateTax
+              ? state.taxType === 'flat'
+                ? `, plus ${state.name}'s flat ${(stateRate * 100).toFixed(2)}% state tax`
+                : `, and the ${(stateRate * 100).toFixed(2)}% ${state.name} state bracket`
+              : `; ${state.name} has no state income tax`}
+            . Only the income above each threshold is taxed at the higher rate, which is why your average rate ({fmtPct(result.effectiveRate)})
+            is lower than your bracket.
+          </p>
+          <h3>Does this include 401(k) or health insurance?</h3>
+          <p>
+            No. Pre-tax contributions lower your taxable income, so a 401(k) deferral or health premium would reduce the taxes
+            above and the amount in your check. Run your own numbers, including filing status and pre-tax deductions, in the{' '}
+            <a href={`/${state.slug}`}>{state.name} paycheck calculator</a>.
+          </p>
+        </div>
+      </section>
+
       {/* Other salaries in this state */}
       <section>
         <div className="section-head">
@@ -356,6 +511,7 @@ export default async function SalaryPage({ params }: { params: Promise<{ state: 
           <div>
             <span className="eyebrow">Compare states</span>
             <h2>{formatted} salary in other states</h2>
+            <p>Neighbours, then the best and worst states in the country for this salary.</p>
           </div>
           <a href="/#states" className="text-link">
             All 50 states
