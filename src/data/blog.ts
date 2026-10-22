@@ -1010,6 +1010,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#0891b2',
     heroIcon: '✈',
   },
+  {
+    title: 'Shift Differential Pay: How Night Shifts and Weekend Pay Are Taxed in 2026',
+    slug: 'shift-differential-pay-taxes-2026',
+    publishDate: '2026-10-22',
+    excerpt: 'Shift differential pay is taxed as ordinary income — just like your base wages. Here\'s exactly how night shift and weekend pay affect your take-home, with a full worked example at $25/hr plus a 15% overnight differential.',
+    keywords: 'shift differential pay taxes 2026, how is shift differential taxed, night shift pay tax, weekend differential tax, overtime vs shift differential, shift pay take-home',
+    readingTime: '9 min read',
+    heroColor: '#be185d',
+    heroIcon: '☾',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
