@@ -1,14 +1,16 @@
 import { blogPosts } from '@/data/blog'
 import type { Metadata } from 'next'
-import { blogIndexSchema } from '@/lib/seo'
+import { blogIndexSchema, breadcrumbSchema, canonicalUrl, ogImage } from '@/lib/seo'
 
 export const metadata: Metadata = {
   title: 'Blog — Tax Tips, State Comparisons & Salary Guides',
   description: 'Paycheck guides, state tax comparisons, salary planning tips, and everything you need to understand your take-home pay in 2026.',
   alternates: { canonical: '/blog' },
   openGraph: {
-    title: 'PaycheckCalc Blog',
+    title: 'Paycheck & Tax Guides | PaycheckCalc',
     description: 'Tax tips, state comparisons, and salary guides for 2026.',
+    url: '/blog',
+    images: ogImage('/og/page/blog', 'PaycheckCalc paycheck and tax guides'),
   },
 }
 
@@ -27,6 +29,12 @@ export default function BlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogIndexSchema(blogPosts)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema([{ name: 'Home', url: canonicalUrl() }, { name: 'Guides', url: canonicalUrl('/blog') }])),
+        }}
       />
       <div className="page-head center">
         <span className="eyebrow eyebrow-plain">{blogPosts.length} guides and counting</span>

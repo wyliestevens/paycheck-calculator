@@ -1,7 +1,7 @@
 import { states, federalBrackets, federalStandardDeduction, socialSecurityWageCap, additionalMedicareThreshold, taxYear, taxDataUpdated, usd } from '@/data/states'
 import { blogPosts } from '@/data/blog'
 import { salaryAmounts, salaryToSlug, formatSalary } from '@/lib/tax-calculator'
-import { canonicalUrl } from '@/lib/seo'
+import { canonicalUrl, authorName, authorPath } from '@/lib/seo'
 
 export const dynamic = 'force-static'
 
@@ -17,11 +17,11 @@ export function GET() {
   const lines: string[] = [
     '# PaycheckCalc (paycheck.center)',
     '',
-    '> Free paycheck calculator for all 50 US states. Calculate take-home pay after federal, state, Social Security, and Medicare taxes using 2026 rates, plus plain-English guides on payroll taxes and withholding.',
+    `> Free paycheck calculator for all 50 US states. Calculate take-home pay after federal, state, Social Security, and Medicare taxes using ${taxYear} rates, plus plain-English guides on payroll taxes and withholding. Also known as Paycheck Center.`,
     '',
     '## About',
     '',
-    'PaycheckCalc is a free online tool that helps employees and job seekers estimate take-home pay in any US state. Calculations run in the browser; no financial data is transmitted or stored. Operated by AI Peak Biz (https://www.aipeakbiz.com). Contact: contact@aipeakbiz.com.',
+    `PaycheckCalc is a free online tool that helps employees and job seekers estimate take-home pay in any US state. Calculations run in the browser; no financial data is transmitted or stored. Built and maintained by ${authorName} (${canonicalUrl(authorPath)}), founder of AI Peak Biz (https://www.aipeakbiz.com). Contact: contact@aipeakbiz.com. Methodology: ${canonicalUrl('/about#methodology')}.`,
     '',
     `## Key facts (${taxYear}, single filer; verified ${taxDataUpdated})`,
     '',
@@ -38,7 +38,8 @@ export function GET() {
     '',
     `- [Home](${canonicalUrl('/')}): State search and links to all 50 calculators`,
     `- [Guides](${canonicalUrl('/blog')}): ${blogPosts.length} articles on paychecks, withholding, and taxes`,
-    `- [About](${canonicalUrl('/about')}): Mission and methodology`,
+    `- [About](${canonicalUrl('/about')}): Who runs the site, methodology, sources and corrections policy`,
+    `- [Author: ${authorName}](${canonicalUrl(authorPath)}): Bio and how the guides are produced`,
     `- [Contact](${canonicalUrl('/contact')}): FAQ and contact information`,
     '',
     '## State calculators',
@@ -56,7 +57,19 @@ export function GET() {
     '',
     '## Guides (newest first)',
     '',
-    ...sortedPosts.map((p) => `- [${p.title}](${canonicalUrl(`/blog/${p.slug}`)}) (${p.publishDate}): ${p.excerpt}`),
+    ...sortedPosts.slice(0, 30).map((p) => `- [${p.title}](${canonicalUrl(`/blog/${p.slug}`)}) (${p.publishDate}): ${p.excerpt}`),
+    '',
+    '## Sources',
+    '',
+    '- [IRS Rev. Proc. 2025-32](https://www.irs.gov/pub/irs-drop/rp-25-32.pdf): tax year 2026 brackets and standard deduction',
+    '- [SSA 2026 COLA fact sheet](https://www.ssa.gov/news/press/factsheets/colafacts2026.pdf): Social Security wage base',
+    '- [IRS Topic 751](https://www.irs.gov/taxtopics/tc751): Social Security and Medicare withholding rates',
+    '',
+    '## Optional',
+    '',
+    ...sortedPosts.slice(30).map((p) => `- [${p.title}](${canonicalUrl(`/blog/${p.slug}`)}) (${p.publishDate})`),
+    `- [Privacy policy](${canonicalUrl('/privacy')})`,
+    `- [Terms of service](${canonicalUrl('/terms')})`,
     '',
     '## Limitations',
     '',

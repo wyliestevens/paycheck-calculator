@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { faqSchema } from '@/lib/seo'
+import { faqSchema, breadcrumbSchema, canonicalUrl, ogImage } from '@/lib/seo'
 
 export const metadata: Metadata = {
   title: 'Contact Us',
@@ -8,6 +8,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Contact PaycheckCalc',
     description: 'Get in touch with PaycheckCalc for questions, feedback, or support.',
+    url: '/contact',
+    images: ogImage('/og/page/contact', 'Contact PaycheckCalc'),
   },
 }
 
@@ -33,6 +35,12 @@ export default function ContactPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(faqs)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema([{ name: 'Home', url: canonicalUrl() }, { name: 'Contact', url: canonicalUrl('/contact') }])),
+        }}
       />
       <h1 style={{ fontSize: '2rem', fontWeight: 700, marginBottom: '1.5rem' }}>Contact Us</h1>
 

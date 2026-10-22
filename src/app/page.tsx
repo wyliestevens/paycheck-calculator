@@ -2,7 +2,7 @@ import { states, getStateBySlug, federalBrackets, federalStandardDeduction, soci
 import { blogPosts } from '@/data/blog'
 import { calculateTakeHome } from '@/lib/tax-calculator'
 import type { Metadata } from 'next'
-import { webApplicationSchema } from '@/lib/seo'
+import { webApplicationSchema, ogImage } from '@/lib/seo'
 import StateFinder from '@/components/StateFinder'
 
 export const metadata: Metadata = {
@@ -12,6 +12,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Free Paycheck Calculator by State | 2026 Tax Rates',
     description: 'Calculate your take-home pay in any US state. Free paycheck calculator with 2026 federal and state tax rates.',
+    url: '/',
+    images: ogImage('/opengraph-image', 'PaycheckCalc — free paycheck calculator for every US state'),
   },
 }
 

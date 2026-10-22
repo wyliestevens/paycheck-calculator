@@ -2,6 +2,8 @@ export interface BlogPost {
   title: string
   slug: string
   publishDate: string
+  /** Set when a post's figures or text are materially revised; drives dateModified. */
+  updatedDate?: string
   excerpt: string
   keywords: string
   readingTime: string

@@ -1,6 +1,6 @@
-import { states, getStateBySlug, federalStandardDeduction, socialSecurityWageCap, usd } from '@/data/states'
+import { states, getStateBySlug, federalStandardDeduction, socialSecurityWageCap, taxYear, usd } from '@/data/states'
 import { calculateTakeHome, salaryAmounts, formatSalary, parseSalarySlug, salaryToSlug } from '@/lib/tax-calculator'
-import { breadcrumbSchema, canonicalUrl } from '@/lib/seo'
+import { breadcrumbSchema, canonicalUrl, ogImage, webPageSchema } from '@/lib/seo'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
@@ -14,6 +14,17 @@ export function generateStaticParams() {
   return params
 }
 
+const money0 = (n: number) => '$' + Math.round(n).toLocaleString('en-US')
+
+/** Whole-dollar, 140-160 character description for a salary page. */
+export function salaryDescription(state: (typeof states)[number], amount: number): string {
+  const r = calculateTakeHome(amount, state)
+  const formatted = formatSalary(amount)
+  const base = `A ${formatted} salary in ${state.name} takes home about ${money0(r.takeHomePay)} a year after ${taxYear} federal${state.hasStateTax ? ', state' : ''}, Social Security and Medicare taxes`
+  const withPeriods = `${base}: ${money0(r.takeHomePay / 12)} a month or ${money0(r.takeHomePay / 26)} per bi-weekly check.`
+  return withPeriods.length <= 160 ? withPeriods : `${base} (${money0(r.takeHomePay / 12)} a month).`
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ state: string; salary: string }> }): Promise<Metadata> {
   const { state: stateSlug, salary: salarySlug } = await params
   const state = getStateBySlug(stateSlug)
@@ -22,17 +33,19 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
 
   const result = calculateTakeHome(amount, state)
   const formatted = formatSalary(amount)
-  const takeHome = formatSalary(Math.round(result.takeHomePay))
+  const takeHome = money0(result.takeHomePay)
+  const description = salaryDescription(state, amount)
 
   return {
-    title: `${formatted} Salary in ${state.name} After Taxes (2026)`,
-    description: `See how much of a ${formatted} salary you take home in ${state.name}. After federal, state, Social Security, and Medicare taxes, your estimated take-home pay is ${takeHome} per year.`,
-    keywords: `${formatted} salary ${state.name}, ${formatted} after taxes ${state.abbreviation}, take home pay ${formatted} ${state.name}, ${state.name} salary calculator 2026`,
+    title: `${formatted} Salary in ${state.name} After Taxes (${taxYear})`,
+    description,
+    keywords: `${formatted} salary ${state.name}, ${formatted} after taxes ${state.abbreviation}, take home pay ${formatted} ${state.name}, ${state.name} salary calculator ${taxYear}`,
     alternates: { canonical: `/${state.slug}/${salaryToSlug(amount)}` },
     openGraph: {
-      title: `${formatted} Salary After Taxes in ${state.name} (2026)`,
+      title: `${formatted} Salary After Taxes in ${state.name} (${taxYear})`,
       description: `${formatted} salary in ${state.name} = ${takeHome} take-home pay after all taxes. See the full breakdown.`,
       url: `/${state.slug}/${salaryToSlug(amount)}`,
+      images: ogImage(`/og/salary/${state.slug}/${salaryToSlug(amount)}`, `${formatted} salary after taxes in ${state.name}`),
     },
   }
 }
@@ -92,6 +105,11 @@ export default async function SalaryPage({ params }: { params: Promise<{ state: 
     { name: `${state.name} Paycheck Calculator`, url: canonicalUrl(`/${state.slug}`) },
     { name: `${formatted} Salary`, url: canonicalUrl(`/${state.slug}/${salaryToSlug(amount)}`) },
   ])
+  const pageLd = webPageSchema({
+    path: `/${state.slug}/${salaryToSlug(amount)}`,
+    name: `${formatted} Salary in ${state.name} After Taxes (${taxYear})`,
+    description: salaryDescription(state, amount),
+  })
 
   const taxDescription = state.taxType === 'none'
     ? `${state.name} does not levy a state income tax, so the only deductions from a ${formatted} salary are federal income tax, Social Security, and Medicare. This makes ${state.name} one of the most tax-friendly states for wage earners.`
@@ -105,6 +123,7 @@ export default async function SalaryPage({ params }: { params: Promise<{ state: 
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
       />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageLd) }} />
 
       <div>
         <div className="ad-slot ad-slot-horizontal" style={{ margin: '0 auto 1.5rem' }}>Advertisement</div>
@@ -118,7 +137,7 @@ export default async function SalaryPage({ params }: { params: Promise<{ state: 
         </nav>
 
         <div className="page-head">
-          <span className="badge badge-ink">{state.abbreviation} &middot; 2026 rates</span>
+          <span className="badge badge-ink">{state.abbreviation} &middot; {taxYear} rates</span>
           <h1>
             {formatted} salary after taxes in {state.name}
           </h1>
@@ -203,7 +222,7 @@ export default async function SalaryPage({ params }: { params: Promise<{ state: 
           <h2>
             {formatted} salary breakdown &mdash; {state.name}
           </h2>
-          <span className="badge badge-gold">2026 · single filer</span>
+          <span className="badge badge-gold">{taxYear} · single filer</span>
         </div>
         <div className="table-scroll">
           <table className="ledger">

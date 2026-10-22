@@ -2055,3 +2055,71 @@ table.ledger tr.subtotal td {
     scroll-behavior: auto !important;
   }
 }
+
+/* ------------------------------------------------------------------
+   Post-audit fixes (2026-10-22): byline, mobile tables, tap targets
+   ------------------------------------------------------------------ */
+.article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-3);
+  font-size: 0.875rem;
+  margin-bottom: 2rem;
+}
+
+.article-meta a {
+  color: var(--text-2);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--line-strong);
+  text-underline-offset: 3px;
+}
+
+.article-meta a:hover {
+  color: var(--ink);
+}
+
+.article-meta .dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--line-strong);
+  display: inline-block;
+}
+
+/* Guide bodies set table widths inline; on phones let wide tables scroll instead of overflowing the page. */
+@media (max-width: 640px) {
+  .site-main article table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Tap targets: 40px+ for chips and segmented buttons, roomier breadcrumbs. */
+.quick-amounts button {
+  min-height: 40px;
+  padding: 0.45rem 0.8rem;
+}
+
+.seg button {
+  min-height: 44px;
+}
+
+.crumbs {
+  font-size: 0.875rem;
+  row-gap: 0.25rem;
+}
+
+.crumbs a {
+  padding: 0.35rem 0;
+  display: inline-block;
+}
+
+/* State-page H1 year badge: keep a real space before it so the heading reads "calculator 2026". */
+.page-head h1 .year {
+  margin-left: 0.5rem;
+}

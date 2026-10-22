@@ -1,9 +1,9 @@
-import { states, getStateBySlug, socialSecurityWageCap, usd } from '@/data/states'
+import { states, getStateBySlug, socialSecurityWageCap, taxYear, usd } from '@/data/states'
 import { salaryAmounts, salaryToSlug, formatSalary, calculateTakeHome } from '@/lib/tax-calculator'
 import PaycheckCalculator from '@/components/PaycheckCalculator'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { breadcrumbSchema, stateCalculatorSchema, canonicalUrl } from '@/lib/seo'
+import { breadcrumbSchema, stateCalculatorSchema, canonicalUrl, ogImage, webPageSchema } from '@/lib/seo'
 
 export function generateStaticParams() {
   return states.map((state) => ({ state: state.slug }))
@@ -17,22 +17,39 @@ function topRateOf(state: (typeof states)[number]): string {
     : `${(state.brackets![state.brackets!.length - 1].rate * 100).toFixed(2)}%`
 }
 
+/** 140-160 character description with a real number in it, unique per state. */
+export function stateDescription(state: (typeof states)[number]): string {
+  const r = calculateTakeHome(75000, state)
+  const takeHome = '$' + Math.round(r.takeHomePay).toLocaleString('en-US')
+  const stateTax = !state.hasStateTax
+    ? 'no state income tax'
+    : state.taxType === 'flat'
+    ? `${state.name}'s flat ${(state.flatRate! * 100).toFixed(2)}% state tax`
+    : `${state.name}'s progressive state tax (top rate ${topRateOf(state)})`
+  const full = `Free ${state.name} paycheck calculator for ${taxYear}. See take-home pay after federal tax, ${stateTax}, Social Security and Medicare. A $75,000 salary keeps about ${takeHome} a year.`
+  if (full.length <= 160) return full
+  return `Free ${state.name} paycheck calculator for ${taxYear}. Take-home pay after federal, state, Social Security and Medicare tax. A $75,000 salary keeps about ${takeHome} a year.`
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ state: string }> }): Promise<Metadata> {
   const { state: slug } = await params
   const state = getStateBySlug(slug)
   if (!state) return {}
 
   const topRate = topRateOf(state)
+  const title = `${state.name} Paycheck Calculator ${taxYear}`
+  const description = stateDescription(state)
 
   return {
-    title: `${state.name} Paycheck Calculator 2026 | ${state.abbreviation} Take-Home Pay`,
-    description: state.metaDescription,
-    keywords: `${state.name} paycheck calculator, ${state.abbreviation} salary calculator, ${state.name} take home pay, ${state.name} income tax calculator, ${state.name} tax rate ${topRate}, paycheck calculator ${state.name} 2026`,
+    title,
+    description,
+    keywords: `${state.name} paycheck calculator, ${state.abbreviation} salary calculator, ${state.name} take home pay, ${state.name} income tax calculator, ${state.name} tax rate ${topRate}, paycheck calculator ${state.name} ${taxYear}`,
     alternates: { canonical: `/${state.slug}` },
     openGraph: {
-      title: `${state.name} Paycheck Calculator 2026`,
-      description: state.metaDescription,
+      title: `${title} | Take-Home Pay After Taxes`,
+      description,
       url: `/${state.slug}`,
+      images: ogImage(`/og/state/${state.slug}`, `${state.name} paycheck calculator ${taxYear}`),
     },
   }
 }
@@ -67,6 +84,11 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
     { name: `${state.name} Paycheck Calculator`, url: canonicalUrl(`/${state.slug}`) },
   ])
   const calculatorLd = stateCalculatorSchema(state.name, state.slug)
+  const pageLd = webPageSchema({
+    path: `/${state.slug}`,
+    name: `${state.name} Paycheck Calculator ${taxYear}`,
+    description: stateDescription(state),
+  })
 
   return (
     <div className="container page stack-lg">
@@ -78,6 +100,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(calculatorLd) }}
       />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageLd) }} />
 
       <div>
         <div className="ad-slot ad-slot-horizontal" style={{ margin: '0 auto 1.5rem' }}>Advertisement</div>
@@ -97,8 +120,8 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
               : 'No state income tax'}
           </span>
           <h1>
-            {state.name} paycheck calculator
-            <span className="year">2026</span>
+            {state.name} paycheck calculator{' '}
+            <span className="year">{taxYear}</span>
           </h1>
           <p className="lede">
             Calculate your take-home pay in {state.name} ({state.abbreviation}) after federal, state, Social Security,

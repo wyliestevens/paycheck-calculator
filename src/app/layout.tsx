@@ -8,7 +8,6 @@ import { organizationSchema, websiteSchema } from '@/lib/seo'
 const fraunces = Fraunces({
   subsets: ['latin'],
   style: ['normal', 'italic'],
-  axes: ['opsz'],
   display: 'swap',
   variable: '--font-display',
   fallback: ['Iowan Old Style', 'Georgia', 'serif'],
@@ -16,7 +15,6 @@ const fraunces = Fraunces({
 
 const figtree = Figtree({
   subsets: ['latin'],
-  style: ['normal', 'italic'],
   display: 'swap',
   variable: '--font-body',
   fallback: ['Avenir Next', 'Segoe UI', 'sans-serif'],
@@ -37,17 +35,23 @@ export const metadata: Metadata = {
   description: 'Calculate your take-home pay after federal, state, Social Security, and Medicare taxes. Free paycheck calculator for all 50 US states with 2026 tax rates.',
   keywords: 'paycheck calculator, take home pay calculator, salary calculator, tax calculator, paycheck after taxes, net pay calculator, 2026 tax calculator',
   metadataBase: new URL('https://www.paycheck.center'),
-  alternates: {
-    canonical: '/',
-  },
   openGraph: {
     type: 'website',
     siteName: 'PaycheckCalc',
     locale: 'en_US',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'PaycheckCalc — free paycheck calculator for every US state' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Free Paycheck Calculator by State | 2026 Tax Rates',
+    description: 'Calculate your take-home pay after federal, state, Social Security, and Medicare taxes. Free for all 50 US states.',
   },
   robots: {
     index: true,
     follow: true,
+    'max-image-preview': 'large',
+    'max-snippet': -1,
+    'max-video-preview': -1,
   },
 }
 
