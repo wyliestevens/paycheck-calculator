@@ -5,7 +5,7 @@ import ArticleMeta from '@/components/ArticleMeta'
 export const metadata: Metadata = {
   title: { absolute: 'Child Tax Credit 2026: How It Works, Who Qualifies, and How to Claim It' },
   description:
-    'The Child Tax Credit gives parents up to $2,000 per child under 17. Here\'s who qualifies, the income phase-out, and how to claim it on your W-4 to boost every paycheck.',
+    'The Child Tax Credit gives parents up to $2,200 per child under 17. Here\'s who qualifies, the income phase-out, and how to claim it on your W-4 to boost every paycheck.',
   alternates: { canonical: '/blog/child-tax-credit-explained' },
   keywords:
     'child tax credit 2026, child tax credit amount, who qualifies for child tax credit, additional child tax credit, child tax credit W-4, child tax credit income limit, refundable child tax credit',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     images: [{ url: '/og/blog/child-tax-credit-explained', width: 1200, height: 630 }],
     title: 'Child Tax Credit 2026: How It Works, Who Qualifies, and How to Claim It',
     description:
-      'The Child Tax Credit gives parents up to $2,000 per child under 17. Here\'s who qualifies, the income limits, and how to claim it now to boost your take-home pay.',
+      'The Child Tax Credit gives parents up to $2,200 per child under 17. Here\'s who qualifies, the income limits, and how to claim it now to boost your take-home pay.',
   },
 }
 
@@ -51,7 +51,7 @@ export default function ChildTaxCreditExplained() {
           {/* Dollar / credit badge */}
           <circle cx="490" cy="100" r="45" fill="rgba(255,255,255,0.2)" />
           <text x="490" y="90" textAnchor="middle" fontSize="13" fontWeight="600" fill="#fff" fontFamily="sans-serif">UP TO</text>
-          <text x="490" y="110" textAnchor="middle" fontSize="22" fontWeight="800" fill="#fff" fontFamily="monospace">$2,000</text>
+          <text x="490" y="110" textAnchor="middle" fontSize="22" fontWeight="800" fill="#fff" fontFamily="monospace">$2,200</text>
           <text x="490" y="126" textAnchor="middle" fontSize="11" fill="rgba(255,255,255,0.85)" fontFamily="sans-serif">per child</text>
           {/* Connecting line */}
           <line x1="165" y1="100" x2="290" y2="100" stroke="rgba(255,255,255,0.4)" strokeWidth="2" strokeDasharray="6,4" />
@@ -76,7 +76,7 @@ export default function ChildTaxCreditExplained() {
       <ArticleMeta slug="child-tax-credit-explained" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        If you have kids and you are not claiming the Child Tax Credit, you are leaving money on the table. The Child Tax Credit can cut your federal tax bill by up to <strong>$2,000 per qualifying child</strong> — and up to $1,700 of that can be refunded to you even if you owe nothing in taxes.
+        If you have kids and you are not claiming the Child Tax Credit, you are leaving money on the table. The Child Tax Credit can cut your federal tax bill by up to <strong>$2,200 per qualifying child</strong> — and up to $1,700 of that can be refunded to you even if you owe nothing in taxes.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
@@ -98,7 +98,7 @@ export default function ChildTaxCreditExplained() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        For example, if you owe $5,000 in federal income tax and you have two qualifying children, the Child Tax Credit can cut your bill to <strong>$1,000</strong> ($5,000 &minus; $4,000 in credits). That is $4,000 you keep instead of paying to the IRS.{' '}
+        For example, if you owe $5,000 in federal income tax and you have two qualifying children, the Child Tax Credit can cut your bill to <strong>$600</strong> ($5,000 &minus; $4,400 in credits). That is $4,000 you keep instead of paying to the IRS.{' '}
         <a href="https://www.irs.gov/credits-deductions/individuals/child-tax-credit" target="_blank" rel="noopener noreferrer" style={{ color: '#7c3aed', textDecoration: 'underline' }}>
           (IRS — Child Tax Credit)
         </a>
@@ -127,7 +127,7 @@ export default function ChildTaxCreditExplained() {
           </thead>
           <tbody>
             {[
-              ['Child Tax Credit (CTC)', '$2,000', 'Full credit per qualifying child'],
+              ['Child Tax Credit (CTC)', '$2,200', 'Full credit per qualifying child'],
               ['Additional Child Tax Credit (ACTC)', 'Up to $1,700', 'Refundable portion — you keep it even if tax bill is $0'],
               ['Credit for Other Dependents', '$500', 'For dependents who don\'t qualify for the full CTC'],
             ].map(([label, amount, note], i) => (
@@ -142,7 +142,7 @@ export default function ChildTaxCreditExplained() {
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The <strong>$2,000 per child</strong> figure is the total credit. Of that $2,000, up to <strong>$1,700 is refundable</strong> — meaning if the credit wipes out your entire tax bill and there is still credit left over, the IRS sends you the remaining amount as a refund. This refundable piece is officially called the <strong>Additional Child Tax Credit (ACTC)</strong>.
+        The <strong>$2,200 per child</strong> figure is the total credit. Of that $2,200, up to <strong>$1,700 is refundable</strong> — meaning if the credit wipes out your entire tax bill and there is still credit left over, the IRS sends you the remaining amount as a refund. This refundable piece is officially called the <strong>Additional Child Tax Credit (ACTC)</strong>.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
@@ -160,7 +160,7 @@ export default function ChildTaxCreditExplained() {
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
         <li style={{ marginBottom: '0.75rem' }}>
-          <strong>Age:</strong> The child must be under age 17 at the end of the tax year. A child who turns 17 on or before December 31, 2026, does not qualify for the full $2,000 credit for tax year 2026 (they may qualify for the $500 Credit for Other Dependents).
+          <strong>Age:</strong> The child must be under age 17 at the end of the tax year. A child who turns 17 on or before December 31, 2026, does not qualify for the full $2,200 credit for tax year 2026 (they may qualify for the $500 Credit for Other Dependents).
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
           <strong>Relationship:</strong> The child must be your son, daughter, stepchild, foster child, sibling, half-sibling, step-sibling, or a descendant of any of these (such as a grandchild, niece, or nephew).
@@ -175,7 +175,7 @@ export default function ChildTaxCreditExplained() {
           <strong>Financial support:</strong> The child must not have provided more than half of their own financial support during the year.
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
-          <strong>Social Security number:</strong> The child must have a valid Social Security number (SSN) by the due date of your tax return. An Individual Taxpayer Identification Number (ITIN) does not qualify for the full $2,000 credit.
+          <strong>Social Security number:</strong> The child must have a valid Social Security number (SSN) by the due date of your tax return. An Individual Taxpayer Identification Number (ITIN) does not qualify for the full $2,200 credit.
         </li>
       </ul>
 
@@ -244,7 +244,7 @@ export default function ChildTaxCreditExplained() {
         }}
       >
         <p style={{ fontSize: '0.9375rem', color: '#1e293b', margin: 0, lineHeight: 1.7 }}>
-          <strong>Phase-Out Example:</strong> A married couple filing jointly earns $410,000. Their income is $10,000 over the $400,000 threshold. The phase-out reduces their credit by $50 &times; 10 = <strong>$500</strong> per child. Instead of $2,000 per child, they receive $1,500 per child.
+          <strong>Phase-Out Example:</strong> A married couple filing jointly earns $410,000. Their income is $10,000 over the $400,000 threshold. The phase-out reduces their credit by $50 &times; 10 = <strong>$500</strong> per child. Instead of $2,200 per child, they receive $1,700 per child.
         </p>
       </div>
 
@@ -314,7 +314,7 @@ export default function ChildTaxCreditExplained() {
           <strong>Step 3 on your W-4</strong> is titled &ldquo;Claim Dependents.&rdquo; This is where you claim your Child Tax Credits.
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
-          For each qualifying child under 17, multiply by <strong>$2,000</strong> and enter the total in the first box.
+          For each qualifying child under 17, multiply by <strong>$2,200</strong> and enter the total in the first box.
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
           For other dependents (ages 17–23 full-time students, elderly relatives, etc.), multiply by <strong>$500</strong> and enter in the second box.
@@ -337,10 +337,10 @@ export default function ChildTaxCreditExplained() {
           Example — Married couple, two kids under 17:
         </p>
         <p style={{ fontSize: '0.9375rem', color: '#475569', margin: 0, lineHeight: 1.8 }}>
-          2 qualifying children &times; $2,000 = $4,000<br />
-          Enter <strong>$4,000</strong> in Step 3 of the W-4.<br />
+          2 qualifying children &times; $2,200 = $4,400<br />
+          Enter <strong>$4,400</strong> in Step 3 of the W-4.<br />
           <br />
-          This tells your employer to withhold $4,000 less in federal income tax over the year — roughly <strong>$154 less per biweekly paycheck</strong> if you are paid 26 times per year.
+          This tells your employer to withhold $4,400 less in federal income tax over the year — roughly <strong>$169 less per biweekly paycheck</strong> if you are paid 26 times per year.
         </p>
       </div>
 
@@ -386,12 +386,12 @@ export default function ChildTaxCreditExplained() {
               ['Standard Deduction (MFJ)', '−$32,200', '−$32,200'],
               ['Taxable Income', '$52,800', '$52,800'],
               ['Federal Tax (before CTC)', '$5,840', '$5,840'],
-              ['Child Tax Credit (2 kids)', '−$4,000', '−$4,000'],
-              ['Federal Tax (after CTC)', '$1,840', '$1,840'],
+              ['Child Tax Credit (2 kids)', '−$4,400', '−$4,400'],
+              ['Federal Tax (after CTC)', '$1,440', '$1,440'],
               ['FICA (7.65%)', '$6,503', '$6,503'],
               ['State Income Tax', '$0', '$3,502'],
-              ['Total Tax Bill', '$8,343', '$11,845'],
-              ['Take-Home Pay', '$76,657', '$73,155'],
+              ['Total Tax Bill', '$7,943', '$11,445'],
+              ['Take-Home Pay', '$77,057', '$73,555'],
             ].map(([label, tx, ny], i) => {
               const isTotal = label === 'Total Tax Bill'
               const isTakeHome = label === 'Take-Home Pay'
@@ -408,7 +408,7 @@ export default function ChildTaxCreditExplained() {
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The Child Tax Credit saves this family <strong>$4,000</strong> regardless of which state they live in — it is a federal credit that applies everywhere. The state income tax difference ($3,502 in New York vs $0 in Texas) is separate and on top of the credit savings. Want to see what your family&rsquo;s take-home pay looks like? Try the calculator for{' '}
+        The Child Tax Credit saves this family <strong>$4,400</strong> regardless of which state they live in — it is a federal credit that applies everywhere. The state income tax difference ($3,502 in New York vs $0 in Texas) is separate and on top of the credit savings. Want to see what your family&rsquo;s take-home pay looks like? Try the calculator for{' '}
         <a href="/texas" style={{ color: '#7c3aed', textDecoration: 'underline' }}>Texas</a>,{' '}
         <a href="/california" style={{ color: '#7c3aed', textDecoration: 'underline' }}>California</a>, or{' '}
         <a href="/florida" style={{ color: '#7c3aed', textDecoration: 'underline' }}>Florida</a>.
@@ -425,7 +425,7 @@ export default function ChildTaxCreditExplained() {
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
         <li style={{ marginBottom: '0.75rem' }}>
-          <strong>Non-refundable portion ($300 per child):</strong> This can only reduce your tax bill to zero. If you owe less than $300 per child in taxes, the remaining non-refundable credit is lost.
+          <strong>Non-refundable portion ($500 per child):</strong> This can only reduce your tax bill to zero. If you owe less than $500 per child in taxes, the remaining non-refundable credit is lost.
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
           <strong>Refundable portion — Additional Child Tax Credit ($1,700 per child):</strong> Once your non-refundable credit reduces your tax bill to zero, you can then receive the ACTC as a cash refund based on the 15%-of-earned-income formula described above.
@@ -449,13 +449,13 @@ export default function ChildTaxCreditExplained() {
           <strong>Not updating your W-4 after having a child.</strong> If you had a baby this year and did not update your W-4, you are probably having too much withheld. File a new W-4 as soon as possible to start seeing the benefit in your paychecks.
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
-          <strong>Claiming a child who does not have an SSN.</strong> A child needs a valid Social Security number issued before your tax return is due. If your child has an ITIN instead, you cannot claim the full $2,000 credit (only the $500 Credit for Other Dependents).
+          <strong>Claiming a child who does not have an SSN.</strong> A child needs a valid Social Security number issued before your tax return is due. If your child has an ITIN instead, you cannot claim the full $2,200 credit (only the $500 Credit for Other Dependents).
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
           <strong>Both divorced parents claiming the same child.</strong> Only one parent can claim the Child Tax Credit for a given child in a given year. If you share custody, you need to agree on who claims which child. The IRS tiebreaker rule generally gives priority to the parent with whom the child lived most during the year.
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
-          <strong>Forgetting about children who turned 17 this year.</strong> A child who turns 17 on or before December 31 does not qualify for the $2,000 credit for that tax year. However, they may still qualify for the $500 Credit for Other Dependents if you can claim them as a dependent.
+          <strong>Forgetting about children who turned 17 this year.</strong> A child who turns 17 on or before December 31 does not qualify for the $2,200 credit for that tax year. However, they may still qualify for the $500 Credit for Other Dependents if you can claim them as a dependent.
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
           <strong>Not claiming it if you had low or no income.</strong> Even if you earned very little, you may be eligible for the refundable Additional Child Tax Credit as long as you had at least $2,500 in earned income.
@@ -503,7 +503,7 @@ export default function ChildTaxCreditExplained() {
       </h2>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The Child Tax Credit is one of the most valuable tax breaks available to American families. At <strong>$2,000 per qualifying child</strong> under 17, with up to <strong>$1,700 refundable</strong>, it can dramatically reduce your tax bill — or even result in a refund when you owe nothing.
+        The Child Tax Credit is one of the most valuable tax breaks available to American families. At <strong>$2,200 per qualifying child</strong> under 17, with up to <strong>$1,700 refundable</strong>, it can dramatically reduce your tax bill — or even result in a refund when you owe nothing.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>

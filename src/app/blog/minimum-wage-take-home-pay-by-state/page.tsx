@@ -267,7 +267,7 @@ export default function MinimumWageTakeHomeByState() {
         <a href="https://www.irs.gov/credits-deductions/individuals/earned-income-tax-credit/eitc-income-limits-maximum-credit-amounts" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           Earned Income Tax Credit (EITC)
         </a>
-        , worth up to <strong>$632</strong> for childless workers in 2026. With one qualifying child, the maximum EITC rises to $4,213. This credit is refundable &mdash; meaning it comes back as a tax refund even if you owe no federal income tax &mdash; and can meaningfully offset your FICA cost at tax time.
+        , worth up to <strong>$664</strong> for childless workers in 2026. With one qualifying child, the maximum EITC rises to $4,427. This credit is refundable &mdash; meaning it comes back as a tax refund even if you owe no federal income tax &mdash; and can meaningfully offset your FICA cost at tax time.
       </p>
 
       {/* Section 4 — Worked Example 2 */}
@@ -459,7 +459,7 @@ export default function MinimumWageTakeHomeByState() {
       </h3>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The EITC is one of the largest anti-poverty tax credits in the US tax code and is specifically designed for low- and moderate-income workers. For 2026, the maximum credit is approximately <strong>$632 with no children</strong>, <strong>$4,213 with one child</strong>, <strong>$6,960 with two children</strong>, and <strong>$7,830 with three or more children</strong>. Because it is refundable, if the credit exceeds your tax liability, the difference comes back to you as a refund. Don&rsquo;t leave this on the table &mdash; claim it when you file.{' '}
+        The EITC is one of the largest anti-poverty tax credits in the US tax code and is specifically designed for low- and moderate-income workers. For 2026, the maximum credit is approximately <strong>$664 with no children</strong>, <strong>$4,427 with one child</strong>, <strong>$7,316 with two children</strong>, and <strong>$8,231 with three or more children</strong>. Because it is refundable, if the credit exceeds your tax liability, the difference comes back to you as a refund. Don&rsquo;t leave this on the table &mdash; claim it when you file.{' '}
         <a href="https://www.irs.gov/credits-deductions/individuals/earned-income-tax-credit/eitc-income-limits-maximum-credit-amounts" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS &mdash; EITC Income Limits and Maximum Credit Amounts)
         </a>

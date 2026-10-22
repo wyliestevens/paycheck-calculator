@@ -173,7 +173,7 @@ export default function ReduceTaxableIncome2026() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The 2026 IRA contribution limit is <strong>$7,500</strong> ($8,600 if you are 50+). For single filers who have a 401(k) at work, the deduction phases out between $79,000 and $89,000 of MAGI. If you do not have a workplace plan, you can deduct the full amount at any income level.{' '}
+        The 2026 IRA contribution limit is <strong>$7,500</strong> ($8,600 if you are 50+). For single filers who have a 401(k) at work, the deduction phases out between $81,000 and $91,000 of MAGI. If you do not have a workplace plan, you can deduct the full amount at any income level.{' '}
         <a href="https://www.irs.gov/retirement-plans/ira-deduction-limits" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS &mdash; IRA Deduction Limits)
         </a>

@@ -329,8 +329,8 @@ export default function HealthInsurancePremiumsPost() {
       </p>
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
-        <li style={{ marginBottom: '0.5rem' }}><strong>$1,650</strong> for self-only coverage</li>
-        <li style={{ marginBottom: '0.5rem' }}><strong>$3,300</strong> for family coverage</li>
+        <li style={{ marginBottom: '0.5rem' }}><strong>$1,700</strong> for self-only coverage</li>
+        <li style={{ marginBottom: '0.5rem' }}><strong>$3,400</strong> for family coverage</li>
       </ul>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>

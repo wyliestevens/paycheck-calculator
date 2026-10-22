@@ -229,7 +229,7 @@ export default function AdjustedGrossIncomeExplained() {
         6. Contributions to SEP-IRA, SIMPLE IRA, or Solo 401(k)
       </h3>
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Self-employed workers can contribute to a SEP-IRA (up to 25% of net self-employment income, max $72,000 in 2026), a SIMPLE IRA ($16,500 limit), or a Solo 401(k). These contributions reduce your AGI dollar-for-dollar.{' '}
+        Self-employed workers can contribute to a SEP-IRA (up to 25% of net self-employment income, max $72,000 in 2026), a SIMPLE IRA ($17,000 limit), or a Solo 401(k). These contributions reduce your AGI dollar-for-dollar.{' '}
         <a href="https://www.irs.gov/retirement-plans/retirement-plans-for-self-employed-people" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS &mdash; Retirement Plans for Self-Employed People)
         </a>
@@ -400,8 +400,8 @@ export default function AdjustedGrossIncomeExplained() {
           </thead>
           <tbody>
             {[
-              ['Roth IRA contributions', 'Phase-out begins at $150,000 (single) / $236,000 (married) of MAGI'],
-              ['Traditional IRA deduction', 'Phase-out if covered by a workplace plan: begins at $79,000 (single)'],
+              ['Roth IRA contributions', 'Phase-out begins at $153,000 (single) / $242,000 (married) of MAGI'],
+              ['Traditional IRA deduction', 'Phase-out if covered by a workplace plan: begins at $81,000 (single)'],
               ['Medical expense deduction', 'Only expenses exceeding 7.5% of AGI are deductible on Schedule A'],
               ['Child Tax Credit phase-out', 'Credit reduces by $50 per $1,000 of AGI above $200,000 (single)'],
               ['American Opportunity Credit', 'Phases out between $80,000 and $90,000 of MAGI (single)'],

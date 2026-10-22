@@ -118,11 +118,11 @@ export default function EstateTaxVsInheritanceTax() {
 
       {/* Section 2 */}
       <h2 style={{ fontSize: '1.375rem', fontWeight: 700, color: '#1e293b', marginTop: '2.5rem', marginBottom: '0.75rem' }}>
-        Federal Estate Tax: The $13.99 Million Threshold
+        Federal Estate Tax: The $15 Million Threshold
       </h2>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The federal estate tax applies only to very large estates. In 2026, the federal exemption is <strong>$13.99 million per person</strong> ($27.98 million for a married couple using portability). If the total value of the estate is below this threshold, no federal estate tax is due &mdash; period.{' '}
+        The federal estate tax applies only to very large estates. In 2026, the federal exemption is <strong>$15 million per person</strong> ($30 million for a married couple using portability). If the total value of the estate is below this threshold, no federal estate tax is due &mdash; period.{' '}
         <a href="https://www.irs.gov/businesses/small-businesses-self-employed/estate-tax" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS &mdash; Estate Tax)
         </a>
@@ -172,7 +172,7 @@ export default function EstateTaxVsInheritanceTax() {
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        In practice, fewer than 1% of estates owe any federal estate tax. If your parent leaves you a house worth $400,000 and a $200,000 savings account, that&rsquo;s a $600,000 estate &mdash; well under the $13.99 million threshold. No federal estate tax.
+        In practice, fewer than 1% of estates owe any federal estate tax. If your parent leaves you a house worth $400,000 and a $200,000 savings account, that&rsquo;s a $600,000 estate &mdash; well under the $15 million threshold. No federal estate tax.
       </p>
 
       <div
@@ -185,7 +185,7 @@ export default function EstateTaxVsInheritanceTax() {
         }}
       >
         <p style={{ fontSize: '0.9375rem', lineHeight: 1.7, color: '#1e293b', margin: 0 }}>
-          <strong>Portability:</strong> A surviving spouse can claim any unused exemption from their deceased spouse. If one spouse dies in 2026 with a $5 million estate, the surviving spouse can add the unused $8.99 million ($13.99M &minus; $5M) to their own exemption, giving them a combined $22.98 million exemption.
+          <strong>Portability:</strong> A surviving spouse can claim any unused exemption from their deceased spouse. If one spouse dies in 2026 with a $5 million estate, the surviving spouse can add the unused $10 million ($15M &minus; $5M) to their own exemption, giving them a combined $25 million exemption.
         </p>
       </div>
 
@@ -386,7 +386,7 @@ export default function EstateTaxVsInheritanceTax() {
           </thead>
           <tbody>
             {[
-              ['Federal estate tax?', 'No — $500K is far below the $13.99M exemption'],
+              ['Federal estate tax?', 'No — $500K is far below the $15M exemption'],
               ['Ohio state estate tax?', 'No — Ohio repealed its estate tax in 2013'],
               ['Ohio state inheritance tax?', 'No — Ohio has no inheritance tax'],
               ['Tax on the savings account?', 'No — cash is not taxable income when inherited'],
@@ -433,7 +433,7 @@ export default function EstateTaxVsInheritanceTax() {
       </h2>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The federal gift tax and estate tax are part of a single unified transfer tax system. The <strong>$13.99 million lifetime exemption</strong> covers both gifts you make during your lifetime and transfers at death. If you give away $3 million in taxable gifts during your lifetime, only $10.99 million of your estate exemption remains.
+        The federal gift tax and estate tax are part of a single unified transfer tax system. The <strong>$15 million lifetime exemption</strong> covers both gifts you make during your lifetime and transfers at death. If you give away $3 million in taxable gifts during your lifetime, only $12 million of your estate exemption remains.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
@@ -459,7 +459,7 @@ export default function EstateTaxVsInheritanceTax() {
       </h2>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        For most Americans, inheriting money triggers no immediate tax bill. Federal estate tax only applies to estates above $13.99 million, and inheritance taxes only exist in five states. The real tax exposure comes later: from capital gains when you sell inherited property, and from income tax on inherited retirement account withdrawals.
+        For most Americans, inheriting money triggers no immediate tax bill. Federal estate tax only applies to estates above $15 million, and inheritance taxes only exist in five states. The real tax exposure comes later: from capital gains when you sell inherited property, and from income tax on inherited retirement account withdrawals.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>

@@ -196,15 +196,15 @@ export default function UnderstandingYourW4() {
       </p>
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
-        <li style={{ marginBottom: '0.5rem' }}><strong>Qualifying children under 17:</strong> multiply the number of qualifying children by <strong>$2,000</strong></li>
+        <li style={{ marginBottom: '0.5rem' }}><strong>Qualifying children under 17:</strong> multiply the number of qualifying children by <strong>$2,200</strong></li>
         <li style={{ marginBottom: '0.5rem' }}><strong>Other dependents</strong> (older children, other qualifying relatives): multiply by <strong>$500</strong></li>
         <li style={{ marginBottom: '0.5rem' }}>Add these together and enter the total in Step 3</li>
       </ul>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        This amount is then spread across your remaining pay periods for the year, reducing each paycheck&rsquo;s withholding by an equal share. For example, if you enter $4,000 (two qualifying children) and you have 20 pay periods left in the year, your withholding drops by $200 per check.{' '}
+        This amount is then spread across your remaining pay periods for the year, reducing each paycheck&rsquo;s withholding by an equal share. For example, if you enter $4,400 (two qualifying children) and you have 20 pay periods left in the year, your withholding drops by $220 per check.{' '}
         <a href="https://www.irs.gov/taxtopics/tc607" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
-          (IRS &mdash; Topic 607: Adoption Credit and Adoption Assistance Programs)
+          (IRS &mdash; Form W-4 instructions, Step 3: Claim Dependents)
         </a>
       </p>
 

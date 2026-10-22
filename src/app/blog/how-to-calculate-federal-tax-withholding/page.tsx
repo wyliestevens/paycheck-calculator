@@ -501,7 +501,7 @@ export default function HowToCalculateFederalTaxWithholding() {
           <strong>Step 2 &mdash; Multiple jobs or spouse works:</strong> If you (or your spouse) work multiple jobs, checking this box or using the worksheet increases withholding to prevent under-withholding from income stacking across jobs.
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
-          <strong>Step 3 &mdash; Claim dependents:</strong> You enter a dollar amount (e.g., $4,000 for two qualifying children). This is subtracted annually from the tentative withholding &mdash; it directly reduces how much tax is withheld each paycheck. For example, claiming $4,000 reduces annual withholding by $4,000 &divide; your tax rate.
+          <strong>Step 3 &mdash; Claim dependents:</strong> You enter a dollar amount (e.g., $4,400 for two qualifying children). This is subtracted annually from the tentative withholding &mdash; it directly reduces how much tax is withheld each paycheck. For example, claiming $4,400 reduces annual withholding by $4,400 &divide; your tax rate.
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
           <strong>Step 4a &mdash; Other income:</strong> Enter additional income not subject to withholding (like freelance income or investment income) to have extra tax withheld. This amount is added to your annualized wages.

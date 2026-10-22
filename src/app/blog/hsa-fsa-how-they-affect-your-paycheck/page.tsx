@@ -133,7 +133,7 @@ export default function HsaFsaPaycheck() {
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
         <li style={{ marginBottom: '0.5rem' }}><strong>Funds are front-loaded:</strong> Your entire annual election is available on January 1 — even if you have not contributed that much yet through payroll deductions. This means you can have a $3,000 procedure in January and be reimbursed in full, even though your paycheck contributions only started.</li>
-        <li style={{ marginBottom: '0.5rem' }}><strong>&ldquo;Use it or lose it&rdquo; rule:</strong> Unused FSA funds generally expire at the end of the plan year. Employers may offer a grace period of up to 2.5 months into the new year, or allow a limited rollover. In 2026, the IRS rollover limit is <strong>$660</strong> — any balance above that is forfeited.</li>
+        <li style={{ marginBottom: '0.5rem' }}><strong>&ldquo;Use it or lose it&rdquo; rule:</strong> Unused FSA funds generally expire at the end of the plan year. Employers may offer a grace period of up to 2.5 months into the new year, or allow a limited rollover. In 2026, the IRS rollover limit is <strong>$680</strong> — any balance above that is forfeited.</li>
         <li style={{ marginBottom: '0.5rem' }}><strong>Employer-only:</strong> You can only open an FSA through your employer&rsquo;s benefits plan. Self-employed workers cannot use healthcare FSAs.</li>
       </ul>
 
@@ -175,7 +175,7 @@ export default function HsaFsaPaycheck() {
               ['HSA — Family Coverage', '$8,750', 'Must be enrolled in HDHP'],
               ['HSA Catch-Up (age 55+)', '+$1,000', 'Additional per eligible individual'],
               ['Healthcare FSA', '$3,400', 'Per employee; no HDHP required'],
-              ['FSA Rollover Maximum', '$660', 'Maximum unused funds that carry over'],
+              ['FSA Rollover Maximum', '$680', 'Maximum unused funds that carry over'],
               ['Dependent Care FSA', '$5,000', '$2,500 if married filing separately'],
             ].map(([account, limit, notes], i) => (
               <tr key={account} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
@@ -228,13 +228,13 @@ export default function HsaFsaPaycheck() {
           <tbody>
             <tr style={{ background: '#ffffff' }}>
               <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#1e293b' }}>Minimum annual deductible</td>
-              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$1,650</td>
-              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$3,300</td>
+              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$1,700</td>
+              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$3,400</td>
             </tr>
             <tr style={{ background: '#f8fafc' }}>
               <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#1e293b' }}>Maximum out-of-pocket limit</td>
-              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$8,300</td>
-              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$16,600</td>
+              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$8,500</td>
+              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$17,000</td>
             </tr>
           </tbody>
         </table>
@@ -385,7 +385,7 @@ export default function HsaFsaPaycheck() {
             {[
               ['HDHP required?', 'Yes', 'No'],
               ['2026 individual limit', '$4,400', '$3,400'],
-              ['Unused funds roll over?', 'Yes — unlimited', 'Limited ($660 max)'],
+              ['Unused funds roll over?', 'Yes — unlimited', 'Limited ($680 max)'],
               ['Funds available January 1?', 'Only what you\'ve contributed', 'Full annual election'],
               ['Can you invest the balance?', 'Yes', 'No'],
               ['Who can contribute?', 'You + employer + anyone', 'You only (via payroll)'],

@@ -62,13 +62,13 @@ export default function CommuterBenefitsPage() {
           <rect x="258" y="55" width="118" height="88" rx="6" fill="rgba(255,255,255,0.2)" />
           <text x="317" y="79" textAnchor="middle" fontSize="11" fontWeight="600" fill="#fff" fontFamily="sans-serif">Transit &amp;</text>
           <text x="317" y="95" textAnchor="middle" fontSize="11" fontWeight="600" fill="#fff" fontFamily="sans-serif">Vanpool</text>
-          <text x="317" y="128" textAnchor="middle" fontSize="22" fontWeight="700" fill="#fff" fontFamily="monospace">$330</text>
+          <text x="317" y="128" textAnchor="middle" fontSize="22" fontWeight="700" fill="#fff" fontFamily="monospace">$340</text>
           <text x="317" y="144" textAnchor="middle" fontSize="10" fill="rgba(255,255,255,0.75)" fontFamily="sans-serif">per month</text>
           {/* Parking box */}
           <rect x="390" y="55" width="118" height="88" rx="6" fill="rgba(255,255,255,0.2)" />
           <text x="449" y="87" textAnchor="middle" fontSize="11" fontWeight="600" fill="#fff" fontFamily="sans-serif">Qualified</text>
           <text x="449" y="103" textAnchor="middle" fontSize="11" fontWeight="600" fill="#fff" fontFamily="sans-serif">Parking</text>
-          <text x="449" y="128" textAnchor="middle" fontSize="22" fontWeight="700" fill="#fff" fontFamily="monospace">$330</text>
+          <text x="449" y="128" textAnchor="middle" fontSize="22" fontWeight="700" fill="#fff" fontFamily="monospace">$340</text>
           <text x="449" y="144" textAnchor="middle" fontSize="10" fill="rgba(255,255,255,0.75)" fontFamily="sans-serif">per month</text>
           {/* Bottom note */}
           <text x="382" y="170" textAnchor="middle" fontSize="11" fill="rgba(255,255,255,0.7)" fontFamily="sans-serif">Reduces federal, state &amp; FICA taxes</text>
@@ -150,9 +150,9 @@ export default function CommuterBenefitsPage() {
           </thead>
           <tbody>
             {[
-              ['Transit passes &amp; vanpool', '$330', '$3,960'],
-              ['Qualified parking', '$330', '$3,960'],
-              ['Combined maximum', '$660', '$7,920'],
+              ['Transit passes &amp; vanpool', '$340', '$4,080'],
+              ['Qualified parking', '$340', '$4,080'],
+              ['Combined maximum', '$680', '$8,160'],
             ].map(([type, monthly, annual], i) => (
               <tr key={type} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td
@@ -168,9 +168,9 @@ export default function CommuterBenefitsPage() {
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        These limits are adjusted annually for inflation. In 2025, both limits were $325/month. The IRS publishes updated amounts each fall in a Revenue Procedure. Note that the transit limit and parking limit are <strong>completely separate</strong> &mdash; a commuter who parks at a train station and rides the train can claim up to $330/month for parking AND $330/month for the transit pass.{' '}
+        These limits are adjusted annually for inflation. In 2025, both limits were $325/month. The IRS publishes updated amounts each fall in a Revenue Procedure. Note that the transit limit and parking limit are <strong>completely separate</strong> &mdash; a commuter who parks at a train station and rides the train can claim up to $340/month for parking AND $340/month for the transit pass.{' '}
         <a href="https://www.irs.gov/taxtopics/tc421" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
-          (IRS Topic 421 &mdash; Scholarships, Fellowship Grants, and Other Grants)
+          (IRS Publication 15-B &mdash; Employer&rsquo;s Tax Guide to Fringe Benefits)
         </a>
       </p>
 
@@ -274,7 +274,7 @@ export default function CommuterBenefitsPage() {
       </h2>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Both transit and parking benefits share the same $330/month limit, but they cover different things and work slightly differently in practice.
+        Both transit and parking benefits share the same $340/month limit, but they cover different things and work slightly differently in practice.
       </p>
 
       <h3 style={{ fontSize: '1.125rem', fontWeight: 600, color: '#1e293b', marginTop: '1.5rem', marginBottom: '0.75rem' }}>
@@ -338,7 +338,7 @@ export default function CommuterBenefitsPage() {
               ['Reduces FICA?', 'Yes', 'Yes', 'Yes'],
               ['Use-it-or-lose-it?', 'Varies*', 'Yes (mostly)', 'No'],
               ['Election locked in?', 'Monthly changes OK', 'Annual', 'Anytime'],
-              ['2026 limit', '$330/mo each', '$3,400/yr', '$4,400/yr single'],
+              ['2026 limit', '$340/mo each', '$3,400/yr', '$4,400/yr single'],
               ['Requires HDHP?', 'No', 'No', 'Yes'],
             ].map(([label, commuter, fsa, hsa], i) => (
               <tr key={label} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
@@ -374,7 +374,7 @@ export default function CommuterBenefitsPage() {
 
       <ol style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
         <li style={{ marginBottom: '0.5rem' }}>Log in to your employer&rsquo;s benefits portal or contact HR</li>
-        <li style={{ marginBottom: '0.5rem' }}>Select your monthly election amounts for transit and/or parking (up to $330 each)</li>
+        <li style={{ marginBottom: '0.5rem' }}>Select your monthly election amounts for transit and/or parking (up to $340 each)</li>
         <li style={{ marginBottom: '0.5rem' }}>Receive a prepaid debit card or vouchers linked to your benefit account</li>
         <li style={{ marginBottom: '0.5rem' }}>Use the card directly at subway fare machines, bus fare apps, or parking garages</li>
       </ol>
@@ -498,7 +498,7 @@ export default function CommuterBenefitsPage() {
       </h2>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Commuter benefits are one of the most underutilized tax savings tools available to employees. The 2026 limits &mdash; $330/month for transit and $330/month for parking &mdash; can shelter up to $7,920 per year in commuting costs from federal income tax, state income tax, Social Security, and Medicare. That is a far broader tax reduction than a standard 401(k) deduction, which does not reduce FICA taxes.
+        Commuter benefits are one of the most underutilized tax savings tools available to employees. The 2026 limits &mdash; $340/month for transit and $340/month for parking &mdash; can shelter up to $8,160 per year in commuting costs from federal income tax, state income tax, Social Security, and Medicare. That is a far broader tax reduction than a standard 401(k) deduction, which does not reduce FICA taxes.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>

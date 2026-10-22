@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     images: [{ url: '/og/blog/savers-credit-2026', width: 1200, height: 630 }],
     title: "The Saver's Credit: The Tax Credit Most Low-Income Workers Miss (2026)",
     description:
-      "Contribute to a 401(k) or IRA and earn under $39,500 (single)? The IRS will give you up to $1,000 back. Here's exactly how the Saver's Credit works.",
+      "Contribute to a 401(k) or IRA and earn under $40,250 (single)? The IRS will give you up to $1,000 back. Here's exactly how the Saver's Credit works.",
   },
 }
 
@@ -168,10 +168,10 @@ export default function SaversCredit2026() {
           </thead>
           <tbody>
             {[
-              ['50%', 'Up to $23,750', 'Up to $35,625', 'Up to $47,500'],
-              ['20%', '$23,751 – $25,875', '$35,626 – $38,812', '$47,501 – $51,750'],
-              ['10%', '$25,876 – $39,500', '$38,813 – $59,250', '$51,751 – $79,000'],
-              ['0%', 'Over $39,500', 'Over $59,250', 'Over $79,000'],
+              ['50%', 'Up to $24,250', 'Up to $36,375', 'Up to $48,500'],
+              ['20%', '$24,251 – $26,500', '$36,376 – $39,750', '$48,501 – $53,000'],
+              ['10%', '$26,501 – $40,250', '$39,751 – $60,375', '$53,001 – $80,500'],
+              ['0%', 'Over $40,250', 'Over $60,375', 'Over $80,500'],
             ].map(([rate, single, hoh, mfj], i) => (
               <tr key={rate} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', fontFamily: "'JetBrains Mono', monospace", color: rate === '0%' ? '#94a3b8' : '#16a34a', fontWeight: 600 }}>{rate}</td>
@@ -270,11 +270,11 @@ export default function SaversCredit2026() {
       </p>
 
       <h3 style={{ fontSize: '1.125rem', fontWeight: 600, color: '#1e293b', marginTop: '1.75rem', marginBottom: '0.625rem' }}>
-        Example 2: Married Couple in Ohio, $44,000 AGI
+        Example 2: Married Couple in Ohio, $50,000 AGI
       </h3>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1rem' }}>
-        James and Linda file jointly. Their combined AGI is $44,000. James contributes $2,000 to his Roth IRA and Linda contributes $2,000 to her 401(k).
+        James and Linda file jointly. Their combined AGI is $50,000. James contributes $2,000 to his Roth IRA and Linda contributes $2,000 to her 401(k).
       </p>
 
       <div
@@ -289,7 +289,7 @@ export default function SaversCredit2026() {
         }}
       >
         <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem', color: '#475569' }}>
-          <span>AGI (married filing jointly)</span><span style={{ color: '#1e293b', fontWeight: 600 }}>$44,000</span>
+          <span>AGI (married filing jointly)</span><span style={{ color: '#1e293b', fontWeight: 600 }}>$50,000</span>
         </div>
         <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem', color: '#475569' }}>
           <span>Credit rate (20% bracket for MFJ)</span><span style={{ color: '#1e293b', fontWeight: 600 }}>20%</span>
@@ -314,7 +314,7 @@ export default function SaversCredit2026() {
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The couple saves $800 off their federal tax bill — just by saving money they were already planning to save. If they were in the 50% bracket (AGI under $47,500 MFJ), the credit would be $2,000.
+        The couple saves $800 off their federal tax bill — just by saving money they were already planning to save. If they were in the 50% bracket (AGI under $48,500 MFJ), the credit would be $2,000.
       </p>
 
       {/* Section 5 */}
@@ -499,12 +499,12 @@ export default function SaversCredit2026() {
           </thead>
           <tbody>
             {[
-              ['Single, AGI ≤ $23,750', '50%', '$2,000', '$1,000'],
-              ['Single, AGI $23,751–$25,875', '20%', '$2,000', '$400'],
-              ['Single, AGI $25,876–$39,500', '10%', '$2,000', '$200'],
-              ['Married jointly, AGI ≤ $47,500', '50%', '$4,000', '$2,000'],
-              ['Married jointly, AGI $47,501–$51,750', '20%', '$4,000', '$800'],
-              ['Married jointly, AGI $51,751–$79,000', '10%', '$4,000', '$400'],
+              ['Single, AGI ≤ $24,250', '50%', '$2,000', '$1,000'],
+              ['Single, AGI $24,251–$26,500', '20%', '$2,000', '$400'],
+              ['Single, AGI $26,501–$40,250', '10%', '$2,000', '$200'],
+              ['Married jointly, AGI ≤ $48,500', '50%', '$4,000', '$2,000'],
+              ['Married jointly, AGI $48,501–$53,000', '20%', '$4,000', '$800'],
+              ['Married jointly, AGI $53,001–$80,500', '10%', '$4,000', '$400'],
             ].map(([scenario, rate, contrib, credit], i) => (
               <tr key={scenario} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569' }}>{scenario}</td>
@@ -527,7 +527,7 @@ export default function SaversCredit2026() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        If your AGI falls below $39,500 (single) or $79,000 (married filing jointly), and you have contributed anything to a qualifying retirement account, there is a good chance you qualify. The only way to miss it is to not claim it.
+        If your AGI falls below $40,250 (single) or $80,500 (married filing jointly), and you have contributed anything to a qualifying retirement account, there is a good chance you qualify. The only way to miss it is to not claim it.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>

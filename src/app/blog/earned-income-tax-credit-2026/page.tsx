@@ -5,7 +5,7 @@ import ArticleMeta from '@/components/ArticleMeta'
 export const metadata: Metadata = {
   title: { absolute: 'Earned Income Tax Credit (EITC) 2026: Who Qualifies and How Much You Can Get' },
   description:
-    'The EITC can put up to $8,250 back in your pocket in 2026 — but only if you claim it. Here\'s who qualifies, the exact income limits, and a worked example at $28,000 with two qualifying children.',
+    'The EITC can put up to $8,231 back in your pocket in 2026 — but only if you claim it. Here\'s who qualifies, the exact income limits, and a worked example at $28,000 with two qualifying children.',
   alternates: { canonical: '/blog/earned-income-tax-credit-2026' },
   keywords:
     'earned income tax credit 2026, EITC 2026, who qualifies for EITC, EITC income limit 2026, earned income credit amount 2026, EITC with children, how to claim EITC, EITC refund 2026',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     images: [{ url: '/og/blog/earned-income-tax-credit-2026', width: 1200, height: 630 }],
     title: 'Earned Income Tax Credit (EITC) 2026: Who Qualifies and How Much You Can Get',
     description:
-      'The EITC can put up to $8,250 back in your pocket in 2026. Here\'s who qualifies and the exact income limits.',
+      'The EITC can put up to $8,231 back in your pocket in 2026. Here\'s who qualifies and the exact income limits.',
   },
 }
 
@@ -46,19 +46,19 @@ export default function EarnedIncomeTaxCredit2026() {
           {/* Box 1: 0 children */}
           <rect x="40" y="65" width="155" height="95" rx="8" fill="rgba(255,255,255,0.15)" />
           <text x="118" y="90" textAnchor="middle" fontSize="11" fill="rgba(255,255,255,0.7)" fontFamily="sans-serif">No qualifying children</text>
-          <text x="118" y="120" textAnchor="middle" fontSize="26" fontWeight="700" fill="#fff" fontFamily="monospace">$700</text>
+          <text x="118" y="120" textAnchor="middle" fontSize="26" fontWeight="700" fill="#fff" fontFamily="monospace">$664</text>
           <text x="118" y="144" textAnchor="middle" fontSize="10" fill="rgba(255,255,255,0.55)" fontFamily="sans-serif">max credit</text>
 
           {/* Box 2: 1-2 children */}
           <rect x="220" y="65" width="155" height="95" rx="8" fill="rgba(255,255,255,0.2)" />
           <text x="298" y="90" textAnchor="middle" fontSize="11" fill="rgba(255,255,255,0.7)" fontFamily="sans-serif">2 qualifying children</text>
-          <text x="298" y="120" textAnchor="middle" fontSize="26" fontWeight="700" fill="#fff" fontFamily="monospace">$7,350</text>
+          <text x="298" y="120" textAnchor="middle" fontSize="26" fontWeight="700" fill="#fff" fontFamily="monospace">$7,316</text>
           <text x="298" y="144" textAnchor="middle" fontSize="10" fill="rgba(255,255,255,0.55)" fontFamily="sans-serif">max credit</text>
 
           {/* Box 3: 3+ children */}
           <rect x="400" y="65" width="155" height="95" rx="8" fill="rgba(255,255,255,0.25)" />
           <text x="478" y="90" textAnchor="middle" fontSize="11" fill="rgba(255,255,255,0.7)" fontFamily="sans-serif">3+ qualifying children</text>
-          <text x="478" y="120" textAnchor="middle" fontSize="26" fontWeight="700" fill="#fff" fontFamily="monospace">$8,250</text>
+          <text x="478" y="120" textAnchor="middle" fontSize="26" fontWeight="700" fill="#fff" fontFamily="monospace">$8,231</text>
           <text x="478" y="144" textAnchor="middle" fontSize="10" fill="rgba(255,255,255,0.55)" fontFamily="sans-serif">max credit</text>
 
           {/* Bottom note */}
@@ -81,7 +81,7 @@ export default function EarnedIncomeTaxCredit2026() {
       <ArticleMeta slug="earned-income-tax-credit-2026" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The <strong>Earned Income Tax Credit</strong> is one of the largest anti-poverty programs in the United States &mdash; and one of the most overlooked benefits available to working Americans. In 2026, it can put up to <strong>$8,250</strong> back into the pockets of working families with three or more qualifying children, and even workers without children can claim up to <strong>$700</strong>.
+        The <strong>Earned Income Tax Credit</strong> is one of the largest anti-poverty programs in the United States &mdash; and one of the most overlooked benefits available to working Americans. In 2026, it can put up to <strong>$8,231</strong> back into the pockets of working families with three or more qualifying children, and even workers without children can claim up to <strong>$700</strong>.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
@@ -192,10 +192,10 @@ export default function EarnedIncomeTaxCredit2026() {
           </thead>
           <tbody>
             {[
-              ['0 (no children)', '$700', '7.65%', '7.65%'],
-              ['1 child', '$4,450', '34%', '15.98%'],
-              ['2 children', '$7,350', '40%', '21.06%'],
-              ['3 or more children', '$8,250', '45%', '21.06%'],
+              ['0 (no children)', '$664', '7.65%', '7.65%'],
+              ['1 child', '$4,427', '34%', '15.98%'],
+              ['2 children', '$7,316', '40%', '21.06%'],
+              ['3 or more children', '$8,231', '45%', '21.06%'],
             ].map(([children, max, phaseIn, phaseOut], i) => (
               <tr key={children} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', fontWeight: 600, color: '#1e293b' }}>{children}</td>
@@ -290,7 +290,7 @@ export default function EarnedIncomeTaxCredit2026() {
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
         <li style={{ marginBottom: '0.5rem' }}>Credit grows at <strong>40%</strong> per dollar of earned income from $0</li>
-        <li style={{ marginBottom: '0.5rem' }}>Reaches the maximum of <strong>$7,350</strong> at approximately $18,375 in earnings</li>
+        <li style={{ marginBottom: '0.5rem' }}>Reaches the maximum of <strong>$7,316</strong> at approximately $18,290 in earnings</li>
         <li style={{ marginBottom: '0.5rem' }}>Stays at maximum through approximately $25,000</li>
         <li style={{ marginBottom: '0.5rem' }}>Decreases at approximately <strong>21 cents per dollar</strong> above the phase-out threshold</li>
         <li style={{ marginBottom: '0.5rem' }}>Falls to <strong>zero</strong> at approximately $54,200</li>
@@ -565,7 +565,7 @@ export default function EarnedIncomeTaxCredit2026() {
           </thead>
           <tbody>
             {[
-              ['Max benefit', 'Up to $8,250', 'Up to $2,000/child', 'Up to $1,050 (1 child)'],
+              ['Max benefit', 'Up to $8,231', 'Up to $2,200/child', 'Up to $1,050 (1 child)'],
               ['Refundable?', 'Yes (fully)', 'Partially ($1,700/child)', 'No'],
               ['Income-tested?', 'Yes (phases out)', 'Yes (phases out)', 'Yes (phases out)'],
               ['Requires children?', 'No (but more if yes)', 'Yes (under 17)', 'Yes (for care expenses)'],
@@ -592,7 +592,7 @@ export default function EarnedIncomeTaxCredit2026() {
       </h2>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The Earned Income Tax Credit is one of the most powerful tax benefits available to working Americans with low-to-moderate incomes. In 2026, it can provide up to <strong>$8,250 for families with three or more qualifying children</strong> &mdash; and even workers without children can claim up to $700. Because it is fully refundable, the EITC can generate a significant check even if you owe no income tax at all.
+        The Earned Income Tax Credit is one of the most powerful tax benefits available to working Americans with low-to-moderate incomes. In 2026, it can provide up to <strong>$8,231 for families with three or more qualifying children</strong> &mdash; and even workers without children can claim up to $700. Because it is fully refundable, the EITC can generate a significant check even if you owe no income tax at all.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>

@@ -5,7 +5,7 @@ import ArticleMeta from '@/components/ArticleMeta'
 export const metadata: Metadata = {
   title: { absolute: 'How to Claim Dependents on Your Taxes: 2026 Guide' },
   description:
-    "Claiming a dependent can cut your federal tax bill by $2,000 or more — and boost every paycheck through your W-4. Here's exactly who qualifies and how to claim them.",
+    "Claiming a dependent can cut your federal tax bill by $2,200 or more — and boost every paycheck through your W-4. Here's exactly who qualifies and how to claim them.",
   alternates: { canonical: '/blog/how-to-claim-dependents-on-taxes-2026' },
   keywords:
     'how to claim dependents 2026, qualifying child, qualifying relative, dependent tax credit, child tax credit 2026, W-4 dependents, dependent definition IRS, claim dependent taxes',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     images: [{ url: '/og/blog/how-to-claim-dependents-on-taxes-2026', width: 1200, height: 630 }],
     title: 'How to Claim Dependents on Your Taxes: 2026 Guide',
     description:
-      "Claiming a dependent can cut your federal tax bill by $2,000 or more — and boost every paycheck through your W-4. Here's exactly who qualifies and how to claim them.",
+      "Claiming a dependent can cut your federal tax bill by $2,200 or more — and boost every paycheck through your W-4. Here's exactly who qualifies and how to claim them.",
   },
 }
 
@@ -70,7 +70,7 @@ export default function HowToClaimDependents2026() {
           <rect x="415" y="55" width="145" height="95" rx="8" fill="rgba(255,255,255,0.15)" />
           <text x="488" y="78" textAnchor="middle" fontSize="11" fontWeight="600" fill="rgba(255,255,255,0.85)" fontFamily="sans-serif">TAX SAVINGS</text>
           <rect x="428" y="85" width="120" height="25" rx="4" fill="rgba(255,255,255,0.2)" />
-          <text x="488" y="102" textAnchor="middle" fontSize="12" fontWeight="700" fill="#fff" fontFamily="monospace">$2,000 / child</text>
+          <text x="488" y="102" textAnchor="middle" fontSize="12" fontWeight="700" fill="#fff" fontFamily="monospace">$2,200 / child</text>
           <rect x="428" y="115" width="120" height="25" rx="4" fill="rgba(255,255,255,0.12)" />
           <text x="488" y="132" textAnchor="middle" fontSize="12" fontWeight="700" fill="rgba(255,255,255,0.9)" fontFamily="monospace">$500 / other</text>
         </svg>
@@ -91,7 +91,7 @@ export default function HowToClaimDependents2026() {
       <ArticleMeta slug="how-to-claim-dependents-on-taxes-2026" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Claiming a dependent is one of the most valuable things you can do on your tax return. A single qualifying child under age 17 earns you a <strong>$2,000 Child Tax Credit</strong> — and that credit flows directly to your paycheck when you update your W-4. For a family with two qualifying children, the savings reach <strong>$4,000 per year</strong>, or roughly <strong>$154 more in every biweekly paycheck</strong>.
+        Claiming a dependent is one of the most valuable things you can do on your tax return. A single qualifying child under age 17 earns you a <strong>$2,200 Child Tax Credit</strong> — and that credit flows directly to your paycheck when you update your W-4. For a family with two qualifying children, the savings reach <strong>$4,000 per year</strong>, or roughly <strong>$154 more in every biweekly paycheck</strong>.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
@@ -108,7 +108,7 @@ export default function HowToClaimDependents2026() {
       </p>
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
-        <li style={{ marginBottom: '0.5rem' }}><strong>Child Tax Credit:</strong> Up to $2,000 per qualifying child under 17 — directly reduces your tax bill dollar for dollar</li>
+        <li style={{ marginBottom: '0.5rem' }}><strong>Child Tax Credit:</strong> Up to $2,200 per qualifying child under 17 — directly reduces your tax bill dollar for dollar</li>
         <li style={{ marginBottom: '0.5rem' }}><strong>Credit for Other Dependents:</strong> $500 per qualifying non-child dependent</li>
         <li style={{ marginBottom: '0.5rem' }}><strong>Head of Household filing status:</strong> A higher standard deduction ($24,150 vs. $16,100 for single filers) and lower tax brackets</li>
         <li style={{ marginBottom: '0.5rem' }}><strong>Child and Dependent Care Credit:</strong> 20–35% of childcare expenses up to $3,000 for one child or $6,000 for two or more</li>
@@ -117,7 +117,7 @@ export default function HowToClaimDependents2026() {
       </ul>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The two most impactful benefits for most families are the <strong>Child Tax Credit</strong> (up to $2,000 per child, up to $1,700 refundable) and the ability to file as <strong>Head of Household</strong>.{' '}
+        The two most impactful benefits for most families are the <strong>Child Tax Credit</strong> (up to $2,200 per child, up to $1,700 refundable) and the ability to file as <strong>Head of Household</strong>.{' '}
         <a href="https://www.irs.gov/taxtopics/tc551" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS — Topic 551: Standard Deduction)
         </a>
@@ -153,7 +153,7 @@ export default function HowToClaimDependents2026() {
               ['Who it covers', 'Children, stepchildren, foster children, siblings, and their descendants', 'Parents, grandparents, adult children, siblings, in-laws, and others you support'],
               ['Age limit', 'Under 19; or under 24 and full-time student; or disabled at any age', 'No age limit'],
               ['Income limit', 'None (support test applies)', 'Gross income must be under $5,050'],
-              ['Main credit', '$2,000 Child Tax Credit (per child under 17)', '$500 Credit for Other Dependents'],
+              ['Main credit', '$2,200 Child Tax Credit (per child under 17)', '$500 Credit for Other Dependents'],
               ['HOH eligibility', 'Yes, if unmarried', 'Yes, for parents and certain others'],
             ].map(([label, child, relative], i) => (
               <tr key={label} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
@@ -172,7 +172,7 @@ export default function HowToClaimDependents2026() {
       </h2>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        To claim someone as a qualifying child, they must pass <strong>all five</strong> of these tests. This is the higher-value category — it unlocks the $2,000 Child Tax Credit and Head of Household status.{' '}
+        To claim someone as a qualifying child, they must pass <strong>all five</strong> of these tests. This is the higher-value category — it unlocks the $2,200 Child Tax Credit and Head of Household status.{' '}
         <a href="https://www.irs.gov/publications/p501" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS Publication 501 — Dependents, Standard Deduction, and Filing Information)
         </a>
@@ -202,7 +202,7 @@ export default function HowToClaimDependents2026() {
         <li style={{ marginBottom: '0.375rem' }}>Permanently and totally disabled — no age limit</li>
       </ul>
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Note: the $2,000 Child Tax Credit only applies to qualifying children who are under 17 at year-end. A 19-year-old full-time student counts as a qualifying child for filing purposes (Head of Household, dependency exemption), but does not generate the $2,000 Child Tax Credit — they generate the $500 Credit for Other Dependents instead.
+        Note: the $2,200 Child Tax Credit only applies to qualifying children who are under 17 at year-end. A 19-year-old full-time student counts as a qualifying child for filing purposes (Head of Household, dependency exemption), but does not generate the $2,200 Child Tax Credit — they generate the $500 Credit for Other Dependents instead.
       </p>
 
       <h3 style={{ fontSize: '1.125rem', fontWeight: 600, color: '#1e293b', marginTop: '1.5rem', marginBottom: '0.75rem' }}>
@@ -327,7 +327,7 @@ export default function HowToClaimDependents2026() {
           </thead>
           <tbody>
             {[
-              ['Child Tax Credit', '$2,000', '—', '—'],
+              ['Child Tax Credit', '$2,200', '—', '—'],
               ['Credit for Other Dependents', '—', '$500', '$500'],
               ['Head of Household status', 'Yes (if unmarried)', 'Yes (if unmarried)', 'Yes (parent in own home)'],
               ['Higher standard deduction', '$24,150 (HOH)', '$24,150 (HOH)', '$24,150 (HOH, parent)'],
@@ -382,9 +382,9 @@ export default function HowToClaimDependents2026() {
               ['Standard deduction', '−$16,100', '−$24,150'],
               ['Taxable income', '$43,900', '$35,850'],
               ['Federal tax (before credits)', '$5,020', '$3,948'],
-              ['Child Tax Credit', '—', '−$2,000'],
-              ['Federal tax (after credits)', '$5,020', '$1,948'],
-              ['Effective federal rate', '8.4%', '3.2%'],
+              ['Child Tax Credit', '—', '−$2,200'],
+              ['Federal tax (after credits)', '$5,020', '$1,748'],
+              ['Effective federal rate', '8.4%', '2.9%'],
             ].map(([label, noDependent, withChild], i) => (
               <tr key={label} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569' }}>{label}</td>
@@ -395,18 +395,18 @@ export default function HowToClaimDependents2026() {
             <tr style={{ background: '#f0fdf4' }}>
               <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', fontWeight: 700, color: '#1e293b' }}>Annual tax savings</td>
               <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#94a3b8' }}>—</td>
-              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>$3,072</td>
+              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>$3,272</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <p style={{ fontSize: '0.875rem', lineHeight: 1.6, color: '#94a3b8', marginBottom: '1.5rem' }}>
-        The $3,072 total savings comes from two sources: $2,000 from the Child Tax Credit plus $1,072 from the larger standard deduction as Head of Household (the extra $8,050 deduction saves $1,072 at the 12% marginal rate: $8,050 × 12% = $966, and the bracketing effect brings it to approximately $1,072).
+        The $3,272 total savings comes from two sources: $2,200 from the Child Tax Credit plus $1,072 from the larger standard deduction as Head of Household (the extra $8,050 deduction saves $1,072 at the 12% marginal rate: $8,050 × 12% = $966, and the bracketing effect brings it to approximately $1,072).
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        With <strong>two qualifying children under 17</strong>, the Child Tax Credit doubles to $4,000, and the total savings increases to approximately <strong>$5,072 per year</strong>.
+        With <strong>two qualifying children under 17</strong>, the Child Tax Credit doubles to $4,400, and the total savings increases to approximately <strong>$5,472 per year</strong>.
       </p>
 
       {/* Section 8 */}
@@ -426,13 +426,13 @@ export default function HowToClaimDependents2026() {
       </p>
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
-        <li style={{ marginBottom: '0.5rem' }}>For each qualifying child under age 17: multiply by <strong>$2,000</strong></li>
+        <li style={{ marginBottom: '0.5rem' }}>For each qualifying child under age 17: multiply by <strong>$2,200</strong></li>
         <li style={{ marginBottom: '0.5rem' }}>For each other qualifying dependent: multiply by <strong>$500</strong></li>
         <li style={{ marginBottom: '0.5rem' }}>Add these together and enter the total on line 3</li>
       </ul>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1rem' }}>
-        Your employer will reduce your annual withholding by the amount you entered — spread equally across all remaining pay periods. Here is the per-paycheck boost for one qualifying child ($2,000 entered on Step 3):
+        Your employer will reduce your annual withholding by the amount you entered — spread equally across all remaining pay periods. Here is the per-paycheck boost for one qualifying child ($2,200 entered on Step 3):
       </p>
 
       <div style={{ overflowX: 'auto', marginBottom: '1.5rem' }}>
@@ -454,10 +454,10 @@ export default function HowToClaimDependents2026() {
           </thead>
           <tbody>
             {[
-              ['Weekly', '52', '$38.46', '$76.92'],
-              ['Biweekly', '26', '$76.92', '$153.85'],
-              ['Semi-monthly', '24', '$83.33', '$166.67'],
-              ['Monthly', '12', '$166.67', '$333.33'],
+              ['Weekly', '52', '$42.31', '$84.62'],
+              ['Biweekly', '26', '$84.62', '$169.23'],
+              ['Semi-monthly', '24', '$91.67', '$183.33'],
+              ['Monthly', '12', '$183.33', '$366.67'],
             ].map(([freq, periods, one, two], i) => (
               <tr key={freq} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569' }}>{freq}</td>
@@ -532,7 +532,7 @@ export default function HowToClaimDependents2026() {
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
         <li style={{ marginBottom: '0.625rem' }}><strong>Forgetting to update your W-4.</strong> The Child Tax Credit does not automatically flow into your paycheck — you must complete Step 3 on your W-4. Many parents leave money in every paycheck all year unnecessarily.</li>
         <li style={{ marginBottom: '0.625rem' }}><strong>Claiming a child who lived elsewhere most of the year.</strong> A child must live with you for more than 183 days. If they lived primarily with your ex-spouse, you need Form 8332 to claim them.</li>
-        <li style={{ marginBottom: '0.625rem' }}><strong>Assuming a full-time college student generates the $2,000 Child Tax Credit.</strong> A 19-year-old college student is still your qualifying child — but only generates the $500 Credit for Other Dependents, not $2,000. The $2,000 credit requires the child to be under 17 at year-end.</li>
+        <li style={{ marginBottom: '0.625rem' }}><strong>Assuming a full-time college student generates the $2,200 Child Tax Credit.</strong> A 19-year-old college student is still your qualifying child — but only generates the $500 Credit for Other Dependents, not $2,200. The $2,200 credit requires the child to be under 17 at year-end.</li>
         <li style={{ marginBottom: '0.625rem' }}><strong>Counting the noncustodial parent&rsquo;s claim as automatic.</strong> If you and your ex share children 50/50, the IRS tiebreaker gives the claim to the parent with the higher AGI — not whoever claimed them last year. Use Form 8332 to make arrangements explicit.</li>
         <li style={{ marginBottom: '0.625rem' }}><strong>Overlooking elderly parents.</strong> Millions of Americans pay the bulk of a parent&rsquo;s living expenses without realizing they can claim a $500 credit and potentially file as Head of Household.</li>
         <li style={{ marginBottom: '0.625rem' }}><strong>Claiming a dependent with too much income.</strong> The $5,050 gross income limit for qualifying relatives catches many people off guard, especially with adult children or parents who work part-time.</li>
@@ -544,7 +544,7 @@ export default function HowToClaimDependents2026() {
       </h2>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Claiming dependents correctly is one of the most impactful tax moves a working American can make. A single qualifying child under 17 is worth up to <strong>$2,000 in tax credits</strong> plus a larger standard deduction if you qualify for Head of Household. Two children double the credits to $4,000. And none of that has to wait until April — update your W-4 Step 3 and the savings flow into every paycheck.
+        Claiming dependents correctly is one of the most impactful tax moves a working American can make. A single qualifying child under 17 is worth up to <strong>$2,200 in tax credits</strong> plus a larger standard deduction if you qualify for Head of Household. Two children double the credits to $4,400. And none of that has to wait until April — update your W-4 Step 3 and the savings flow into every paycheck.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>

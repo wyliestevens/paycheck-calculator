@@ -195,7 +195,7 @@ export default function YearEndTaxPlanning2026() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        If you expect to be in a higher tax bracket in retirement, a <strong>Roth IRA</strong> (after-tax contributions, tax-free withdrawals) may be more valuable. The same $7,500 limit applies. Roth IRA eligibility phases out at $150,000 for single filers and $236,000 for married filing jointly in 2026.
+        If you expect to be in a higher tax bracket in retirement, a <strong>Roth IRA</strong> (after-tax contributions, tax-free withdrawals) may be more valuable. The same $7,500 limit applies. Roth IRA eligibility phases out at $153,000 for single filers and $242,000 for married filing jointly in 2026.
       </p>
 
       {/* Step 4 */}
@@ -220,7 +220,7 @@ export default function YearEndTaxPlanning2026() {
       </ul>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Employers are allowed to offer either a 2.5-month grace period (until March 15, 2027) or a rollover of up to <strong>$660</strong> in 2026 &mdash; but they are not required to. Check your plan documents or call your HR department to find out which option, if any, applies to you.{' '}
+        Employers are allowed to offer either a 2.5-month grace period (until March 15, 2027) or a rollover of up to <strong>$680</strong> in 2026 &mdash; but they are not required to. Check your plan documents or call your HR department to find out which option, if any, applies to you.{' '}
         <a href="https://www.irs.gov/pub/irs-pdf/p969.pdf" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS &mdash; Publication 969, Health Savings Accounts and Other Tax-Favored Health Plans)
         </a>
@@ -333,7 +333,7 @@ export default function YearEndTaxPlanning2026() {
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
         <li style={{ marginBottom: '0.5rem' }}><strong>Marriage:</strong> Your filing status changes to Married Filing Jointly. The 2026 standard deduction doubles to $32,200. Update your W-4 with your employer.</li>
-        <li style={{ marginBottom: '0.5rem' }}><strong>New child:</strong> You may now claim the Child Tax Credit ($2,000 per qualifying child), Child and Dependent Care Credit, and Dependent Care FSA benefits. Update your W-4 Step 3.</li>
+        <li style={{ marginBottom: '0.5rem' }}><strong>New child:</strong> You may now claim the Child Tax Credit ($2,200 per qualifying child), Child and Dependent Care Credit, and Dependent Care FSA benefits. Update your W-4 Step 3.</li>
         <li style={{ marginBottom: '0.5rem' }}><strong>Home purchase:</strong> Mortgage interest and property taxes may now push you over the standard deduction threshold, making itemizing worthwhile.</li>
         <li style={{ marginBottom: '0.5rem' }}><strong>Job change:</strong> If you changed jobs mid-year, each employer calculates withholding independently as if you worked there all year. Combined, you may be significantly under-withheld.</li>
         <li style={{ marginBottom: '0.5rem' }}><strong>Retirement:</strong> Switching from earned income to retirement withdrawals changes which credits and deductions you qualify for, and may trigger Required Minimum Distributions.</li>

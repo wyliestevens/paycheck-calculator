@@ -236,7 +236,7 @@ export default function GiftTaxRules2026() {
           A note on the 2026 lifetime exemption:
         </p>
         <p style={{ fontSize: '0.9375rem', color: '#475569', margin: 0, lineHeight: 1.6 }}>
-          The lifetime exemption was significantly increased by the Tax Cuts and Jobs Act of 2017. The 2025 exemption was $13.99 million per person. Tax legislation in effect for 2026 determines the current figure — check{' '}
+          The lifetime exemption was significantly increased by the Tax Cuts and Jobs Act of 2017. The 2025 exemption was $13.99 million per person. For 2026, the exemption is $15 million per person — check{' '}
           <a href="https://www.irs.gov/newsroom/estate-and-gift-tax" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
             IRS.gov&rsquo;s Estate and Gift Tax page
           </a>{' '}

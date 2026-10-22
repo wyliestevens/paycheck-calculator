@@ -395,7 +395,7 @@ export default function PartTimeVsFullTimeTaxes() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Part-time workers who lack a workplace plan still have options: they can open a <strong>Traditional IRA</strong> (up to $7,500 in 2026, or $8,600 if you are 50+) and get the same pre-tax deduction — as long as their income is below the IRA deductibility phase-out ($79,000 for a single filer in 2026 who has no workplace retirement plan). A <strong>Roth IRA</strong> is also available and while contributions are post-tax, the tax-free growth can be very valuable for lower earners.{' '}
+        Part-time workers who lack a workplace plan still have options: they can open a <strong>Traditional IRA</strong> (up to $7,500 in 2026, or $8,600 if you are 50+) and get the same pre-tax deduction — as long as their income is below the IRA deductibility phase-out (the deduction only begins to phase out above $81,000 for a single filer who is covered by a workplace plan; without one there is no income limit on the deduction). A <strong>Roth IRA</strong> is also available and while contributions are post-tax, the tax-free growth can be very valuable for lower earners.{' '}
         <a
           href="https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-ira-contribution-limits"
           target="_blank"

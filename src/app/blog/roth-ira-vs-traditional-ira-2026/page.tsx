@@ -187,13 +187,13 @@ export default function RothIraVsTraditionalIra2026() {
           <thead>
             <tr style={{ background: '#f8fafc' }}>
               <th style={{ padding: '0.75rem 1rem', textAlign: 'left', borderBottom: '2px solid #e2e8f0', fontWeight: 600, color: '#1e293b' }}>Filing Status</th>
-              <th style={{ padding: '0.75rem 1rem', textAlign: 'left', borderBottom: '2px solid #e2e8f0', fontWeight: 600, color: '#1e293b' }}>Phase-Out Range (2026 est.)</th>
+              <th style={{ padding: '0.75rem 1rem', textAlign: 'left', borderBottom: '2px solid #e2e8f0', fontWeight: 600, color: '#1e293b' }}>Phase-Out Range (2026)</th>
             </tr>
           </thead>
           <tbody>
             {[
               ['Single / Head of Household', '$81,000 – $91,000'],
-              ['Married Filing Jointly', '$130,000 – $150,000'],
+              ['Married Filing Jointly', '$129,000 – $149,000'],
               ['Married Filing Separately', '$0 – $10,000'],
             ].map(([status, range], i) => (
               <tr key={status} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
@@ -223,13 +223,13 @@ export default function RothIraVsTraditionalIra2026() {
           <thead>
             <tr style={{ background: '#f8fafc' }}>
               <th style={{ padding: '0.75rem 1rem', textAlign: 'left', borderBottom: '2px solid #e2e8f0', fontWeight: 600, color: '#1e293b' }}>Filing Status</th>
-              <th style={{ padding: '0.75rem 1rem', textAlign: 'left', borderBottom: '2px solid #e2e8f0', fontWeight: 600, color: '#1e293b' }}>Phase-Out Range (2026 est.)</th>
+              <th style={{ padding: '0.75rem 1rem', textAlign: 'left', borderBottom: '2px solid #e2e8f0', fontWeight: 600, color: '#1e293b' }}>Phase-Out Range (2026)</th>
             </tr>
           </thead>
           <tbody>
             {[
-              ['Single / Head of Household', '$155,000 – $170,000'],
-              ['Married Filing Jointly', '$240,000 – $250,000'],
+              ['Single / Head of Household', '$153,000 – $168,000'],
+              ['Married Filing Jointly', '$242,000 – $252,000'],
               ['Married Filing Separately', '$0 – $10,000'],
             ].map(([status, range], i) => (
               <tr key={status} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>

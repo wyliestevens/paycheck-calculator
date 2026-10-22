@@ -348,7 +348,7 @@ export default function HowToFileFirstTime() {
 
       <h3 style={{ fontSize: '1.125rem', fontWeight: 600, color: '#1e293b', marginTop: '1.5rem', marginBottom: '0.5rem' }}>Earned Income Tax Credit (EITC)</h3>
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1rem' }}>
-        The EITC is a refundable credit for low-to-moderate income workers. For 2026, the maximum credit for a single filer with no children is <strong>$649</strong>. With three or more qualifying children, the credit can reach $8,250.{' '}
+        The EITC is a refundable credit for low-to-moderate income workers. For 2026, the maximum credit for a single filer with no children is <strong>$664</strong>. With three or more qualifying children, the credit can reach $8,231.{' '}
         <a href="https://www.irs.gov/credits-deductions/individuals/earned-income-tax-credit/do-i-qualify-for-earned-income-tax-credit-eitc" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS &mdash; EITC Eligibility)
         </a>
@@ -356,7 +356,7 @@ export default function HowToFileFirstTime() {
 
       <h3 style={{ fontSize: '1.125rem', fontWeight: 600, color: '#1e293b', marginTop: '1.5rem', marginBottom: '0.5rem' }}>Saver&rsquo;s Credit (Retirement Savings Contributions Credit)</h3>
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1rem' }}>
-        If you contributed to a 401(k) or IRA and earned under $39,500 (single) in 2026, you may qualify for the Saver&rsquo;s Credit &mdash; worth up to $1,000. It is one of the most overlooked credits for young workers.{' '}
+        If you contributed to a 401(k) or IRA and earned under $40,250 (single) in 2026, you may qualify for the Saver&rsquo;s Credit &mdash; worth up to $1,000. It is one of the most overlooked credits for young workers.{' '}
         <a href="https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-savings-contributions-savers-credit" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS &mdash; Saver&rsquo;s Credit)
         </a>

@@ -201,7 +201,7 @@ export default function TaxCreditsVsDeductions() {
       </ul>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        There is also a third type: <strong>partially refundable credits</strong>. The Child Tax Credit is a prime example &mdash; up to $1,700 of the $2,000 credit is refundable through the Additional Child Tax Credit, while the remaining portion is non-refundable.{' '}
+        There is also a third type: <strong>partially refundable credits</strong>. The Child Tax Credit is a prime example &mdash; up to $1,700 of the $2,200 credit is refundable through the Additional Child Tax Credit, while the remaining portion is non-refundable.{' '}
         <a href="https://www.irs.gov/taxtopics/tc972" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS &mdash; Topic 972: Child Tax Credit)
         </a>
@@ -444,8 +444,8 @@ export default function TaxCreditsVsDeductions() {
           </thead>
           <tbody>
             {[
-              ['Earned Income Tax Credit (up to 3 children)', '$8,250', 'Yes (fully)'],
-              ['Child Tax Credit (per qualifying child)', '$2,000', 'Partially ($1,700)'],
+              ['Earned Income Tax Credit (up to 3 children)', '$8,231', 'Yes (fully)'],
+              ['Child Tax Credit (per qualifying child)', '$2,200', 'Partially ($1,700)'],
               ['American Opportunity Tax Credit (college)', '$2,500', 'Partially ($1,000)'],
               ['Clean Vehicle Credit (new EV)', '$7,500', 'No'],
               ['Lifetime Learning Credit', '$2,000', 'No'],
@@ -623,7 +623,7 @@ export default function TaxCreditsVsDeductions() {
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
         <li style={{ marginBottom: '0.5rem' }}>$3,000 HSA contribution (above-the-line deduction, saves $360 in taxes at 12%)</li>
         <li style={{ marginBottom: '0.5rem' }}>$16,100 standard deduction (reduces taxable income)</li>
-        <li style={{ marginBottom: '0.5rem' }}>$2,000 Child Tax Credit for one child (saves $2,000 directly)</li>
+        <li style={{ marginBottom: '0.5rem' }}>$2,200 Child Tax Credit for one child (saves $2,200 directly)</li>
       </ul>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>

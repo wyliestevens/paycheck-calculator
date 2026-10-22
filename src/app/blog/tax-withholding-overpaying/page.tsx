@@ -138,7 +138,7 @@ export default function TaxWithholdingOverpaying() {
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
         <li style={{ marginBottom: '0.5rem' }}><strong>Haven&rsquo;t updated a W-4 in years.</strong> The IRS redesigned the W-4 in 2020 and old forms may result in higher withholding than needed.</li>
         <li style={{ marginBottom: '0.5rem' }}><strong>Got married.</strong> Married filing jointly has a larger standard deduction ($32,200 in 2026) and lower combined tax bills, but both spouses&rsquo; W-4s may not reflect the new status.</li>
-        <li style={{ marginBottom: '0.5rem' }}><strong>Had a child.</strong> Claiming the Child Tax Credit (up to $2,000 per child) significantly reduces what you owe, but only if your W-4 reflects those credits.</li>
+        <li style={{ marginBottom: '0.5rem' }}><strong>Had a child.</strong> Claiming the Child Tax Credit (up to $2,200 per child) significantly reduces what you owe, but only if your W-4 reflects those credits.</li>
         <li style={{ marginBottom: '0.5rem' }}><strong>Bought a home.</strong> Mortgage interest deductions can substantially lower taxable income if you itemize.</li>
         <li style={{ marginBottom: '0.5rem' }}><strong>Requested extra withholding.</strong> Some people add extra withholding to avoid a surprise bill — and forget to remove it when their situation changes.</li>
       </ul>

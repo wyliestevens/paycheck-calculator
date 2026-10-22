@@ -379,7 +379,7 @@ export default function PreTaxVsPostTaxDeductions() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The Flexible Spending Account (FSA) works similarly but is available to employees regardless of their health plan type. The 2026 limit is $3,400, but FSA funds generally must be used by year-end (with a limited grace period or rollover of up to $660 depending on your employer&rsquo;s plan). Because both HSA and FSA contributions reduce income tax and FICA, they are among the most efficient pre-tax deductions available.
+        The Flexible Spending Account (FSA) works similarly but is available to employees regardless of their health plan type. The 2026 limit is $3,400, but FSA funds generally must be used by year-end (with a limited grace period or rollover of up to $680 depending on your employer&rsquo;s plan). Because both HSA and FSA contributions reduce income tax and FICA, they are among the most efficient pre-tax deductions available.
       </p>
 
       {/* Section 8: Disability insurance note */}
