@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'What Happens to Your Taxes When You Get a Raise? (2026 Guide)',
+  title: { absolute: 'What Happens to Your Taxes When You Get a Raise? (2026 Guide)' },
   description:
     'A raise always increases your take-home pay — but how much? Learn exactly how federal tax brackets, FICA, and state taxes work when your salary goes up, with a worked dollar example.',
   alternates: { canonical: '/blog/what-happens-to-taxes-when-you-get-a-raise' },
   keywords:
     'what happens to taxes when you get a raise, does a raise increase taxes, raise tax bracket, salary increase take home pay, marginal tax rate raise 2026',
   openGraph: {
+    type: 'article',
+    url: '/blog/what-happens-to-taxes-when-you-get-a-raise',
+    images: [{ url: '/og/blog/what-happens-to-taxes-when-you-get-a-raise', width: 1200, height: 630 }],
     title: 'What Happens to Your Taxes When You Get a Raise? (2026 Guide)',
     description:
       'A raise always increases your take-home pay — but how much? See the exact math with a worked example going from $55,000 to $70,000.',
@@ -67,9 +71,7 @@ export default function WhatHappensToTaxesWhenYouGetARaise() {
         What Happens to Your Taxes When You Get a Raise?
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published July 6, 2026 &middot; 8 min read
-      </p>
+      <ArticleMeta slug="what-happens-to-taxes-when-you-get-a-raise" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         One of the most common worries workers have about getting a raise is this: <em>&ldquo;Will a higher salary push me into a higher tax bracket and leave me with less money than before?&rdquo;</em>
@@ -113,13 +115,13 @@ export default function WhatHappensToTaxesWhenYouGetARaise() {
           </thead>
           <tbody>
             {[
-              ['10%', '$0 – $11,925'],
-              ['12%', '$11,926 – $48,475'],
-              ['22%', '$48,476 – $103,350'],
-              ['24%', '$103,351 – $197,300'],
-              ['32%', '$197,301 – $250,525'],
-              ['35%', '$250,526 – $626,350'],
-              ['37%', 'Over $626,350'],
+              ['10%', '$0 – $12,400'],
+              ['12%', '$12,401 – $50,400'],
+              ['22%', '$50,401 – $105,700'],
+              ['24%', '$105,701 – $201,775'],
+              ['32%', '$201,776 – $256,225'],
+              ['35%', '$256,226 – $640,600'],
+              ['37%', 'Over $640,600'],
             ].map(([rate, range], i) => (
               <tr key={rate} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', fontFamily: "'JetBrains Mono', monospace", color: '#2563eb', fontWeight: 600 }}>{rate}</td>
@@ -131,7 +133,7 @@ export default function WhatHappensToTaxesWhenYouGetARaise() {
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Keep in mind: these brackets apply to your <strong>taxable income</strong>, not your gross salary. In 2026, the standard deduction for a single filer is <strong>$15,000</strong>, so you subtract that from your salary before any bracket math begins.{' '}
+        Keep in mind: these brackets apply to your <strong>taxable income</strong>, not your gross salary. In 2026, the standard deduction for a single filer is <strong>$16,100</strong>, so you subtract that from your salary before any bracket math begins.{' '}
         <a href="https://www.irs.gov/newsroom/irs-provides-tax-inflation-adjustments-for-tax-year-2026" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS &mdash; 2026 Tax Inflation Adjustments)
         </a>
@@ -154,14 +156,14 @@ export default function WhatHappensToTaxesWhenYouGetARaise() {
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1rem', paddingLeft: '1.5rem' }}>
         <li style={{ marginBottom: '0.5rem' }}>Gross salary: $55,000</li>
-        <li style={{ marginBottom: '0.5rem' }}>Minus standard deduction: &minus;$15,000</li>
-        <li style={{ marginBottom: '0.5rem' }}>Taxable income: $40,000</li>
-        <li style={{ marginBottom: '0.5rem' }}>Federal tax: 10% on $11,925 = $1,192 + 12% on $28,075 = $3,369 &rarr; <strong>$4,561 total</strong></li>
+        <li style={{ marginBottom: '0.5rem' }}>Minus standard deduction: &minus;$16,100</li>
+        <li style={{ marginBottom: '0.5rem' }}>Taxable income: $38,900</li>
+        <li style={{ marginBottom: '0.5rem' }}>Federal tax: 10% on $12,400 = $1,240 + 12% on $26,500 = $3,180 &rarr; <strong>$4,420 total</strong></li>
         <li style={{ marginBottom: '0.5rem' }}>FICA (7.65%): $55,000 &times; 7.65% = <strong>$4,208</strong></li>
       </ul>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        <strong>Annual take-home pay: $55,000 &minus; $4,561 &minus; $4,208 = $46,231</strong>
+        <strong>Annual take-home pay: $55,000 &minus; $4,420 &minus; $4,208 = $46,372</strong>
       </p>
 
       <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#1e293b', marginTop: '1.5rem', marginBottom: '0.5rem' }}>
@@ -170,14 +172,14 @@ export default function WhatHappensToTaxesWhenYouGetARaise() {
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1rem', paddingLeft: '1.5rem' }}>
         <li style={{ marginBottom: '0.5rem' }}>Gross salary: $70,000</li>
-        <li style={{ marginBottom: '0.5rem' }}>Minus standard deduction: &minus;$15,000</li>
-        <li style={{ marginBottom: '0.5rem' }}>Taxable income: $55,000</li>
-        <li style={{ marginBottom: '0.5rem' }}>Federal tax: 10% on $11,925 = $1,192 + 12% on $36,550 = $4,386 + 22% on $6,525 = $1,436 &rarr; <strong>$7,014 total</strong></li>
+        <li style={{ marginBottom: '0.5rem' }}>Minus standard deduction: &minus;$16,100</li>
+        <li style={{ marginBottom: '0.5rem' }}>Taxable income: $53,900</li>
+        <li style={{ marginBottom: '0.5rem' }}>Federal tax: 10% on $12,400 = $1,240 + 12% on $38,000 = $4,560 + 22% on $3,500 = $770 &rarr; <strong>$6,570 total</strong></li>
         <li style={{ marginBottom: '0.5rem' }}>FICA (7.65%): $70,000 &times; 7.65% = <strong>$5,355</strong></li>
       </ul>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        <strong>Annual take-home pay: $70,000 &minus; $7,014 &minus; $5,355 = $57,631</strong>
+        <strong>Annual take-home pay: $70,000 &minus; $6,570 &minus; $5,355 = $58,075</strong>
       </p>
 
       <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#1e293b', marginTop: '1.5rem', marginBottom: '0.5rem' }}>
@@ -204,9 +206,9 @@ export default function WhatHappensToTaxesWhenYouGetARaise() {
           <tbody>
             {[
               ['Gross Salary', '$55,000', '$70,000', '+$15,000'],
-              ['Federal Income Tax', '$4,561', '$7,014', '+$2,453'],
+              ['Federal Income Tax', '$4,420', '$6,570', '+$2,150'],
               ['FICA (SS + Medicare)', '$4,208', '$5,355', '+$1,147'],
-              ['Annual Take-Home', '$46,231', '$57,631', '+$11,400'],
+              ['Annual Take-Home', '$46,372', '$58,075', '+$11,703'],
             ].map(([label, before, after, change], i) => {
               const isTotal = label === 'Annual Take-Home'
               return (
@@ -223,11 +225,11 @@ export default function WhatHappensToTaxesWhenYouGetARaise() {
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The $15,000 raise in gross pay translates to <strong>$11,400 more in take-home pay</strong>. You kept 76 cents of every extra dollar earned. The other 24 cents went to taxes &mdash; not the worst trade.
+        The $15,000 raise in gross pay translates to <strong>$11,703 more in take-home pay</strong>. You kept 78 cents of every extra dollar earned. The other 22 cents went to taxes &mdash; not the worst trade.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Notice that only <strong>$6,525</strong> of the $15,000 raise entered the 22% bracket. The rest was still taxed at 10% and 12%. That is marginal taxation in action.
+        Notice that only <strong>$3,500</strong> of the $15,000 raise entered the 22% bracket. The rest was still taxed at 10% and 12%. That is marginal taxation in action.
       </p>
 
       {/* Section 3 */}
@@ -286,9 +288,9 @@ export default function WhatHappensToTaxesWhenYouGetARaise() {
           </thead>
           <tbody>
             {[
-              ['/texas', 'Texas', 'No state income tax (0%)', '~$11,400'],
-              ['/illinois', 'Illinois', 'Flat 4.95%', '~$10,658'],
-              ['/california', 'California', 'Progressive ~8% on this income', '~$10,200'],
+              ['/texas', 'Texas', 'No state income tax (0%)', '~$11,700'],
+              ['/illinois', 'Illinois', 'Flat 4.95%', '~$10,960'],
+              ['/california', 'California', 'Progressive ~8% on this income', '~$10,500'],
             ].map(([href, state, rate, amount], i) => (
               <tr key={state} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#2563eb' }}>
@@ -303,7 +305,7 @@ export default function WhatHappensToTaxesWhenYouGetARaise() {
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Even in high-tax California, you still take home roughly <strong>$10,200 more</strong> from a $15,000 raise. The raise always wins.
+        Even in high-tax California, you still take home roughly <strong>$10,500 more</strong> from a $15,000 raise. The raise always wins.
       </p>
 
       {/* Section 5 */}
@@ -316,7 +318,7 @@ export default function WhatHappensToTaxesWhenYouGetARaise() {
       </p>
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
-        <li style={{ marginBottom: '0.5rem' }}><strong>Social Security:</strong> 6.2% on wages up to $168,600 (the 2026 wage base)</li>
+        <li style={{ marginBottom: '0.5rem' }}><strong>Social Security:</strong> 6.2% on wages up to $184,500 (the 2026 wage base)</li>
         <li style={{ marginBottom: '0.5rem' }}><strong>Medicare:</strong> 1.45% on all wages, with no cap</li>
       </ul>
 
@@ -391,7 +393,7 @@ export default function WhatHappensToTaxesWhenYouGetARaise() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        In 2026, you can contribute up to <strong>$23,500</strong> to a traditional 401(k) if you are under age 50 ($31,000 if you are 50 or older with the catch-up contribution).{' '}
+        In 2026, you can contribute up to <strong>$24,500</strong> to a traditional 401(k) if you are under age 50 ($32,500 if you are 50 or older with the catch-up contribution).{' '}
         <a href="https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-401k-and-profit-sharing-plan-contribution-limits" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS &mdash; 401(k) Contribution Limits)
         </a>
@@ -424,7 +426,7 @@ export default function WhatHappensToTaxesWhenYouGetARaise() {
       </h2>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        A raise <strong>always</strong> increases your take-home pay. The marginal tax system means only the new income above a bracket threshold faces the higher rate &mdash; your existing earnings stay taxed at the same rates they always were. In the worked example above, a $15,000 raise resulted in $11,400 more in take-home pay per year: a 76% keep rate.
+        A raise <strong>always</strong> increases your take-home pay. The marginal tax system means only the new income above a bracket threshold faces the higher rate &mdash; your existing earnings stay taxed at the same rates they always were. In the worked example above, a $15,000 raise resulted in $11,700 more in take-home pay per year: a 76% keep rate.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>

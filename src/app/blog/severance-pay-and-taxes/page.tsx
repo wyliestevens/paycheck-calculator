@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Severance Pay and Taxes: What You Need to Know (2026)',
+  title: { absolute: 'Severance Pay and Taxes: What You Need to Know (2026)' },
   description:
     "Severance pay is taxed as ordinary income — federal, state, and FICA all apply. Here's how withholding works on your separation package, with a full worked example.",
   alternates: { canonical: '/blog/severance-pay-and-taxes' },
   keywords:
     'severance pay taxes 2026, is severance taxable, how severance is taxed, severance package taxes, severance withholding, severance pay federal income tax, severance pay take home',
   openGraph: {
+    type: 'article',
+    url: '/blog/severance-pay-and-taxes',
+    images: [{ url: '/og/blog/severance-pay-and-taxes', width: 1200, height: 630 }],
     title: 'Severance Pay and Taxes: What You Need to Know (2026)',
     description:
       "Severance is taxed as ordinary income. Learn how federal, state, and FICA taxes apply — with a full worked example showing your take-home on a 4-week package.",
@@ -71,9 +75,7 @@ export default function SeverancePayAndTaxes() {
         Severance Pay and Taxes: What You Need to Know (2026)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published August 3, 2026 &middot; 8 min read
-      </p>
+      <ArticleMeta slug="severance-pay-and-taxes" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         Losing a job is stressful enough. Then your employer hands you a severance package, and suddenly you have to figure out how much of it you actually get to keep. The short answer: severance pay is taxed just like a regular paycheck &mdash; federal income tax, FICA, and state taxes all apply. But the way it is withheld can catch people off guard, and your final tax bill may be higher or lower than what was withheld.
@@ -94,7 +96,7 @@ export default function SeverancePayAndTaxes() {
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
         <li style={{ marginBottom: '0.5rem' }}><strong>Federal income tax</strong> &mdash; withheld at 22% (flat supplemental rate) or using your W-4 tax tables</li>
-        <li style={{ marginBottom: '0.5rem' }}><strong>Social Security tax</strong> &mdash; 6.2%, up to the annual wage base ($168,600 in 2026)</li>
+        <li style={{ marginBottom: '0.5rem' }}><strong>Social Security tax</strong> &mdash; 6.2%, up to the annual wage base ($184,500 in 2026)</li>
         <li style={{ marginBottom: '0.5rem' }}><strong>Medicare tax</strong> &mdash; 1.45% on all severance, with no income cap</li>
         <li style={{ marginBottom: '0.5rem' }}><strong>State income tax</strong> &mdash; applies if your state has one</li>
       </ul>
@@ -149,7 +151,7 @@ export default function SeverancePayAndTaxes() {
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
         <li style={{ marginBottom: '0.5rem' }}>
-          <strong>Social Security:</strong> 6.2% on your combined wages and severance, up to the $168,600 wage base. If you had already earned $168,600 in wages before your layoff, your severance is not subject to Social Security tax.
+          <strong>Social Security:</strong> 6.2% on your combined wages and severance, up to the $184,500 wage base. If you had already earned $184,500 in wages before your layoff, your severance is not subject to Social Security tax.
         </li>
         <li style={{ marginBottom: '0.5rem' }}>
           <strong>Medicare:</strong> 1.45% on all severance, with no income cap.
@@ -320,7 +322,7 @@ export default function SeverancePayAndTaxes() {
       </h3>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        If you have not yet hit your annual 401(k) limit, ask HR if you can temporarily increase your contribution rate for your remaining paychecks before your last day. Pre-tax 401(k) contributions reduce your taxable income, which lowers the bracket your severance gets taxed in. The 2026 contribution limit is <strong>$23,500</strong> per year, or <strong>$31,000</strong> if you are 50 or older.{' '}
+        If you have not yet hit your annual 401(k) limit, ask HR if you can temporarily increase your contribution rate for your remaining paychecks before your last day. Pre-tax 401(k) contributions reduce your taxable income, which lowers the bracket your severance gets taxed in. The 2026 contribution limit is <strong>$24,500</strong> per year, or <strong>$32,500</strong> if you are 50 or older.{' '}
         <a href="https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-401k-and-profit-sharing-plan-contribution-limits" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS &mdash; 401(k) Contribution Limits)
         </a>
@@ -331,7 +333,7 @@ export default function SeverancePayAndTaxes() {
       </h3>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        As long as you have earned income for the year (from the job you just left), you can contribute to a Traditional IRA even after your layoff, right up until Tax Day. The 2026 IRA contribution limit is <strong>$7,000</strong> (or $8,000 if you are 50+). A deductible IRA contribution reduces your adjusted gross income, which can lower the effective tax rate on your severance. Income limits may apply if you or your spouse had access to a workplace retirement plan.{' '}
+        As long as you have earned income for the year (from the job you just left), you can contribute to a Traditional IRA even after your layoff, right up until Tax Day. The 2026 IRA contribution limit is <strong>$7,500</strong> (or $8,600 if you are 50+). A deductible IRA contribution reduces your adjusted gross income, which can lower the effective tax rate on your severance. Income limits may apply if you or your spouse had access to a workplace retirement plan.{' '}
         <a href="https://www.irs.gov/retirement-plans/ira/iras" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS &mdash; IRA Deduction Limits)
         </a>

@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Home Sale Tax Exclusion 2026: How to Avoid Capital Gains When You Sell',
+  title: { absolute: 'Home Sale Tax Exclusion 2026: How to Avoid Capital Gains When You Sell' },
   description:
     "Sell your home for a $300,000 profit and pay zero capital gains tax — if you qualify for the Section 121 exclusion. Here's exactly how it works, who qualifies, and full worked examples for single and married sellers.",
   alternates: { canonical: '/blog/home-sale-tax-exclusion-2026' },
   keywords:
     'home sale tax exclusion 2026, capital gains on home sale, Section 121 exclusion, sell house tax free, primary residence capital gains, $250000 exclusion home sale, $500000 exclusion married, Form 8949 home sale, home sale profit tax',
   openGraph: {
+    type: 'article',
+    url: '/blog/home-sale-tax-exclusion-2026',
+    images: [{ url: '/og/blog/home-sale-tax-exclusion-2026', width: 1200, height: 630 }],
     title: 'Home Sale Tax Exclusion 2026: How to Avoid Capital Gains When You Sell',
     description:
       "Sell your home for a $300,000 profit and pay zero capital gains tax — if you qualify for the Section 121 exclusion.",
@@ -79,9 +83,7 @@ export default function HomeSaleTaxExclusion2026() {
         Home Sale Tax Exclusion 2026: How to Avoid Capital Gains When You Sell
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published September 22, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="home-sale-tax-exclusion-2026" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         You bought your home for $350,000 and are about to sell it for $650,000. That&rsquo;s a $300,000 profit — and it could be completely <strong>tax-free</strong>. No capital gains tax. Not a dollar owed to the IRS.
@@ -307,9 +309,9 @@ export default function HomeSaleTaxExclusion2026() {
           </thead>
           <tbody>
             {[
-              ['0%', '$0 – $48,350', '$0 – $96,700'],
-              ['15%', '$48,351 – $533,400', '$96,701 – $600,050'],
-              ['20%', 'Over $533,400', 'Over $600,050'],
+              ['0%', '$0 – $49,450', '$0 – $98,900'],
+              ['15%', '$49,451 – $545,500', '$98,901 – $613,700'],
+              ['20%', 'Over $545,500', 'Over $613,700'],
             ].map(([rate, single, mfj], i) => (
               <tr key={rate} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', fontWeight: 700, color: rate === '0%' ? '#059669' : rate === '15%' ? '#d97706' : '#dc2626', fontFamily: "'JetBrains Mono', monospace" }}>{rate}</td>

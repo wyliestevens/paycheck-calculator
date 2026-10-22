@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Capital Gains Tax Explained: Short-Term vs Long-Term in 2026',
+  title: { absolute: 'Capital Gains Tax Explained: Short-Term vs Long-Term in 2026' },
   description:
     'Short-term capital gains are taxed as ordinary income. Long-term gains get lower rates — 0%, 15%, or 20%. Here\'s exactly how capital gains tax works in 2026, with real examples.',
   alternates: { canonical: '/blog/capital-gains-tax-2026' },
   keywords:
     'capital gains tax 2026, short-term capital gains, long-term capital gains, capital gains tax rate 2026, investment taxes, crypto capital gains, stock tax 2026',
   openGraph: {
+    type: 'article',
+    url: '/blog/capital-gains-tax-2026',
+    images: [{ url: '/og/blog/capital-gains-tax-2026', width: 1200, height: 630 }],
     title: 'Capital Gains Tax Explained: Short-Term vs Long-Term in 2026',
     description:
       'Short-term gains are taxed as income. Long-term gains get 0%, 15%, or 20% rates. Here\'s the full breakdown with a worked example.',
@@ -89,9 +93,7 @@ export default function CapitalGainsTax2026() {
         Capital Gains Tax Explained: Short-Term vs Long-Term in 2026
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published August 20, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="capital-gains-tax-2026" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         When you sell an investment for more than you paid, the profit is called a <strong>capital gain</strong>. The IRS taxes that gain — but the rate depends on one critical factor: how long you held the investment before selling.
@@ -198,9 +200,9 @@ export default function CapitalGainsTax2026() {
           </thead>
           <tbody>
             {[
-              ['0%', 'Up to $49,150', 'Up to $98,300'],
-              ['15%', '$49,151 – $542,250', '$98,301 – $610,700'],
-              ['20%', 'Over $542,250', 'Over $610,700'],
+              ['0%', 'Up to $49,450', 'Up to $98,900'],
+              ['15%', '$49,451 – $545,500', '$98,901 – $613,700'],
+              ['20%', 'Over $545,500', 'Over $613,700'],
             ].map(([rate, single, mfj], i) => (
               <tr key={rate} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', fontFamily: "'JetBrains Mono', monospace", fontWeight: 700, color: rate === '0%' ? '#059669' : rate === '15%' ? '#d97706' : '#dc2626' }}>{rate}</td>
@@ -391,8 +393,8 @@ export default function CapitalGainsTax2026() {
             {[
               ['Salary', '$80,000', '$80,000'],
               ['Capital Gain', '$10,000', '$10,000'],
-              ['Standard Deduction (2026)', '-$15,000', '-$15,000'],
-              ['Taxable Income', '$75,000', '$75,000'],
+              ['Standard Deduction (2026)', '-$16,100', '-$16,100'],
+              ['Taxable Income', '$73,900', '$73,900'],
               ['Federal Tax Rate on Gain', '22%', '15%'],
               ['Federal Tax on $10,000 Gain', '$2,200', '$1,500'],
             ].map(([label, st, lt], i) => (

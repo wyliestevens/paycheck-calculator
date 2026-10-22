@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Child Tax Credit 2026: How It Works, Who Qualifies, and How to Claim It',
+  title: { absolute: 'Child Tax Credit 2026: How It Works, Who Qualifies, and How to Claim It' },
   description:
     'The Child Tax Credit gives parents up to $2,000 per child under 17. Here\'s who qualifies, the income phase-out, and how to claim it on your W-4 to boost every paycheck.',
   alternates: { canonical: '/blog/child-tax-credit-explained' },
   keywords:
     'child tax credit 2026, child tax credit amount, who qualifies for child tax credit, additional child tax credit, child tax credit W-4, child tax credit income limit, refundable child tax credit',
   openGraph: {
+    type: 'article',
+    url: '/blog/child-tax-credit-explained',
+    images: [{ url: '/og/blog/child-tax-credit-explained', width: 1200, height: 630 }],
     title: 'Child Tax Credit 2026: How It Works, Who Qualifies, and How to Claim It',
     description:
       'The Child Tax Credit gives parents up to $2,000 per child under 17. Here\'s who qualifies, the income limits, and how to claim it now to boost your take-home pay.',
@@ -69,9 +73,7 @@ export default function ChildTaxCreditExplained() {
         Child Tax Credit 2026: How It Works, Who Qualifies, and How to Claim It
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published July 13, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="child-tax-credit-explained" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         If you have kids and you are not claiming the Child Tax Credit, you are leaving money on the table. The Child Tax Credit can cut your federal tax bill by up to <strong>$2,000 per qualifying child</strong> — and up to $1,700 of that can be refunded to you even if you owe nothing in taxes.
@@ -355,7 +357,7 @@ export default function ChildTaxCreditExplained() {
       </h2>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1rem' }}>
-        Let&rsquo;s see how the Child Tax Credit affects a real family. We will use a married couple earning $85,000 combined with two qualifying children under 17. They file jointly and take the standard deduction ($30,000 for married filing jointly in 2026).
+        Let&rsquo;s see how the Child Tax Credit affects a real family. We will use a married couple earning $85,000 combined with two qualifying children under 17. They file jointly and take the standard deduction ($32,200 for married filing jointly in 2026).
       </p>
 
       <div style={{ overflowX: 'auto', marginBottom: '1.5rem' }}>
@@ -381,15 +383,15 @@ export default function ChildTaxCreditExplained() {
           <tbody>
             {[
               ['Gross Income', '$85,000', '$85,000'],
-              ['Standard Deduction (MFJ)', '−$30,000', '−$30,000'],
-              ['Taxable Income', '$55,000', '$55,000'],
-              ['Federal Tax (before CTC)', '$5,568', '$5,568'],
+              ['Standard Deduction (MFJ)', '−$32,200', '−$32,200'],
+              ['Taxable Income', '$52,800', '$52,800'],
+              ['Federal Tax (before CTC)', '$5,840', '$5,840'],
               ['Child Tax Credit (2 kids)', '−$4,000', '−$4,000'],
-              ['Federal Tax (after CTC)', '$1,568', '$1,568'],
+              ['Federal Tax (after CTC)', '$1,840', '$1,840'],
               ['FICA (7.65%)', '$6,503', '$6,503'],
               ['State Income Tax', '$0', '$3,502'],
-              ['Total Tax Bill', '$8,071', '$11,573'],
-              ['Take-Home Pay', '$76,929', '$73,427'],
+              ['Total Tax Bill', '$8,343', '$11,845'],
+              ['Take-Home Pay', '$76,657', '$73,155'],
             ].map(([label, tx, ny], i) => {
               const isTotal = label === 'Total Tax Bill'
               const isTakeHome = label === 'Take-Home Pay'

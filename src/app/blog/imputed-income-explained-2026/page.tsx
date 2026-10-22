@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Imputed Income: What It Is and How It Affects Your Paycheck (2026)',
+  title: { absolute: 'Imputed Income: What It Is and How It Affects Your Paycheck (2026)' },
   description:
     'Imputed income is the taxable value of non-cash benefits your employer provides. Here\'s exactly what it is, what triggers it, and how it shows up on your W-2 — with a full worked example for group-term life insurance.',
   alternates: { canonical: '/blog/imputed-income-explained-2026' },
   keywords:
     'imputed income 2026, what is imputed income, imputed income paycheck, group-term life insurance imputed income, imputed income W-2, domestic partner benefits imputed income, Box 12 Code C, IRS Publication 15-B',
   openGraph: {
+    type: 'article',
+    url: '/blog/imputed-income-explained-2026',
+    images: [{ url: '/og/blog/imputed-income-explained-2026', width: 1200, height: 630 }],
     title: 'Imputed Income: What It Is and How It Affects Your Paycheck (2026)',
     description:
       'Imputed income is the taxable value of non-cash benefits your employer provides. Here\'s exactly what it is and how it affects your taxes.',
@@ -81,9 +85,7 @@ export default function ImputedIncomeExplained() {
         Imputed Income: What It Is and How It Affects Your Paycheck (2026)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published October 2, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="imputed-income-explained-2026" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         You glance at your pay stub and notice your gross pay is <strong>$3,250</strong> — but your employer reported <strong>$3,318</strong> to the IRS. What&rsquo;s that extra $68? It is likely <strong>imputed income</strong>, and if you have employer-provided life insurance, a domestic partner on your health plan, or personal use of a company car, you may be paying tax on money you never received.

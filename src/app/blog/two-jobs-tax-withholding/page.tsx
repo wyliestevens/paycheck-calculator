@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'How Multiple Jobs Affect Your Taxes in 2026',
+  title: { absolute: 'How Multiple Jobs Affect Your Taxes in 2026' },
   description:
     'Working two jobs can leave you owing thousands at tax time if your withholding isn\'t adjusted. Here\'s the exact math — and how to fix it with your W-4.',
   alternates: { canonical: '/blog/two-jobs-tax-withholding' },
   keywords:
     'two jobs taxes 2026, multiple jobs withholding, second job tax rate, two jobs W-4, working two jobs taxes owe money, how two jobs affect taxes',
   openGraph: {
+    type: 'article',
+    url: '/blog/two-jobs-tax-withholding',
+    images: [{ url: '/og/blog/two-jobs-tax-withholding', width: 1200, height: 630 }],
     title: 'How Multiple Jobs Affect Your Taxes in 2026',
     description:
       'Working two jobs can leave you owing thousands at tax time if your withholding isn\'t adjusted. Here\'s the exact math — and how to fix it with your W-4.',
@@ -69,9 +73,7 @@ export default function TwoJobsTaxWithholding() {
         How Multiple Jobs Affect Your Taxes in 2026
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published July 20, 2026 &middot; 8 min read
-      </p>
+      <ArticleMeta slug="two-jobs-tax-withholding" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         Millions of Americans work more than one job. Whether it is a side gig, a part-time weekend position, or two full-time careers, having multiple income sources changes how your taxes work — and it often leads to a nasty surprise at tax time if you are not careful.
@@ -115,13 +117,13 @@ export default function TwoJobsTaxWithholding() {
           </thead>
           <tbody>
             {[
-              ['10%', '$0 – $11,925'],
-              ['12%', '$11,926 – $48,475'],
-              ['22%', '$48,476 – $103,350'],
-              ['24%', '$103,351 – $197,300'],
-              ['32%', '$197,301 – $250,525'],
-              ['35%', '$250,526 – $626,350'],
-              ['37%', 'Over $626,350'],
+              ['10%', '$0 – $12,400'],
+              ['12%', '$12,401 – $50,400'],
+              ['22%', '$50,401 – $105,700'],
+              ['24%', '$105,701 – $201,775'],
+              ['32%', '$201,776 – $256,225'],
+              ['35%', '$256,226 – $640,600'],
+              ['37%', 'Over $640,600'],
             ].map(([rate, range], i) => (
               <tr key={rate} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', fontFamily: "'JetBrains Mono', monospace", color: '#d97706', fontWeight: 600 }}>{rate}</td>
@@ -133,7 +135,7 @@ export default function TwoJobsTaxWithholding() {
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        If you earn $45,000 from job one and $20,000 from job two, your combined income is $65,000. After the $15,000 standard deduction, your <strong>taxable income is $50,000</strong>. That puts you mostly in the 12% bracket, with just $1,525 taxed at 22%. A raise always increases your take-home pay — you can never &ldquo;lose money&rdquo; by earning more.{' '}
+        If you earn $45,000 from job one and $20,000 from job two, your combined income is $65,000. After the $16,100 standard deduction, your <strong>taxable income is $48,900</strong>. That puts you in the 12% bracket, with none of it reaching the 22% rate. A raise always increases your take-home pay — you can never &ldquo;lose money&rdquo; by earning more.{' '}
         <a href="https://www.irs.gov/newsroom/irs-provides-tax-inflation-adjustments-for-tax-year-2026" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS &mdash; 2026 Tax Inflation Adjustments)
         </a>
@@ -154,10 +156,10 @@ export default function TwoJobsTaxWithholding() {
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
         <li style={{ marginBottom: '0.75rem' }}>
-          <strong>Job 1</strong> withholds taxes assuming $45,000 is your full income. It applies the entire $15,000 standard deduction against your $45,000 salary.
+          <strong>Job 1</strong> withholds taxes assuming $45,000 is your full income. It applies the entire $16,100 standard deduction against your $45,000 salary.
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
-          <strong>Job 2</strong> withholds taxes assuming $20,000 is your full income. It also applies the $15,000 standard deduction against your $20,000 salary.
+          <strong>Job 2</strong> withholds taxes assuming $20,000 is your full income. It also applies the $16,100 standard deduction against your $20,000 salary.
         </li>
       </ul>
 
@@ -167,7 +169,7 @@ export default function TwoJobsTaxWithholding() {
 
       {/* Section 3 — Worked Example */}
       <h2 style={{ fontSize: '1.375rem', fontWeight: 700, color: '#1e293b', marginTop: '2.5rem', marginBottom: '0.75rem' }}>
-        Worked Example: $45,000 + $20,000 = A $2,052 Surprise
+        Worked Example: $45,000 + $20,000 = A $2,010 Surprise
       </h2>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1rem' }}>
@@ -194,9 +196,9 @@ export default function TwoJobsTaxWithholding() {
           <tbody>
             {[
               ['Gross Income', '$45,000', '$20,000', '$65,000'],
-              ['Standard Deduction Applied', '−$15,000', '−$15,000', '−$15,000 (once)'],
-              ['Taxable Income', '$30,000', '$5,000', '$50,000'],
-              ['Federal Tax Withheld/Owed', '$3,362', '$500', '$5,914'],
+              ['Standard Deduction Applied', '−$16,100', '−$16,100', '−$16,100 (once)'],
+              ['Taxable Income', '$28,900', '$3,900', '$48,900'],
+              ['Federal Tax Withheld/Owed', '$3,220', '$390', '$5,620'],
             ].map(([label, j1, j2, combined], i) => (
               <tr key={label} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569' }}>{label}</td>
@@ -210,10 +212,10 @@ export default function TwoJobsTaxWithholding() {
                 Total Withheld vs. Owed
               </td>
               <td colSpan={2} style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>
-                $3,362 + $500 = $3,862
+                $3,220 + $390 = $3,610
               </td>
               <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>
-                OWED: $2,052
+                OWED: $2,010
               </td>
             </tr>
           </tbody>
@@ -221,7 +223,7 @@ export default function TwoJobsTaxWithholding() {
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The combined withholding is only $3,862, but the IRS expects $5,914 on $50,000 of taxable income. That leaves a <strong>$2,052 gap</strong>. If you do not fix your W-4, you will owe that entire amount in April — plus a possible underpayment penalty.
+        The combined withholding is only $3,610, but the IRS expects $5,620 on $48,900 of taxable income. That leaves a <strong>$2,010 gap</strong>. If you do not fix your W-4, you will owe that entire amount in April — plus a possible underpayment penalty.
       </p>
 
       <div
@@ -289,7 +291,7 @@ export default function TwoJobsTaxWithholding() {
       </h3>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        If you already know your approximate shortfall, you can add a flat extra dollar amount to each paycheck in Step 4(c) of your W-4. Using the example above, the $2,052 shortfall spread across 26 biweekly paychecks comes out to about <strong>$79 extra per paycheck</strong>. You can add that to your primary job&rsquo;s W-4 and your withholding will be right on target by year-end.
+        If you already know your approximate shortfall, you can add a flat extra dollar amount to each paycheck in Step 4(c) of your W-4. Using the example above, the $2,010 shortfall spread across 26 biweekly paychecks comes out to about <strong>$77 extra per paycheck</strong>. You can add that to your primary job&rsquo;s W-4 and your withholding will be right on target by year-end.
       </p>
 
       {/* Section 5 */}
@@ -309,7 +311,7 @@ export default function TwoJobsTaxWithholding() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        <strong>Social Security:</strong> You pay 6.2% on wages up to $168,600 per year (the 2026 wage base). Each employer withholds on their own payroll independently. If your combined wages from all jobs stay below $168,600, there is no problem — withholding is correct. If your combined wages <em>exceed</em> $168,600 but no single employer paid you that much, both employers will keep withholding Social Security past the point they should. The result is <strong>over-withholding</strong> of Social Security, which you get back as a credit when you file your tax return.{' '}
+        <strong>Social Security:</strong> You pay 6.2% on wages up to $184,500 per year (the 2026 wage base). Each employer withholds on their own payroll independently. If your combined wages from all jobs stay below $184,500, there is no problem — withholding is correct. If your combined wages <em>exceed</em> $184,500 but no single employer paid you that much, both employers will keep withholding Social Security past the point they should. The result is <strong>over-withholding</strong> of Social Security, which you get back as a credit when you file your tax return.{' '}
         <a href="https://www.ssa.gov/oact/cola/cbb.html" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (SSA.gov &mdash; Contribution and Benefit Base)
         </a>
@@ -420,7 +422,7 @@ export default function TwoJobsTaxWithholding() {
           <strong>Track both employers&rsquo; W-2s at year-end.</strong> You will receive a separate W-2 from each employer. Make sure both are included when you file.
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
-          <strong>Check for Social Security over-withholding.</strong> If your combined wages exceed $168,600, confirm the excess Social Security is refunded on your return.
+          <strong>Check for Social Security over-withholding.</strong> If your combined wages exceed $184,500, confirm the excess Social Security is refunded on your return.
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
           <strong>Different states: file part-year returns if needed.</strong> Most tax software (TurboTax, H&amp;R Block, FreeTaxUSA) handles multi-state returns.

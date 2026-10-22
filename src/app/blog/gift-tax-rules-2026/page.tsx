@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Gift Tax Rules 2026: Annual Exclusion, Lifetime Exemption, and Who Pays',
+  title: { absolute: 'Gift Tax Rules 2026: Annual Exclusion, Lifetime Exemption, and Who Pays' },
   description:
     'The IRS lets you give up to $19,000 per person tax-free in 2026. Here\'s exactly how the annual exclusion, lifetime exemption, gift splitting, and Form 709 work — with worked dollar examples.',
   alternates: { canonical: '/blog/gift-tax-rules-2026' },
   keywords:
     'gift tax 2026, annual gift tax exclusion 2026, lifetime gift tax exemption, gift tax rules, Form 709, who pays gift tax, gift splitting, tax-free gifts, how much can I give tax-free',
   openGraph: {
+    type: 'article',
+    url: '/blog/gift-tax-rules-2026',
+    images: [{ url: '/og/blog/gift-tax-rules-2026', width: 1200, height: 630 }],
     title: 'Gift Tax Rules 2026: Annual Exclusion, Lifetime Exemption, and Who Pays',
     description:
       'The IRS lets you give up to $19,000 per person tax-free in 2026. Here\'s exactly how the annual exclusion, lifetime exemption, and Form 709 work.',
@@ -87,9 +91,7 @@ export default function GiftTaxRules2026() {
         Gift Tax Rules 2026: Annual Exclusion, Lifetime Exemption, and Who Pays
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published September 8, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="gift-tax-rules-2026" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         Most people assume that giving money to a family member is completely tax-free — and for the vast majority of gifts, they are right. The IRS allows you to give <strong>up to $19,000 per recipient per year</strong> in 2026 without any gift tax consequences whatsoever. No forms, no taxes, no strings attached.

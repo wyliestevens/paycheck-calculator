@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'How to Reduce Your Taxable Income: 10 Legal Strategies for 2026',
+  title: { absolute: 'How to Reduce Your Taxable Income: 10 Legal Strategies for 2026' },
   description:
     '10 legal ways to lower your taxable income in 2026 — from maxing your 401(k) to HSA contributions and above-the-line deductions. With worked dollar examples.',
   alternates: { canonical: '/blog/reduce-taxable-income-2026' },
   keywords:
     'reduce taxable income 2026, lower taxable income, how to pay less taxes, tax reduction strategies, above-the-line deductions, 401k tax savings, HSA tax deduction, ways to reduce taxes legally',
   openGraph: {
+    type: 'article',
+    url: '/blog/reduce-taxable-income-2026',
+    images: [{ url: '/og/blog/reduce-taxable-income-2026', width: 1200, height: 630 }],
     title: 'How to Reduce Your Taxable Income: 10 Legal Strategies for 2026',
     description:
       '10 legal ways to lower your taxable income in 2026 — from 401(k) contributions to HSA, charitable giving, and tax-loss harvesting. With worked dollar examples.',
@@ -77,9 +81,7 @@ export default function ReduceTaxableIncome2026() {
         How to Reduce Your Taxable Income: 10 Legal Strategies for 2026
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published September 21, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="reduce-taxable-income-2026" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         You cannot avoid taxes entirely — but you can legally pay less by reducing your <strong>taxable income</strong>. Taxable income is not the same as your total earnings. It is what is left after you subtract deductions and contributions. The IRS only taxes what remains. So every dollar you move out of taxable income is a dollar that escapes taxation entirely.
@@ -135,7 +137,7 @@ export default function ReduceTaxableIncome2026() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        In 2026, the employee contribution limit is <strong>$23,500</strong>. Workers age 50 and older can add a <strong>$7,500 catch-up contribution</strong>, for a total of $31,000. Workers between 60 and 63 get a special catch-up of <strong>$11,250</strong> under SECURE 2.0 rules.{' '}
+        In 2026, the employee contribution limit is <strong>$24,500</strong>. Workers age 50 and older can add a <strong>$8,000 catch-up contribution</strong>, for a total of $32,500. Workers between 60 and 63 get a special catch-up of <strong>$11,250</strong> under SECURE 2.0 rules.{' '}
         <a href="https://www.irs.gov/newsroom/401k-limit-increases-to-23500-for-2025-ira-limit-remains-7000" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS &mdash; 401(k) Contribution Limits)
         </a>
@@ -155,7 +157,7 @@ export default function ReduceTaxableIncome2026() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        For 2026, the HSA contribution limit is <strong>$4,300</strong> for self-only coverage and <strong>$8,550</strong> for family coverage. Unlike FSAs, HSA money rolls over indefinitely — there is no &ldquo;use it or lose it&rdquo; rule.{' '}
+        For 2026, the HSA contribution limit is <strong>$4,400</strong> for self-only coverage and <strong>$8,750</strong> for family coverage. Unlike FSAs, HSA money rolls over indefinitely — there is no &ldquo;use it or lose it&rdquo; rule.{' '}
         <a href="https://www.irs.gov/publications/p969" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS Publication 969 &mdash; HSAs and Other Tax-Favored Health Plans)
         </a>
@@ -171,7 +173,7 @@ export default function ReduceTaxableIncome2026() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The 2026 IRA contribution limit is <strong>$7,000</strong> ($8,000 if you are 50+). For single filers who have a 401(k) at work, the deduction phases out between $79,000 and $89,000 of MAGI. If you do not have a workplace plan, you can deduct the full amount at any income level.{' '}
+        The 2026 IRA contribution limit is <strong>$7,500</strong> ($8,600 if you are 50+). For single filers who have a 401(k) at work, the deduction phases out between $79,000 and $89,000 of MAGI. If you do not have a workplace plan, you can deduct the full amount at any income level.{' '}
         <a href="https://www.irs.gov/retirement-plans/ira-deduction-limits" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS &mdash; IRA Deduction Limits)
         </a>
@@ -183,7 +185,7 @@ export default function ReduceTaxableIncome2026() {
       </h2>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        A Healthcare FSA lets you set aside up to <strong>$3,300</strong> pre-tax in 2026 for out-of-pocket medical costs — copays, prescriptions, dental, and vision. A <strong>Dependent Care FSA</strong> lets you set aside up to $5,000 pre-tax for daycare, after-school care, or elder care.
+        A Healthcare FSA lets you set aside up to <strong>$3,400</strong> pre-tax in 2026 for out-of-pocket medical costs — copays, prescriptions, dental, and vision. A <strong>Dependent Care FSA</strong> lets you set aside up to $5,000 pre-tax for daycare, after-school care, or elder care.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
@@ -213,7 +215,7 @@ export default function ReduceTaxableIncome2026() {
       </h2>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The 2026 standard deduction is <strong>$15,000 for single filers</strong> and <strong>$30,000 for married filing jointly</strong>. Most people take it — but if your deductible expenses add up to more, itemizing on Schedule A saves you more money.
+        The 2026 standard deduction is <strong>$16,100 for single filers</strong> and <strong>$32,200 for married filing jointly</strong>. Most people take it — but if your deductible expenses add up to more, itemizing on Schedule A saves you more money.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
@@ -316,12 +318,12 @@ export default function ReduceTaxableIncome2026() {
             {[
               ['Gross income', '$80,000', false],
               ['401(k) contribution (Strategy 1)', '−$10,000', true],
-              ['HSA contribution (Strategy 2)', '−$4,300', true],
-              ['Traditional IRA deduction (Strategy 3)', '−$7,000', true],
+              ['HSA contribution (Strategy 2)', '−$4,400', true],
+              ['Traditional IRA deduction (Strategy 3)', '−$7,500', true],
               ['Student loan interest (Strategy 5)', '−$2,500', true],
-              ['= Adjusted Gross Income (AGI)', '$56,200', false, true],
-              ['Standard deduction', '−$15,000', true],
-              ['= Taxable Income', '$41,200', false, true],
+              ['= Adjusted Gross Income (AGI)', '$55,600', false, true],
+              ['Standard deduction', '−$16,100', true],
+              ['= Taxable Income', '$39,500', false, true],
             ].map(([label, amount, isDeduction, isBold], i) => (
               <tr key={String(label)} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569', fontWeight: isBold ? 700 : 400 }}>{label}</td>
@@ -339,14 +341,14 @@ export default function ReduceTaxableIncome2026() {
             ))}
             <tr style={{ background: '#ecfdf5' }}>
               <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', fontWeight: 700, color: '#1e293b' }}>Federal tax owed (vs. no strategies)</td>
-              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>$4,582 vs. $11,094</td>
+              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>$4,492 vs. $8,770</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        By applying just four strategies — 401(k), HSA, IRA, and a student loan interest deduction — this worker cut their federal tax bill by roughly <strong>$6,512 per year</strong>. And most of that &ldquo;lost&rdquo; money is not gone — it is sitting in retirement and health savings accounts growing for the future.
+        By applying just four strategies — 401(k), HSA, IRA, and a student loan interest deduction — this worker cut their federal tax bill by roughly <strong>$4,278 per year</strong>. And most of that &ldquo;lost&rdquo; money is not gone — it is sitting in retirement and health savings accounts growing for the future.
       </p>
 
       {/* What you cannot deduct */}

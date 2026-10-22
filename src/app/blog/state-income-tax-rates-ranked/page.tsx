@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Highest and Lowest State Income Tax Rates in 2026',
+  title: { absolute: 'Highest and Lowest State Income Tax Rates in 2026' },
   description:
     'Every state income tax rate ranked from highest to lowest for 2026. See which states have flat taxes, progressive brackets, and no income tax at all.',
   alternates: { canonical: '/blog/state-income-tax-rates-ranked' },
   keywords:
     'state income tax rates 2026, highest state tax rates, lowest state tax rates, state tax comparison, flat tax states, progressive tax states',
   openGraph: {
+    type: 'article',
+    url: '/blog/state-income-tax-rates-ranked',
+    images: [{ url: '/og/blog/state-income-tax-rates-ranked', width: 1200, height: 630 }],
     title: 'Highest and Lowest State Income Tax Rates in 2026',
     description:
       'From California\'s 13.3% to states with 0%, here\'s every state income tax rate ranked for 2026.',
@@ -185,9 +189,7 @@ export default function StateIncomeTaxRatesRankedPost() {
       </div>
 
       {/* Publication info */}
-      <div style={{ fontSize: '0.8125rem', color: '#94a3b8', marginBottom: '1.5rem' }}>
-        Published June 4, 2026 &middot; 7 min read
-      </div>
+      <ArticleMeta slug="state-income-tax-rates-ranked" />
 
       <h1
         style={{

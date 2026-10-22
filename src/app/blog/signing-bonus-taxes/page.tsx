@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Signing Bonus Taxes: How Much Will You Actually Keep? (2026)',
+  title: { absolute: 'Signing Bonus Taxes: How Much Will You Actually Keep? (2026)' },
   description:
     'A $10,000 signing bonus is not $10,000 in your pocket. Here\'s exactly how signing bonuses are taxed, how clawback clauses work, and strategies to keep more.',
   alternates: { canonical: '/blog/signing-bonus-taxes' },
   keywords:
     'signing bonus taxes, how is a signing bonus taxed, signing bonus tax rate 2026, signing bonus take home, signing bonus clawback taxes, new job signing bonus withholding',
   openGraph: {
+    type: 'article',
+    url: '/blog/signing-bonus-taxes',
+    images: [{ url: '/og/blog/signing-bonus-taxes', width: 1200, height: 630 }],
     title: 'Signing Bonus Taxes: How Much Will You Actually Keep? (2026)',
     description:
       'A $10,000 signing bonus is not $10,000 in your pocket. Here\'s exactly how signing bonuses are taxed, how clawback clauses work, and strategies to keep more.',
@@ -73,9 +77,7 @@ export default function SigningBonusTaxes() {
         Signing Bonus Taxes: How Much Will You Actually Keep? (2026)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published August 31, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="signing-bonus-taxes" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         You just landed a new job that comes with a <strong>$10,000 signing bonus</strong>. Before you plan how to spend it, there is something important to know: that $10,000 is not $10,000 in your bank account. After federal income tax, FICA, and state taxes, you might take home closer to $6,500 to $7,500 depending on where you live.
@@ -120,7 +122,7 @@ export default function SigningBonusTaxes() {
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
         <li style={{ marginBottom: '0.5rem' }}>Federal income tax (withheld at 22% for most bonuses, or at your marginal rate)</li>
-        <li style={{ marginBottom: '0.5rem' }}>Social Security tax (6.2%, up to the $176,100 wage base in 2026)</li>
+        <li style={{ marginBottom: '0.5rem' }}>Social Security tax (6.2%, up to the $184,500 wage base in 2026)</li>
         <li style={{ marginBottom: '0.5rem' }}>Medicare tax (1.45%, or 2.35% if your total wages exceed $200,000)</li>
         <li style={{ marginBottom: '0.5rem' }}>State income tax (varies widely — zero in nine states, up to 13.3% in California)</li>
       </ul>
@@ -353,7 +355,7 @@ export default function SigningBonusTaxes() {
       </h3>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.25rem' }}>
-        The signing bonus itself cannot go directly into a 401(k) — employer retirement plans are funded by payroll deductions, not lump-sum transfers. But you can increase your regular paycheck contribution rate to the maximum ($23,500 in 2026) for the rest of the year, then live off the bonus cash. You will reduce your taxable income from regular wages while preserving the bonus for spending. See our guide on{' '}
+        The signing bonus itself cannot go directly into a 401(k) — employer retirement plans are funded by payroll deductions, not lump-sum transfers. But you can increase your regular paycheck contribution rate to the maximum ($24,500 in 2026) for the rest of the year, then live off the bonus cash. You will reduce your taxable income from regular wages while preserving the bonus for spending. See our guide on{' '}
         <a href="/blog/how-401k-contributions-affect-your-paycheck" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           how 401(k) contributions affect your paycheck
         </a>{' '}
@@ -365,7 +367,7 @@ export default function SigningBonusTaxes() {
       </h3>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.25rem' }}>
-        A Health Savings Account (HSA) accepts up to $4,300 (individual) or $8,550 (family) per year in 2026 — and those contributions are pre-tax on your payroll. Using bonus cash to cover your regular expenses while maxing out your HSA through payroll deductions is one of the most tax-efficient ways to deploy a windfall.
+        A Health Savings Account (HSA) accepts up to $4,400 (individual) or $8,750 (family) per year in 2026 — and those contributions are pre-tax on your payroll. Using bonus cash to cover your regular expenses while maxing out your HSA through payroll deductions is one of the most tax-efficient ways to deploy a windfall.
       </p>
 
       <h3 style={{ fontSize: '1.125rem', fontWeight: 700, color: '#1e293b', marginTop: '1.5rem', marginBottom: '0.5rem' }}>

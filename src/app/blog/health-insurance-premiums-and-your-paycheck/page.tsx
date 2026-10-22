@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Health Insurance Premiums and Your Paycheck: What You Actually Pay in 2026',
+  title: { absolute: 'Health Insurance Premiums and Your Paycheck: What You Actually Pay in 2026' },
   description:
     "The average worker pays $1,400/year for single health coverage — and it's pre-tax. Here's exactly how employer health insurance affects your take-home pay, with a full worked example at $65,000.",
   alternates: { canonical: '/blog/health-insurance-premiums-and-your-paycheck' },
   keywords:
     'health insurance premium paycheck 2026, employer health insurance deduction, pre-tax health insurance, average health insurance cost 2026, Section 125 cafeteria plan, health insurance take home pay',
   openGraph: {
+    type: 'article',
+    url: '/blog/health-insurance-premiums-and-your-paycheck',
+    images: [{ url: '/og/blog/health-insurance-premiums-and-your-paycheck', width: 1200, height: 630 }],
     title: 'Health Insurance Premiums and Your Paycheck: What You Actually Pay in 2026',
     description:
       "The average worker pays $1,400/year for single health coverage — and it's pre-tax. Here's exactly how it affects your take-home pay.",
@@ -49,7 +53,7 @@ export default function HealthInsurancePremiumsPost() {
           <text x="148" y="127" textAnchor="end" fontSize="9" fontWeight="600" fill="#fff" fontFamily="sans-serif">&#8722;$54</text>
           <line x1="58" y1="136" x2="148" y2="136" stroke="rgba(255,255,255,0.35)" strokeWidth="1" />
           <text x="58" y="150" fontSize="9" fill="rgba(255,255,255,0.5)" fontFamily="sans-serif">Net Pay</text>
-          <text x="148" y="150" textAnchor="end" fontSize="9" fontWeight="700" fill="rgba(255,255,255,0.95)" fontFamily="sans-serif">$2,043</text>
+          <text x="148" y="150" textAnchor="end" fontSize="9" fontWeight="700" fill="rgba(255,255,255,0.95)" fontFamily="sans-serif">$2,049</text>
           {/* Arrow */}
           <line x1="178" y1="100" x2="215" y2="100" stroke="rgba(255,255,255,0.55)" strokeWidth="3" />
           <polygon points="215,92 230,100 215,108" fill="rgba(255,255,255,0.55)" />
@@ -79,16 +83,14 @@ export default function HealthInsurancePremiumsPost() {
         Health Insurance Premiums and Your Paycheck: What You Actually Pay in 2026
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published August 4, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="health-insurance-premiums-and-your-paycheck" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         After federal taxes and FICA, health insurance is typically the next biggest deduction on your paycheck. More than 155 million Americans get health coverage through their employer &mdash; but most people have never done the math on what they actually pay, what their employer covers, or how much that pre-tax deduction is really saving them.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Here is everything you need to know: how employer health insurance premiums work, what the average American pays in 2026, and a full worked example showing how a $1,400/year premium actually only costs you about $985 out of pocket &mdash; thanks to the pre-tax tax advantage built into most employer health plans.
+        Here is everything you need to know: how employer health insurance premiums work, what the average American pays in 2026, and a full worked example showing how a $1,400/year premium actually only costs you about $1,125 out of pocket &mdash; thanks to the pre-tax tax advantage built into most employer health plans.
       </p>
 
       {/* Section 1 */}
@@ -205,7 +207,7 @@ export default function HealthInsurancePremiumsPost() {
       </h2>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Let&rsquo;s run the exact numbers for a single worker earning $65,000 per year, paid biweekly (26 paychecks), who pays the average $1,400/year in health insurance premiums. This example assumes filing single with the standard deduction of $15,000 and no other pre-tax deductions.
+        Let&rsquo;s run the exact numbers for a single worker earning $65,000 per year, paid biweekly (26 paychecks), who pays the average $1,400/year in health insurance premiums. This example assumes filing single with the standard deduction of $16,100 and no other pre-tax deductions.
       </p>
 
       <h3 style={{ fontSize: '1.125rem', fontWeight: 600, color: '#1e293b', marginTop: '1.5rem', marginBottom: '0.75rem' }}>
@@ -233,9 +235,9 @@ export default function HealthInsurancePremiumsPost() {
               ['Gross pay (biweekly)', '$2,500.00', '$2,500.00', false],
               ['Health insurance premium (pre-tax)', '—', '−$53.85', false],
               ['Taxable wages', '$2,500.00', '$2,446.15', false],
-              ['Federal income tax withheld', '−$227.46', '−$215.62', false],
+              ['Federal income tax withheld', '−$216.15', '−$209.69', false],
               ['FICA (7.65%)', '−$191.25', '−$187.13', false],
-              ['Net take-home pay', '$2,081.29', '$2,043.40', true],
+              ['Net take-home pay', '$2,092.60', '$2,049.33', true],
             ].map(([item, noHealth, withHealth, bold], i) => (
               <tr key={String(item)} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569', fontWeight: bold ? 700 : 400 }}>{item}</td>
@@ -248,13 +250,13 @@ export default function HealthInsurancePremiumsPost() {
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Here is the key insight: the health insurance premium reduces your paycheck by only <strong>$37.89</strong> &mdash; not the full $53.85 you are paying. The gap is your tax savings:
+        Here is the key insight: the health insurance premium reduces your paycheck by only <strong>$43.27</strong> &mdash; not the full $53.85 you are paying. The gap is your tax savings:
       </p>
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
-        <li style={{ marginBottom: '0.5rem' }}>Federal income tax savings per paycheck: $227.46 &minus; $215.62 = <strong>$11.84</strong></li>
+        <li style={{ marginBottom: '0.5rem' }}>Federal income tax savings per paycheck: $216.15 &minus; $209.69 = <strong>$6.46</strong></li>
         <li style={{ marginBottom: '0.5rem' }}>FICA tax savings per paycheck: $191.25 &minus; $187.13 = <strong>$4.12</strong></li>
-        <li style={{ marginBottom: '0.5rem' }}>Total tax savings per paycheck: <strong>$15.96</strong></li>
+        <li style={{ marginBottom: '0.5rem' }}>Total tax savings per paycheck: <strong>$10.58</strong></li>
       </ul>
 
       <div
@@ -271,12 +273,12 @@ export default function HealthInsurancePremiumsPost() {
         }}
       >
         $1,400 annual premium<br />
-        &minus; $415 in tax savings (29.6%)<br />
-        = <strong>$985 actual after-tax cost</strong>
+        &minus; $275 in tax savings (19.6%)<br />
+        = <strong>$1,125 actual after-tax cost</strong>
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        You pay $1,400 in premiums but only feel $985 in your wallet &mdash; about $38 per biweekly paycheck rather than $54. That $415 difference is real money that the pre-tax structure delivers automatically, with no extra steps required from you.
+        You pay $1,400 in premiums but only feel $1,125 in your wallet &mdash; about $43 per biweekly paycheck rather than $54. That $275 difference is real money that the pre-tax structure delivers automatically, with no extra steps required from you.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
@@ -353,8 +355,8 @@ export default function HealthInsurancePremiumsPost() {
           </thead>
           <tbody>
             {[
-              ['Self-only HDHP', '$4,300', '$358'],
-              ['Family HDHP', '$8,550', '$713'],
+              ['Self-only HDHP', '$4,400', '$367'],
+              ['Family HDHP', '$8,750', '$729'],
               ['Age 55+ catch-up (add\'l)', '+$1,000', '+$83'],
             ].map(([type, limit, monthly], i) => (
               <tr key={type} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
@@ -498,7 +500,7 @@ export default function HealthInsurancePremiumsPost() {
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
         <li style={{ marginBottom: '0.5rem' }}>The average worker pays about <strong>$1,400/year</strong> for single coverage and <strong>$6,500/year</strong> for family coverage &mdash; your employer covers thousands more on top of that.</li>
         <li style={{ marginBottom: '0.5rem' }}>Pre-tax premiums are exempt from federal income tax, state income tax, and FICA (7.65%), creating a combined savings rate of roughly 30% for workers in the 22% bracket.</li>
-        <li style={{ marginBottom: '0.5rem' }}>A $1,400 annual premium effectively costs about <strong>$985</strong> in take-home pay &mdash; you save $415 through the pre-tax structure.</li>
+        <li style={{ marginBottom: '0.5rem' }}>A $1,400 annual premium effectively costs about <strong>$1,125</strong> in take-home pay &mdash; you save $275 through the pre-tax structure.</li>
         <li style={{ marginBottom: '0.5rem' }}>Enrolling in an HDHP unlocks HSA eligibility &mdash; an additional triple-tax-advantaged account for medical savings.</li>
         <li style={{ marginBottom: '0.5rem' }}>If you lose employer coverage, COBRA can be very expensive; the ACA marketplace may offer more affordable alternatives if your income qualifies for the Premium Tax Credit.</li>
       </ul>

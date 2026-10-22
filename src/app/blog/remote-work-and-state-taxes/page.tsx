@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Remote Work and State Taxes: What You Need to Know (2026)',
+  title: { absolute: 'Remote Work and State Taxes: What You Need to Know (2026)' },
   description:
     "Working remotely for a company in another state could mean filing two state tax returns — or more. Here's how remote work state taxes work in 2026, including the \"convenience of the employer\" rule and reciprocity agreements.",
   alternates: { canonical: '/blog/remote-work-and-state-taxes' },
   keywords:
     'remote work state taxes, work from home state taxes 2026, convenience of employer rule, reciprocity agreements taxes, two state taxes remote work, telecommute tax 2026, remote worker tax filing',
   openGraph: {
+    type: 'article',
+    url: '/blog/remote-work-and-state-taxes',
+    images: [{ url: '/og/blog/remote-work-and-state-taxes', width: 1200, height: 630 }],
     title: 'Remote Work and State Taxes: What You Need to Know (2026)',
     description:
       "Working remotely for a company in another state could mean filing two state tax returns. Here's how it works in 2026.",
@@ -86,9 +90,7 @@ export default function RemoteWorkAndStateTaxes() {
         Remote Work and State Taxes: What You Need to Know (2026)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published July 3, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="remote-work-and-state-taxes" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         Remote work changed where millions of Americans do their jobs &mdash; but it did not simplify their taxes. If you live in one state and work for an employer based in another, you may owe income tax in <em>both</em> states, not just the one where you live. In some cases, you could even owe taxes to a state you have never physically set foot in.

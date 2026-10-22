@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'State Sales Tax Rates Ranked for 2026: Where You Pay the Most (and Least)',
+  title: { absolute: 'State Sales Tax Rates Ranked for 2026: Where You Pay the Most (and Least)' },
   description:
     'Five states charge zero sales tax. Louisiana tops the list at nearly 10%. Here are all 50 states ranked by combined sales tax rate — and what it means for your wallet.',
   alternates: { canonical: '/blog/state-sales-tax-rates-2026' },
   keywords:
     'state sales tax rates 2026, highest sales tax states, no sales tax states, combined sales tax rate by state, sales tax comparison 2026',
   openGraph: {
+    type: 'article',
+    url: '/blog/state-sales-tax-rates-2026',
+    images: [{ url: '/og/blog/state-sales-tax-rates-2026', width: 1200, height: 630 }],
     title: 'State Sales Tax Rates Ranked for 2026: Where You Pay the Most (and Least)',
     description:
       'Five states charge zero sales tax. Louisiana tops the list at nearly 10%. Here are all 50 states ranked by combined sales tax rate.',
@@ -136,9 +140,7 @@ export default function StateSalesTaxRates2026() {
         State Sales Tax Rates Ranked for 2026: Where You Pay the Most (and Least)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published July 23, 2026 &middot; 8 min read
-      </p>
+      <ArticleMeta slug="state-sales-tax-rates-2026" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         Most people focus on income tax when comparing states — and for good reason. But there is another tax that hits you every time you buy groceries, fill up your gas tank, or pick up new clothes: <strong>sales tax</strong>. In some states, the combined state and local sales tax rate tops 9.5%, adding nearly $10 on every $100 you spend. In five states, that rate is zero.

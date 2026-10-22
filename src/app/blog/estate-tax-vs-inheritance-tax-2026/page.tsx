@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Estate Tax vs. Inheritance Tax: Who Pays, What\'s Exempt, and What You Owe (2026)',
+  title: { absolute: 'Estate Tax vs. Inheritance Tax: Who Pays, What\'s Exempt, and What You Owe (2026)' },
   description:
     'Most heirs pay zero tax on inherited money. Here\'s how the federal estate tax, state estate taxes, and inheritance taxes actually work in 2026 — with real examples.',
   alternates: { canonical: '/blog/estate-tax-vs-inheritance-tax-2026' },
   keywords:
     'estate tax vs inheritance tax, do I pay taxes on inherited money, inheritance tax 2026, federal estate tax exemption 2026, estate tax states, inheritance tax states, inherited IRA taxes',
   openGraph: {
+    type: 'article',
+    url: '/blog/estate-tax-vs-inheritance-tax-2026',
+    images: [{ url: '/og/blog/estate-tax-vs-inheritance-tax-2026', width: 1200, height: 630 }],
     title: 'Estate Tax vs. Inheritance Tax: Who Pays, What\'s Exempt, and What You Owe (2026)',
     description:
       'Most heirs pay zero tax on inherited money. Here\'s how the federal estate tax, state estate taxes, and inheritance taxes actually work in 2026.',
@@ -80,9 +84,7 @@ export default function EstateTaxVsInheritanceTax() {
         Estate Tax vs. Inheritance Tax: Who Pays, What&rsquo;s Exempt, and What You Owe (2026)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published October 15, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="estate-tax-vs-inheritance-tax-2026" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         When a family member passes away and leaves you money, your first question is often: <strong>Do I owe taxes on this?</strong> The short answer for most Americans is no &mdash; but the full answer is more nuanced. There are actually two different types of taxes that can apply when wealth transfers at death: the <strong>estate tax</strong> and the <strong>inheritance tax</strong>. They are not the same thing, and understanding the difference could save you a significant amount of stress (and possibly money).

@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Quarterly Estimated Taxes 2026: Who Owes Them and How to Pay',
+  title: { absolute: 'Quarterly Estimated Taxes 2026: Who Owes Them and How to Pay' },
   description:
     'Freelancers, gig workers, and anyone with untaxed income must make quarterly estimated tax payments to the IRS in 2026 — or face an underpayment penalty. Here is the complete guide: deadlines, safe harbor rules, and a worked example at $80,000.',
   alternates: { canonical: '/blog/quarterly-estimated-taxes-2026' },
   keywords:
     'quarterly estimated taxes 2026, quarterly tax payments, IRS estimated taxes, self-employed estimated taxes, Form 1040-ES, safe harbor tax rule, underpayment penalty 2026, when to pay quarterly taxes',
   openGraph: {
+    type: 'article',
+    url: '/blog/quarterly-estimated-taxes-2026',
+    images: [{ url: '/og/blog/quarterly-estimated-taxes-2026', width: 1200, height: 630 }],
     title: 'Quarterly Estimated Taxes 2026: Who Owes Them and How to Pay',
     description:
       'Freelancers, gig workers, and anyone with untaxed income must make quarterly estimated tax payments in 2026. Here are the deadlines, safe harbor rules, and a full worked example.',
@@ -77,9 +81,7 @@ export default function QuarterlyEstimatedTaxes2026() {
         Quarterly Estimated Taxes 2026: Who Owes Them and How to Pay
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published September 1, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="quarterly-estimated-taxes-2026" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         If you are a freelancer, independent contractor, gig worker, small business owner, or anyone who earns significant income without an employer withholding taxes, the IRS expects you to <strong>prepay your taxes four times per year</strong> &mdash; not just once at filing time. These are called <strong>quarterly estimated tax payments</strong>, and missing them can trigger a penalty even if you pay your full tax bill by the April deadline.
@@ -210,7 +212,7 @@ export default function QuarterlyEstimatedTaxes2026() {
         <li style={{ marginBottom: '0.75rem' }}>Estimate your total gross income for 2026 (wages, self-employment revenue, investment income, etc.).</li>
         <li style={{ marginBottom: '0.75rem' }}>Subtract your estimated deductions (standard deduction or itemized) and any above-the-line deductions like the self-employment tax deduction.</li>
         <li style={{ marginBottom: '0.75rem' }}>Apply the 2026 federal income tax brackets to get your estimated income tax.</li>
-        <li style={{ marginBottom: '0.75rem' }}>Add self-employment tax if applicable (15.3% on net SE income up to $168,600, then 2.9% above that).</li>
+        <li style={{ marginBottom: '0.75rem' }}>Add self-employment tax if applicable (15.3% on net SE income up to $184,500, then 2.9% above that).</li>
         <li style={{ marginBottom: '0.75rem' }}>Subtract any expected withholding (from W-2 jobs, retirement distributions, etc.) and refundable credits.</li>
         <li style={{ marginBottom: '0.75rem' }}>Divide the remaining amount by 4. That is your quarterly payment.</li>
       </ol>
@@ -275,13 +277,13 @@ export default function QuarterlyEstimatedTaxes2026() {
       >
         Gross income:            $80,000<br />
         Less SE tax deduction: &minus; $5,652<br />
-        Less standard deduction:&minus;$15,000<br />
-        Taxable income:          $59,348<br />
+        Less standard deduction:&minus;$16,100<br />
+        Taxable income:          $58,248<br />
         <br />
-        10% on $11,925:           $1,193<br />
-        12% on $36,550 ($11,925–$48,475): $4,386<br />
-        22% on $10,873 ($48,475–$59,348): $2,392<br />
-        Federal income tax:      <strong>$7,971</strong>
+        10% on $12,400:           $1,240<br />
+        12% on $38,000 ($12,400–$50,400): $4,560<br />
+        22% on $7,848 ($50,400–$58,248): $1,727<br />
+        Federal income tax:      <strong>$7,527</strong>
       </div>
 
       <h3 style={{ fontSize: '1.125rem', fontWeight: 600, color: '#1e293b', marginTop: '1.5rem', marginBottom: '0.75rem' }}>
@@ -307,7 +309,7 @@ export default function QuarterlyEstimatedTaxes2026() {
           <tbody>
             {[
               ['Self-employment tax', '$11,304', '$2,826'],
-              ['Federal income tax', '$7,971', '$1,993'],
+              ['Federal income tax', '$7,527', '$1,882'],
             ].map(([label, annual, quarter], i) => (
               <tr key={label} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569' }}>{label}</td>
@@ -317,19 +319,19 @@ export default function QuarterlyEstimatedTaxes2026() {
             ))}
             <tr style={{ background: '#eff6ff' }}>
               <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', fontWeight: 700, color: '#1e293b' }}>Total</td>
-              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#1e293b' }}>$19,275</td>
-              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#2563eb' }}>$4,819</td>
+              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#1e293b' }}>$18,831</td>
+              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#2563eb' }}>$4,708</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Alex should send approximately <strong>$4,819 to the IRS each quarter</strong> (April 15, June 17, September 15, January 15). On $80,000 in gross self-employment income, the total federal tax burden &mdash; both self-employment tax and income tax &mdash; is about <strong>24.1%</strong> of gross income.
+        Alex should send approximately <strong>$4,708 to the IRS each quarter</strong> (April 15, June 17, September 15, January 15). On $80,000 in gross self-employment income, the total federal tax burden &mdash; both self-employment tax and income tax &mdash; is about <strong>23.5%</strong> of gross income.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Most self-employed people also owe <strong>state income tax</strong>. If Alex lives in a state with a 5% income tax, add another $2,967 per year ($742 per quarter), bringing the total quarterly payment to roughly $5,561. Check your state&rsquo;s requirements, as many states have their own quarterly estimated tax schedule with separate forms and deadlines.
+        Most self-employed people also owe <strong>state income tax</strong>. If Alex lives in a state with a 5% income tax, add another $2,912 per year ($728 per quarter), bringing the total quarterly payment to roughly $5,436. Check your state&rsquo;s requirements, as many states have their own quarterly estimated tax schedule with separate forms and deadlines.
       </p>
 
       {/* Section 5 — Safe Harbor */}

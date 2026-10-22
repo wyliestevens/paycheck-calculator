@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'How Interest Income Is Taxed in 2026: Savings Accounts, CDs, and Bonds',
+  title: { absolute: 'How Interest Income Is Taxed in 2026: Savings Accounts, CDs, and Bonds' },
   description:
     'Interest income from savings accounts, CDs, and bonds is taxed as ordinary income at your marginal rate — but some interest is tax-free or state-exempt. Full 2026 guide with worked examples.',
   alternates: { canonical: '/blog/interest-income-taxes-2026' },
   keywords:
     'interest income taxes 2026, how is interest income taxed, savings account tax, CD interest tax, Form 1099-INT, municipal bond tax-free, Treasury interest state exempt, I bond taxes',
   openGraph: {
+    type: 'article',
+    url: '/blog/interest-income-taxes-2026',
+    images: [{ url: '/og/blog/interest-income-taxes-2026', width: 1200, height: 630 }],
     title: 'How Interest Income Is Taxed in 2026: Savings Accounts, CDs, and Bonds',
     description:
       'Interest income is taxed as ordinary income — but some bonds are federally tax-free or state-exempt. Full 2026 breakdown.',
@@ -75,9 +79,7 @@ export default function InterestIncomeTaxes2026() {
         How Interest Income Is Taxed in 2026: Savings Accounts, CDs, and Bonds
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published October 6, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="interest-income-taxes-2026" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         With high-yield savings accounts paying 4% or more and CDs locking in attractive rates, millions of Americans are earning meaningful interest income in 2026. But that money doesn&rsquo;t arrive tax-free. Unlike qualified dividends or long-term capital gains &mdash; which get preferential lower rates &mdash; <strong>interest income is taxed as ordinary income</strong> at your regular marginal tax rate.
@@ -146,13 +148,13 @@ export default function InterestIncomeTaxes2026() {
           </thead>
           <tbody>
             {[
-              ['10%', 'Up to $11,925', 'Up to $23,850'],
-              ['12%', '$11,926 – $48,475', '$23,851 – $96,950'],
-              ['22%', '$48,476 – $103,350', '$96,951 – $206,700'],
-              ['24%', '$103,351 – $197,300', '$206,701 – $394,600'],
-              ['32%', '$197,301 – $250,525', '$394,601 – $501,050'],
-              ['35%', '$250,526 – $626,350', '$501,051 – $751,600'],
-              ['37%', 'Over $626,350', 'Over $751,600'],
+              ['10%', 'Up to $12,400', 'Up to $24,800'],
+              ['12%', '$12,401 – $50,400', '$24,801 – $100,800'],
+              ['22%', '$50,401 – $105,700', '$100,801 – $211,400'],
+              ['24%', '$105,701 – $201,775', '$211,401 – $403,550'],
+              ['32%', '$201,776 – $256,225', '$403,551 – $512,450'],
+              ['35%', '$256,226 – $640,600', '$512,451 – $768,700'],
+              ['37%', 'Over $640,600', 'Over $768,700'],
             ].map(([rate, single, mfj], i) => (
               <tr key={rate} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', fontWeight: 600, color: '#0891b2', fontFamily: "'JetBrains Mono', monospace" }}>{rate}</td>
@@ -169,7 +171,7 @@ export default function InterestIncomeTaxes2026() {
         <a href="https://www.irs.gov/newsroom/irs-provides-tax-inflation-adjustments-for-tax-year-2026" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb' }}>
           IRS Revenue Procedure 2025-61
         </a>
-        . Taxable income is after the standard deduction ($15,000 single / $30,000 MFJ for 2026).
+        . Taxable income is after the standard deduction ($16,100 single / $32,200 MFJ for 2026).
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
@@ -228,14 +230,14 @@ export default function InterestIncomeTaxes2026() {
         <div style={{ marginBottom: '0.5rem' }}>Wages: $75,000</div>
         <div style={{ marginBottom: '0.5rem' }}>Interest income: +$3,500</div>
         <div style={{ marginBottom: '0.5rem' }}>Gross income: $78,500</div>
-        <div style={{ marginBottom: '0.5rem' }}>Standard deduction (single): &minus;$15,000</div>
+        <div style={{ marginBottom: '0.5rem' }}>Standard deduction (single): &minus;$16,100</div>
         <div style={{ borderTop: '1px solid #e2e8f0', marginTop: '0.5rem', paddingTop: '0.5rem', fontWeight: 700 }}>
-          Taxable income: $63,500
+          Taxable income: $62,400
         </div>
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1rem' }}>
-        At $63,500 in taxable income, a single filer is in the 22% bracket. The $3,500 in interest income sits entirely within the 22% bracket, so:
+        At $62,400 in taxable income, a single filer is in the 22% bracket. The $3,500 in interest income sits entirely within the 22% bracket, so:
       </p>
 
       <div style={{ overflowX: 'auto', marginBottom: '1.5rem' }}>

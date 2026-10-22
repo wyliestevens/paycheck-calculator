@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Dependent Care FSA: How to Save on Childcare Taxes in 2026',
+  title: { absolute: 'Dependent Care FSA: How to Save on Childcare Taxes in 2026' },
   description:
     'A Dependent Care FSA lets working parents pay for daycare with pre-tax dollars — saving up to $1,020+ per year in federal taxes. Here\'s how it works, 2026 limits, and a full worked example.',
   alternates: { canonical: '/blog/dependent-care-fsa-childcare-taxes' },
   keywords:
     'dependent care FSA 2026, DCFSA, childcare tax savings, dependent care flexible spending account, childcare pre-tax, dependent care tax credit vs FSA, Form 2441, daycare tax benefit',
   openGraph: {
+    type: 'article',
+    url: '/blog/dependent-care-fsa-childcare-taxes',
+    images: [{ url: '/og/blog/dependent-care-fsa-childcare-taxes', width: 1200, height: 630 }],
     title: 'Dependent Care FSA: How to Save on Childcare Taxes in 2026',
     description:
       'A Dependent Care FSA lets working parents pay for daycare with pre-tax dollars — saving up to $1,020+ per year in federal taxes. Here\'s the full guide.',
@@ -73,9 +77,7 @@ export default function DependentCareFSA() {
         Dependent Care FSA: How to Save on Childcare Taxes in 2026
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published August 10, 2026 &middot; 8 min read
-      </p>
+      <ArticleMeta slug="dependent-care-fsa-childcare-taxes" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         Childcare is expensive. The average cost of full-time daycare in the United States is over <strong>$18,000 per year</strong>, and in high-cost states like California or New York, it can run $25,000 or more.{' '}

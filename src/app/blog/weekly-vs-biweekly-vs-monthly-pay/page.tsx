@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Weekly vs Biweekly vs Monthly Pay: How Frequency Affects Your Taxes (2026)',
+  title: { absolute: 'Weekly vs Biweekly vs Monthly Pay: How Frequency Affects Your Taxes (2026)' },
   description:
     'Your annual tax bill is identical whether you get paid weekly, biweekly, or monthly — but pay frequency changes your withholding per check, your cash flow, and how you budget. Full breakdown with worked examples at $65,000.',
   alternates: { canonical: '/blog/weekly-vs-biweekly-vs-monthly-pay' },
   keywords:
     'weekly vs biweekly pay, pay frequency taxes, biweekly vs semimonthly, how often you get paid taxes, paycheck frequency 2026, biweekly extra paycheck, pay period withholding, semimonthly vs biweekly',
   openGraph: {
+    type: 'article',
+    url: '/blog/weekly-vs-biweekly-vs-monthly-pay',
+    images: [{ url: '/og/blog/weekly-vs-biweekly-vs-monthly-pay', width: 1200, height: 630 }],
     title: 'Weekly vs Biweekly vs Monthly Pay: How Frequency Affects Your Taxes (2026)',
     description:
       'Your annual tax bill is the same no matter how often you\'re paid — but frequency changes your cash flow, withholding math, and budgeting strategy.',
@@ -83,9 +87,7 @@ export default function WeeklyVsBiweeklyVsMonthlyPay() {
         Weekly vs Biweekly vs Monthly Pay: How Frequency Affects Your Taxes (2026)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published June 23, 2026 &middot; 8 min read
-      </p>
+      <ArticleMeta slug="weekly-vs-biweekly-vs-monthly-pay" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         If you have ever switched jobs and gone from biweekly to monthly pay &mdash; or wondered why your biweekly paycheck feels smaller than a friend&rsquo;s semimonthly one even though you earn the same salary &mdash; you are not imagining things. Pay frequency genuinely affects the size of each individual check, how withholding is calculated, and how you manage your cash flow throughout the year.
@@ -180,7 +182,7 @@ export default function WeeklyVsBiweeklyVsMonthlyPay() {
       </h2>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1rem' }}>
-        Let&rsquo;s run the numbers for a single filer earning $65,000 per year with no additional withholding adjustments. For 2026, the standard deduction for a single filer is <strong>$15,000</strong>, making taxable income <strong>$50,000</strong>.{' '}
+        Let&rsquo;s run the numbers for a single filer earning $65,000 per year with no additional withholding adjustments. For 2026, the standard deduction for a single filer is <strong>$16,100</strong>, making taxable income <strong>$48,900</strong>.{' '}
         <a href="https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS &mdash; 2026 Tax Inflation Adjustments)
         </a>
@@ -203,11 +205,10 @@ export default function WeeklyVsBiweeklyVsMonthlyPay() {
           lineHeight: 1.8,
         }}
       >
-        <div>10% &times; $11,925 = <strong>$1,192.50</strong></div>
-        <div>12% &times; ($48,475 &minus; $11,925) = 12% &times; $36,550 = <strong>$4,386.00</strong></div>
-        <div>22% &times; ($50,000 &minus; $48,475) = 22% &times; $1,525 = <strong>$335.50</strong></div>
+        <div>10% &times; $12,400 = <strong>$1,240.00</strong></div>
+        <div>12% &times; ($48,900 &minus; $12,400) = 12% &times; $36,500 = <strong>$4,380.00</strong></div>
         <div style={{ marginTop: '0.5rem', paddingTop: '0.5rem', borderTop: '1px solid #e2e8f0' }}>
-          Total federal income tax = <strong>$5,914.00</strong>
+          Total federal income tax = <strong>$5,620.00</strong>
         </div>
       </div>
 
@@ -252,11 +253,11 @@ export default function WeeklyVsBiweeklyVsMonthlyPay() {
           lineHeight: 1.8,
         }}
       >
-        <div>$65,000 &minus; $5,914.00 &minus; $4,972.50 = <strong>$54,113.50</strong></div>
+        <div>$65,000 &minus; $5,620.00 &minus; $4,972.50 = <strong>$54,407.50</strong></div>
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1rem' }}>
-        Now here is how that $54,113.50 annual take-home is delivered under each pay schedule:
+        Now here is how that $54,407.50 annual take-home is delivered under each pay schedule:
       </p>
 
       <div style={{ overflowX: 'auto', marginBottom: '1.5rem' }}>
@@ -280,10 +281,10 @@ export default function WeeklyVsBiweeklyVsMonthlyPay() {
           </thead>
           <tbody>
             {[
-              ['Weekly', '52', '$1,250.00', '$113.73', '$95.62', '$1,040.65'],
-              ['Biweekly', '26', '$2,500.00', '$227.46', '$191.25', '$2,081.29'],
-              ['Semimonthly', '24', '$2,708.33', '$246.42', '$207.19', '$2,254.72'],
-              ['Monthly', '12', '$5,416.67', '$492.83', '$414.38', '$4,509.46'],
+              ['Weekly', '52', '$1,250.00', '$108.08', '$95.62', '$1,046.30'],
+              ['Biweekly', '26', '$2,500.00', '$216.15', '$191.25', '$2,092.60'],
+              ['Semimonthly', '24', '$2,708.33', '$234.17', '$207.19', '$2,266.97'],
+              ['Monthly', '12', '$5,416.67', '$468.33', '$414.38', '$4,533.96'],
             ].map(([schedule, checks, gross, fedTax, fica, net], i) => (
               <tr key={schedule} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', fontWeight: 600, color: '#1e293b' }}>{schedule}</td>
@@ -296,14 +297,14 @@ export default function WeeklyVsBiweeklyVsMonthlyPay() {
             ))}
             <tr style={{ background: '#eff6ff' }}>
               <td colSpan={5} style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', fontWeight: 700, color: '#1e293b' }}>Annual take-home (all schedules)</td>
-              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>$54,113.50</td>
+              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>$54,407.50</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Every schedule delivers the same <strong>$54,113.50 per year</strong>. The numbers look very different per check &mdash; a weekly paycheck is $1,040 while a monthly check is $4,509 &mdash; but they are simply different slices of the same pie.
+        Every schedule delivers the same <strong>$54,407.50 per year</strong>. The numbers look very different per check &mdash; a weekly paycheck is $1,046 while a monthly check is $4,534 &mdash; but they are simply different slices of the same pie.
       </p>
 
       {/* Section 4 */}
@@ -336,10 +337,10 @@ export default function WeeklyVsBiweeklyVsMonthlyPay() {
           lineHeight: 1.8,
         }}
       >
-        <div>Normal month (2 checks): 2 &times; $2,081.29 = <strong>$4,162.58</strong></div>
-        <div>Three-paycheck month: 3 &times; $2,081.29 = <strong>$6,243.87</strong></div>
+        <div>Normal month (2 checks): 2 &times; $2,092.60 = <strong>$4,185.20</strong></div>
+        <div>Three-paycheck month: 3 &times; $2,092.60 = <strong>$6,277.80</strong></div>
         <div style={{ marginTop: '0.5rem', paddingTop: '0.5rem', borderTop: '1px solid #e2e8f0' }}>
-          Extra deposit in those two months: <strong>+$2,081.29 each</strong>
+          Extra deposit in those two months: <strong>+$2,092.60 each</strong>
         </div>
       </div>
 
@@ -516,7 +517,7 @@ export default function WeeklyVsBiweeklyVsMonthlyPay() {
       </h2>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Pay frequency &mdash; weekly, biweekly, semimonthly, or monthly &mdash; does not change how much tax you owe at year-end. The IRS annualizes your income to calculate withholding, ensuring the total comes out the same regardless of how often the checks arrive. At $65,000 per year, every schedule produces the same <strong>$54,113.50 in annual take-home pay</strong>.
+        Pay frequency &mdash; weekly, biweekly, semimonthly, or monthly &mdash; does not change how much tax you owe at year-end. The IRS annualizes your income to calculate withholding, ensuring the total comes out the same regardless of how often the checks arrive. At $65,000 per year, every schedule produces the same <strong>$54,407.50 in annual take-home pay</strong>.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>

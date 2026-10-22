@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Hourly vs Salary: How Pay Structure Affects Your Take-Home Pay (2026)',
+  title: { absolute: 'Hourly vs Salary: How Pay Structure Affects Your Take-Home Pay (2026)' },
   description:
     "Hourly and salaried workers are taxed at the same federal rates — but overtime rights, benefits, and income stability create real differences in what you keep. Here's the full breakdown with worked examples.",
   alternates: { canonical: '/blog/hourly-vs-salary-taxes' },
   keywords:
     'hourly vs salary taxes, hourly vs salary take home pay, overtime tax hourly worker, exempt vs nonexempt FLSA, salary take home pay 2026, hourly to annual salary',
   openGraph: {
+    type: 'article',
+    url: '/blog/hourly-vs-salary-taxes',
+    images: [{ url: '/og/blog/hourly-vs-salary-taxes', width: 1200, height: 630 }],
     title: 'Hourly vs Salary: How Pay Structure Affects Your Take-Home Pay (2026)',
     description:
       'Same gross pay on paper — very different rules. Learn how hourly and salaried workers are taxed and when each structure wins.',
@@ -82,9 +86,7 @@ export default function HourlyVsSalaryTaxes() {
         Hourly vs Salary: How Pay Structure Affects Your Take-Home Pay
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published June 9, 2026 &middot; 8 min read
-      </p>
+      <ArticleMeta slug="hourly-vs-salary-taxes" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         A $20-per-hour job and a $41,600-per-year salaried position pay exactly the same amount on paper. But the two arrangements lead to very different paychecks over the course of a year &mdash; thanks to overtime rights, benefits, and how payroll withholding handles fluctuating income.
@@ -223,9 +225,9 @@ export default function HourlyVsSalaryTaxes() {
               ['Annual gross pay', '$41,600', '$41,600'],
               ['Social Security (6.2%)', '−$2,579', '−$2,579'],
               ['Medicare (1.45%)', '−$603', '−$603'],
-              ['Standard deduction', '−$15,000', '−$15,000'],
-              ['Taxable income', '$26,600', '$26,600'],
-              ['Federal income tax', '−$2,954', '−$2,954'],
+              ['Standard deduction', '−$16,100', '−$16,100'],
+              ['Taxable income', '$25,500', '$25,500'],
+              ['Federal income tax', '−$2,812', '−$2,812'],
             ].map(([label, hourly, salary], i) => (
               <tr key={label} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#1e293b' }}>{label}</td>
@@ -235,19 +237,19 @@ export default function HourlyVsSalaryTaxes() {
             ))}
             <tr style={{ background: '#ecfdf5' }}>
               <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', fontWeight: 700, color: '#1e293b' }}>Annual take-home (federal only)</td>
-              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#1e293b' }}>$35,464</td>
-              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#1e293b' }}>$35,464</td>
+              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#1e293b' }}>$35,606</td>
+              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#1e293b' }}>$35,606</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Federal take-home is identical: <strong>$35,464</strong> per year, or about <strong>$1,364 per biweekly paycheck</strong> before state tax. The divergence is not in tax rates &mdash; it is in how consistent that paycheck is. The salaried worker gets exactly $1,364 every two weeks. The hourly worker gets $1,364 during a normal 80-hour period, less during slow weeks, and meaningfully more during overtime weeks.
+        Federal take-home is identical: <strong>$35,606</strong> per year, or about <strong>$1,369 per biweekly paycheck</strong> before state tax. The divergence is not in tax rates &mdash; it is in how consistent that paycheck is. The salaried worker gets exactly $1,364 every two weeks. The hourly worker gets $1,364 during a normal 80-hour period, less during slow weeks, and meaningfully more during overtime weeks.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        For the federal income tax calculation above: the $26,600 taxable income falls into two brackets &mdash; 10% on the first $11,925 ($1,192.50) and 12% on the remaining $14,675 ($1,761.00) &mdash; for a total of $2,953.50.
+        For the federal income tax calculation above: the $25,500 taxable income falls into two brackets &mdash; 10% on the first $12,400 ($1,240.00) and 12% on the remaining $13,100 ($1,572.00) &mdash; for a total of $2,812.00.
       </p>
 
       {/* Section 5 */}
@@ -331,10 +333,10 @@ export default function HourlyVsSalaryTaxes() {
       </p>
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
-        <li style={{ marginBottom: '0.5rem' }}><strong>Traditional 401(k):</strong> Reduces federal taxable income dollar-for-dollar (up to $23,500 in 2026)</li>
+        <li style={{ marginBottom: '0.5rem' }}><strong>Traditional 401(k):</strong> Reduces federal taxable income dollar-for-dollar (up to $24,500 in 2026)</li>
         <li style={{ marginBottom: '0.5rem' }}><strong>Health insurance premiums</strong> paid through a Section 125 cafeteria plan: reduces both income tax and FICA</li>
         <li style={{ marginBottom: '0.5rem' }}><strong>Health Savings Account (HSA):</strong> Triple tax-advantaged &mdash; contributions, growth, and qualified withdrawals are all tax-free</li>
-        <li style={{ marginBottom: '0.5rem' }}><strong>Flexible Spending Account (FSA):</strong> Up to $3,300/year in 2026 for medical expenses, contributed pre-tax</li>
+        <li style={{ marginBottom: '0.5rem' }}><strong>Flexible Spending Account (FSA):</strong> Up to $3,400/year in 2026 for medical expenses, contributed pre-tax</li>
         <li style={{ marginBottom: '0.5rem' }}><strong>Commuter benefits:</strong> Up to $315/month in 2026 for transit passes, excluded from income</li>
       </ul>
 
@@ -487,7 +489,7 @@ export default function HourlyVsSalaryTaxes() {
 
       <ol style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
         <li style={{ marginBottom: '0.75rem' }}>
-          <strong>Open a Traditional IRA.</strong> Anyone with earned income can contribute up to $7,000/year (2026 limit, or $8,000 if 50+). Contributions may be fully deductible, directly reducing your federal taxable income.{' '}
+          <strong>Open a Traditional IRA.</strong> Anyone with earned income can contribute up to $7,500/year (2026 limit, or $8,600 if 50+). Contributions may be fully deductible, directly reducing your federal taxable income.{' '}
           <a href="https://www.irs.gov/retirement-plans/traditional-iras" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
             (IRS &mdash; Traditional IRAs)
           </a>

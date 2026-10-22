@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'How 401(k) Contributions Affect Your Paycheck in 2026',
+  title: { absolute: 'How 401(k) Contributions Affect Your Paycheck in 2026' },
   description:
     'Contributing to a 401(k) lowers your taxable income and your taxes — but not dollar-for-dollar. Here\'s the exact math on what a 401(k) contribution actually costs you per paycheck.',
   alternates: { canonical: '/blog/how-401k-contributions-affect-your-paycheck' },
   keywords:
     '401k paycheck, how 401k affects take home pay, 401k contribution 2026, 401k tax savings, pre-tax 401k, traditional 401k vs roth 401k, 401k employer match',
   openGraph: {
+    type: 'article',
+    url: '/blog/how-401k-contributions-affect-your-paycheck',
+    images: [{ url: '/og/blog/how-401k-contributions-affect-your-paycheck', width: 1200, height: 630 }],
     title: 'How 401(k) Contributions Affect Your Paycheck in 2026',
     description:
       'Contributing $4,500 to a 401(k) only reduces your take-home pay by $3,510 — because you save $990 in taxes. Here\'s the full breakdown.',
@@ -87,9 +91,7 @@ export default function How401kContributionsAffectYourPaycheck() {
         How 401(k) Contributions Affect Your Paycheck in 2026
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published May 29, 2026 &middot; 8 min read
-      </p>
+      <ArticleMeta slug="how-401k-contributions-affect-your-paycheck" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         Here is a fact that surprises most people: if you contribute <strong>$173 per paycheck</strong> to your 401(k), your take-home pay does not drop by $173. It only drops by about <strong>$135</strong>. The difference &mdash; roughly $38 per paycheck &mdash; is the federal tax you no longer owe because that money went into your retirement account instead.
@@ -151,9 +153,9 @@ export default function How401kContributionsAffectYourPaycheck() {
           </thead>
           <tbody>
             {[
-              ['Elective deferral (regular)', 'All employees', '$23,500'],
-              ['Catch-up contribution', 'Age 50–59 and 64+', '+$7,500 (total $31,000)'],
-              ['Enhanced catch-up (SECURE 2.0)', 'Age 60–63', '+$11,250 (total $34,750)'],
+              ['Elective deferral (regular)', 'All employees', '$24,500'],
+              ['Catch-up contribution', 'Age 50–59 and 64+', '+$8,000 (total $32,500)'],
+              ['Enhanced catch-up (SECURE 2.0)', 'Age 60–63', '+$11,250 (total $35,750)'],
             ].map(([type, who, limit], i) => (
               <tr key={type} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569' }}>{type}</td>
@@ -195,7 +197,7 @@ export default function How401kContributionsAffectYourPaycheck() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1rem' }}>
-        Here is how the annual federal income tax changes with and without the contribution. These calculations use approximate 2026 tax brackets for a single filer and a standard deduction of $15,000.{' '}
+        Here is how the annual federal income tax changes with and without the contribution. These calculations use approximate 2026 tax brackets for a single filer and a standard deduction of $16,100.{' '}
         <a href="https://www.irs.gov/taxtopics/tc409" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS &mdash; Tax Topic 409)
         </a>
@@ -221,9 +223,9 @@ export default function How401kContributionsAffectYourPaycheck() {
             {[
               ['Gross salary', '$75,000', '$75,000'],
               ['401(k) contribution', '$0', '−$4,500'],
-              ['Standard deduction', '−$15,000', '−$15,000'],
-              ['Federal taxable income', '$60,000', '$55,500'],
-              ['Federal income tax (est.)', '$8,011', '$7,021'],
+              ['Standard deduction', '−$16,100', '−$16,100'],
+              ['Federal taxable income', '$58,900', '$54,400'],
+              ['Federal income tax (est.)', '$7,670', '$6,680'],
               ['Tax savings from 401(k)', '—', '$990'],
               ['Net cost of contribution', '—', '$3,510'],
             ].map(([label, noContrib, withContrib], i) => (
@@ -466,7 +468,7 @@ export default function How401kContributionsAffectYourPaycheck() {
           <strong>Next, address high-interest debt.</strong> If you carry credit card debt above 7&ndash;8% interest, paying it down may beat additional 401(k) contributions beyond the match.
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
-          <strong>Then, work toward the IRS maximum.</strong> The $23,500 limit represents the most you can contribute in a year. The more you contribute, the more you benefit from tax-deferred compounding.
+          <strong>Then, work toward the IRS maximum.</strong> The $24,500 limit represents the most you can contribute in a year. The more you contribute, the more you benefit from tax-deferred compounding.
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
           <strong>Consider your tax bracket.</strong> The higher your marginal tax rate, the more valuable the pre-tax deduction becomes. Someone in the 24% bracket saves $240 per $1,000 contributed; someone in the 12% bracket saves only $120.
@@ -555,7 +557,7 @@ export default function How401kContributionsAffectYourPaycheck() {
       </ul>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The 2026 contribution limit is $23,500 per year ($31,000 if you are 50&ndash;59 or 64+, and $34,750 if you are 60&ndash;63). If maxing out feels out of reach, start with the employer match and increase your contribution rate by 1% each year &mdash; most people find they barely notice the gradual difference in take-home pay.
+        The 2026 contribution limit is $24,500 per year ($32,500 if you are 50&ndash;59 or 64+, and $35,750 if you are 60&ndash;63). If maxing out feels out of reach, start with the employer match and increase your contribution rate by 1% each year &mdash; most people find they barely notice the gradual difference in take-home pay.
       </p>
 
       {/* CTA */}

@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'How Marriage Changes Your Tax Bracket (2026 Guide)',
+  title: { absolute: 'How Marriage Changes Your Tax Bracket (2026 Guide)' },
   description:
     'Getting married changes your filing status, doubles your standard deduction, and may save you thousands — or cost you more. Here\'s exactly what happens to your taxes.',
   alternates: { canonical: '/blog/how-marriage-changes-your-taxes' },
   keywords:
     'how marriage changes taxes, married filing jointly 2026, marriage tax bonus, marriage tax penalty, married tax brackets 2026, W-4 after marriage',
   openGraph: {
+    type: 'article',
+    url: '/blog/how-marriage-changes-your-taxes',
+    images: [{ url: '/og/blog/how-marriage-changes-your-taxes', width: 1200, height: 630 }],
     title: 'How Marriage Changes Your Tax Bracket (2026 Guide)',
     description:
       'Getting married changes your filing status, doubles your standard deduction, and may save you thousands. Here\'s exactly how your taxes change in 2026.',
@@ -37,14 +41,14 @@ export default function HowMarriageChangesTaxes() {
           {/* Left person circle */}
           <circle cx="210" cy="100" r="55" fill="rgba(255,255,255,0.18)" />
           <text x="210" y="94" textAnchor="middle" fontSize="13" fontWeight="600" fill="#fff" fontFamily="sans-serif">Single</text>
-          <text x="210" y="112" textAnchor="middle" fontSize="11" fill="rgba(255,255,255,0.85)" fontFamily="sans-serif">$15,000 deduction</text>
+          <text x="210" y="112" textAnchor="middle" fontSize="11" fill="rgba(255,255,255,0.85)" fontFamily="sans-serif">$16,100 deduction</text>
           {/* Right person circle */}
           <circle cx="390" cy="100" r="55" fill="rgba(255,255,255,0.18)" />
           <text x="390" y="94" textAnchor="middle" fontSize="13" fontWeight="600" fill="#fff" fontFamily="sans-serif">Single</text>
-          <text x="390" y="112" textAnchor="middle" fontSize="11" fill="rgba(255,255,255,0.85)" fontFamily="sans-serif">$15,000 deduction</text>
+          <text x="390" y="112" textAnchor="middle" fontSize="11" fill="rgba(255,255,255,0.85)" fontFamily="sans-serif">$16,100 deduction</text>
           {/* Plus and arrow */}
           <text x="300" y="88" textAnchor="middle" fontSize="28" fontWeight="700" fill="rgba(255,255,255,0.9)" fontFamily="monospace">+</text>
-          <text x="300" y="118" textAnchor="middle" fontSize="11" fill="rgba(255,255,255,0.7)" fontFamily="sans-serif">= $30,000</text>
+          <text x="300" y="118" textAnchor="middle" fontSize="11" fill="rgba(255,255,255,0.7)" fontFamily="sans-serif">= $32,200</text>
           {/* Ring icon at center */}
           <circle cx="300" cy="40" r="10" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="3" />
           <text x="490" y="50" textAnchor="middle" fontSize="11" fill="rgba(255,255,255,0.75)" fontFamily="sans-serif">MFJ 2026</text>
@@ -63,9 +67,7 @@ export default function HowMarriageChangesTaxes() {
         How Marriage Changes Your Tax Bracket (2026 Guide)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published June 11, 2026 &middot; 8 min read
-      </p>
+      <ArticleMeta slug="how-marriage-changes-your-taxes" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         Getting married changes a lot more than your last name. It also changes how the IRS sees you &mdash; and how much money comes out of your paycheck every two weeks. For some couples, marriage delivers a meaningful tax cut. For others, combining incomes can push them into a higher bracket. Understanding which camp you fall into can help you plan smarter from day one of your new life together.
@@ -120,22 +122,22 @@ export default function HowMarriageChangesTaxes() {
           <tbody>
             <tr style={{ background: '#ffffff' }}>
               <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569' }}>Single</td>
-              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#1e293b' }}>$15,000</td>
+              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#1e293b' }}>$16,100</td>
             </tr>
             <tr style={{ background: '#f8fafc' }}>
               <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569' }}>Married Filing Jointly</td>
-              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#059669', fontWeight: 700 }}>$30,000</td>
+              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#059669', fontWeight: 700 }}>$32,200</td>
             </tr>
             <tr style={{ background: '#ffffff' }}>
               <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569' }}>Married Filing Separately</td>
-              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#1e293b' }}>$15,000</td>
+              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#1e293b' }}>$16,100</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        This alone is a huge benefit. If you and your spouse both earn $50,000, you now subtract $30,000 from your combined $100,000 before any federal tax is calculated. That leaves $70,000 of taxable income instead of $85,000 if you had each filed as single.
+        This alone is a huge benefit. If you and your spouse both earn $50,000, you now subtract $32,200 from your combined $100,000 before any federal tax is calculated. That leaves $67,800 of taxable income instead of $83,900 if you had each filed as single.
       </p>
 
       {/* Section 3 */}
@@ -158,13 +160,13 @@ export default function HowMarriageChangesTaxes() {
           </thead>
           <tbody>
             {[
-              ['10%', '$0 – $11,925', '$0 – $23,850'],
-              ['12%', '$11,926 – $48,475', '$23,851 – $96,950'],
-              ['22%', '$48,476 – $103,350', '$96,951 – $206,700'],
-              ['24%', '$103,351 – $197,300', '$206,701 – $394,600'],
-              ['32%', '$197,301 – $250,525', '$394,601 – $501,050'],
-              ['35%', '$250,526 – $626,350', '$501,051 – $751,600'],
-              ['37%', 'Over $626,350', 'Over $751,600'],
+              ['10%', '$0 – $12,400', '$0 – $24,800'],
+              ['12%', '$12,401 – $50,400', '$24,801 – $100,800'],
+              ['22%', '$50,401 – $105,700', '$100,801 – $211,400'],
+              ['24%', '$105,701 – $201,775', '$211,401 – $403,550'],
+              ['32%', '$201,776 – $256,225', '$403,551 – $512,450'],
+              ['35%', '$256,226 – $640,600', '$512,451 – $768,700'],
+              ['37%', 'Over $640,600', 'Over $768,700'],
             ].map(([rate, single, mfj], i) => (
               <tr key={rate} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', fontFamily: "'JetBrains Mono', monospace", color: '#db2777', fontWeight: 600 }}>{rate}</td>
@@ -177,7 +179,7 @@ export default function HowMarriageChangesTaxes() {
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Notice that for most income levels, the MFJ brackets are exactly twice the Single brackets. This design is meant to be &ldquo;marriage neutral&rdquo; for couples with equal incomes. The place where the brackets diverge significantly is at the very top &mdash; the MFJ 37% bracket starts at $751,600, not $1,252,700 (which would be double the Single threshold of $626,350). This gap is why high-earning couples can face a <strong>marriage penalty</strong>.
+        Notice that for most income levels, the MFJ brackets are exactly twice the Single brackets. This design is meant to be &ldquo;marriage neutral&rdquo; for couples with equal incomes. The place where the brackets diverge significantly is at the very top &mdash; the MFJ 37% bracket starts at $768,700, not $1,281,200 (which would be double the Single threshold of $640,600). This gap is why high-earning couples can face a <strong>marriage penalty</strong>.
       </p>
 
       {/* Section 4 */}
@@ -206,9 +208,9 @@ export default function HowMarriageChangesTaxes() {
           <tbody>
             {[
               ['Gross Income', '$80,000', '$30,000', '$110,000'],
-              ['Standard Deduction', '−$15,000', '−$15,000', '−$30,000'],
-              ['Taxable Income', '$65,000', '$15,000', '$80,000'],
-              ['Federal Income Tax', '$9,215', '$1,561', '$9,123'],
+              ['Standard Deduction', '−$16,100', '−$16,100', '−$32,200'],
+              ['Taxable Income', '$63,900', '$13,900', '$77,800'],
+              ['Federal Income Tax', '$8,770', '$1,420', '$8,840'],
             ].map(([label, sarah, mike, mfj], i) => (
               <tr key={label} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569' }}>{label}</td>
@@ -219,15 +221,15 @@ export default function HowMarriageChangesTaxes() {
             ))}
             <tr style={{ background: '#ecfdf5' }}>
               <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', fontWeight: 700, color: '#1e293b' }}>Combined Tax (Singles vs. MFJ)</td>
-              <td colSpan={2} style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>$10,776</td>
-              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>$9,123</td>
+              <td colSpan={2} style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>$10,190</td>
+              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>$8,840</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Sarah and Mike save <strong>$1,653 per year</strong> in federal income tax by filing jointly. That is roughly <strong>$63 back in their pocket every two weeks</strong>. The bonus exists because Mike&rsquo;s lower income pulls more of their combined earnings into the 10% and 12% brackets instead of the 22% bracket.
+        Sarah and Mike save <strong>$1,350 per year</strong> in federal income tax by filing jointly. That is roughly <strong>$52 back in their pocket every two weeks</strong>. The bonus exists because Mike&rsquo;s lower income pulls more of their combined earnings into the 10% and 12% brackets instead of the 22% bracket.
       </p>
 
       {/* Section 5 */}
@@ -240,7 +242,7 @@ export default function HowMarriageChangesTaxes() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The penalty is most severe at the 37% bracket. The Single threshold is $626,350, but the MFJ threshold is only $751,600 &mdash; not $1,252,700 (which would be exactly double). So a couple where both spouses earn $650,000 each will have a large chunk of their combined $1.3 million income hit the 37% rate &mdash; income that would have stayed in the 35% bracket if they had remained single.
+        The penalty is most severe at the 37% bracket. The Single threshold is $640,600, but the MFJ threshold is only $768,700 &mdash; not $1,281,200 (which would be exactly double). So a couple where both spouses earn $650,000 each will have a large chunk of their combined $1.3 million income hit the 37% rate &mdash; income that would have stayed in the 35% bracket if they had remained single.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
@@ -264,7 +266,7 @@ export default function HowMarriageChangesTaxes() {
       </p>
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
-        <li style={{ marginBottom: '0.5rem' }}><strong>Social Security: 6.2%</strong> on wages up to $168,600</li>
+        <li style={{ marginBottom: '0.5rem' }}><strong>Social Security: 6.2%</strong> on wages up to $184,500</li>
         <li style={{ marginBottom: '0.5rem' }}><strong>Medicare: 1.45%</strong> on all wages (no cap)</li>
         <li style={{ marginBottom: '0.5rem' }}><strong>Additional Medicare Tax: 0.9%</strong> on wages above $200,000 per individual, or above $250,000 combined for MFJ</li>
       </ul>

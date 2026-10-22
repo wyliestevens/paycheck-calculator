@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'How to File Your Taxes for the First Time: A Step-by-Step Guide (2026)',
+  title: { absolute: 'How to File Your Taxes for the First Time: A Step-by-Step Guide (2026)' },
   description:
     'Filing taxes for the first time? This step-by-step guide covers what documents you need, how to choose your filing status, free filing options, and a worked example at $42,000.',
   alternates: { canonical: '/blog/how-to-file-taxes-first-time-2026' },
   keywords:
     'how to file taxes for the first time, first time tax filer 2026, how to do your taxes, IRS Free File 2026, filing taxes step by step, first job taxes, W-2 first time filing',
   openGraph: {
+    type: 'article',
+    url: '/blog/how-to-file-taxes-first-time-2026',
+    images: [{ url: '/og/blog/how-to-file-taxes-first-time-2026', width: 1200, height: 630 }],
     title: 'How to File Your Taxes for the First Time: A Step-by-Step Guide (2026)',
     description:
       'Everything a first-time filer needs: what documents to gather, which status to choose, free filing options, and a worked example at $42,000.',
@@ -95,9 +99,7 @@ export default function HowToFileFirstTime() {
         How to File Your Taxes for the First Time: A Step-by-Step Guide (2026)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published September 29, 2026 &middot; 10 min read
-      </p>
+      <ArticleMeta slug="how-to-file-taxes-first-time-2026" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         Filing taxes for the first time is one of those adult milestones that feels more intimidating than it actually is. If you started your first job, moved out on your own, or simply never got around to filing before &mdash; this guide covers everything you need to know from start to finish.
@@ -131,15 +133,15 @@ export default function HowToFileFirstTime() {
           </thead>
           <tbody>
             {[
-              ['Single', 'Under 65', '$15,000'],
+              ['Single', 'Under 65', '$16,100'],
               ['Single', '65 or older', '$16,550'],
-              ['Married Filing Jointly', 'Both under 65', '$30,000'],
+              ['Married Filing Jointly', 'Both under 65', '$32,200'],
               ['Married Filing Jointly', 'One spouse 65+', '$31,550'],
               ['Married Filing Jointly', 'Both 65+', '$33,100'],
               ['Married Filing Separately', 'Any age', '$5'],
-              ['Head of Household', 'Under 65', '$22,500'],
+              ['Head of Household', 'Under 65', '$24,150'],
               ['Head of Household', '65 or older', '$24,050'],
-              ['Qualifying Surviving Spouse', 'Under 65', '$30,000'],
+              ['Qualifying Surviving Spouse', 'Under 65', '$32,200'],
             ].map(([status, age, threshold], i) => (
               <tr key={i} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569' }}>{status}</td>
@@ -209,10 +211,10 @@ export default function HowToFileFirstTime() {
       </p>
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1rem', paddingLeft: '1.5rem' }}>
-        <li style={{ marginBottom: '0.75rem' }}><strong>Single</strong> &mdash; unmarried, or legally separated. The most common status for first-time filers. Standard deduction: $15,000.</li>
-        <li style={{ marginBottom: '0.75rem' }}><strong>Married Filing Jointly (MFJ)</strong> &mdash; you were married and choose to file one return together. Standard deduction: $30,000. Usually the best option for married couples.</li>
+        <li style={{ marginBottom: '0.75rem' }}><strong>Single</strong> &mdash; unmarried, or legally separated. The most common status for first-time filers. Standard deduction: $16,100.</li>
+        <li style={{ marginBottom: '0.75rem' }}><strong>Married Filing Jointly (MFJ)</strong> &mdash; you were married and choose to file one return together. Standard deduction: $32,200. Usually the best option for married couples.</li>
         <li style={{ marginBottom: '0.75rem' }}><strong>Married Filing Separately (MFS)</strong> &mdash; married but file separate returns. Rarely beneficial except in specific situations (income-driven student loan repayment, liability concerns).</li>
-        <li style={{ marginBottom: '0.75rem' }}><strong>Head of Household (HoH)</strong> &mdash; unmarried <em>and</em> paid more than half the cost of keeping a home for a qualifying dependent. More favorable brackets than Single. Standard deduction: $22,500.</li>
+        <li style={{ marginBottom: '0.75rem' }}><strong>Head of Household (HoH)</strong> &mdash; unmarried <em>and</em> paid more than half the cost of keeping a home for a qualifying dependent. More favorable brackets than Single. Standard deduction: $24,150.</li>
         <li style={{ marginBottom: '0.75rem' }}><strong>Qualifying Surviving Spouse</strong> &mdash; for widows/widowers with a dependent child, for up to two years after the spouse&rsquo;s death.</li>
       </ul>
 
@@ -277,7 +279,7 @@ export default function HowToFileFirstTime() {
         <li style={{ marginBottom: '0.75rem' }}><strong>Enter your personal information</strong> &mdash; name, SSN, address, and filing status.</li>
         <li style={{ marginBottom: '0.75rem' }}><strong>Report your income</strong> &mdash; enter wages from Box 1 of each W-2. Add any 1099 income. The software totals everything into your gross income.</li>
         <li style={{ marginBottom: '0.75rem' }}><strong>Claim above-the-line deductions</strong> &mdash; student loan interest, HSA contributions, IRA contributions, and similar items reduce your Adjusted Gross Income (AGI) before the standard deduction.</li>
-        <li style={{ marginBottom: '0.75rem' }}><strong>Claim the standard deduction</strong> &mdash; most first-time filers take the standard deduction ($15,000 for Single in 2026) rather than itemizing, because it is larger.</li>
+        <li style={{ marginBottom: '0.75rem' }}><strong>Claim the standard deduction</strong> &mdash; most first-time filers take the standard deduction ($16,100 for Single in 2026) rather than itemizing, because it is larger.</li>
         <li style={{ marginBottom: '0.75rem' }}><strong>Calculate taxable income</strong> &mdash; AGI minus deductions. This is the number your tax is computed on.</li>
         <li style={{ marginBottom: '0.75rem' }}><strong>Apply tax credits</strong> &mdash; credits reduce your tax bill dollar-for-dollar. Common ones for first-time filers include the Earned Income Tax Credit and the Saver&rsquo;s Credit.</li>
         <li style={{ marginBottom: '0.75rem' }}><strong>Subtract withholding</strong> &mdash; Box 2 of your W-2 shows federal income tax already withheld. If withholding exceeds your tax, the difference is your refund. If it falls short, you owe the difference.</li>
@@ -309,13 +311,13 @@ export default function HowToFileFirstTime() {
               ['Gross wages (W-2 Box 1)', '$42,000', 'From employer'],
               ['Student loan interest (1098-E)', '−$1,200', 'Above-the-line deduction'],
               ['Adjusted Gross Income (AGI)', '$40,800', 'After deduction'],
-              ['Standard deduction (Single)', '−$15,000', '2026 amount'],
-              ['Taxable income', '$25,800', 'AGI minus standard deduction'],
-              ['Federal tax: 10% on $0–$11,925', '$1,192.50', ''],
-              ['Federal tax: 12% on $11,925–$25,800', '$1,665.00', '12% × $13,875'],
-              ['Total federal income tax', '$2,857.50', ''],
+              ['Standard deduction (Single)', '−$16,100', '2026 amount'],
+              ['Taxable income', '$24,700', 'AGI minus standard deduction'],
+              ['Federal tax: 10% on $0–$12,400', '$1,240.00', ''],
+              ['Federal tax: 12% on $12,400–$24,700', '$1,476.00', '12% × $12,300'],
+              ['Total federal income tax', '$2,716.00', ''],
               ['Federal withholding (W-2 Box 2)', '$3,120.00', 'Employer withheld throughout year'],
-              ['Refund (withholding − tax)', '$262.50', 'Direct deposited in ~21 days'],
+              ['Refund (withholding − tax)', '$404.00', 'Direct deposited in ~21 days'],
             ].map(([item, amount, note], i) => (
               <tr key={i} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569' }}>{item}</td>
@@ -328,7 +330,7 @@ export default function HowToFileFirstTime() {
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Jordan pays an <strong>effective federal income tax rate of about 7.0%</strong> ($2,857.50 &divide; $40,800 AGI). Because the employer withheld a little extra, Jordan gets back <strong>$262.50</strong> as a refund &mdash; not a windfall, but not owing anything either. The student loan interest deduction saved $144 in federal tax (12% &times; $1,200).
+        Jordan pays an <strong>effective federal income tax rate of about 6.7%</strong> ($2,716.00 &divide; $40,800 AGI). Because the employer withheld a little extra, Jordan gets back <strong>$404.00</strong> as a refund &mdash; not a windfall, but not owing anything either. The student loan interest deduction saved $144 in federal tax (12% &times; $1,200).
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>

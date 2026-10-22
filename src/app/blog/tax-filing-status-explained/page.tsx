@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Tax Filing Status Explained: Single, Married, Head of Household (2026)',
+  title: { absolute: 'Tax Filing Status Explained: Single, Married, Head of Household (2026)' },
   description:
     'Your filing status controls your tax brackets and standard deduction — choosing wrong costs thousands. Here\'s how all 5 statuses work, with 2026 numbers and a full worked example.',
   alternates: { canonical: '/blog/tax-filing-status-explained' },
   keywords:
     'tax filing status 2026, single vs married filing jointly, head of household filing status, married filing separately, tax filing status explained, which filing status to choose, W-4 filing status 2026',
   openGraph: {
+    type: 'article',
+    url: '/blog/tax-filing-status-explained',
+    images: [{ url: '/og/blog/tax-filing-status-explained', width: 1200, height: 630 }],
     title: 'Tax Filing Status Explained: Single, Married, Head of Household (2026)',
     description:
       'Your filing status controls your tax brackets and standard deduction. Here\'s how all 5 statuses work — with a full $80,000 worked example.',
@@ -43,31 +47,31 @@ export default function TaxFilingStatusExplained() {
           <rect x="28" y="70" width="100" height="100" rx="8" fill="rgba(255,255,255,0.18)" />
           <text x="78" y="110" textAnchor="middle" fontSize="22" fill="#fff" fontFamily="monospace" fontWeight="700">1</text>
           <text x="78" y="130" textAnchor="middle" fontSize="10" fill="rgba(255,255,255,0.85)" fontFamily="sans-serif">Single</text>
-          <text x="78" y="148" textAnchor="middle" fontSize="9" fill="rgba(255,255,255,0.65)" fontFamily="sans-serif">$15,000 std.</text>
+          <text x="78" y="148" textAnchor="middle" fontSize="9" fill="rgba(255,255,255,0.65)" fontFamily="sans-serif">$16,100 std.</text>
 
           {/* Card 2: MFJ */}
           <rect x="140" y="70" width="100" height="100" rx="8" fill="rgba(255,255,255,0.18)" />
           <text x="190" y="110" textAnchor="middle" fontSize="22" fill="#fff" fontFamily="monospace" fontWeight="700">2</text>
           <text x="190" y="130" textAnchor="middle" fontSize="10" fill="rgba(255,255,255,0.85)" fontFamily="sans-serif">Married Jointly</text>
-          <text x="190" y="148" textAnchor="middle" fontSize="9" fill="rgba(255,255,255,0.65)" fontFamily="sans-serif">$30,000 std.</text>
+          <text x="190" y="148" textAnchor="middle" fontSize="9" fill="rgba(255,255,255,0.65)" fontFamily="sans-serif">$32,200 std.</text>
 
           {/* Card 3: MFS */}
           <rect x="252" y="70" width="100" height="100" rx="8" fill="rgba(255,255,255,0.12)" />
           <text x="302" y="110" textAnchor="middle" fontSize="22" fill="rgba(255,255,255,0.7)" fontFamily="monospace" fontWeight="700">3</text>
           <text x="302" y="130" textAnchor="middle" fontSize="10" fill="rgba(255,255,255,0.7)" fontFamily="sans-serif">Married Sep.</text>
-          <text x="302" y="148" textAnchor="middle" fontSize="9" fill="rgba(255,255,255,0.5)" fontFamily="sans-serif">$15,000 std.</text>
+          <text x="302" y="148" textAnchor="middle" fontSize="9" fill="rgba(255,255,255,0.5)" fontFamily="sans-serif">$16,100 std.</text>
 
           {/* Card 4: HoH */}
           <rect x="364" y="70" width="100" height="100" rx="8" fill="rgba(255,255,255,0.22)" />
           <text x="414" y="110" textAnchor="middle" fontSize="22" fill="#fff" fontFamily="monospace" fontWeight="700">4</text>
           <text x="414" y="130" textAnchor="middle" fontSize="10" fill="rgba(255,255,255,0.85)" fontFamily="sans-serif">Head of House</text>
-          <text x="414" y="148" textAnchor="middle" fontSize="9" fill="rgba(255,255,255,0.65)" fontFamily="sans-serif">$22,500 std.</text>
+          <text x="414" y="148" textAnchor="middle" fontSize="9" fill="rgba(255,255,255,0.65)" fontFamily="sans-serif">$24,150 std.</text>
 
           {/* Card 5: QSS */}
           <rect x="476" y="70" width="100" height="100" rx="8" fill="rgba(255,255,255,0.12)" />
           <text x="526" y="110" textAnchor="middle" fontSize="22" fill="rgba(255,255,255,0.7)" fontFamily="monospace" fontWeight="700">5</text>
           <text x="526" y="130" textAnchor="middle" fontSize="10" fill="rgba(255,255,255,0.7)" fontFamily="sans-serif">Surv. Spouse</text>
-          <text x="526" y="148" textAnchor="middle" fontSize="9" fill="rgba(255,255,255,0.5)" fontFamily="sans-serif">$30,000 std.</text>
+          <text x="526" y="148" textAnchor="middle" fontSize="9" fill="rgba(255,255,255,0.5)" fontFamily="sans-serif">$32,200 std.</text>
         </svg>
       </div>
 
@@ -83,9 +87,7 @@ export default function TaxFilingStatusExplained() {
         Tax Filing Status Explained: Single, Married, Head of Household (2026)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published August 17, 2026 &middot; 8 min read
-      </p>
+      <ArticleMeta slug="tax-filing-status-explained" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         When you fill out your W-4 at work or file your annual tax return, one of the first things the IRS asks is your <strong>filing status</strong>. Most people pick the one that sounds right and move on without thinking much about it. But your filing status does two big things that directly affect every paycheck:
@@ -127,11 +129,11 @@ export default function TaxFilingStatusExplained() {
           </thead>
           <tbody>
             {[
-              ['Single', '$15,000', 'Unmarried, legally separated, or divorced'],
-              ['Married Filing Jointly', '$30,000', 'Married couples filing one combined return'],
-              ['Married Filing Separately', '$15,000', 'Married couples who file separate returns'],
-              ['Head of Household', '$22,500', 'Unmarried with a qualifying dependent'],
-              ['Qualifying Surviving Spouse', '$30,000', 'Widowed in prior 2 years, with dependent child'],
+              ['Single', '$16,100', 'Unmarried, legally separated, or divorced'],
+              ['Married Filing Jointly', '$32,200', 'Married couples filing one combined return'],
+              ['Married Filing Separately', '$16,100', 'Married couples who file separate returns'],
+              ['Head of Household', '$24,150', 'Unmarried with a qualifying dependent'],
+              ['Qualifying Surviving Spouse', '$32,200', 'Widowed in prior 2 years, with dependent child'],
             ].map(([status, deduction, who], i) => (
               <tr key={status} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#1e293b', fontWeight: 500 }}>{status}</td>
@@ -160,7 +162,7 @@ export default function TaxFilingStatusExplained() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The 2026 standard deduction for Single filers is <strong>$15,000</strong>. Single filers have the narrowest tax brackets — meaning your income hits the higher rates sooner than it would under any other status.
+        The 2026 standard deduction for Single filers is <strong>$16,100</strong>. Single filers have the narrowest tax brackets — meaning your income hits the higher rates sooner than it would under any other status.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
@@ -173,7 +175,7 @@ export default function TaxFilingStatusExplained() {
       </h2>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        <strong>Married Filing Jointly</strong> is usually the best option for married couples. You combine both spouses&rsquo; incomes onto one return, and you get the largest standard deduction of any status: <strong>$30,000</strong> in 2026 — exactly double the Single deduction.
+        <strong>Married Filing Jointly</strong> is usually the best option for married couples. You combine both spouses&rsquo; incomes onto one return, and you get the largest standard deduction of any status: <strong>$32,200</strong> in 2026 — exactly double the Single deduction.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
@@ -197,7 +199,7 @@ export default function TaxFilingStatusExplained() {
       </h2>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        <strong>Married Filing Separately</strong> means each spouse files their own return with their own income. The standard deduction is <strong>$15,000</strong> — same as Single — and you lose access to the wider MFJ brackets.
+        <strong>Married Filing Separately</strong> means each spouse files their own return with their own income. The standard deduction is <strong>$16,100</strong> — same as Single — and you lose access to the wider MFJ brackets.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
@@ -225,7 +227,7 @@ export default function TaxFilingStatusExplained() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        HoH gives you a <strong>$22,500 standard deduction</strong> in 2026 — $7,500 more than Single — and wider tax brackets on the lower rates. A single parent earning $70,000 saves roughly <strong>$1,650 in federal tax</strong> by qualifying as HoH instead of Single.
+        HoH gives you a <strong>$24,150 standard deduction</strong> in 2026 — $8,050 more than Single — and wider tax brackets on the lower rates. A single parent earning $70,000 saves roughly <strong>$1,420 in federal tax</strong> by qualifying as HoH instead of Single.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
@@ -255,7 +257,7 @@ export default function TaxFilingStatusExplained() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        This status lets you use the same tax brackets and <strong>$30,000 standard deduction</strong> as Married Filing Jointly — giving widowed parents extra financial support during a difficult transition. After those two years, you generally move to Head of Household (if you have a qualifying dependent) or Single.
+        This status lets you use the same tax brackets and <strong>$32,200 standard deduction</strong> as Married Filing Jointly — giving widowed parents extra financial support during a difficult transition. After those two years, you generally move to Head of Household (if you have a qualifying dependent) or Single.
       </p>
 
       {/* Section 7 — Brackets */}
@@ -286,13 +288,13 @@ export default function TaxFilingStatusExplained() {
           </thead>
           <tbody>
             {[
-              ['10%', '$0 – $11,925', '$0 – $23,850', '$0 – $17,000'],
-              ['12%', '$11,926 – $48,475', '$23,851 – $96,950', '$17,001 – $64,850'],
-              ['22%', '$48,476 – $103,350', '$96,951 – $206,700', '$64,851 – $103,350'],
-              ['24%', '$103,351 – $197,300', '$206,701 – $394,600', '$103,351 – $197,300'],
-              ['32%', '$197,301 – $250,525', '$394,601 – $501,050', '$197,301 – $250,500'],
-              ['35%', '$250,526 – $626,350', '$501,051 – $751,600', '$250,501 – $626,350'],
-              ['37%', 'Over $626,350', 'Over $751,600', 'Over $626,350'],
+              ['10%', '$0 – $12,400', '$0 – $24,800', '$0 – $17,700'],
+              ['12%', '$12,401 – $50,400', '$24,801 – $100,800', '$17,701 – $67,450'],
+              ['22%', '$50,401 – $105,700', '$100,801 – $211,400', '$67,451 – $105,700'],
+              ['24%', '$105,701 – $201,775', '$211,401 – $403,550', '$105,701 – $201,775'],
+              ['32%', '$201,776 – $256,225', '$403,551 – $512,450', '$201,776 – $256,225'],
+              ['35%', '$256,226 – $640,600', '$512,451 – $768,700', '$256,226 – $640,600'],
+              ['37%', 'Over $640,600', 'Over $768,700', 'Over $640,600'],
             ].map(([rate, single, mfj, hoh], i) => (
               <tr key={rate} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.5rem 0.875rem', borderBottom: '1px solid #e2e8f0', fontFamily: "'JetBrains Mono', monospace", color: '#6d28d9', fontWeight: 700 }}>{rate}</td>
@@ -343,11 +345,11 @@ export default function TaxFilingStatusExplained() {
           <tbody>
             {[
               ['Gross Income', '$80,000', '$80,000', '$80,000'],
-              ['Standard Deduction', '−$15,000', '−$22,500', '−$30,000'],
-              ['Taxable Income', '$65,000', '$57,500', '$50,000'],
-              ['Federal Income Tax', '$9,214', '$6,560', '$5,523'],
+              ['Standard Deduction', '−$16,100', '−$24,150', '−$32,200'],
+              ['Taxable Income', '$63,900', '$55,850', '$47,800'],
+              ['Federal Income Tax', '$8,770', '$6,348', '$5,240'],
               ['FICA (7.65%)', '$6,120', '$6,120', '$6,120'],
-              ['Total Withheld', '$15,334', '$12,680', '$11,643'],
+              ['Total Withheld', '$14,890', '$12,468', '$11,360'],
             ].map(([label, single, hoh, mfj], i) => {
               const isTotal = label === 'Total Withheld'
               return (
@@ -361,16 +363,16 @@ export default function TaxFilingStatusExplained() {
             })}
             <tr style={{ background: '#ecfdf5' }}>
               <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', fontWeight: 700, color: '#1e293b' }}>Annual Take-Home Pay</td>
-              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>$64,666</td>
-              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>$67,320</td>
-              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>$68,357</td>
+              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>$65,110</td>
+              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>$67,532</td>
+              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>$68,640</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The difference between Single and Married Filing Jointly is <strong>$3,691 per year</strong> in federal tax savings — roughly $142 more in every biweekly paycheck. Head of Household saves <strong>$2,654 per year</strong> compared to Single. All three people earn exactly the same gross pay.
+        The difference between Single and Married Filing Jointly is <strong>$3,530 per year</strong> in federal tax savings — roughly $136 more in every biweekly paycheck. Head of Household saves <strong>$2,422 per year</strong> compared to Single. All three people earn exactly the same gross pay.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>

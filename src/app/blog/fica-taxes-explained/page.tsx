@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'FICA Taxes Explained: Social Security and Medicare in 2026',
+  title: { absolute: 'FICA Taxes Explained: Social Security and Medicare in 2026' },
   description:
     'FICA takes 7.65% of every paycheck. Learn what Social Security and Medicare taxes are, how they work, and what you get back — with worked examples at $50K and $200K.',
   alternates: { canonical: '/blog/fica-taxes-explained' },
   keywords:
     'FICA tax 2026, Social Security tax rate, Medicare tax rate, FICA withholding, self-employment tax, additional Medicare tax, payroll tax',
   openGraph: {
+    type: 'article',
+    url: '/blog/fica-taxes-explained',
+    images: [{ url: '/og/blog/fica-taxes-explained', width: 1200, height: 630 }],
     title: 'FICA Taxes Explained: Social Security and Medicare in 2026',
     description:
       'FICA takes 7.65% of every paycheck. Learn what Social Security and Medicare taxes are, how they work, and what you get back.',
@@ -56,7 +60,7 @@ export default function FicaTaxesExplained() {
           <text x="445" y="90" textAnchor="middle" fontSize="12" fontWeight="600" fill="#fff" fontFamily="sans-serif">Medicare</text>
           <text x="445" y="122" textAnchor="middle" fontSize="20" fontWeight="700" fill="#fff" fontFamily="monospace">1.45%</text>
           {/* Bottom labels */}
-          <text x="310" y="160" textAnchor="middle" fontSize="10" fill="rgba(255,255,255,0.6)" fontFamily="sans-serif">Cap: $168,600</text>
+          <text x="310" y="160" textAnchor="middle" fontSize="10" fill="rgba(255,255,255,0.6)" fontFamily="sans-serif">Cap: $184,500</text>
           <text x="445" y="160" textAnchor="middle" fontSize="10" fill="rgba(255,255,255,0.6)" fontFamily="sans-serif">No cap</text>
         </svg>
       </div>
@@ -73,9 +77,7 @@ export default function FicaTaxesExplained() {
         FICA Taxes Explained: Social Security and Medicare in 2026
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published May 29, 2026 &middot; 6 min read
-      </p>
+      <ArticleMeta slug="fica-taxes-explained" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         Look at any pay stub and you will see two deductions that appear on every single one: <strong>Social Security</strong> and <strong>Medicare</strong>. Together, they are known as <strong>FICA taxes</strong>. They take a combined <strong>7.65%</strong> out of every paycheck, and your employer pays an equal amount on top of that.
@@ -117,7 +119,7 @@ export default function FicaTaxesExplained() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        However, there is an important limit called the <strong>wage base</strong>. In 2026, you only pay Social Security tax on the first <strong>$168,600</strong> of earnings. Once your year-to-date earnings exceed that amount, Social Security tax stops being deducted from your paycheck for the rest of the year.{' '}
+        However, there is an important limit called the <strong>wage base</strong>. In 2026, you only pay Social Security tax on the first <strong>$184,500</strong> of earnings. Once your year-to-date earnings exceed that amount, Social Security tax stops being deducted from your paycheck for the rest of the year.{' '}
         <a href="https://www.ssa.gov/oact/cola/cbb.html" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (SSA.gov &mdash; Contribution and Benefit Base)
         </a>
@@ -139,15 +141,15 @@ export default function FicaTaxesExplained() {
           color: '#1e293b',
         }}
       >
-        $168,600 &times; 6.2% = <strong>$10,453.20</strong>
+        $184,500 &times; 6.2% = <strong>$11,439.00</strong>
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        If you earn $80,000, $150,000, or $168,600 &mdash; you pay Social Security tax on every dollar. But if you earn $250,000, you only pay Social Security tax on the first $168,600 and nothing on the remaining $81,400.
+        If you earn $80,000, $150,000, or $184,500 &mdash; you pay Social Security tax on every dollar. But if you earn $250,000, you only pay Social Security tax on the first $184,500 and nothing on the remaining $65,500.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The wage base adjusts each year based on average wage growth. It has increased steadily over time &mdash; it was $147,000 in 2022, $160,200 in 2023, $168,600 in 2024, and has remained at $168,600 for 2026.{' '}
+        The wage base adjusts each year based on average wage growth. It has increased steadily over time &mdash; it was $147,000 in 2022, $160,200 in 2023, $168,600 in 2024, $176,100 in 2025, and $184,500 for 2026.{' '}
         <a href="https://www.ssa.gov/oact/cola/cbb.html" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (SSA.gov)
         </a>
@@ -220,7 +222,7 @@ export default function FicaTaxesExplained() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The same Social Security wage base ($168,600) and Additional Medicare Tax rules apply to self-employed workers.
+        The same Social Security wage base ($184,500) and Additional Medicare Tax rules apply to self-employed workers.
       </p>
 
       {/* Section 6 */}
@@ -303,9 +305,9 @@ export default function FicaTaxesExplained() {
           <tbody>
             <tr style={{ background: '#ffffff' }}>
               <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569' }}>Social Security</td>
-              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$168,600</td>
+              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$184,500</td>
               <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>6.2%</td>
-              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>$10,453.20</td>
+              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>$11,439.00</td>
             </tr>
             <tr style={{ background: '#f8fafc' }}>
               <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569' }}>Medicare</td>
@@ -321,7 +323,7 @@ export default function FicaTaxesExplained() {
             </tr>
             <tr style={{ background: '#ecfdf5' }}>
               <td colSpan={3} style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', fontWeight: 700, color: '#1e293b' }}>Total FICA</td>
-              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#1e293b' }}>$13,353.20</td>
+              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#1e293b' }}>$14,339.00</td>
             </tr>
           </tbody>
         </table>
@@ -332,11 +334,11 @@ export default function FicaTaxesExplained() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Notice how the Social Security tax is capped at $10,453.20 even though the salary is $200,000. The remaining $31,400 above the wage base is exempt from Social Security tax. But Medicare still applies to every dollar.
+        Notice how the Social Security tax is capped at $11,439.00 even though the salary is $200,000. The remaining $15,500 above the wage base is exempt from Social Security tax. But Medicare still applies to every dollar.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        At $50,000, FICA takes <strong>7.65%</strong> of your pay. At $200,000, the effective FICA rate drops to about <strong>6.68%</strong> because of the Social Security cap. This is why FICA is sometimes called a <strong>regressive tax</strong> &mdash; lower-income workers pay a higher percentage of their income than higher-income workers.
+        At $50,000, FICA takes <strong>7.65%</strong> of your pay. At $200,000, the effective FICA rate drops to about <strong>7.17%</strong> because of the Social Security cap. This is why FICA is sometimes called a <strong>regressive tax</strong> &mdash; lower-income workers pay a higher percentage of their income than higher-income workers.
       </p>
 
       {/* Section 7 */}
@@ -406,10 +408,10 @@ export default function FicaTaxesExplained() {
           <tbody>
             {[
               ['Rate', 'Flat 7.65%', 'Progressive (10%–37%)'],
-              ['Standard deduction', 'None', '$15,000 (single)'],
+              ['Standard deduction', 'None', '$16,100 (single)'],
               ['Can be reduced with credits?', 'No', 'Yes'],
               ['Employer pays half?', 'Yes', 'No'],
-              ['Income cap?', 'SS only ($168,600)', 'No'],
+              ['Income cap?', 'SS only ($184,500)', 'No'],
               ['Funds what?', 'Social Security & Medicare', 'General government'],
             ].map(([label, fica, income], i) => (
               <tr key={label} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
@@ -465,7 +467,7 @@ export default function FicaTaxesExplained() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The Social Security portion has a wage cap ($168,600 in 2026), so high earners stop paying it partway through the year. Medicare has no cap, and earners above $200,000 pay an extra 0.9%.
+        The Social Security portion has a wage cap ($184,500 in 2026), so high earners stop paying it partway through the year. Medicare has no cap, and earners above $200,000 pay an extra 0.9%.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>

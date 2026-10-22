@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'How Investment Dividends Are Taxed in 2026: Qualified vs. Ordinary',
+  title: { absolute: 'How Investment Dividends Are Taxed in 2026: Qualified vs. Ordinary' },
   description:
     'Qualified dividends are taxed at 0%, 15%, or 20% — far below ordinary income rates. Here\'s exactly how dividend taxation works in 2026, with a full worked example and rate table.',
   alternates: { canonical: '/blog/how-dividends-are-taxed-2026' },
   keywords:
     'how dividends are taxed 2026, qualified dividends tax rate, ordinary dividends tax, dividend income taxes, 1099-DIV, qualified dividend holding period, REIT dividends tax, investment income taxes 2026',
   openGraph: {
+    type: 'article',
+    url: '/blog/how-dividends-are-taxed-2026',
+    images: [{ url: '/og/blog/how-dividends-are-taxed-2026', width: 1200, height: 630 }],
     title: 'How Investment Dividends Are Taxed in 2026: Qualified vs. Ordinary',
     description:
       'Qualified dividends are taxed at 0%, 15%, or 20% — far below ordinary income rates. Here\'s the full guide with a worked example at $75,000.',
@@ -81,9 +85,7 @@ export default function HowDividendsAreTaxed2026() {
         How Investment Dividends Are Taxed in 2026: Qualified vs. Ordinary
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published October 9, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="how-dividends-are-taxed-2026" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         If you own stocks, mutual funds, or ETFs, you probably receive <strong>dividends</strong> — regular cash payments companies make to shareholders out of their profits. Those payments feel like found money, but the IRS taxes them. The key is <em>how</em> they&rsquo;re taxed: not all dividends are treated equally.
@@ -225,9 +227,9 @@ export default function HowDividendsAreTaxed2026() {
           </thead>
           <tbody>
             {[
-              ['0%', 'Up to $48,350', 'Up to $96,700'],
-              ['15%', '$48,351 – $533,400', '$96,701 – $600,050'],
-              ['20%', 'Over $533,400', 'Over $600,050'],
+              ['0%', 'Up to $49,450', 'Up to $98,900'],
+              ['15%', '$49,451 – $545,500', '$98,901 – $613,700'],
+              ['20%', 'Over $545,500', 'Over $613,700'],
             ].map(([rate, single, mfj], i) => (
               <tr key={rate} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', fontWeight: 700, color: '#059669', fontFamily: "'JetBrains Mono', monospace" }}>{rate}</td>
@@ -240,11 +242,11 @@ export default function HowDividendsAreTaxed2026() {
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Notice: if your taxable income is below $48,350 as a single filer, you owe <strong>zero federal tax on qualified dividends</strong>. This is a powerful benefit for lower-income investors and retirees managing their income carefully.
+        Notice: if your taxable income is below $49,450 as a single filer, you owe <strong>zero federal tax on qualified dividends</strong>. This is a powerful benefit for lower-income investors and retirees managing their income carefully.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Important nuance: these thresholds apply to your <em>total</em> taxable income, including the dividends themselves. Dividends are &ldquo;stacked on top&rdquo; of your ordinary income for the purpose of determining the rate. So if your wages fill the bracket up to $45,000, the first $3,350 of qualified dividends is taxed at 0% and anything above $48,350 is taxed at 15%.{' '}
+        Important nuance: these thresholds apply to your <em>total</em> taxable income, including the dividends themselves. Dividends are &ldquo;stacked on top&rdquo; of your ordinary income for the purpose of determining the rate. So if your wages fill the bracket up to $45,000, the first $4,450 of qualified dividends is taxed at 0% and anything above $49,450 is taxed at 15%.{' '}
         <a href="https://www.irs.gov/newsroom/irs-provides-tax-inflation-adjustments-for-tax-year-2026" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS — Tax Inflation Adjustments for 2026)
         </a>
@@ -256,7 +258,7 @@ export default function HowDividendsAreTaxed2026() {
       </h2>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1rem' }}>
-        Let&rsquo;s run the numbers for a single filer with $75,000 in wages and $3,000 in dividends — $2,400 qualified, $600 ordinary. Standard deduction is $15,000 in 2026.
+        Let&rsquo;s run the numbers for a single filer with $75,000 in wages and $3,000 in dividends — $2,400 qualified, $600 ordinary. Standard deduction is $16,100 in 2026.
       </p>
 
       <div style={{ overflowX: 'auto', marginBottom: '1.5rem' }}>
@@ -280,8 +282,8 @@ export default function HowDividendsAreTaxed2026() {
               ['Ordinary dividends (non-qualified)', '$600'],
               ['Qualified dividends', '$2,400'],
               ['Gross income', '$78,000'],
-              ['Standard deduction', '−$15,000'],
-              ['Taxable income', '$63,000'],
+              ['Standard deduction', '−$16,100'],
+              ['Taxable income', '$61,900'],
             ].map(([label, amount], i) => (
               <tr key={label} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569' }}>{label}</td>
@@ -293,7 +295,7 @@ export default function HowDividendsAreTaxed2026() {
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1rem' }}>
-        <strong>Step 1: Tax on ordinary income ($60,600 = taxable income minus qualified dividends)</strong>
+        <strong>Step 1: Tax on ordinary income ($59,500 = taxable income minus qualified dividends)</strong>
       </p>
 
       <div
@@ -309,10 +311,10 @@ export default function HowDividendsAreTaxed2026() {
           lineHeight: 1.8,
         }}
       >
-        10% on first $11,925 = $1,192.50<br />
-        12% on $11,926–$48,475 = $4,385.88<br />
-        22% on $48,476–$60,600 = $2,667.28<br />
-        <strong>Ordinary income tax: $8,245.66</strong>
+        10% on first $12,400 = $1,240.00<br />
+        12% on $12,401–$50,400 = $4,560.00<br />
+        22% on $50,401–$59,500 = $2,002.00<br />
+        <strong>Ordinary income tax: $7,802.00</strong>
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1rem' }}>
@@ -320,7 +322,7 @@ export default function HowDividendsAreTaxed2026() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1rem' }}>
-        Total taxable income is $63,000. Since this is above the 0% threshold of $48,350, the $2,400 in qualified dividends is taxed at <strong>15%</strong>.
+        Total taxable income is $61,900. Since this is above the 0% threshold of $49,450, the $2,400 in qualified dividends is taxed at <strong>15%</strong>.
       </p>
 
       <div
@@ -527,7 +529,7 @@ export default function HowDividendsAreTaxed2026() {
       </h3>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Retirees with modest taxable income can pay <strong>zero federal tax on qualified dividends</strong> if their taxable income stays below $48,350 (single) or $96,700 (MFJ). Strategies like Roth conversions in low-income years, delaying Social Security, and drawing from Roth accounts first can help keep taxable income in the 0% zone.
+        Retirees with modest taxable income can pay <strong>zero federal tax on qualified dividends</strong> if their taxable income stays below $49,450 (single) or $98,900 (MFJ). Strategies like Roth conversions in low-income years, delaying Social Security, and drawing from Roth accounts first can help keep taxable income in the 0% zone.
       </p>
 
       {/* Section 12 — State Taxes */}

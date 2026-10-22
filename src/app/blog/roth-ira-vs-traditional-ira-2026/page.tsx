@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Roth IRA vs Traditional IRA: How Each Affects Your Taxes in 2026',
+  title: { absolute: 'Roth IRA vs Traditional IRA: How Each Affects Your Taxes in 2026' },
   description:
     'A Traditional IRA may cut your tax bill today. A Roth IRA gives you tax-free money in retirement. Here\'s exactly how each type works, the 2026 limits, and a full worked example at $65,000.',
   alternates: { canonical: '/blog/roth-ira-vs-traditional-ira-2026' },
   keywords:
     'Roth IRA vs Traditional IRA 2026, IRA contribution limits 2026, traditional IRA tax deduction, Roth IRA income limit 2026, IRA vs 401k, open IRA 2026, individual retirement account 2026',
   openGraph: {
+    type: 'article',
+    url: '/blog/roth-ira-vs-traditional-ira-2026',
+    images: [{ url: '/og/blog/roth-ira-vs-traditional-ira-2026', width: 1200, height: 630 }],
     title: 'Roth IRA vs Traditional IRA: How Each Affects Your Taxes in 2026',
     description:
       'A Traditional IRA may cut your tax bill today. A Roth IRA gives you tax-free money in retirement. Here\'s the full breakdown with 2026 limits and a worked dollar example.',
@@ -71,12 +75,10 @@ export default function RothIraVsTraditionalIra2026() {
         Roth IRA vs Traditional IRA: How Each Affects Your Taxes in 2026
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published August 13, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="roth-ira-vs-traditional-ira-2026" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Your employer&rsquo;s 401(k) is not the only way to save on taxes through retirement contributions. An <strong>Individual Retirement Account (IRA)</strong> lets you put away up to <strong>$7,000 per year</strong> in 2026 &mdash; and depending on which type you choose, that money either reduces your tax bill right now or grows completely tax-free for retirement.
+        Your employer&rsquo;s 401(k) is not the only way to save on taxes through retirement contributions. An <strong>Individual Retirement Account (IRA)</strong> lets you put away up to <strong>$7,500 per year</strong> in 2026 &mdash; and depending on which type you choose, that money either reduces your tax bill right now or grows completely tax-free for retirement.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
@@ -144,8 +146,8 @@ export default function RothIraVsTraditionalIra2026() {
           </thead>
           <tbody>
             {[
-              ['Under 50', '$7,000'],
-              ['50 or older (catch-up)', '$8,000'],
+              ['Under 50', '$7,500'],
+              ['50 or older (catch-up)', '$8,600'],
             ].map(([age, limit], i) => (
               <tr key={age} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569' }}>{age}</td>
@@ -173,7 +175,7 @@ export default function RothIraVsTraditionalIra2026() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1rem' }}>
-        <strong>If you are NOT covered by a workplace retirement plan:</strong> You can deduct 100% of your Traditional IRA contribution, no matter how much you earn. The full $7,000 reduces your taxable income.
+        <strong>If you are NOT covered by a workplace retirement plan:</strong> You can deduct 100% of your Traditional IRA contribution, no matter how much you earn. The full $7,500 reduces your taxable income.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1rem' }}>
@@ -240,7 +242,7 @@ export default function RothIraVsTraditionalIra2026() {
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Most working Americans fall well under the Roth income limit. If your income is below the bottom of the phase-out range, you can contribute the full $7,000. Inside the phase-out range, your allowable contribution shrinks. Above the top, you cannot contribute directly.{' '}
+        Most working Americans fall well under the Roth income limit. If your income is below the bottom of the phase-out range, you can contribute the full $7,500. Inside the phase-out range, your allowable contribution shrinks. Above the top, you cannot contribute directly.{' '}
         <a href="https://www.irs.gov/retirement-plans/roth-iras" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS &mdash; Roth IRAs)
         </a>
@@ -269,7 +271,7 @@ export default function RothIraVsTraditionalIra2026() {
               ['Deductibility limit', 'Yes (if workplace plan)', 'N/A'],
               ['Required withdrawals (RMDs)', 'Yes, starting at age 73', 'No RMDs during owner\'s life'],
               ['Early withdrawal penalty', '10% (on pre-tax amounts)', '10% on earnings only'],
-              ['2026 contribution limit', '$7,000 / $8,000 (50+)', '$7,000 / $8,000 (50+)'],
+              ['2026 contribution limit', '$7,500 / $8,600 (50+)', '$7,500 / $8,600 (50+)'],
             ].map(([feature, trad, roth], i) => (
               <tr key={feature} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', fontWeight: 600, color: '#1e293b' }}>{feature}</td>
@@ -287,7 +289,7 @@ export default function RothIraVsTraditionalIra2026() {
       </h2>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1rem' }}>
-        Let&rsquo;s say you earn $65,000 per year, file as single, and contribute the full $7,000 to an IRA. Here is how the numbers look in{' '}
+        Let&rsquo;s say you earn $65,000 per year, file as single, and contribute the full $7,500 to an IRA. Here is how the numbers look in{' '}
         <a href="/texas" style={{ color: '#2563eb', textDecoration: 'underline' }}>Texas</a> (no state income tax), which isolates the federal impact:
       </p>
 
@@ -304,12 +306,12 @@ export default function RothIraVsTraditionalIra2026() {
           <tbody>
             {[
               ['Gross salary', '$65,000', '$65,000', '$65,000'],
-              ['IRA deduction', '—', '−$7,000', '—'],
-              ['Standard deduction', '−$15,000', '−$15,000', '−$15,000'],
-              ['Taxable income', '$50,000', '$43,000', '$50,000'],
-              ['Federal income tax', '~$6,053', '~$4,513', '~$6,053'],
-              ['Tax saved this year', '—', '+$1,540', '—'],
-              ['IRA contribution (out of pocket)', '—', '$7,000', '$7,000'],
+              ['IRA deduction', '—', '−$7,500', '—'],
+              ['Standard deduction', '−$16,100', '−$16,100', '−$16,100'],
+              ['Taxable income', '$48,900', '$41,400', '$48,900'],
+              ['Federal income tax', '~$5,620', '~$4,720', '~$5,620'],
+              ['Tax saved this year', '—', '+$900', '—'],
+              ['IRA contribution (out of pocket)', '—', '$7,500', '$7,500'],
             ].map(([label, noIra, tradIra, rothIra], i) => (
               <tr key={label} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569' }}>{label}</td>
@@ -323,11 +325,11 @@ export default function RothIraVsTraditionalIra2026() {
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The Traditional IRA deduction saves this worker <strong>$1,540 in federal taxes</strong> right now. That is because the $7,000 deduction at a 22% marginal rate = $1,540. The effective cost of the $7,000 contribution is only $5,460 after the tax savings.
+        The Traditional IRA deduction saves this worker <strong>$900 in federal taxes</strong> right now. That is because the $7,500 deduction at a 12% marginal rate = $900. The effective cost of the $7,500 contribution is only $6,600 after the tax savings.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The Roth IRA saves nothing today &mdash; but if that $7,000 grows to $70,000 over 30 years, <strong>every single dollar of those gains comes out tax-free</strong>. With the Traditional IRA, you would owe income tax on the full $70,000 at whatever rate you face in retirement.
+        The Roth IRA saves nothing today &mdash; but if that $7,500 grows to $75,000 over 30 years, <strong>every single dollar of those gains comes out tax-free</strong>. With the Traditional IRA, you would owe income tax on the full $75,000 at whatever rate you face in retirement.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
@@ -353,7 +355,7 @@ export default function RothIraVsTraditionalIra2026() {
           <strong>Choose Roth IRA</strong> if you expect to be in the <em>same or higher</em> bracket in retirement, or if you are early in your career with decades of tax-free growth ahead. Young workers in the 10% or 12% bracket get very little benefit from the deduction, but enormous benefit from decades of tax-free compounding.
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
-          <strong>Use both</strong> if you are unsure. Contributing to both a Traditional and Roth IRA (splitting the $7,000 limit between them) hedges your bets against future tax rate changes.
+          <strong>Use both</strong> if you are unsure. Contributing to both a Traditional and Roth IRA (splitting the $7,500 limit between them) hedges your bets against future tax rate changes.
         </li>
       </ul>
 
@@ -372,7 +374,7 @@ export default function RothIraVsTraditionalIra2026() {
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
         <li style={{ marginBottom: '0.75rem' }}>
-          <strong>Contribution limits:</strong> A 401(k) allows up to $23,500 per year (2026) &mdash; more than three times the $7,000 IRA limit.
+          <strong>Contribution limits:</strong> A 401(k) allows up to $24,500 per year (2026) &mdash; more than three times the $7,500 IRA limit.
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
           <strong>Employer match:</strong> Many employers match 401(k) contributions &mdash; free money that IRAs simply do not offer. Always contribute at least enough to capture the full employer match before funding an IRA.
@@ -406,7 +408,7 @@ export default function RothIraVsTraditionalIra2026() {
           <strong>Select Traditional or Roth</strong> based on your income and tax situation. Most early-career workers do well with a Roth IRA.
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
-          <strong>Fund the account</strong> by linking your bank account and transferring up to $7,000 ($8,000 if you are 50+). You can contribute a lump sum or set up automatic monthly contributions of $583.
+          <strong>Fund the account</strong> by linking your bank account and transferring up to $7,500 ($8,600 if you are 50+). You can contribute a lump sum or set up automatic monthly contributions of $625.
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
           <strong>Invest the money</strong> &mdash; just contributing is not enough. Choose investments inside the IRA (a low-cost index fund like a total market ETF is a common starting point for beginners).

@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Tax Withholding: How to Make Sure You\'re Not Overpaying (or Underpaying)',
+  title: { absolute: 'Tax Withholding: How to Make Sure You\'re Not Overpaying (or Underpaying)' },
   description:
     'A big tax refund sounds great — but it means the IRS held your money interest-free all year. Here\'s how to check your withholding, spot common problems, and use your W-4 to get it right.',
   alternates: { canonical: '/blog/tax-withholding-overpaying' },
   keywords:
     'tax withholding 2026, how to check tax withholding, am I withholding too much, IRS withholding estimator, W-4 withholding, underpayment penalty 2026, adjust tax withholding',
   openGraph: {
+    type: 'article',
+    url: '/blog/tax-withholding-overpaying',
+    images: [{ url: '/og/blog/tax-withholding-overpaying', width: 1200, height: 630 }],
     title: 'Tax Withholding: How to Make Sure You\'re Not Overpaying (or Underpaying)',
     description:
       'A big refund means you over-withheld. A surprise tax bill means you under-withheld. Here\'s how to get withholding right.',
@@ -79,9 +83,7 @@ export default function TaxWithholdingOverpaying() {
         Tax Withholding: How to Make Sure You&rsquo;re Not Overpaying (or Underpaying)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published June 30, 2026 &middot; 8 min read
-      </p>
+      <ArticleMeta slug="tax-withholding-overpaying" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         Getting a $3,000 tax refund feels like a windfall — but it isn&rsquo;t. It means you overpaid your taxes by $250 a month all year and let the IRS hold that money <strong>interest-free</strong>. On the flip side, owing $2,500 at tax time stings, and if you underpay significantly, the IRS charges you a penalty on top of the bill.
@@ -135,7 +137,7 @@ export default function TaxWithholdingOverpaying() {
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
         <li style={{ marginBottom: '0.5rem' }}><strong>Haven&rsquo;t updated a W-4 in years.</strong> The IRS redesigned the W-4 in 2020 and old forms may result in higher withholding than needed.</li>
-        <li style={{ marginBottom: '0.5rem' }}><strong>Got married.</strong> Married filing jointly has a larger standard deduction ($30,000 in 2026) and lower combined tax bills, but both spouses&rsquo; W-4s may not reflect the new status.</li>
+        <li style={{ marginBottom: '0.5rem' }}><strong>Got married.</strong> Married filing jointly has a larger standard deduction ($32,200 in 2026) and lower combined tax bills, but both spouses&rsquo; W-4s may not reflect the new status.</li>
         <li style={{ marginBottom: '0.5rem' }}><strong>Had a child.</strong> Claiming the Child Tax Credit (up to $2,000 per child) significantly reduces what you owe, but only if your W-4 reflects those credits.</li>
         <li style={{ marginBottom: '0.5rem' }}><strong>Bought a home.</strong> Mortgage interest deductions can substantially lower taxable income if you itemize.</li>
         <li style={{ marginBottom: '0.5rem' }}><strong>Requested extra withholding.</strong> Some people add extra withholding to avoid a surprise bill — and forget to remove it when their situation changes.</li>
@@ -231,13 +233,14 @@ export default function TaxWithholdingOverpaying() {
         }}
       >
         Gross income: $70,000<br />
-        Standard deduction (single 2026): &minus; $15,000<br />
-        Taxable income: $55,000<br />
+        Standard deduction (single 2026): &minus; $16,100<br />
+        Taxable income: $53,900<br />
         <br />
-        10% on first $11,925 = $1,192.50<br />
-        12% on $43,075 ($55,000 &minus; $11,925) = $5,169.00<br />
-        <strong>Total federal income tax owed: $6,361.50</strong><br />
-        Per biweekly paycheck: $6,361.50 &divide; 26 = <strong>$244.67</strong>
+        10% on first $12,400 = $1,240.00<br />
+        12% on $38,000 ($12,400 &minus; $50,400) = $4,560.00<br />
+        22% on $3,500 ($50,400 &minus; $53,900) = $770.00<br />
+        <strong>Total federal income tax owed: $6,570.00</strong><br />
+        Per biweekly paycheck: $6,570.00 &divide; 26 = <strong>$252.69</strong>
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1rem' }}>
@@ -267,29 +270,29 @@ export default function TaxWithholdingOverpaying() {
               <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#1e293b', fontWeight: 600 }}>Over-withheld (stale W-4)</td>
               <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$350</td>
               <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$9,100</td>
-              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$6,362</td>
-              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#7c3aed', fontWeight: 600 }}>$2,738 refund</td>
+              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$6,570</td>
+              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#7c3aed', fontWeight: 600 }}>$2,530 refund</td>
             </tr>
             <tr style={{ background: '#ecfdf5' }}>
               <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#1e293b', fontWeight: 600 }}>Just right (updated W-4)</td>
-              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$245</td>
-              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$6,370</td>
-              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$6,362</td>
+              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$253</td>
+              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$6,578</td>
+              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$6,570</td>
               <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#059669', fontWeight: 600 }}>~$8 refund</td>
             </tr>
             <tr style={{ background: '#fff7ed' }}>
               <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#1e293b', fontWeight: 600 }}>Under-withheld (2nd job unfiled)</td>
               <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$160</td>
               <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$4,160</td>
-              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$6,362</td>
-              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#dc2626', fontWeight: 600 }}>$2,202 owed + penalty</td>
+              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$6,570</td>
+              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#dc2626', fontWeight: 600 }}>$2,410 owed + penalty</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        In the over-withheld scenario, that $2,738 refund came out of your biweekly paychecks at $105 extra per check. You could have had that money in hand every two weeks. In the under-withheld scenario, the $2,202 bill exceeds the $1,000 de minimis threshold, so the IRS also charges an underpayment penalty &mdash; adding roughly $90&ndash;$140 depending on when in the year the shortfall occurred.
+        In the over-withheld scenario, that $2,530 refund came out of your biweekly paychecks at $97 extra per check. You could have had that money in hand every two weeks. In the under-withheld scenario, the $2,202 bill exceeds the $1,000 de minimis threshold, so the IRS also charges an underpayment penalty &mdash; adding roughly $90&ndash;$140 depending on when in the year the shortfall occurred.
       </p>
 
       {/* Section: IRS Estimator */}

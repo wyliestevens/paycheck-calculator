@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Cost of Living vs Salary: A State-by-State Comparison (2026)',
+  title: { absolute: 'Cost of Living vs Salary: A State-by-State Comparison (2026)' },
   description:
     'A $70,000 salary in Mississippi buys nearly twice what it buys in California. See how purchasing power varies by state — with a full comparison table and worked dollar examples.',
   alternates: { canonical: '/blog/cost-of-living-vs-salary-by-state' },
   keywords:
     'cost of living vs salary by state 2026, purchasing power by state, salary comparison by state, cost of living salary adjustment, real salary by state, how far does salary go by state',
   openGraph: {
+    type: 'article',
+    url: '/blog/cost-of-living-vs-salary-by-state',
+    images: [{ url: '/og/blog/cost-of-living-vs-salary-by-state', width: 1200, height: 630 }],
     title: 'Cost of Living vs Salary: A State-by-State Comparison (2026)',
     description:
       'A $70,000 salary in Mississippi buys nearly twice what it buys in California. See how purchasing power varies by state.',
@@ -86,9 +90,7 @@ export default function CostOfLivingVsSalaryByState() {
         Cost of Living vs Salary: A State-by-State Comparison (2026)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published July 21, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="cost-of-living-vs-salary-by-state" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         A $70,000 salary in Mississippi delivers roughly the same buying power as a <strong>$120,000 salary in Hawaii</strong>. The number on your offer letter is only half the story. What actually matters is how much your paycheck can <em>buy</em> after taxes and after paying for the basics — housing, groceries, transportation, healthcare — in the specific place you live.

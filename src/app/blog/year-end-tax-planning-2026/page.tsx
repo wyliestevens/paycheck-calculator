@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Year-End Tax Planning Checklist for 2026: 10 Steps Before December 31',
+  title: { absolute: 'Year-End Tax Planning Checklist for 2026: 10 Steps Before December 31' },
   description:
     'Ten actionable steps to cut your 2026 tax bill before December 31 — from maxing out retirement accounts to reviewing withholding. Real dollar examples and key deadlines.',
   alternates: { canonical: '/blog/year-end-tax-planning-2026' },
   keywords:
     'year end tax planning 2026, tax planning checklist 2026, reduce taxes before December 31, max 401k 2026, tax loss harvesting, year end financial checklist, lower tax bill 2026',
   openGraph: {
+    type: 'article',
+    url: '/blog/year-end-tax-planning-2026',
+    images: [{ url: '/og/blog/year-end-tax-planning-2026', width: 1200, height: 630 }],
     title: 'Year-End Tax Planning Checklist for 2026: 10 Steps Before December 31',
     description:
       'Ten actionable steps to cut your 2026 tax bill before December 31 — with real dollar examples and key deadlines.',
@@ -87,9 +91,7 @@ export default function YearEndTaxPlanning2026() {
         Year-End Tax Planning Checklist for 2026: 10 Steps to Take Before December 31
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published August 25, 2026 &middot; 10 min read
-      </p>
+      <ArticleMeta slug="year-end-tax-planning-2026" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         December 31 is the most important deadline in your tax year &mdash; and it arrives faster than most people expect. Once midnight hits, the window on dozens of tax-reducing moves closes permanently for 2026. A few hours of planning in the fall can legally shave hundreds or even thousands of dollars off what you owe the IRS.
@@ -141,7 +143,7 @@ export default function YearEndTaxPlanning2026() {
       </h2>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Traditional 401(k) contributions reduce your federal taxable income dollar for dollar. The 2026 employee contribution limit is <strong>$23,500</strong>. If you are 50 or older, you can add a catch-up contribution of <strong>$7,500</strong>, for a total of <strong>$31,000</strong>. Workers aged 60&ndash;63 have a higher catch-up limit of <strong>$11,250</strong> under SECURE 2.0 rules, for a maximum of <strong>$34,750</strong>.{' '}
+        Traditional 401(k) contributions reduce your federal taxable income dollar for dollar. The 2026 employee contribution limit is <strong>$24,500</strong>. If you are 50 or older, you can add a catch-up contribution of <strong>$8,000</strong>, for a total of <strong>$32,500</strong>. Workers aged 60&ndash;63 have a higher catch-up limit of <strong>$11,250</strong> under SECURE 2.0 rules, for a maximum of <strong>$35,750</strong>.{' '}
         <a href="https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-401k-and-profit-sharing-plan-contribution-limits" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS &mdash; 401(k) Contribution Limits)
         </a>
@@ -163,9 +165,9 @@ export default function YearEndTaxPlanning2026() {
           color: '#1e293b',
         }}
       >
-        $23,500 &times; 22% federal rate = <strong>$5,170 saved in federal tax alone</strong>
+        $24,500 &times; 22% federal rate = <strong>$5,390 saved in federal tax alone</strong>
         <br />
-        + $23,500 &times; 7.65% (no FICA on 401k contributions at some employers*) = <strong>up to $1,798 more</strong>
+        + $24,500 &times; 7.65% (no FICA on 401k contributions at some employers*) = <strong>up to $1,874 more</strong>
       </div>
 
       <p style={{ fontSize: '0.875rem', lineHeight: 1.6, color: '#94a3b8', marginBottom: '1.5rem' }}>
@@ -186,14 +188,14 @@ export default function YearEndTaxPlanning2026() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The 2026 IRA contribution limit is <strong>$7,000</strong> ($8,000 if you are 50 or older). If you are not covered by a workplace retirement plan, your traditional IRA contributions are fully deductible regardless of income. If you or your spouse have a 401(k) at work, deductibility phases out at higher income levels.{' '}
+        The 2026 IRA contribution limit is <strong>$7,500</strong> ($8,600 if you are 50 or older). If you are not covered by a workplace retirement plan, your traditional IRA contributions are fully deductible regardless of income. If you or your spouse have a 401(k) at work, deductibility phases out at higher income levels.{' '}
         <a href="https://www.irs.gov/retirement-plans/ira-deduction-limits" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS &mdash; IRA Deduction Limits)
         </a>
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        If you expect to be in a higher tax bracket in retirement, a <strong>Roth IRA</strong> (after-tax contributions, tax-free withdrawals) may be more valuable. The same $7,000 limit applies. Roth IRA eligibility phases out at $150,000 for single filers and $236,000 for married filing jointly in 2026.
+        If you expect to be in a higher tax bracket in retirement, a <strong>Roth IRA</strong> (after-tax contributions, tax-free withdrawals) may be more valuable. The same $7,500 limit applies. Roth IRA eligibility phases out at $150,000 for single filers and $236,000 for married filing jointly in 2026.
       </p>
 
       {/* Step 4 */}
@@ -238,8 +240,8 @@ export default function YearEndTaxPlanning2026() {
       </p>
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
-        <li style={{ marginBottom: '0.5rem' }}><strong>Self-only HDHP coverage:</strong> $4,300</li>
-        <li style={{ marginBottom: '0.5rem' }}><strong>Family HDHP coverage:</strong> $8,550</li>
+        <li style={{ marginBottom: '0.5rem' }}><strong>Self-only HDHP coverage:</strong> $4,400</li>
+        <li style={{ marginBottom: '0.5rem' }}><strong>Family HDHP coverage:</strong> $8,750</li>
         <li style={{ marginBottom: '0.5rem' }}><strong>Catch-up (age 55+):</strong> additional $1,000</li>
       </ul>
 
@@ -279,7 +281,7 @@ export default function YearEndTaxPlanning2026() {
       </h2>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Cash donations to qualified charities are deductible if you itemize. The standard deduction in 2026 is <strong>$15,000</strong> for single filers and <strong>$30,000</strong> for married filing jointly. If your total itemized deductions &mdash; state and local taxes (capped at $10,000), mortgage interest, charitable gifts, and others &mdash; exceed those amounts, you benefit from itemizing.
+        Cash donations to qualified charities are deductible if you itemize. The standard deduction in 2026 is <strong>$16,100</strong> for single filers and <strong>$32,200</strong> for married filing jointly. If your total itemized deductions &mdash; state and local taxes (capped at $10,000), mortgage interest, charitable gifts, and others &mdash; exceed those amounts, you benefit from itemizing.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
@@ -330,7 +332,7 @@ export default function YearEndTaxPlanning2026() {
       </p>
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
-        <li style={{ marginBottom: '0.5rem' }}><strong>Marriage:</strong> Your filing status changes to Married Filing Jointly. The 2026 standard deduction doubles to $30,000. Update your W-4 with your employer.</li>
+        <li style={{ marginBottom: '0.5rem' }}><strong>Marriage:</strong> Your filing status changes to Married Filing Jointly. The 2026 standard deduction doubles to $32,200. Update your W-4 with your employer.</li>
         <li style={{ marginBottom: '0.5rem' }}><strong>New child:</strong> You may now claim the Child Tax Credit ($2,000 per qualifying child), Child and Dependent Care Credit, and Dependent Care FSA benefits. Update your W-4 Step 3.</li>
         <li style={{ marginBottom: '0.5rem' }}><strong>Home purchase:</strong> Mortgage interest and property taxes may now push you over the standard deduction threshold, making itemizing worthwhile.</li>
         <li style={{ marginBottom: '0.5rem' }}><strong>Job change:</strong> If you changed jobs mid-year, each employer calculates withholding independently as if you worked there all year. Combined, you may be significantly under-withheld.</li>
@@ -393,9 +395,9 @@ export default function YearEndTaxPlanning2026() {
             {[
               ['Gross wages', '$80,000'],
               ['401(k) contributions (already made)', '−$10,000'],
-              ['Standard deduction', '−$15,000'],
-              ['Taxable income', '$55,000'],
-              ['Federal tax (10/12/22% brackets)', '$7,706'],
+              ['Standard deduction', '−$16,100'],
+              ['Taxable income', '$53,900'],
+              ['Federal tax (10/12/22% brackets)', '$6,570'],
               ['Effective federal rate', '9.6%'],
             ].map(([label, value], i) => (
               <tr key={label} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
@@ -429,13 +431,13 @@ export default function YearEndTaxPlanning2026() {
           <tbody>
             {[
               ['Gross wages', '$80,000'],
-              ['401(k) contributions (maxed to $23,500)', '−$23,500'],
-              ['Traditional IRA contribution', '−$7,000'],
-              ['Standard deduction', '−$15,000'],
-              ['Taxable income', '$34,500'],
-              ['Federal tax (10/12% brackets)', '$3,858'],
-              ['Effective federal rate', '4.8%'],
-              ['Tax savings vs. baseline', '$3,848'],
+              ['401(k) contributions (maxed to $24,500)', '−$24,500'],
+              ['Traditional IRA contribution', '−$7,500'],
+              ['Standard deduction', '−$16,100'],
+              ['Taxable income', '$31,900'],
+              ['Federal tax (10/12% brackets)', '$3,580'],
+              ['Effective federal rate', '4.5%'],
+              ['Tax savings vs. baseline', '$2,990'],
             ].map(([label, value], i) => (
               <tr key={label} style={{ background: i === 7 ? '#ecfdf5' : i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: i === 7 ? '#1e293b' : '#475569', fontWeight: i === 7 ? 700 : 400 }}>{label}</td>
@@ -447,7 +449,7 @@ export default function YearEndTaxPlanning2026() {
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        By maxing out the 401(k) and contributing to a traditional IRA, this filer cuts their federal tax bill from <strong>$7,706 to $3,858</strong> &mdash; saving <strong>$3,848 in federal tax alone</strong>. The money saved on taxes goes into tax-advantaged accounts that continue growing. State income tax savings would add to these figures depending on the state.
+        By maxing out the 401(k) and contributing to a traditional IRA, this filer cuts their federal tax bill from <strong>$6,570 to $3,580</strong> &mdash; saving <strong>$2,990 in federal tax alone</strong>. The money saved on taxes goes into tax-advantaged accounts that continue growing. State income tax savings would add to these figures depending on the state.
       </p>
 
       {/* Deadlines Table */}
@@ -503,7 +505,7 @@ export default function YearEndTaxPlanning2026() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The worked example above shows that a single earner at $80,000 can cut their federal tax bill nearly in half through retirement contributions alone &mdash; from $7,706 to $3,858. That $3,848 in savings does not disappear; it goes into accounts that grow tax-advantaged for decades. Combined with state tax savings, loss harvesting, and charitable deductions, the total benefit of a solid year-end plan regularly exceeds $5,000 for a middle-income household.
+        The worked example above shows that a single earner at $80,000 can cut their federal tax bill by more than 40% through retirement contributions alone &mdash; from $6,570 to $3,580. That $2,990 in savings does not disappear; it goes into accounts that grow tax-advantaged for decades. Combined with state tax savings, loss harvesting, and charitable deductions, the total benefit of a solid year-end plan regularly exceeds $5,000 for a middle-income household.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>

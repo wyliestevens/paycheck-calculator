@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'State Disability Insurance (SDI): What It Is and How It Affects Your Paycheck (2026)',
+  title: { absolute: 'State Disability Insurance (SDI): What It Is and How It Affects Your Paycheck (2026)' },
   description:
     'See "CASDI" or "SDI" on your pay stub and wonder what it means? State Disability Insurance is a payroll deduction in 7+ states. Here\'s exactly how it works, what it costs, and what you get back.',
   alternates: { canonical: '/blog/state-disability-insurance-sdi-paycheck' },
   keywords:
     'state disability insurance, SDI paycheck, CASDI pay stub, what is SDI, California SDI 2026, New Jersey TDI, state disability tax, SDI deduction paycheck 2026',
   openGraph: {
+    type: 'article',
+    url: '/blog/state-disability-insurance-sdi-paycheck',
+    images: [{ url: '/og/blog/state-disability-insurance-sdi-paycheck', width: 1200, height: 630 }],
     title: 'State Disability Insurance (SDI): What It Is and How It Affects Your Paycheck (2026)',
     description:
       'See "CASDI" or "SDI" on your pay stub? State Disability Insurance is a payroll deduction in 7+ states. Here\'s how it works and what it costs.',
@@ -84,9 +88,7 @@ export default function StateDisabilityInsurancePage() {
         State Disability Insurance (SDI): What It Is and How It Affects Your Paycheck (2026)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published September 15, 2026 &middot; 8 min read
-      </p>
+      <ArticleMeta slug="state-disability-insurance-sdi-paycheck" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         You scan your pay stub and spot a line you don&rsquo;t recognize: <strong>CASDI</strong>, <strong>SDI</strong>, <strong>TDI</strong>, or <strong>NJ FLI</strong>. A few dollars are coming out of every paycheck, and nobody explained why. This guide answers that question completely &mdash; what state disability insurance is, which states require it, how much it costs, and what benefit you get in return.
@@ -343,7 +345,7 @@ export default function StateDisabilityInsurancePage() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        For most workers, who take the standard deduction ($15,000 for single filers in 2026), SDI contributions provide no direct federal tax benefit. The deduction is simply taken from your gross pay, reducing your take-home amount.
+        For most workers, who take the standard deduction ($16,100 for single filers in 2026), SDI contributions provide no direct federal tax benefit. The deduction is simply taken from your gross pay, reducing your take-home amount.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>

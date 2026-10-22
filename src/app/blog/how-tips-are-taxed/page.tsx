@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'How Tips Are Taxed: A Guide for Service Workers (2026)',
+  title: { absolute: 'How Tips Are Taxed: A Guide for Service Workers (2026)' },
   description:
     "Every dollar in tips is taxable income — cash, credit card, and tip pool shares alike. Here's how tip income is taxed, how withholding works, and a full worked example at $35,000.",
   alternates: { canonical: '/blog/how-tips-are-taxed' },
   keywords:
     'how tips are taxed 2026, tip income taxes, tipped worker taxes, reporting tip income IRS, tip withholding, server taxes, restaurant worker taxes, FICA on tips',
   openGraph: {
+    type: 'article',
+    url: '/blog/how-tips-are-taxed',
+    images: [{ url: '/og/blog/how-tips-are-taxed', width: 1200, height: 630 }],
     title: 'How Tips Are Taxed: A Guide for Service Workers (2026)',
     description:
       "Every dollar in tips is taxable income. Here's how tip income is taxed, how your employer withholds, and what every service worker needs to know.",
@@ -85,9 +89,7 @@ export default function HowTipsAreTaxed() {
         How Tips Are Taxed: A Guide for Service Workers (2026)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published July 10, 2026 &middot; 8 min read
-      </p>
+      <ArticleMeta slug="how-tips-are-taxed" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         If you work in a restaurant, hotel, hair salon, casino, or any other service industry, a large portion of your income probably comes from tips. And tips are treated differently from regular wages in a few important ways &mdash; most notably, you are responsible for reporting them yourself.
@@ -119,7 +121,7 @@ export default function HowTipsAreTaxed() {
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
         <li style={{ marginBottom: '0.5rem' }}><strong>Federal income tax</strong> &mdash; at your marginal rate (10%, 12%, 22%, etc.)</li>
-        <li style={{ marginBottom: '0.5rem' }}><strong>Social Security tax</strong> &mdash; 6.2% (on income up to $168,600)</li>
+        <li style={{ marginBottom: '0.5rem' }}><strong>Social Security tax</strong> &mdash; 6.2% (on income up to $184,500)</li>
         <li style={{ marginBottom: '0.5rem' }}><strong>Medicare tax</strong> &mdash; 1.45% (no income cap)</li>
       </ul>
 
@@ -295,22 +297,22 @@ export default function HowTipsAreTaxed() {
             <tr style={{ background: '#ffffff' }}>
               <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569' }}>Standard deduction</td>
               <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>Single filer, 2026</td>
-              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>&minus;$15,000</td>
+              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>&minus;$16,100</td>
             </tr>
             <tr style={{ background: '#f8fafc' }}>
               <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569' }}>Taxable income</td>
-              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$35,000 &minus; $15,000</td>
-              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#1e293b' }}>$20,000</td>
+              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$35,000 &minus; $16,100</td>
+              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#1e293b' }}>$18,900</td>
             </tr>
             <tr style={{ background: '#ffffff' }}>
-              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569' }}>10% bracket (first $11,925)</td>
-              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$11,925 &times; 10%</td>
-              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>$1,192.50</td>
+              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569' }}>10% bracket (first $12,400)</td>
+              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$12,400 &times; 10%</td>
+              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>$1,240.00</td>
             </tr>
             <tr style={{ background: '#f8fafc' }}>
-              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569' }}>12% bracket (next $8,075)</td>
-              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$8,075 &times; 12%</td>
-              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>$969.00</td>
+              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569' }}>12% bracket (next $6,500)</td>
+              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$6,500 &times; 12%</td>
+              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>$780.00</td>
             </tr>
             <tr style={{ background: '#ffffff' }}>
               <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569' }}>Social Security (6.2%)</td>
@@ -324,22 +326,22 @@ export default function HowTipsAreTaxed() {
             </tr>
             <tr style={{ background: '#fef2f2' }}>
               <td colSpan={2} style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', fontWeight: 700, color: '#1e293b' }}>Total federal taxes</td>
-              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>$4,839.00</td>
+              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>$4,697.50</td>
             </tr>
             <tr style={{ background: '#ecfdf5' }}>
               <td colSpan={2} style={{ padding: '0.75rem 1rem', fontWeight: 700, color: '#1e293b' }}>Annual take-home pay (no state tax)</td>
-              <td style={{ padding: '0.75rem 1rem', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>$30,161</td>
+              <td style={{ padding: '0.75rem 1rem', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>$30,303</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The effective federal tax rate is <strong>13.8%</strong> ($4,839 / $35,000). Notice that FICA applies to the full $35,000 &mdash; both wages and tips. There is no standard deduction for Social Security and Medicare the way there is for income tax.
+        The effective federal tax rate is <strong>13.4%</strong> ($4,698 / $35,000). Notice that FICA applies to the full $35,000 &mdash; both wages and tips. There is no standard deduction for Social Security and Medicare the way there is for income tax.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Also notice how the $15,000 standard deduction eliminates the bottom slice of taxable income. If this server also contributed $2,000 to a traditional IRA, taxable income would drop to $18,000 and their income tax bill would fall by $240.
+        Also notice how the $16,100 standard deduction eliminates the bottom slice of taxable income. If this server also contributed $2,000 to a traditional IRA, taxable income would drop to $16,900 and their income tax bill would fall by $240.
       </p>
 
       {/* Section 6 */}
@@ -553,7 +555,7 @@ export default function HowTipsAreTaxed() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The good news: at $35,000 in total income, the effective federal tax rate is only around 13.8% &mdash; a manageable number when you plan for it rather than being surprised at tax time.
+        The good news: at $35,000 in total income, the effective federal tax rate is only around 13.4% &mdash; a manageable number when you plan for it rather than being surprised at tax time.
       </p>
 
       {/* CTA */}

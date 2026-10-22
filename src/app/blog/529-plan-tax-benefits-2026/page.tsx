@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: '529 Plan Tax Benefits: How to Save for College and Cut Your Taxes in 2026',
+  title: { absolute: '529 Plan Tax Benefits: How to Save for College and Cut Your Taxes in 2026' },
   description:
     '529 plans grow tax-free and withdrawals for college are tax-free too. Here\'s how the federal and state tax benefits work — with contribution limits and a worked example.',
   alternates: { canonical: '/blog/529-plan-tax-benefits-2026' },
   keywords:
     '529 plan tax benefits 2026, 529 college savings plan, 529 state tax deduction, 529 plan contribution limit, qualified education expenses, 529 plan rules 2026',
   openGraph: {
+    type: 'article',
+    url: '/blog/529-plan-tax-benefits-2026',
+    images: [{ url: '/og/blog/529-plan-tax-benefits-2026', width: 1200, height: 630 }],
     title: '529 Plan Tax Benefits: How to Save for College and Cut Your Taxes in 2026',
     description:
       '529 plans grow tax-free and withdrawals for college are tax-free too. Here\'s how the federal and state tax benefits work — with a full worked example.',
@@ -76,9 +80,7 @@ export default function Plan529TaxBenefits() {
         529 Plan Tax Benefits: How to Save for College and Cut Your Taxes in 2026
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published September 24, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="529-plan-tax-benefits-2026" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         College is expensive. The average cost of four years at a public university now exceeds $110,000 &mdash; and private schools often run twice that. A <strong>529 plan</strong> is the most tax-efficient way most families have to save for those costs. Money grows completely tax-free inside a 529, and when you use it to pay for qualifying education expenses, you owe zero federal income tax on any of the gains.

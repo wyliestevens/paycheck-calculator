@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'How Pension Income Is Taxed in 2026: A Complete Guide',
+  title: { absolute: 'How Pension Income Is Taxed in 2026: A Complete Guide' },
   description:
     'Pension income is taxed as ordinary income at federal rates — but with no FICA, an extra senior standard deduction, and partial state exemptions in many states. Full 2026 guide with worked examples.',
   alternates: { canonical: '/blog/how-pension-income-is-taxed-2026' },
   keywords:
     'how is pension income taxed, pension income taxes 2026, defined benefit pension tax, Form 1099-R, pension withholding, W-4P, state pension tax exemption, railroad retirement taxes 2026',
   openGraph: {
+    type: 'article',
+    url: '/blog/how-pension-income-is-taxed-2026',
+    images: [{ url: '/og/blog/how-pension-income-is-taxed-2026', width: 1200, height: 630 }],
     title: 'How Pension Income Is Taxed in 2026: A Complete Guide',
     description:
       'Pension income is taxed as ordinary income — but no FICA, an extra senior deduction, and many state exemptions. Everything you need to know.',
@@ -75,9 +79,7 @@ export default function HowPensionIncomeTaxed() {
         How Pension Income Is Taxed in 2026: A Complete Guide
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published October 16, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="how-pension-income-is-taxed-2026" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         If you receive a pension, your monthly checks are not tax-free. The IRS treats <strong>pension income as ordinary income</strong>, which means it is taxed at the same federal rates as wages. But there are important differences: pension income is completely exempt from FICA taxes, retirees get an extra standard deduction boost, and many states offer partial or full exemptions on pension income.
@@ -134,13 +136,13 @@ export default function HowPensionIncomeTaxed() {
           </thead>
           <tbody>
             {[
-              ['10%', '$0 – $11,925', '$0 – $23,850'],
-              ['12%', '$11,925 – $48,475', '$23,850 – $96,950'],
-              ['22%', '$48,475 – $103,350', '$96,950 – $206,700'],
-              ['24%', '$103,350 – $197,300', '$206,700 – $394,600'],
-              ['32%', '$197,300 – $250,525', '$394,600 – $501,050'],
-              ['35%', '$250,525 – $626,350', '$501,050 – $751,600'],
-              ['37%', 'Over $626,350', 'Over $751,600'],
+              ['10%', '$0 – $12,400', '$0 – $24,800'],
+              ['12%', '$12,400 – $50,400', '$24,800 – $100,800'],
+              ['22%', '$50,400 – $105,700', '$100,800 – $211,400'],
+              ['24%', '$105,700 – $201,775', '$211,400 – $403,550'],
+              ['32%', '$201,775 – $256,225', '$403,550 – $512,450'],
+              ['35%', '$256,225 – $640,600', '$512,450 – $768,700'],
+              ['37%', 'Over $640,600', 'Over $768,700'],
             ].map(([rate, single, married], i) => (
               <tr key={rate} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', fontWeight: 600, color: '#2563eb', fontFamily: "'JetBrains Mono', monospace" }}>{rate}</td>
@@ -204,12 +206,12 @@ export default function HowPensionIncomeTaxed() {
       </p>
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
-        <li style={{ marginBottom: '0.5rem' }}><strong>$2,000</strong> for single filers and heads of household who are 65+</li>
-        <li style={{ marginBottom: '0.5rem' }}><strong>$1,600 per qualifying spouse</strong> for married filing jointly (up to $3,200 if both spouses are 65+)</li>
+        <li style={{ marginBottom: '0.5rem' }}><strong>$2,050</strong> for single filers and heads of household who are 65+</li>
+        <li style={{ marginBottom: '0.5rem' }}><strong>$1,650 per qualifying spouse</strong> for married filing jointly (up to $3,300 if both spouses are 65+)</li>
       </ul>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Combined with the regular 2026 standard deduction of <strong>$15,000 (single)</strong> or <strong>$30,000 (married filing jointly)</strong>, a single retiree age 65+ can deduct <strong>$17,000</strong> before owing a single dollar of income tax. A married couple, both age 65+, can deduct <strong>$33,200</strong>.{' '}
+        Combined with the regular 2026 standard deduction of <strong>$16,100 (single)</strong> or <strong>$32,200 (married filing jointly)</strong>, a single retiree age 65+ can deduct <strong>$18,150</strong> before owing a single dollar of income tax. A married couple, both age 65+, can deduct <strong>$35,500</strong>.{' '}
         <a href="https://www.irs.gov/publications/p554" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS Publication 554 &mdash; Tax Guide for Seniors)
         </a>
@@ -320,9 +322,9 @@ export default function HowPensionIncomeTaxed() {
           lineHeight: 1.8,
         }}
       >
-        Regular standard deduction (single): $15,000<br />
-        Additional deduction (age 65+, single): + $2,000<br />
-        <strong>Total standard deduction: $17,000</strong>
+        Regular standard deduction (single): $16,100<br />
+        Additional deduction (age 65+, single): + $2,050<br />
+        <strong>Total standard deduction: $18,150</strong>
       </div>
 
       <h3 style={{ fontSize: '1.125rem', fontWeight: 600, color: '#1e293b', marginTop: '1.5rem', marginBottom: '0.75rem' }}>
@@ -341,7 +343,7 @@ export default function HowPensionIncomeTaxed() {
           color: '#1e293b',
         }}
       >
-        $36,000 &minus; $17,000 = <strong>$19,000 taxable income</strong>
+        $36,000 &minus; $18,150 = <strong>$17,850 taxable income</strong>
       </div>
 
       <h3 style={{ fontSize: '1.125rem', fontWeight: 600, color: '#1e293b', marginTop: '1.5rem', marginBottom: '0.75rem' }}>
@@ -368,19 +370,19 @@ export default function HowPensionIncomeTaxed() {
           <tbody>
             <tr style={{ background: '#ffffff' }}>
               <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569' }}>10%</td>
-              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$11,925</td>
+              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$12,400</td>
               <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>10%</td>
-              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>$1,192.50</td>
+              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>$1,240.00</td>
             </tr>
             <tr style={{ background: '#f8fafc' }}>
               <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569' }}>12%</td>
-              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$7,075</td>
+              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$5,450</td>
               <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>12%</td>
-              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>$849.00</td>
+              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>$654.00</td>
             </tr>
             <tr style={{ background: '#eff6ff' }}>
               <td colSpan={3} style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', fontWeight: 700, color: '#1e293b' }}>Total Federal Income Tax</td>
-              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#1e293b' }}>$2,041.50</td>
+              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#1e293b' }}>$1,894.00</td>
             </tr>
           </tbody>
         </table>
@@ -409,7 +411,7 @@ export default function HowPensionIncomeTaxed() {
           <tbody>
             {[
               ['Gross Pension', '$36,000', '$3,000', false],
-              ['Federal Income Tax', '−$2,041.50', '−$170.13', true],
+              ['Federal Income Tax', '−$1,894.00', '−$157.83', true],
               ['Social Security (FICA)', '$0', '$0', false],
               ['Medicare (FICA)', '$0', '$0', false],
             ].map(([item, annual, monthly, isRed], i) => (
@@ -421,15 +423,15 @@ export default function HowPensionIncomeTaxed() {
             ))}
             <tr style={{ background: '#eff6ff' }}>
               <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', fontWeight: 700, color: '#1e293b' }}>Net Take-Home (federal only)</td>
-              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>$33,958.50</td>
-              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>$2,829.87</td>
+              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>$34,106.00</td>
+              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>$2,842.17</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The effective federal income tax rate is just <strong>5.67%</strong> ($2,041.50 &divide; $36,000). This compares very favorably to a working-age person earning $36,000 in wages, who would owe about $2,041 in income tax <em>plus</em> $2,754 in FICA &mdash; a combined effective rate of nearly 13.3%.
+        The effective federal income tax rate is just <strong>5.26%</strong> ($1,894.00 &divide; $36,000). This compares very favorably to a working-age person earning $36,000 in wages, who would owe about $2,140 in income tax <em>plus</em> $2,754 in FICA &mdash; a combined effective rate of nearly 13.6%.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
@@ -600,7 +602,7 @@ export default function HowPensionIncomeTaxed() {
       </h3>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        If you have earned income (part-time work, for example) even while receiving a pension, you may still be able to contribute to a Traditional IRA and deduct the contribution. In 2026, the contribution limit is <strong>$7,000</strong> ($8,000 if age 50+). A deductible IRA contribution directly reduces your adjusted gross income.
+        If you have earned income (part-time work, for example) even while receiving a pension, you may still be able to contribute to a Traditional IRA and deduct the contribution. In 2026, the contribution limit is <strong>$7,500</strong> ($8,600 if age 50+). A deductible IRA contribution directly reduces your adjusted gross income.
       </p>
 
       <h3 style={{ fontSize: '1.125rem', fontWeight: 600, color: '#1e293b', marginTop: '1.5rem', marginBottom: '0.75rem' }}>

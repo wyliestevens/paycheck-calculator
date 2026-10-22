@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'How PTO Payout Is Taxed When You Leave a Job (2026 Guide)',
+  title: { absolute: 'How PTO Payout Is Taxed When You Leave a Job (2026 Guide)' },
   description:
     'When you quit or get laid off, your unused PTO payout is taxed as ordinary income — with 22% federal withholding, FICA, and state taxes. Full 2026 guide with a worked example.',
   alternates: { canonical: '/blog/pto-payout-taxes-2026' },
   keywords:
     'PTO payout taxes, how is PTO payout taxed, vacation payout taxes 2026, accrued PTO taxable, unused vacation pay taxes, PTO withholding rate, leave payout tax',
   openGraph: {
+    type: 'article',
+    url: '/blog/pto-payout-taxes-2026',
+    images: [{ url: '/og/blog/pto-payout-taxes-2026', width: 1200, height: 630 }],
     title: 'How PTO Payout Is Taxed When You Leave a Job (2026 Guide)',
     description:
       "A $4,000 PTO payout can lose $1,186 to taxes before you see it. Here's exactly how federal withholding, FICA, and state taxes apply — with a full worked example.",
@@ -73,9 +77,7 @@ export default function PtOPayoutTaxes2026() {
         How PTO Payout Is Taxed When You Leave a Job (2026 Guide)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published October 12, 2026 &middot; 8 min read
-      </p>
+      <ArticleMeta slug="pto-payout-taxes-2026" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         If you quit, get laid off, or are let go, your employer may owe you a check for your unused paid time off (PTO). That sounds like a nice farewell bonus — but before you spend it, understand how it gets taxed. A $4,000 PTO payout can shrink by $1,000 or more by the time it hits your bank account.
@@ -337,7 +339,7 @@ export default function PtOPayoutTaxes2026() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Example: a single filer with $48,000 in wages is right at the top of the 12% bracket ($48,475 for 2026). A $4,000 PTO payout pushes $3,525 of it into the 22% bracket — costing an extra $774 in federal tax beyond what the 12% rate would have cost.
+        Example: a single filer with $50,000 in taxable income is right at the top of the 12% bracket ($50,400 for 2026). A $4,000 PTO payout pushes $3,600 of it into the 22% bracket — costing an extra $360 in federal tax beyond what the 12% rate would have cost.
       </p>
 
       {/* Section 9 */}

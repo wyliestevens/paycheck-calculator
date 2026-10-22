@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Education Tax Credits 2026: American Opportunity vs Lifetime Learning',
+  title: { absolute: 'Education Tax Credits 2026: American Opportunity vs Lifetime Learning' },
   description:
     'The American Opportunity Credit saves up to $2,500 per student. The Lifetime Learning Credit saves up to $2,000. Here\'s exactly who qualifies and how to claim both in 2026.',
   alternates: { canonical: '/blog/education-tax-credits-2026' },
   keywords:
     'education tax credits 2026, American Opportunity Credit, Lifetime Learning Credit, college tax credit 2026, tuition tax credit, Form 8863, education tax deduction',
   openGraph: {
+    type: 'article',
+    url: '/blog/education-tax-credits-2026',
+    images: [{ url: '/og/blog/education-tax-credits-2026', width: 1200, height: 630 }],
     title: 'Education Tax Credits 2026: American Opportunity vs Lifetime Learning',
     description:
       'Save up to $2,500 per year with the American Opportunity Credit or $2,000 with the Lifetime Learning Credit. Here\'s who qualifies and how to claim.',
@@ -69,9 +73,7 @@ export default function EducationTaxCredits2026() {
         Education Tax Credits 2026: American Opportunity vs. Lifetime Learning
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published August 24, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="education-tax-credits-2026" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         College is expensive. The average student pays over $28,000 per year in tuition, fees, and room and board at a four-year public university.{' '}

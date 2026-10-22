@@ -1,17 +1,21 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Standard Deduction vs. Itemized Deductions: Which Saves You More? (2026)',
+  title: { absolute: 'Standard Deduction vs. Itemized Deductions: Which Saves You More? (2026)' },
   description:
-    'The standard deduction is $15,000 for single filers in 2026. Most people take it — but homeowners and high earners may save more by itemizing. Here\'s how to decide.',
+    'The standard deduction is $16,100 for single filers in 2026. Most people take it — but homeowners and high earners may save more by itemizing. Here\'s how to decide.',
   alternates: { canonical: '/blog/standard-deduction-vs-itemized-deductions' },
   keywords:
     'standard deduction 2026, itemized deductions 2026, standard vs itemized deductions, should I itemize, schedule A deductions, SALT deduction, mortgage interest deduction, standard deduction amount 2026',
   openGraph: {
+    type: 'article',
+    url: '/blog/standard-deduction-vs-itemized-deductions',
+    images: [{ url: '/og/blog/standard-deduction-vs-itemized-deductions', width: 1200, height: 630 }],
     title: 'Standard Deduction vs. Itemized Deductions: Which Saves You More? (2026)',
     description:
-      'The standard deduction is $15,000 for single filers in 2026. Here\'s exactly when itemizing saves you more — with a worked homeowner example.',
+      'The standard deduction is $16,100 for single filers in 2026. Here\'s exactly when itemizing saves you more — with a worked homeowner example.',
   },
 }
 
@@ -67,9 +71,7 @@ export default function StandardDeductionVsItemized() {
         Standard Deduction vs. Itemized Deductions: Which Saves You More? (2026 Guide)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published July 30, 2026 &middot; 8 min read
-      </p>
+      <ArticleMeta slug="standard-deduction-vs-itemized-deductions" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         Every year when you file your federal income taxes, you get to make one important choice: take the <strong>standard deduction</strong> or <strong>itemize your deductions</strong>. You cannot do both &mdash; you pick whichever one gives you the bigger deduction.
@@ -89,7 +91,7 @@ export default function StandardDeductionVsItemized() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        For example, if your gross income is $80,000 and you take the $15,000 standard deduction, the IRS only taxes you on <strong>$65,000</strong>. That $15,000 deduction saves you roughly $1,800&ndash;$3,300 in federal taxes, depending on your tax bracket (12% to 22% for most middle-income earners).
+        For example, if your gross income is $80,000 and you take the $16,100 standard deduction, the IRS only taxes you on <strong>$63,900</strong>. That $16,100 deduction saves you roughly $1,900&ndash;$3,500 in federal taxes, depending on your tax bracket (12% to 22% for most middle-income earners).
       </p>
 
       {/* Section 2 */}
@@ -121,10 +123,10 @@ export default function StandardDeductionVsItemized() {
           </thead>
           <tbody>
             {[
-              ['Single', '$15,000'],
-              ['Married Filing Jointly', '$30,000'],
-              ['Married Filing Separately', '$15,000'],
-              ['Head of Household', '$22,500'],
+              ['Single', '$16,100'],
+              ['Married Filing Jointly', '$32,200'],
+              ['Married Filing Separately', '$16,100'],
+              ['Head of Household', '$24,150'],
             ].map(([status, amount], i) => (
               <tr key={status} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569' }}>{status}</td>
@@ -147,8 +149,8 @@ export default function StandardDeductionVsItemized() {
       </p>
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
-        <li style={{ marginBottom: '0.5rem' }}>Single or Head of Household: +$2,000 per qualifying condition</li>
-        <li style={{ marginBottom: '0.5rem' }}>Married Filing Jointly: +$1,600 per qualifying condition per spouse</li>
+        <li style={{ marginBottom: '0.5rem' }}>Single or Head of Household: +$2,050 per qualifying condition</li>
+        <li style={{ marginBottom: '0.5rem' }}>Married Filing Jointly: +$1,650 per qualifying condition per spouse</li>
       </ul>
 
       {/* Section 3 */}
@@ -239,8 +241,8 @@ export default function StandardDeductionVsItemized() {
       >
         <p style={{ fontSize: '1rem', fontWeight: 700, color: '#1e293b', marginBottom: '0.5rem' }}>Quick decision test:</p>
         <ul style={{ fontSize: '1rem', lineHeight: 1.75, color: '#1e293b', paddingLeft: '1.25rem', margin: 0 }}>
-          <li style={{ marginBottom: '0.25rem' }}>Are your itemizable expenses (mortgage interest + SALT + charity + medical) <strong>more than $15,000</strong>? (single filer)</li>
-          <li style={{ marginBottom: '0.25rem' }}>Are they <strong>more than $30,000</strong>? (married filing jointly)</li>
+          <li style={{ marginBottom: '0.25rem' }}>Are your itemizable expenses (mortgage interest + SALT + charity + medical) <strong>more than $16,100</strong>? (single filer)</li>
+          <li style={{ marginBottom: '0.25rem' }}>Are they <strong>more than $32,200</strong>? (married filing jointly)</li>
         </ul>
         <p style={{ fontSize: '1rem', color: '#475569', marginTop: '0.75rem', marginBottom: 0 }}>
           If yes &rarr; itemizing is probably worth it. If no &rarr; take the standard deduction.
@@ -298,7 +300,7 @@ export default function StandardDeductionVsItemized() {
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Alex&rsquo;s itemized total ($1,200) is far less than the standard deduction ($15,000). <strong>Alex takes the standard deduction</strong> and saves $13,800 more in taxable income reduction.
+        Alex&rsquo;s itemized total ($1,200) is far less than the standard deduction ($16,100). <strong>Alex takes the standard deduction</strong> and saves $14,900 more in taxable income reduction.
       </p>
 
       <h3 style={{ fontSize: '1.125rem', fontWeight: 700, color: '#1e293b', marginTop: '1.5rem', marginBottom: '0.5rem' }}>
@@ -344,7 +346,7 @@ export default function StandardDeductionVsItemized() {
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1rem' }}>
-        Jamie&rsquo;s itemized total ($39,900) is <strong>$24,900 more</strong> than the $15,000 standard deduction. By itemizing, Jamie reduces their taxable income by an extra $24,900. At the 24% federal tax rate, that is a tax saving of about <strong>$5,976</strong> compared to taking the standard deduction.
+        Jamie&rsquo;s itemized total ($39,900) is <strong>$23,800 more</strong> than the $16,100 standard deduction. By itemizing, Jamie reduces their taxable income by an extra $23,800. At the 24% federal tax rate, that is a tax saving of about <strong>$5,712</strong> compared to taking the standard deduction.
       </p>
 
       <div
@@ -435,7 +437,7 @@ export default function StandardDeductionVsItemized() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        On your W-4, enter the amount by which your expected itemized deductions <em>exceed</em> the standard deduction. For Jamie from our example above, that would be $39,900 &minus; $15,000 = <strong>$24,900</strong>. Entering $24,900 in Step 4b tells your employer to withhold less tax from each paycheck, spreading your tax savings throughout the year rather than receiving a large refund at tax time.
+        On your W-4, enter the amount by which your expected itemized deductions <em>exceed</em> the standard deduction. For Jamie from our example above, that would be $39,900 &minus; $16,100 = <strong>$23,800</strong>. Entering $23,800 in Step 4b tells your employer to withhold less tax from each paycheck, spreading your tax savings throughout the year rather than receiving a large refund at tax time.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
@@ -473,7 +475,7 @@ export default function StandardDeductionVsItemized() {
               ['Homeowner in a high-tax state (CA, NJ, NY)', 'Probably itemize'],
               ['Large donor (giving $8,000+/year)', 'Run the numbers — may be close'],
               ['Major medical expenses this year', 'Run the numbers — may be close'],
-              ['Married couple, both working, no mortgage', 'Standard deduction ($30,000)'],
+              ['Married couple, both working, no mortgage', 'Standard deduction ($32,200)'],
               ['Senior (65+) with no mortgage', 'Standard deduction (extra amount applies)'],
             ].map(([situation, choice], i) => (
               <tr key={situation} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>

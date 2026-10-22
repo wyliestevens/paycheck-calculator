@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'State vs Federal Tax: A Simple Explanation (2026)',
+  title: { absolute: 'State vs Federal Tax: A Simple Explanation (2026)' },
   description:
     'Federal income tax goes to the IRS. State income tax goes to your state — if it has one. Here\'s exactly how the two systems work together, with 2026 rates and real dollar examples.',
   alternates: { canonical: '/blog/state-vs-federal-tax' },
   keywords:
     'state vs federal tax, state income tax vs federal income tax, federal tax 2026, state tax 2026, how state and federal taxes work, two income taxes paycheck, state income tax rates',
   openGraph: {
+    type: 'article',
+    url: '/blog/state-vs-federal-tax',
+    images: [{ url: '/og/blog/state-vs-federal-tax', width: 1200, height: 630 }],
     title: 'State vs Federal Tax: A Simple Explanation (2026)',
     description:
       'Federal income tax goes to the IRS. State income tax goes to your state — if it has one. Here\'s how both systems work, with 2026 rates and real dollar examples.',
@@ -98,9 +102,7 @@ export default function StateVsFederalTax() {
         State vs Federal Tax: A Simple Explanation (2026)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published June 19, 2026 &middot; 8 min read
-      </p>
+      <ArticleMeta slug="state-vs-federal-tax" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         Look at a pay stub from any W-2 job and you will almost certainly see two separate income tax lines: <strong>Federal Income Tax</strong> and <strong>State Income Tax</strong>. They both say &ldquo;tax,&rdquo; they both come out of every paycheck, and they both reduce your take-home pay &mdash; but they are entirely separate systems, collected by different governments, calculated with different rules, and used for different purposes.
@@ -183,13 +185,13 @@ export default function StateVsFederalTax() {
           </thead>
           <tbody>
             {[
-              ['10%', '$0 – $11,925', 'Up to $1,192.50'],
-              ['12%', '$11,925 – $48,475', 'Up to $4,386.00'],
-              ['22%', '$48,475 – $103,350', 'Up to $12,072.50'],
-              ['24%', '$103,350 – $197,300', 'Up to $22,539.00'],
-              ['32%', '$197,300 – $250,525', 'Up to $17,027.50'],
-              ['35%', '$250,525 – $626,350', 'Up to $131,531.25'],
-              ['37%', 'Over $626,350', 'No limit'],
+              ['10%', '$0 – $12,400', 'Up to $1,240.00'],
+              ['12%', '$12,400 – $50,400', 'Up to $4,560.00'],
+              ['22%', '$50,400 – $105,700', 'Up to $12,166.00'],
+              ['24%', '$105,700 – $201,775', 'Up to $23,058.00'],
+              ['32%', '$201,775 – $256,225', 'Up to $17,424.00'],
+              ['35%', '$256,225 – $640,600', 'Up to $134,531.25'],
+              ['37%', 'Over $640,600', 'No limit'],
             ].map(([rate, range, tax], i) => (
               <tr key={rate} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', fontWeight: 700, color: '#2563eb', fontFamily: "'JetBrains Mono', monospace" }}>{rate}</td>
@@ -202,7 +204,7 @@ export default function StateVsFederalTax() {
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Before these rates apply, most people subtract the <strong>standard deduction</strong> from their gross income to arrive at &ldquo;taxable income.&rdquo; For 2026, the standard deduction is <strong>$15,000 for single filers</strong> and <strong>$30,000 for married couples filing jointly</strong>.{' '}
+        Before these rates apply, most people subtract the <strong>standard deduction</strong> from their gross income to arrive at &ldquo;taxable income.&rdquo; For 2026, the standard deduction is <strong>$16,100 for single filers</strong> and <strong>$32,200 for married couples filing jointly</strong>.{' '}
         <a href="https://www.irs.gov/taxtopics/tc551" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS &mdash; Standard Deduction)
         </a>
@@ -280,12 +282,11 @@ export default function StateVsFederalTax() {
         }}
       >
         <div><strong>Gross income:</strong> $65,000</div>
-        <div><strong>Standard deduction:</strong> &minus;$15,000</div>
-        <div><strong>Taxable income:</strong> $50,000</div>
-        <div style={{ marginTop: '0.5rem' }}>10% &times; $11,925 = $1,192.50</div>
-        <div>12% &times; $36,550 ($11,925&ndash;$48,475) = $4,386.00</div>
-        <div>22% &times; $1,525 ($48,475&ndash;$50,000) = $335.50</div>
-        <div style={{ marginTop: '0.5rem', fontWeight: 700 }}>Federal income tax = $5,914</div>
+        <div><strong>Standard deduction:</strong> &minus;$16,100</div>
+        <div><strong>Taxable income:</strong> $48,900</div>
+        <div style={{ marginTop: '0.5rem' }}>10% &times; $12,400 = $1,240.00</div>
+        <div>12% &times; $36,500 ($12,400&ndash;$48,900) = $4,380.00</div>
+        <div style={{ marginTop: '0.5rem', fontWeight: 700 }}>Federal income tax = $5,620</div>
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1rem' }}>
@@ -305,10 +306,10 @@ export default function StateVsFederalTax() {
           </thead>
           <tbody>
             {[
-              ['Texas (no income tax)', '$5,914', '$4,973', '$0', '$54,113', '#ecfdf5'],
-              ['Ohio (~2.765% progressive)', '$5,914', '$4,973', '~$1,077', '~$53,036', '#f8fafc'],
-              ['California (~3.8% effective)', '$5,914', '$4,973', '~$2,244', '~$51,869', '#f8fafc'],
-              ['New York (~4.9% effective)', '$5,914', '$4,973', '~$2,904', '~$51,209', '#fef2f2'],
+              ['Texas (no income tax)', '$5,620', '$4,973', '$0', '$54,407', '#ecfdf5'],
+              ['Ohio (~2.765% progressive)', '$5,620', '$4,973', '~$1,077', '~$53,330', '#f8fafc'],
+              ['California (~3.8% effective)', '$5,620', '$4,973', '~$2,244', '~$52,163', '#f8fafc'],
+              ['New York (~4.9% effective)', '$5,620', '$4,973', '~$2,904', '~$51,503', '#fef2f2'],
             ].map(([state, fed, fica, stateTax, takeHome, bg]) => (
               <tr key={state} style={{ background: bg }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#1e293b', fontWeight: 500 }}>{state}</td>
@@ -371,7 +372,7 @@ export default function StateVsFederalTax() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Also worth noting: you can only claim the SALT deduction if you itemize. Since the standard deduction is now $15,000 for single filers, most Americans take the standard deduction instead of itemizing &mdash; which means most people do not get any SALT benefit at all. Only about 12% of taxpayers itemize in recent years.{' '}
+        Also worth noting: you can only claim the SALT deduction if you itemize. Since the standard deduction is now $16,100 for single filers, most Americans take the standard deduction instead of itemizing &mdash; which means most people do not get any SALT benefit at all. Only about 12% of taxpayers itemize in recent years.{' '}
         <a href="https://www.taxpolicycenter.org/briefing-book/what-difference-between-refundable-and-nonrefundable-credits" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (Tax Policy Center)
         </a>
@@ -433,7 +434,7 @@ export default function StateVsFederalTax() {
               ['Same rate everywhere?', 'Yes — uniform nationwide', 'No — varies by state'],
               ['Tax structure', 'Progressive (7 brackets)', 'None, flat, or progressive'],
               ['Rate range', '10% – 37%', '0% – 13.3%'],
-              ['Standard deduction (single)', '$15,000', 'Varies ($0 – ~$8,000+)'],
+              ['Standard deduction (single)', '$16,100', 'Varies ($0 – ~$8,000+)'],
               ['Where it goes', 'National programs (defense, Medicare, etc.)', 'State services (schools, roads, courts)'],
               ['Form filed', 'Form 1040 with the IRS', 'State tax return with state agency'],
               ['Deadline', 'April 15 (federal)', 'Usually April 15, varies by state'],
@@ -501,7 +502,7 @@ export default function StateVsFederalTax() {
       </h2>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Federal income tax and state income tax are two separate taxes, collected by two separate governments, for two separate purposes. Federal tax is the same for everyone in the country &mdash; a progressive system with seven brackets and a $15,000 standard deduction for single filers in 2026. State tax is where your location matters: nine states charge nothing, while states like California and New York can take another 4%–9% of your income on top of what the federal government collects.
+        Federal income tax and state income tax are two separate taxes, collected by two separate governments, for two separate purposes. Federal tax is the same for everyone in the country &mdash; a progressive system with seven brackets and a $16,100 standard deduction for single filers in 2026. State tax is where your location matters: nine states charge nothing, while states like California and New York can take another 4%–9% of your income on top of what the federal government collects.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>

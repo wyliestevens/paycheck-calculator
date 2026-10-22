@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Stock Options Taxes: How NSOs and ISOs Are Taxed in 2026',
+  title: { absolute: 'Stock Options Taxes: How NSOs and ISOs Are Taxed in 2026' },
   description:
     'NSOs are taxed as ordinary income when you exercise them. ISOs get special treatment — but can trigger the AMT. Here\'s the complete guide with worked examples.',
   alternates: { canonical: '/blog/stock-options-taxes-nso-iso-2026' },
   keywords:
     'stock options taxes 2026, NSO taxes, ISO taxes, non-qualified stock options, incentive stock options, how stock options are taxed, exercise stock options tax, AMT stock options',
   openGraph: {
+    type: 'article',
+    url: '/blog/stock-options-taxes-nso-iso-2026',
+    images: [{ url: '/og/blog/stock-options-taxes-nso-iso-2026', width: 1200, height: 630 }],
     title: 'Stock Options Taxes: How NSOs and ISOs Are Taxed in 2026',
     description:
       'NSOs are taxed as ordinary income when you exercise them. ISOs get special treatment — but can trigger the AMT. Here\'s the full guide.',
@@ -77,9 +81,7 @@ export default function StockOptionsTaxes() {
         Stock Options Taxes: How NSOs and ISOs Are Taxed in 2026
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published September 28, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="stock-options-taxes-nso-iso-2026" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         Stock options are one of the most powerful forms of employee compensation — but they come with some of the most confusing tax rules. The two main types, <strong>Non-Qualified Stock Options (NSOs)</strong> and <strong>Incentive Stock Options (ISOs)</strong>, are taxed very differently. Make the wrong move and you could owe more in taxes than the gain you thought you were getting.
@@ -237,7 +239,7 @@ export default function StockOptionsTaxes() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The 2026 AMT exemption is <strong>$137,000</strong> for single filers and <strong>$220,000</strong> for married filing jointly. Spreads below these amounts generally do not trigger AMT — but a large ISO exercise can easily push you over.
+        The 2026 AMT exemption is <strong>$90,100</strong> for single filers and <strong>$140,200</strong> for married filing jointly. Spreads below these amounts generally do not trigger AMT — but a large ISO exercise can easily push you over.
       </p>
 
       <h3 style={{ fontSize: '1.125rem', fontWeight: 700, color: '#1e293b', marginTop: '1.75rem', marginBottom: '0.5rem' }}>
@@ -309,8 +311,8 @@ export default function StockOptionsTaxes() {
       <ol style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
         <li style={{ marginBottom: '0.75rem' }}>You exercise 5,000 ISOs with a $5 exercise price when the stock is trading at $50.</li>
         <li style={{ marginBottom: '0.75rem' }}>The spread is $45 × 5,000 = <strong>$225,000</strong>. This is your AMT income but not regular taxable income.</li>
-        <li style={{ marginBottom: '0.75rem' }}>The AMT exemption is $137,000, so your AMT is calculated on $225,000 − $137,000 = <strong>$88,000</strong>.</li>
-        <li style={{ marginBottom: '0.75rem' }}>At the 26% AMT rate, that is <strong>$22,880 in AMT</strong>.</li>
+        <li style={{ marginBottom: '0.75rem' }}>The AMT exemption is $90,100, so your AMT is calculated on $225,000 − $90,100 = <strong>$134,900</strong>.</li>
+        <li style={{ marginBottom: '0.75rem' }}>At the 26% AMT rate, that is <strong>$35,074 in AMT</strong>.</li>
         <li style={{ marginBottom: '0.75rem' }}>If the stock then <em>drops</em> before you can sell, you still owe the AMT on the paper gain you exercised at.</li>
       </ol>
 
@@ -467,7 +469,7 @@ export default function StockOptionsTaxes() {
           <strong>Consider filing an 83(b) election on early exercises.</strong> If your company&rsquo;s stock is likely to appreciate significantly, an early exercise at a low valuation starts your capital gains clock sooner.
         </li>
         <li style={{ marginBottom: '1rem' }}>
-          <strong>Max out other pre-tax contributions in exercise years.</strong> Maxing your 401(k) ($23,500 in 2026), HSA, and other pre-tax benefits lowers your adjusted gross income, which may reduce your regular income tax and AMT exposure in the same year.
+          <strong>Max out other pre-tax contributions in exercise years.</strong> Maxing your 401(k) ($24,500 in 2026), HSA, and other pre-tax benefits lowers your adjusted gross income, which may reduce your regular income tax and AMT exposure in the same year.
         </li>
       </ol>
 

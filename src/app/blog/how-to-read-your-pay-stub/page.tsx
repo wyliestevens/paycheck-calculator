@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'How to Read Your Pay Stub Line by Line (2026 Guide)',
+  title: { absolute: 'How to Read Your Pay Stub Line by Line (2026 Guide)' },
   description:
     'Confused by the numbers on your pay stub? This guide walks through every line — gross pay, FICA, withholding, YTD totals — in plain English with real examples.',
   alternates: { canonical: '/blog/how-to-read-your-pay-stub' },
   keywords:
     'how to read a pay stub, pay stub explained, paycheck stub lines, OASDI on pay stub, YTD pay stub, pay stub deductions 2026',
   openGraph: {
+    type: 'article',
+    url: '/blog/how-to-read-your-pay-stub',
+    images: [{ url: '/og/blog/how-to-read-your-pay-stub', width: 1200, height: 630 }],
     title: 'How to Read Your Pay Stub Line by Line (2026 Guide)',
     description:
       'Every line on your pay stub explained in plain English — gross pay, federal and state tax, FICA, pre-tax deductions, net pay, and YTD totals.',
@@ -85,9 +89,7 @@ export default function HowToReadYourPayStub() {
         How to Read Your Pay Stub Line by Line (2026 Guide)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published June 8, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="how-to-read-your-pay-stub" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         Most people glance at the bottom line of their pay stub &mdash; the direct deposit amount &mdash; and never look further. But every row above that number tells a story. Understanding your pay stub line by line helps you catch payroll errors, verify your taxes are correct, and make smarter decisions about your benefits and withholding.
@@ -229,7 +231,7 @@ export default function HowToReadYourPayStub() {
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
         <li style={{ marginBottom: '0.75rem' }}>
-          <strong>OASDI</strong> stands for Old-Age, Survivors, and Disability Insurance &mdash; the official name for Social Security. The rate is <strong>6.2%</strong> of your gross pay, up to the annual wage base of <strong>$176,100</strong> in 2026. Once you hit that cap in a calendar year, no more Social Security tax is withheld for the rest of the year.{' '}
+          <strong>OASDI</strong> stands for Old-Age, Survivors, and Disability Insurance &mdash; the official name for Social Security. The rate is <strong>6.2%</strong> of your gross pay, up to the annual wage base of <strong>$184,500</strong> in 2026. Once you hit that cap in a calendar year, no more Social Security tax is withheld for the rest of the year.{' '}
           <a href="https://www.ssa.gov/oact/cola/cbb.html" target="_blank" rel="noopener noreferrer" style={{ color: '#0369a1', textDecoration: 'underline' }}>(SSA.gov)</a>
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
@@ -261,17 +263,17 @@ export default function HowToReadYourPayStub() {
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
         <li style={{ marginBottom: '0.75rem' }}>
-          <strong>401(k) / 403(b) contributions</strong> &mdash; Traditional retirement contributions reduce your taxable income dollar-for-dollar. In 2026 you can contribute up to $23,500 (or $31,000 if you are 50 or older). Learn more in our{' '}
+          <strong>401(k) / 403(b) contributions</strong> &mdash; Traditional retirement contributions reduce your taxable income dollar-for-dollar. In 2026 you can contribute up to $24,500 (or $32,500 if you are 50 or older). Learn more in our{' '}
           <a href="/blog/how-401k-contributions-affect-your-paycheck" style={{ color: '#0369a1', textDecoration: 'underline' }}>401(k) paycheck guide</a>.
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
           <strong>Health insurance premiums</strong> &mdash; Your share of employer-sponsored medical, dental, and vision premiums. This is often labeled <strong>MED INS</strong>, <strong>HLTH</strong>, or <strong>DENTAL</strong>.
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
-          <strong>HSA contributions</strong> &mdash; Health Savings Account deposits, tax-free triple: pre-tax going in, grows tax-free, and tax-free coming out for medical expenses. 2026 limit: $4,300 for individual coverage.
+          <strong>HSA contributions</strong> &mdash; Health Savings Account deposits, tax-free triple: pre-tax going in, grows tax-free, and tax-free coming out for medical expenses. 2026 limit: $4,400 for individual coverage.
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
-          <strong>FSA contributions</strong> &mdash; Flexible Spending Accounts for healthcare or dependent care. 2026 limit: $3,300 for healthcare FSA.
+          <strong>FSA contributions</strong> &mdash; Flexible Spending Accounts for healthcare or dependent care. 2026 limit: $3,400 for healthcare FSA.
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
           <strong>Commuter benefits</strong> &mdash; Pre-tax transit or parking benefits. In 2026 the monthly limit is $325 for transit and $325 for parking.
@@ -334,7 +336,7 @@ export default function HowToReadYourPayStub() {
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
         <li style={{ marginBottom: '0.5rem' }}>
-          <strong>Tracking the Social Security wage cap</strong> &mdash; Once your YTD gross pay reaches $176,100 (in 2026), the OASDI deduction stops. You should see that line go to $0 on your next paycheck if you are a high earner.
+          <strong>Tracking the Social Security wage cap</strong> &mdash; Once your YTD gross pay reaches $184,500 (in 2026), the OASDI deduction stops. You should see that line go to $0 on your next paycheck if you are a high earner.
         </li>
         <li style={{ marginBottom: '0.5rem' }}>
           <strong>Verifying W-2 accuracy</strong> &mdash; At year end, your YTD totals should closely match the boxes on your W-2. Box 1 (wages) on your W-2 is your gross pay minus pre-tax deductions.
@@ -445,7 +447,7 @@ export default function HowToReadYourPayStub() {
               ['HSA', 'Health Savings Account', 'Pre-tax medical savings account'],
               ['FSA', 'Flexible Spending Account', 'Pre-tax healthcare or dependent care'],
               ['SDI', 'State Disability Insurance', 'Paid by employees in some states (CA, NJ, NY, RI, HI)'],
-              ['OASDI WB', 'Wage Base', 'Max earnings subject to SS tax ($176,100 in 2026)'],
+              ['OASDI WB', 'Wage Base', 'Max earnings subject to SS tax ($184,500 in 2026)'],
               ['EE / ER', 'Employee / Employer', 'Your share vs. company\'s share'],
             ].map(([abbr, full, desc], i) => (
               <tr key={String(abbr)} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
@@ -480,7 +482,7 @@ export default function HowToReadYourPayStub() {
           <strong>Missing deductions</strong> &mdash; If you signed up for benefits during open enrollment but do not see them deducted, contact HR. You may not be enrolled.
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
-          <strong>OASDI still being withheld above the wage cap</strong> &mdash; If your YTD gross pay has passed $176,100 and you are still seeing OASDI withheld, notify your payroll department immediately.
+          <strong>OASDI still being withheld above the wage cap</strong> &mdash; If your YTD gross pay has passed $184,500 and you are still seeing OASDI withheld, notify your payroll department immediately.
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
           <strong>Extra mystery deductions</strong> &mdash; Always ask HR to explain any line you do not recognize. It is your money.

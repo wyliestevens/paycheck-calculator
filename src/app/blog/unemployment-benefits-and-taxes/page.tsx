@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Unemployment Benefits and Taxes: What You Need to Know in 2026',
+  title: { absolute: 'Unemployment Benefits and Taxes: What You Need to Know in 2026' },
   description:
     'Unemployment benefits are fully taxable as federal income — but exempt from FICA. Learn how UI is taxed, how to use Form W-4V to withhold taxes, and how to read your 1099-G. Includes a full worked example.',
   alternates: { canonical: '/blog/unemployment-benefits-and-taxes' },
   keywords:
     'unemployment benefits taxable 2026, are unemployment benefits taxed, unemployment tax rate, 1099-G form, Form W-4V withholding, unemployment income tax, UI benefits federal tax',
   openGraph: {
+    type: 'article',
+    url: '/blog/unemployment-benefits-and-taxes',
+    images: [{ url: '/og/blog/unemployment-benefits-and-taxes', width: 1200, height: 630 }],
     title: 'Unemployment Benefits and Taxes: What You Need to Know in 2026',
     description:
       'Unemployment benefits are taxable federal income — but exempt from FICA. Here is exactly how UI is taxed, how to avoid a surprise bill, and a full worked example.',
@@ -82,9 +86,7 @@ export default function UnemploymentBenefitsAndTaxes() {
         Unemployment Benefits and Taxes: What You Need to Know in 2026
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published July 31, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="unemployment-benefits-and-taxes" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         Losing a job is stressful enough. The last thing you want is an unexpected tax bill when you file your return. Yet every year, thousands of people are caught off guard when they discover that <strong>unemployment insurance (UI) benefits are fully taxable income</strong> at the federal level — and in most states.
@@ -154,7 +156,7 @@ export default function UnemploymentBenefitsAndTaxes() {
       </h2>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Your unemployment benefits are added to all your other income for the year — wages, freelance income, investment income — and the combined total is what the IRS taxes. The 2026 federal tax brackets apply to your <strong>taxable income</strong>, which is your total income minus the standard deduction ($15,000 for single filers, $30,000 for married filing jointly in 2026).
+        Your unemployment benefits are added to all your other income for the year — wages, freelance income, investment income — and the combined total is what the IRS taxes. The 2026 federal tax brackets apply to your <strong>taxable income</strong>, which is your total income minus the standard deduction ($16,100 for single filers, $32,200 for married filing jointly in 2026).
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
@@ -162,7 +164,7 @@ export default function UnemploymentBenefitsAndTaxes() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The 2026 federal income tax brackets for single filers start at 10% (on taxable income up to $11,925) and 12% (on income from $11,926 to $48,475). Most people collecting UI while also having earned some wages during the year will find their UI benefits taxed in the 12% bracket.{' '}
+        The 2026 federal income tax brackets for single filers start at 10% (on taxable income up to $12,400) and 12% (on income from $12,401 to $50,400). Most people collecting UI while also having earned some wages during the year will find their UI benefits taxed in the 12% bracket.{' '}
         <a href="https://www.irs.gov/newsroom/irs-provides-tax-inflation-adjustments-for-tax-year-2026" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS — 2026 Inflation Adjustments)
         </a>
@@ -394,15 +396,15 @@ export default function UnemploymentBenefitsAndTaxes() {
         }}
       >
         Total income: $46,700<br />
-        &minus; Standard deduction (single, 2026): $15,000<br />
+        &minus; Standard deduction (single, 2026): $16,100<br />
         <span style={{ borderTop: '1px solid #cbd5e1', display: 'block', marginTop: '0.5rem', paddingTop: '0.5rem' }}>
-          Taxable income: <strong>$31,700</strong>
+          Taxable income: <strong>$30,600</strong>
         </span>
         <br />
-        10% &times; $11,925 = $1,192.50<br />
-        12% &times; ($31,700 &minus; $11,925) = 12% &times; $19,775 = $2,373.00<br />
+        10% &times; $12,400 = $1,240.00<br />
+        12% &times; ($30,600 &minus; $12,400) = 12% &times; $18,200 = $2,184.00<br />
         <span style={{ borderTop: '1px solid #cbd5e1', display: 'block', marginTop: '0.5rem', paddingTop: '0.5rem' }}>
-          Federal income tax: <strong>$3,565.50</strong>
+          Federal income tax: <strong>$3,424.00</strong>
         </span>
       </div>
 
@@ -427,14 +429,14 @@ export default function UnemploymentBenefitsAndTaxes() {
           lineHeight: 1.8,
         }}
       >
-        $35,000 &minus; $15,000 deduction = $20,000 taxable<br />
-        10% &times; $11,925 = $1,192.50<br />
-        12% &times; $8,075 = $969.00<br />
-        Total without UI: <strong>$2,161.50</strong>
+        $35,000 &minus; $16,100 deduction = $18,900 taxable<br />
+        10% &times; $12,400 = $1,240.00<br />
+        12% &times; $6,500 = $780.00<br />
+        Total without UI: <strong>$2,020.00</strong>
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Difference: $3,565.50 &minus; $2,161.50 = <strong>$1,404.00</strong> in additional federal income tax attributable to the $11,700 in UI benefits. That works out to an effective rate of exactly 12% on the UI benefits — her marginal rate.
+        Difference: $3,424.00 &minus; $2,020.00 = <strong>$1,404.00</strong> in additional federal income tax attributable to the $11,700 in UI benefits. That works out to an effective rate of exactly 12% on the UI benefits — her marginal rate.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
@@ -487,14 +489,14 @@ export default function UnemploymentBenefitsAndTaxes() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '0.5rem' }}>
-        <strong>Traditional IRA contribution.</strong> If you had earned income earlier in the year (wages, freelance), you can contribute up to $7,000 (2026 limit, or $8,000 if you are 50 or older) to a traditional IRA. This contribution is potentially deductible, reducing your taxable income.{' '}
+        <strong>Traditional IRA contribution.</strong> If you had earned income earlier in the year (wages, freelance), you can contribute up to $7,500 (2026 limit, or $8,600 if you are 50 or older) to a traditional IRA. This contribution is potentially deductible, reducing your taxable income.{' '}
         <a href="https://www.irs.gov/retirement-plans/ira-deduction-limits" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS — IRA Deduction Limits)
         </a>
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '0.5rem' }}>
-        <strong>HSA contributions.</strong> If you had a High Deductible Health Plan (HDHP) for any month during the year, you may be able to contribute to an HSA and deduct those contributions. The 2026 HSA contribution limit is $4,300 for individual coverage or $8,550 for family coverage.{' '}
+        <strong>HSA contributions.</strong> If you had a High Deductible Health Plan (HDHP) for any month during the year, you may be able to contribute to an HSA and deduct those contributions. The 2026 HSA contribution limit is $4,400 for individual coverage or $8,750 for family coverage.{' '}
         <a href="https://www.irs.gov/publications/p969" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS Publication 969 — HSAs)
         </a>

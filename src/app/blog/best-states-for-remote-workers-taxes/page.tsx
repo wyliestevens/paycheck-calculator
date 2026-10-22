@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Best States for Remote Workers: Tax Edition (2026)',
+  title: { absolute: 'Best States for Remote Workers: Tax Edition (2026)' },
   description:
     'Where you live as a remote worker can save you $4,000–$6,500 per year in state taxes. Here are the 10 best states, ranked by tax burden with real dollar examples.',
   alternates: { canonical: '/blog/best-states-for-remote-workers-taxes' },
   keywords:
     'best states for remote workers taxes, low tax states remote work 2026, no income tax states remote workers, where to live as remote worker taxes, remote worker state tax comparison 2026',
   openGraph: {
+    type: 'article',
+    url: '/blog/best-states-for-remote-workers-taxes',
+    images: [{ url: '/og/blog/best-states-for-remote-workers-taxes', width: 1200, height: 630 }],
     title: 'Best States for Remote Workers: Tax Edition (2026)',
     description:
       'Where you live as a remote worker can save you $4,000–$6,500 per year in state taxes. 10 best states ranked with a full $80,000 salary comparison.',
@@ -101,9 +105,7 @@ export default function BestStatesForRemoteWorkersTaxes() {
         Best States for Remote Workers: Tax Edition (2026)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published July 16, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="best-states-for-remote-workers-taxes" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         If you work remotely, where you <em>live</em> is one of the most powerful financial decisions you can make. Unlike a traditional office job, you are not tied to a specific city or state &mdash; which means you can legally cut your annual tax bill by <strong>$3,000 to $6,500 per year</strong> just by choosing the right state to call home.

@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Understanding Your W-2: A Box-by-Box Guide (2026)',
+  title: { absolute: 'Understanding Your W-2: A Box-by-Box Guide (2026)' },
   description:
     "Your W-2 has up to 20 numbered boxes — and most people only check a few. Here's what every box on your W-2 means, with a complete worked example at $75,000.",
   alternates: { canonical: '/blog/understanding-your-w2' },
   keywords:
     'W-2 form explained, W-2 box by box, how to read W-2, W-2 2026, Box 12 W-2 codes, Box 1 wages, W-2 withholding, understand W-2 form',
   openGraph: {
+    type: 'article',
+    url: '/blog/understanding-your-w2',
+    images: [{ url: '/og/blog/understanding-your-w2', width: 1200, height: 630 }],
     title: 'Understanding Your W-2: A Box-by-Box Guide (2026)',
     description:
       "Your W-2 has up to 20 numbered boxes — and most people only check a few. Here's what every box on your W-2 means.",
@@ -92,9 +96,7 @@ export default function UnderstandingYourW2() {
         Understanding Your W-2: A Box-by-Box Guide (2026)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published June 26, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="understanding-your-w2" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         Every January, your employer sends you a <strong>W-2 form</strong> &mdash; officially the Wage and Tax Statement. It&rsquo;s the single most important tax document you receive as an employee. Your tax return depends on it, your bank may require it for loans, and it serves as the official government record of what you earned and what was withheld from your paychecks last year.
@@ -186,14 +188,14 @@ export default function UnderstandingYourW2() {
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
         <li style={{ marginBottom: '0.75rem' }}>
-          <strong>Box 3 &mdash; Social Security wages:</strong> The wages subject to Social Security tax. This is capped at <strong>$168,600</strong> in 2026. Unlike Box 1, this number is <em>not</em> reduced by 401(k) contributions, but it <em>is</em> reduced by Section 125 cafeteria plan deductions (like employer-sponsored health premiums).{' '}
+          <strong>Box 3 &mdash; Social Security wages:</strong> The wages subject to Social Security tax. This is capped at <strong>$184,500</strong> in 2026. Unlike Box 1, this number is <em>not</em> reduced by 401(k) contributions, but it <em>is</em> reduced by Section 125 cafeteria plan deductions (like employer-sponsored health premiums).{' '}
           <a href="https://www.ssa.gov/oact/cola/cbb.html" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>(SSA.gov)</a>
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
-          <strong>Box 4 &mdash; Social Security tax withheld:</strong> Exactly 6.2% of Box 3. The maximum for 2026 is $10,453.20. If this number is more than $10,453.20, your employer made a withholding error.
+          <strong>Box 4 &mdash; Social Security tax withheld:</strong> Exactly 6.2% of Box 3. The maximum for 2026 is $11,439. If this number is more than $11,439, your employer made a withholding error.
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
-          <strong>Box 5 &mdash; Medicare wages and tips:</strong> The wages subject to Medicare tax. There is no income cap, so Box 5 is typically the same as Box 3 (unless you earned above $168,600).
+          <strong>Box 5 &mdash; Medicare wages and tips:</strong> The wages subject to Medicare tax. There is no income cap, so Box 5 is typically the same as Box 3 (unless you earned above $184,500).
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
           <strong>Box 6 &mdash; Medicare tax withheld:</strong> Exactly 1.45% of Box 5. If your wages exceeded $200,000, your employer was required to withhold an additional 0.9% on the excess, and that amount is also included in Box 6.
@@ -449,7 +451,7 @@ export default function UnderstandingYourW2() {
         What if I worked two jobs and have two W-2s?
       </h3>
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        You must report all W-2s on your tax return. Add the Box 1 amounts together for your total wages. However, pay attention to Box 3 across all W-2s. If your combined Social Security wages from all employers exceeded $168,600, you overpaid Social Security tax &mdash; each employer withheld 6.2% without knowing about the other employer. You can claim the excess as a credit on your Form 1040.{' '}
+        You must report all W-2s on your tax return. Add the Box 1 amounts together for your total wages. However, pay attention to Box 3 across all W-2s. If your combined Social Security wages from all employers exceeded $184,500, you overpaid Social Security tax &mdash; each employer withheld 6.2% without knowing about the other employer. You can claim the excess as a credit on your Form 1040.{' '}
         <a href="https://www.irs.gov/taxtopics/tc608" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS &mdash; Topic 608: Excess Social Security Withholding)
         </a>
@@ -476,7 +478,7 @@ export default function UnderstandingYourW2() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Take five minutes to review your W-2 before filing. Verify your Social Security number, confirm that Box 4 is not more than $10,453.20, and make sure your address is current (the IRS mails refund checks to the address on your last return). Small errors on this document can cause big headaches later.
+        Take five minutes to review your W-2 before filing. Verify your Social Security number, confirm that Box 4 is not more than $11,439, and make sure your address is current (the IRS mails refund checks to the address on your last return). Small errors on this document can cause big headaches later.
       </p>
 
       {/* CTA */}

@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Minimum Wage Take-Home Pay by State in 2026',
+  title: { absolute: 'Minimum Wage Take-Home Pay by State in 2026' },
   description:
     'Earning the minimum wage? See exactly what you keep after federal tax, state tax, and FICA — with a full state comparison table and worked examples at $7.25/hr and $16.66/hr.',
   alternates: { canonical: '/blog/minimum-wage-take-home-pay-by-state' },
   keywords:
     'minimum wage take home pay 2026, minimum wage after taxes, state minimum wage 2026, minimum wage net pay, federal minimum wage paycheck, minimum wage by state',
   openGraph: {
+    type: 'article',
+    url: '/blog/minimum-wage-take-home-pay-by-state',
+    images: [{ url: '/og/blog/minimum-wage-take-home-pay-by-state', width: 1200, height: 630 }],
     title: 'Minimum Wage Take-Home Pay by State in 2026',
     description:
       'See exactly what minimum wage workers keep after taxes — with a state-by-state comparison and worked examples.',
@@ -77,9 +81,7 @@ export default function MinimumWageTakeHomeByState() {
         Minimum Wage Take-Home Pay by State in 2026
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published July 14, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="minimum-wage-take-home-pay-by-state" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         If you earn the federal minimum wage of <strong>$7.25 per hour</strong>, your annual gross pay is $15,080 &mdash; but that&rsquo;s not what lands in your bank account. After FICA taxes (Social Security and Medicare), federal income tax, and state income tax where applicable, your real take-home pay is noticeably lower.
@@ -155,7 +157,7 @@ export default function MinimumWageTakeHomeByState() {
       </h3>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Federal income tax is calculated on your income above the standard deduction, which is <strong>$15,000</strong> for single filers in 2026. Workers earning the federal minimum wage of $7.25/hr bring in $15,080 annually &mdash; leaving only $80 in taxable income and a federal income tax bill of just $8. At higher state minimum wages, more income is exposed to the 10% and 12% brackets.{' '}
+        Federal income tax is calculated on your income above the standard deduction, which is <strong>$16,100</strong> for single filers in 2026. Workers earning the federal minimum wage of $7.25/hr bring in $15,080 annually &mdash; leaving no taxable income at all and a federal income tax bill of $0. At higher state minimum wages, more income is exposed to the 10% and 12% brackets.{' '}
         <a href="https://www.irs.gov/publications/p505" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS &mdash; Publication 505, Tax Withholding and Estimated Tax)
         </a>
@@ -211,9 +213,9 @@ export default function MinimumWageTakeHomeByState() {
           <tbody>
             {[
               ['Gross Pay', '$15,080.00', false],
-              ['Federal Standard Deduction', '(−$15,000.00)', false],
-              ['Federal Taxable Income', '$80.00', false],
-              ['Federal Income Tax (10%)', '−$8.00', true],
+              ['Federal Standard Deduction', '(−$16,100.00)', false],
+              ['Federal Taxable Income', '$0.00', false],
+              ['Federal Income Tax (10%)', '−$0.00', true],
               ['Social Security (6.2%)', '−$934.96', true],
               ['Medicare (1.45%)', '−$218.66', true],
               ['Texas State Income Tax', '$0.00', false],
@@ -225,7 +227,7 @@ export default function MinimumWageTakeHomeByState() {
             ))}
             <tr style={{ background: '#e0f2fe' }}>
               <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', fontWeight: 700, color: '#1e293b' }}>Annual Take-Home Pay</td>
-              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#1e293b' }}>$13,918.38</td>
+              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#1e293b' }}>$13,926.38</td>
             </tr>
           </tbody>
         </table>
@@ -242,10 +244,10 @@ export default function MinimumWageTakeHomeByState() {
         >
           <tbody>
             {[
-              ['Monthly take-home', '$1,159.87'],
-              ['Per biweekly paycheck', '$535.32'],
-              ['Effective hourly rate', '$6.69/hr'],
-              ['Total tax rate (FICA + fed)', '7.69%'],
+              ['Monthly take-home', '$1,160.53'],
+              ['Per biweekly paycheck', '$535.63'],
+              ['Effective hourly rate', '$6.70/hr'],
+              ['Total tax rate (FICA + fed)', '7.65%'],
             ].map(([label, value], i) => (
               <tr key={label as string} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', fontWeight: 600, color: '#1e293b' }}>{label}</td>
@@ -257,7 +259,7 @@ export default function MinimumWageTakeHomeByState() {
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1rem' }}>
-        FICA is the largest deduction at this income level because the $15,000 standard deduction nearly wipes out federal taxable income. The $7.25/hr worker pays almost nothing in federal income tax &mdash; but still owes $1,154 in FICA on every dollar earned.
+        FICA is the largest deduction at this income level because the $16,100 standard deduction wipes out federal taxable income entirely. The $7.25/hr worker pays nothing in federal income tax &mdash; but still owes $1,154 in FICA on every dollar earned.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
@@ -293,7 +295,7 @@ export default function MinimumWageTakeHomeByState() {
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1rem' }}>
-        Federal income tax is more significant here. After the $15,000 standard deduction, $19,653 is taxable. The first $11,925 is taxed at 10% ($1,192.50), and the remaining $7,728 falls into the 12% bracket ($927.36), for a total federal income tax of $2,119.86.
+        Federal income tax is more significant here. After the $16,100 standard deduction, $18,553 is taxable. The first $12,400 is taxed at 10% ($1,240.00), and the remaining $6,153 falls into the 12% bracket ($738.36), for a total federal income tax of $1,978.36.
       </p>
 
       <div style={{ overflowX: 'auto', marginBottom: '1.5rem' }}>
@@ -314,7 +316,7 @@ export default function MinimumWageTakeHomeByState() {
           <tbody>
             {[
               ['Gross Pay', '$34,653.00', false],
-              ['Federal Income Tax (10% + 12%)', '−$2,119.86', true],
+              ['Federal Income Tax (10% + 12%)', '−$1,978.36', true],
               ['Social Security (6.2%)', '−$2,148.49', true],
               ['Medicare (1.45%)', '−$502.47', true],
               ['Washington State Income Tax', '$0.00', false],
@@ -326,7 +328,7 @@ export default function MinimumWageTakeHomeByState() {
             ))}
             <tr style={{ background: '#e0f2fe' }}>
               <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', fontWeight: 700, color: '#1e293b' }}>Annual Take-Home Pay</td>
-              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#1e293b' }}>$29,882.18</td>
+              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#1e293b' }}>$30,023.68</td>
             </tr>
           </tbody>
         </table>
@@ -343,10 +345,10 @@ export default function MinimumWageTakeHomeByState() {
         >
           <tbody>
             {[
-              ['Monthly take-home', '$2,490.18'],
-              ['Per biweekly paycheck', '$1,149.32'],
-              ['Effective hourly rate', '$14.37/hr'],
-              ['Total tax rate', '13.77%'],
+              ['Monthly take-home', '$2,501.97'],
+              ['Per biweekly paycheck', '$1,154.76'],
+              ['Effective hourly rate', '$14.43/hr'],
+              ['Total tax rate', '13.36%'],
             ].map(([label, value], i) => (
               <tr key={label as string} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', fontWeight: 600, color: '#1e293b' }}>{label}</td>
@@ -358,7 +360,7 @@ export default function MinimumWageTakeHomeByState() {
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The Washington worker takes home <strong>$29,882</strong> per year &mdash; <strong>$15,964 more</strong> than the Texas worker earning the federal minimum. Meanwhile, the gross pay difference was $19,573. The gap narrows because federal income tax and FICA both scale up proportionally with income.
+        The Washington worker takes home <strong>$30,024</strong> per year &mdash; <strong>$16,097 more</strong> than the Texas worker earning the federal minimum. Meanwhile, the gross pay difference was $19,573. The gap narrows because federal income tax and FICA both scale up proportionally with income.
       </p>
 
       {/* Section 5 — State Comparison Table */}
@@ -393,18 +395,18 @@ export default function MinimumWageTakeHomeByState() {
           </thead>
           <tbody>
             {[
-              ['Texas', '$7.25', '$15,080', '$8', '$0', '$1,154', '$13,918', '$1,160'],
-              ['Florida', '$13.00', '$27,040', '$1,204', '$0', '$2,069', '$23,767', '$1,981'],
-              ['Arizona', '$14.70', '$30,576', '$1,631', '$712', '$2,339', '$25,894', '$2,158'],
-              ['Colorado', '$14.81', '$30,805', '$1,657', '$756', '$2,357', '$26,035', '$2,170'],
-              ['Illinois', '$15.00', '$31,200', '$1,706', '$1,424', '$2,387', '$25,683', '$2,140'],
-              ['Massachusetts', '$15.00', '$31,200', '$1,706', '$1,340', '$2,387', '$25,767', '$2,147'],
-              ['Maryland', '$15.00', '$31,200', '$1,706', '$975', '$2,387', '$26,132', '$2,178'],
-              ['New Jersey', '$15.49', '$32,219', '$1,828', '$974', '$2,465', '$26,952', '$2,246'],
-              ['Connecticut', '$16.35', '$34,008', '$2,041', '$1,190', '$2,601', '$28,176', '$2,348'],
-              ['Hawaii', '$16.00', '$33,280', '$1,955', '$1,148', '$2,546', '$27,631', '$2,303'],
-              ['California', '$16.50', '$34,320', '$2,080', '$781', '$2,625', '$28,834', '$2,403'],
-              ['Washington', '$16.66', '$34,653', '$2,120', '$0', '$2,651', '$29,882', '$2,490'],
+              ['Texas', '$7.25', '$15,080', '$0', '$0', '$1,154', '$13,926', '$1,161'],
+              ['Florida', '$13.00', '$27,040', '$1,094', '$0', '$2,069', '$23,877', '$1,990'],
+              ['Arizona', '$14.70', '$30,576', '$1,489', '$712', '$2,339', '$26,036', '$2,170'],
+              ['Colorado', '$14.81', '$30,805', '$1,517', '$756', '$2,357', '$26,175', '$2,181'],
+              ['Illinois', '$15.00', '$31,200', '$1,564', '$1,424', '$2,387', '$25,825', '$2,152'],
+              ['Massachusetts', '$15.00', '$31,200', '$1,564', '$1,340', '$2,387', '$25,909', '$2,159'],
+              ['Maryland', '$15.00', '$31,200', '$1,564', '$975', '$2,387', '$26,274', '$2,190'],
+              ['New Jersey', '$15.49', '$32,219', '$1,686', '$974', '$2,465', '$27,094', '$2,258'],
+              ['Connecticut', '$16.35', '$34,008', '$1,901', '$1,190', '$2,601', '$28,316', '$2,360'],
+              ['Hawaii', '$16.00', '$33,280', '$1,814', '$1,148', '$2,546', '$27,772', '$2,314'],
+              ['California', '$16.50', '$34,320', '$1,938', '$781', '$2,625', '$28,976', '$2,415'],
+              ['Washington', '$16.66', '$34,653', '$1,978', '$0', '$2,651', '$30,024', '$2,502'],
             ].map(([state, wage, gross, fed, stateTax, fica, takeHome, monthly], i) => (
               <tr key={state as string} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.6rem 0.75rem', borderBottom: '1px solid #e2e8f0', fontWeight: 600, color: '#1e293b' }}>{state}</td>
@@ -431,12 +433,12 @@ export default function MinimumWageTakeHomeByState() {
       </h2>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Washington&rsquo;s minimum wage is <strong>130% higher</strong> than the federal floor ($16.66 vs $7.25), but the annual take-home is only <strong>115% higher</strong> ($29,882 vs $13,918). There are two reasons for this gap:
+        Washington&rsquo;s minimum wage is <strong>130% higher</strong> than the federal floor ($16.66 vs $7.25), but the annual take-home is only <strong>116% higher</strong> ($30,024 vs $13,926). There are two reasons for this gap:
       </p>
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
         <li style={{ marginBottom: '0.75rem' }}>
-          <strong>Federal income tax grows faster.</strong> At $15,080, the standard deduction wipes out nearly all taxable income, so the federal income tax is just $8. At $34,653, the worker pays $2,120 in federal income tax. That $2,112 difference directly reduces the take-home advantage of a higher minimum wage.
+          <strong>Federal income tax grows faster.</strong> At $15,080, the standard deduction wipes out all taxable income, so the federal income tax is $0. At $34,653, the worker pays $1,978 in federal income tax. That $1,978 difference directly reduces the take-home advantage of a higher minimum wage.
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
           <strong>FICA is fully proportional.</strong> Social Security and Medicare apply to every dollar of gross pay at 7.65%. Earning 130% more gross means paying 130% more FICA &mdash; there is no escaping this scaling.
@@ -503,7 +505,7 @@ export default function MinimumWageTakeHomeByState() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        FICA is the largest bite for low earners because it applies to every dollar regardless of the standard deduction. Federal income tax, by contrast, is minimal at the lowest wage levels thanks to the $15,000 standard deduction. State income tax is the wildcard: states with both a high minimum wage and no income tax (Washington) deliver the best outcome; states with high minimums and income taxes (Illinois, Massachusetts) partially offset the gain.
+        FICA is the largest bite for low earners because it applies to every dollar regardless of the standard deduction. Federal income tax, by contrast, is minimal at the lowest wage levels thanks to the $16,100 standard deduction. State income tax is the wildcard: states with both a high minimum wage and no income tax (Washington) deliver the best outcome; states with high minimums and income taxes (Illinois, Massachusetts) partially offset the gain.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>

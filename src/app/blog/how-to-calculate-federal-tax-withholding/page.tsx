@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'How to Calculate Federal Income Tax Withholding Step by Step (2026)',
+  title: { absolute: 'How to Calculate Federal Income Tax Withholding Step by Step (2026)' },
   description:
     'Your employer withholds federal income tax using IRS Publication 15-T. Here\'s exactly how the calculation works — with a full worked example at $65,000 showing every step.',
   alternates: { canonical: '/blog/how-to-calculate-federal-tax-withholding' },
   keywords:
     'how to calculate federal tax withholding, federal income tax withholding calculation, IRS withholding 2026, Publication 15-T, paycheck withholding formula, percentage method withholding, how much federal tax is withheld from paycheck',
   openGraph: {
+    type: 'article',
+    url: '/blog/how-to-calculate-federal-tax-withholding',
+    images: [{ url: '/og/blog/how-to-calculate-federal-tax-withholding', width: 1200, height: 630 }],
     title: 'How to Calculate Federal Income Tax Withholding Step by Step (2026)',
     description:
       'Your employer uses IRS Publication 15-T to figure out how much federal income tax to take from each paycheck. Here\'s the step-by-step math.',
@@ -96,9 +100,7 @@ export default function HowToCalculateFederalTaxWithholding() {
         How to Calculate Federal Income Tax Withholding Step by Step (2026)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published September 18, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="how-to-calculate-federal-tax-withholding" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         Every payday, your employer removes a chunk of federal income tax from your paycheck before you ever see it. But how does your employer know how much to take? The answer is a government document called <strong>IRS Publication 15-T</strong> &mdash; and once you understand the formula inside it, you can verify your own withholding, predict your refund, and adjust your W-4 with confidence.
@@ -180,7 +182,7 @@ export default function HowToCalculateFederalTaxWithholding() {
         {
           step: 'Step 4',
           title: 'Subtract the Annualized Standard Deduction and W-4 Adjustments',
-          text: 'The IRS Publication 15-T tables include a "Tentative Withholding Amount" table. For the 2026 tax year, this means subtracting the equivalent of the standard deduction ($15,000 for Single/MFS; $30,000 for MFJ/QSS; $22,500 for HOH) plus any Step 3 or Step 4 W-4 adjustments the employee specified. The result is the Adjusted Annual Wage.',
+          text: 'The IRS Publication 15-T tables include a "Tentative Withholding Amount" table. For the 2026 tax year, this means subtracting the equivalent of the standard deduction ($16,100 for Single/MFS; $32,200 for MFJ/QSS; $24,150 for HOH) plus any Step 3 or Step 4 W-4 adjustments the employee specified. The result is the Adjusted Annual Wage.',
         },
         {
           step: 'Step 5',
@@ -257,13 +259,13 @@ export default function HowToCalculateFederalTaxWithholding() {
           </thead>
           <tbody>
             {[
-              ['10%', '$0 – $11,925', '$0 – $23,850'],
-              ['12%', '$11,926 – $48,475', '$23,851 – $96,950'],
-              ['22%', '$48,476 – $103,350', '$96,951 – $206,700'],
-              ['24%', '$103,351 – $197,300', '$206,701 – $394,600'],
-              ['32%', '$197,301 – $250,525', '$394,601 – $501,050'],
-              ['35%', '$250,526 – $626,350', '$501,051 – $751,600'],
-              ['37%', 'Over $626,350', 'Over $751,600'],
+              ['10%', '$0 – $12,400', '$0 – $24,800'],
+              ['12%', '$12,401 – $50,400', '$24,801 – $100,800'],
+              ['22%', '$50,401 – $105,700', '$100,801 – $211,400'],
+              ['24%', '$105,701 – $201,775', '$211,401 – $403,550'],
+              ['32%', '$201,776 – $256,225', '$403,551 – $512,450'],
+              ['35%', '$256,226 – $640,600', '$512,451 – $768,700'],
+              ['37%', 'Over $640,600', 'Over $768,700'],
             ].map(([rate, single, mfj], i) => (
               <tr key={rate} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', fontWeight: 700, color: '#2563eb', fontFamily: "'JetBrains Mono', monospace" }}>{rate}</td>
@@ -313,11 +315,11 @@ export default function HowToCalculateFederalTaxWithholding() {
               ['1. Gross pay per period', '$65,000 ÷ 26 pay periods', '$2,500.00'],
               ['2. Subtract pre-tax deductions', '401(k) = $0', '$2,500.00'],
               ['3. Annualize adjusted wages', '$2,500.00 × 26', '$65,000.00'],
-              ['4. Subtract standard deduction (Single)', '− $15,000', '$50,000.00'],
-              ['5a. Tax on first $11,925 @ 10%', '$11,925 × 10%', '$1,192.50'],
-              ['5b. Tax on $11,926 – $50,000 @ 12%', '$38,075 × 12%', '$4,569.00'],
-              ['Annual tentative withholding', '$1,192.50 + $4,569.00', '$5,761.50'],
-              ['Per-paycheck withholding', '$5,761.50 ÷ 26', '$221.60'],
+              ['4. Subtract standard deduction (Single)', '− $16,100', '$48,900.00'],
+              ['5a. Tax on first $12,400 @ 10%', '$12,400 × 10%', '$1,240.00'],
+              ['5b. Tax on $12,401 – $48,900 @ 12%', '$36,500 × 12%', '$4,380.00'],
+              ['Annual tentative withholding', '$1,240.00 + $4,380.00', '$5,620.00'],
+              ['Per-paycheck withholding', '$5,620.00 ÷ 26', '$216.15'],
             ].map(([step, calc, amount], i) => {
               const isTotal = step.startsWith('Annual') || step.startsWith('Per-paycheck')
               return (
@@ -333,7 +335,7 @@ export default function HowToCalculateFederalTaxWithholding() {
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Without any pre-tax deductions, this employee sees <strong>$221.60 withheld for federal income tax</strong> each biweekly paycheck, adding up to $5,761.50 for the year. Their effective federal tax rate on gross income is 8.86%.
+        Without any pre-tax deductions, this employee sees <strong>$216.15 withheld for federal income tax</strong> each biweekly paycheck, adding up to $5,620.00 for the year. Their effective federal tax rate on gross income is 8.65%.
       </p>
 
       <h3 style={{ fontSize: '1.125rem', fontWeight: 600, color: '#1e293b', marginTop: '1.5rem', marginBottom: '0.75rem' }}>
@@ -366,11 +368,11 @@ export default function HowToCalculateFederalTaxWithholding() {
               ['2. Subtract 401(k) contribution (6%)', '$2,500 × 6%', '− $150.00'],
               ['2. Adjusted wages per period', '$2,500 − $150', '$2,350.00'],
               ['3. Annualize adjusted wages', '$2,350 × 26', '$61,100.00'],
-              ['4. Subtract standard deduction (Single)', '− $15,000', '$46,100.00'],
-              ['5a. Tax on first $11,925 @ 10%', '$11,925 × 10%', '$1,192.50'],
-              ['5b. Tax on $11,926 – $46,100 @ 12%', '$34,175 × 12%', '$4,101.00'],
-              ['Annual tentative withholding', '$1,192.50 + $4,101.00', '$5,293.50'],
-              ['Per-paycheck withholding', '$5,293.50 ÷ 26', '$203.60'],
+              ['4. Subtract standard deduction (Single)', '− $16,100', '$45,000.00'],
+              ['5a. Tax on first $12,400 @ 10%', '$12,400 × 10%', '$1,240.00'],
+              ['5b. Tax on $12,401 – $45,000 @ 12%', '$32,600 × 12%', '$3,912.00'],
+              ['Annual tentative withholding', '$1,240.00 + $3,912.00', '$5,152.00'],
+              ['Per-paycheck withholding', '$5,152.00 ÷ 26', '$198.15'],
             ].map(([step, calc, amount], i) => {
               const isTotal = step.startsWith('Annual') || step.startsWith('Per-paycheck')
               return (
@@ -386,7 +388,7 @@ export default function HowToCalculateFederalTaxWithholding() {
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        With a $150/paycheck 401(k) contribution, the per-paycheck withholding drops from $221.60 to $203.60 &mdash; a <strong>$18.00 reduction in federal tax</strong> per paycheck. That&rsquo;s because 6% of $150 falls in the 12% bracket, so 12% &times; $150 = $18.00. The 401(k) contribution doesn&rsquo;t cost $150 in take-home pay; it costs only $132 ($150 &minus; $18).
+        With a $150/paycheck 401(k) contribution, the per-paycheck withholding drops from $216.15 to $198.15 &mdash; a <strong>$18.00 reduction in federal tax</strong> per paycheck. That&rsquo;s because 6% of $150 falls in the 12% bracket, so 12% &times; $150 = $18.00. The 401(k) contribution doesn&rsquo;t cost $150 in take-home pay; it costs only $132 ($150 &minus; $18).
       </p>
 
       {/* Comparison summary box */}
@@ -415,9 +417,9 @@ export default function HowToCalculateFederalTaxWithholding() {
               {[
                 ['Gross pay', '$2,500.00', '$2,500.00'],
                 ['401(k) contribution', '$0.00', '−$150.00'],
-                ['Federal tax withheld', '−$221.60', '−$203.60'],
+                ['Federal tax withheld', '−$216.15', '−$198.15'],
                 ['FICA (Social Security + Medicare)', '−$191.25', '−$191.25'],
-                ['Estimated net pay', '~$2,087', '~$1,955'],
+                ['Estimated net pay', '~$2,093', '~$1,961'],
               ].map(([item, a, b], i) => (
                 <tr key={item} style={{ background: i % 2 === 0 ? '#fff' : '#f8fafc' }}>
                   <td style={{ padding: '0.5rem 0.75rem', color: '#475569' }}>{item}</td>
@@ -462,13 +464,13 @@ export default function HowToCalculateFederalTaxWithholding() {
           </thead>
           <tbody>
             {[
-              ['$35,000', '$1,346.15', '$67.31', '$1,750', '5.0%'],
-              ['$50,000', '$1,923.08', '$143.85', '$3,740', '7.5%'],
-              ['$65,000', '$2,500.00', '$221.60', '$5,762', '8.9%'],
-              ['$80,000', '$3,076.92', '$325.12', '$8,453', '10.6%'],
-              ['$100,000', '$3,846.15', '$453.85', '$11,800', '11.8%'],
-              ['$120,000', '$4,615.38', '$599.54', '$15,588', '13.0%'],
-              ['$150,000', '$5,769.23', '$838.31', '$21,796', '14.5%'],
+              ['$35,000', '$1,346.15', '$77.69', '$2,020', '5.8%'],
+              ['$50,000', '$1,923.08', '$146.92', '$3,820', '7.6%'],
+              ['$65,000', '$2,500.00', '$216.15', '$5,620', '8.6%'],
+              ['$80,000', '$3,076.92', '$337.31', '$8,770', '11.0%'],
+              ['$100,000', '$3,846.15', '$506.54', '$13,170', '13.2%'],
+              ['$120,000', '$4,615.38', '$675.77', '$17,570', '14.6%'],
+              ['$150,000', '$5,769.23', '$951.31', '$24,734', '16.5%'],
             ].map(([salary, gross, tax, annual, rate], i) => (
               <tr key={salary} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontWeight: 600, color: '#1e293b', fontFamily: "'JetBrains Mono', monospace" }}>{salary}</td>

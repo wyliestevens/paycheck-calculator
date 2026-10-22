@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'How Overtime Pay Is Taxed in 2026',
+  title: { absolute: 'How Overtime Pay Is Taxed in 2026' },
   description:
     'Overtime is not taxed at a special rate — it is ordinary income. Here is exactly how overtime gets taxed, why withholding looks higher on your check, and a worked dollar example at $20/hr.',
   alternates: { canonical: '/blog/how-overtime-pay-is-taxed' },
   keywords:
     'how overtime is taxed, overtime tax rate 2026, overtime pay taxes, overtime withholding, is overtime taxed more, overtime take-home pay, FLSA overtime',
   openGraph: {
+    type: 'article',
+    url: '/blog/how-overtime-pay-is-taxed',
+    images: [{ url: '/og/blog/how-overtime-pay-is-taxed', width: 1200, height: 630 }],
     title: 'How Overtime Pay Is Taxed in 2026',
     description:
       'Overtime is not taxed at a special rate. Here is how it actually works — with a real dollar example showing exactly what you keep.',
@@ -70,9 +74,7 @@ export default function HowOvertimePayIsTaxed() {
         How Overtime Pay Is Taxed in 2026
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published June 5, 2026 &middot; 8 min read
-      </p>
+      <ArticleMeta slug="how-overtime-pay-is-taxed" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         One of the most persistent myths in personal finance is that overtime pay is taxed at a dramatically higher rate &mdash; so much higher that it is &ldquo;not worth it&rdquo; to put in extra hours. Some workers believe overtime is taxed at 50% or more. Others have seen their overtime check and noticed the deductions looked unusually large. The good news: <strong>overtime is not taxed at any special rate</strong>. It is taxed as ordinary income, just like the rest of your wages.
@@ -135,13 +137,13 @@ export default function HowOvertimePayIsTaxed() {
           </thead>
           <tbody>
             {[
-              ['10%', '$0 – $11,925'],
-              ['12%', '$11,925 – $48,475'],
-              ['22%', '$48,475 – $103,350'],
-              ['24%', '$103,350 – $197,300'],
-              ['32%', '$197,300 – $250,525'],
-              ['35%', '$250,525 – $626,350'],
-              ['37%', 'Over $626,350'],
+              ['10%', '$0 – $12,400'],
+              ['12%', '$12,400 – $50,400'],
+              ['22%', '$50,400 – $105,700'],
+              ['24%', '$105,700 – $201,775'],
+              ['32%', '$201,775 – $256,225'],
+              ['35%', '$256,225 – $640,600'],
+              ['37%', 'Over $640,600'],
             ].map(([rate, range], i) => (
               <tr key={rate} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', fontFamily: "'JetBrains Mono', monospace", color: '#1e293b', fontWeight: 600 }}>{rate}</td>
@@ -153,14 +155,14 @@ export default function HowOvertimePayIsTaxed() {
       </div>
 
       <p style={{ fontSize: '0.875rem', lineHeight: 1.6, color: '#94a3b8', marginBottom: '1.5rem' }}>
-        These brackets apply to taxable income &mdash; your total wages minus the standard deduction ($15,000 for single filers in 2026).{' '}
+        These brackets apply to taxable income &mdash; your total wages minus the standard deduction ($16,100 for single filers in 2026).{' '}
         <a href="https://www.irs.gov/taxtopics/tc409" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb' }}>
           (IRS &mdash; Topic 409)
         </a>
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        So if your regular wages fall in the 12% bracket, your overtime wages are also taxed at 12% (or perhaps 22% if the extra income pushes your total above $48,475 for the year). There is no &ldquo;50% overtime tax bracket.&rdquo; The highest federal rate on any income is 37%, and that only applies to taxable income above $626,350.
+        So if your regular wages fall in the 12% bracket, your overtime wages are also taxed at 12% (or perhaps 22% if the extra income pushes your total above $50,400 for the year). There is no &ldquo;50% overtime tax bracket.&rdquo; The highest federal rate on any income is 37%, and that only applies to taxable income above $640,600.
       </p>
 
       {/* Section 3 */}
@@ -204,7 +206,7 @@ export default function HowOvertimePayIsTaxed() {
       </p>
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
-        <li style={{ marginBottom: '0.5rem' }}><strong>Social Security:</strong> 6.2% on wages up to $168,600 for the year</li>
+        <li style={{ marginBottom: '0.5rem' }}><strong>Social Security:</strong> 6.2% on wages up to $184,500 for the year</li>
         <li style={{ marginBottom: '0.5rem' }}><strong>Medicare:</strong> 1.45% on all wages (no cap)</li>
         <li style={{ marginBottom: '0.5rem' }}><strong>Combined FICA:</strong> 7.65%</li>
       </ul>
@@ -287,10 +289,10 @@ export default function HowOvertimePayIsTaxed() {
             {[
               ['Weekly gross pay', '$800.00', '$1,100.00'],
               ['Annualized (× 52)', '$41,600', '$57,200'],
-              ['Minus standard deduction', '− $15,000', '− $15,000'],
-              ['Estimated taxable income', '$26,600', '$42,200'],
-              ['Estimated annual tax', '$2,953.50', '$4,825.50'],
-              ['Weekly withholding (÷ 52)', '$56.80', '$92.80'],
+              ['Minus standard deduction', '− $16,100', '− $16,100'],
+              ['Estimated taxable income', '$25,500', '$41,100'],
+              ['Estimated annual tax', '$2,812.00', '$4,684.00'],
+              ['Weekly withholding (÷ 52)', '$54.08', '$90.08'],
             ].map(([step, regular, ot], i) => (
               <tr key={step} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569' }}>{step}</td>
@@ -303,7 +305,7 @@ export default function HowOvertimePayIsTaxed() {
       </div>
 
       <p style={{ fontSize: '0.875rem', lineHeight: 1.6, color: '#94a3b8', marginBottom: '1.5rem' }}>
-        Annual tax figures: 10% &times; $11,925 + 12% &times; remaining taxable income. All income in this example falls within the 10% and 12% federal brackets.
+        Annual tax figures: 10% &times; $12,400 + 12% &times; remaining taxable income. All income in this example falls within the 10% and 12% federal brackets.
       </p>
 
       <h3 style={{ fontSize: '1.125rem', fontWeight: 600, color: '#1e293b', marginTop: '1.5rem', marginBottom: '0.75rem' }}>
@@ -330,10 +332,10 @@ export default function HowOvertimePayIsTaxed() {
           <tbody>
             {[
               ['Gross Pay', '$800.00', '$1,100.00', '+$300.00'],
-              ['Federal Income Tax', '−$56.80', '−$92.80', '+$36.00'],
+              ['Federal Income Tax', '−$54.08', '−$90.08', '+$36.00'],
               ['Social Security (6.2%)', '−$49.60', '−$68.20', '+$18.60'],
               ['Medicare (1.45%)', '−$11.60', '−$15.95', '+$4.35'],
-              ['Total Deductions (fed only)', '−$118.00', '−$176.95', '+$58.95'],
+              ['Total Deductions (fed only)', '−$115.28', '−$174.23', '+$58.95'],
             ].map(([label, regular, ot, diff], i) => (
               <tr key={label} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569' }}>{label}</td>
@@ -344,8 +346,8 @@ export default function HowOvertimePayIsTaxed() {
             ))}
             <tr style={{ background: '#fef9c3' }}>
               <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', fontWeight: 700, color: '#1e293b' }}>Net Take-Home (federal only)</td>
-              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>$682.00</td>
-              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>$923.05</td>
+              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>$684.72</td>
+              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>$925.77</td>
               <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>+$241.05</td>
             </tr>
           </tbody>
@@ -370,7 +372,7 @@ export default function HowOvertimePayIsTaxed() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        <strong>1. Only the income above the bracket threshold gets taxed at the higher rate.</strong> Suppose your regular salary is $46,000 (taxable income about $31,000, all in the 12% bracket). If overtime pushes your total income to $55,000 (taxable income ~$40,000), only the ~$3,525 above the 12%/22% boundary ($48,475 taxable) gets taxed at 22%. The vast majority of your income &mdash; including most of your overtime &mdash; is still taxed at 10% and 12%.
+        <strong>1. Only the income above the bracket threshold gets taxed at the higher rate.</strong> Suppose your regular salary is $46,000 (taxable income about $29,900, all in the 12% bracket). If overtime pushes your total income to $70,000 (taxable income ~$53,900), only the ~$3,500 above the 12%/22% boundary ($50,400 taxable) gets taxed at 22%. The vast majority of your income &mdash; including most of your overtime &mdash; is still taxed at 10% and 12%.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
@@ -378,7 +380,7 @@ export default function HowOvertimePayIsTaxed() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        For reference, someone earning $50,000 annually in regular wages would need to work an enormous amount of overtime to approach the 22% bracket at all &mdash; and even then, only dollars above $48,475 taxable would face the higher rate.
+        For reference, someone earning $50,000 annually in regular wages would need to work an enormous amount of overtime to approach the 22% bracket at all &mdash; and even then, only dollars above $50,400 taxable would face the higher rate.
       </p>
 
       {/* Section 8 */}
@@ -433,9 +435,9 @@ export default function HowOvertimePayIsTaxed() {
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         The 2026 401(k) employee contribution limit is{' '}
         <a href="https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-401k-and-profit-sharing-plan-contribution-limits" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
-          $23,500 per year
+          $24,500 per year
         </a>{' '}
-        ($31,000 if you are 50 or older and eligible for catch-up contributions).
+        ($32,500 if you are 50 or older and eligible for catch-up contributions).
       </p>
 
       <h3 style={{ fontSize: '1.125rem', fontWeight: 600, color: '#1e293b', marginTop: '1.5rem', marginBottom: '0.75rem' }}>
@@ -443,7 +445,7 @@ export default function HowOvertimePayIsTaxed() {
       </h3>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Keep a running tally of your year-to-date gross earnings. Once your wages approach $168,600, your Social Security withholding stops for the remainder of the year, which will noticeably increase your take-home pay. Also watch your cumulative earnings if you work for multiple employers &mdash; each employer withholds Social Security independently. If combined wages exceed $168,600, you will over-pay Social Security taxes and can claim a credit on your tax return.{' '}
+        Keep a running tally of your year-to-date gross earnings. Once your wages approach $184,500, your Social Security withholding stops for the remainder of the year, which will noticeably increase your take-home pay. Also watch your cumulative earnings if you work for multiple employers &mdash; each employer withholds Social Security independently. If combined wages exceed $184,500, you will over-pay Social Security taxes and can claim a credit on your tax return.{' '}
         <a href="https://www.irs.gov/taxtopics/tc608" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS &mdash; Topic 608: Excess Social Security Tax Withheld)
         </a>

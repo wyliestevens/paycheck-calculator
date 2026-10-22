@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Per Diem Pay: What\'s Taxable and What\'s Not (2026)',
+  title: { absolute: 'Per Diem Pay: What\'s Taxable and What\'s Not (2026)' },
   description:
     'Per diem is completely tax-free under a valid accountable plan — but exceed the federal rate and the IRS treats the excess as wages. Full 2026 guide with worked examples.',
   alternates: { canonical: '/blog/per-diem-pay-taxes-2026' },
   keywords:
     'per diem taxable 2026, is per diem income, per diem tax rules, accountable plan per diem, GSA per diem rates 2026, per diem W-2, per diem reimbursement taxes, high-low per diem method',
   openGraph: {
+    type: 'article',
+    url: '/blog/per-diem-pay-taxes-2026',
+    images: [{ url: '/og/blog/per-diem-pay-taxes-2026', width: 1200, height: 630 }],
     title: 'Per Diem Pay: What\'s Taxable and What\'s Not (2026)',
     description:
       'Per diem under a valid accountable plan is completely tax-free — but exceed the federal rate and the excess becomes taxable wages. Full 2026 guide.',
@@ -72,9 +76,7 @@ export default function PerDiemPayTaxes2026() {
         Per Diem Pay: What&rsquo;s Taxable and What&rsquo;s Not (2026)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published October 21, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="per-diem-pay-taxes-2026" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         Per diem payments are fixed daily allowances employers give employees to cover lodging, meals, and incidentals while traveling for work. They can be completely <strong>tax-free</strong> &mdash; or completely <strong>taxable</strong> &mdash; and the difference comes down to one rule: whether your employer runs a qualified <strong>accountable plan</strong>. Under a properly structured plan, per diem up to the federal government&rsquo;s daily rates never shows up as income. Exceed those rates &mdash; or skip the plan requirements &mdash; and the IRS treats the payments as ordinary wages.

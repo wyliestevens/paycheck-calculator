@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'How to Calculate Your Hourly Rate from a Salary (2026 Guide)',
+  title: { absolute: 'How to Calculate Your Hourly Rate from a Salary (2026 Guide)' },
   description:
     'Divide your annual salary by 2,080 to get your hourly rate — but that\'s just the start. Learn the exact formula, see a quick reference table, and find your real after-tax hourly pay.',
   alternates: { canonical: '/blog/how-to-calculate-hourly-rate-from-salary' },
   keywords:
     'how to calculate hourly rate from salary, salary to hourly calculator, annual salary to hourly, hourly rate from annual salary 2026, salary divided by 2080, convert salary to hourly',
   openGraph: {
+    type: 'article',
+    url: '/blog/how-to-calculate-hourly-rate-from-salary',
+    images: [{ url: '/og/blog/how-to-calculate-hourly-rate-from-salary', width: 1200, height: 630 }],
     title: 'How to Calculate Your Hourly Rate from a Salary (2026 Guide)',
     description:
       'The formula is simple: annual salary ÷ 2,080. But your real hourly take-home pay after taxes can be 25–35% lower. Here\'s the full picture.',
@@ -76,9 +80,7 @@ export default function HourlyRateFromSalary() {
         How to Calculate Your Hourly Rate from a Salary (2026 Guide)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published June 15, 2026 &middot; 8 min read
-      </p>
+      <ArticleMeta slug="how-to-calculate-hourly-rate-from-salary" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         Whether you are comparing a salaried job offer to an hourly contract, trying to figure out what your time is really worth, or just curious how your annual pay translates to an hourly number, the math is straightforward. <strong>Divide your annual salary by 2,080</strong> and you have your gross hourly rate.

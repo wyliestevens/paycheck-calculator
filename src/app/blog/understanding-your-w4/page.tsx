@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Understanding Your W-4: How to Fill It Out Correctly (2026)',
+  title: { absolute: 'Understanding Your W-4: How to Fill It Out Correctly (2026)' },
   description:
     'A step-by-step guide to filling out the 2026 W-4 form correctly — including what each step means, worked examples, and how your answers affect your paycheck.',
   alternates: { canonical: '/blog/understanding-your-w4' },
   keywords:
     'how to fill out W-4, W-4 2026, W-4 instructions, federal tax withholding form, W-4 multiple jobs, W-4 dependents, withholding allowances',
   openGraph: {
+    type: 'article',
+    url: '/blog/understanding-your-w4',
+    images: [{ url: '/og/blog/understanding-your-w4', width: 1200, height: 630 }],
     title: 'Understanding Your W-4: How to Fill It Out Correctly (2026)',
     description:
       'Step-by-step W-4 instructions with real examples showing how each step changes what comes out of your paycheck.',
@@ -82,9 +86,7 @@ export default function UnderstandingYourW4() {
         Understanding Your W-4: How to Fill It Out Correctly (2026)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published June 2, 2026 &middot; 8 min read
-      </p>
+      <ArticleMeta slug="understanding-your-w4" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         Every time you start a new job &mdash; or experience a major life change &mdash; your employer hands you a <strong>W-4 form</strong>. How you fill it out determines exactly how much federal income tax gets withheld from every paycheck. Too little withheld and you owe a surprise tax bill in April. Too much and you are giving the IRS an interest-free loan for the year.
@@ -254,7 +256,7 @@ export default function UnderstandingYourW4() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1rem' }}>
-        The IRS uses annualized wages and a standard deduction to calculate withholding. For a single filer in 2026, the standard deduction is <strong>$15,000</strong>, leaving $50,000 of taxable income. The federal tax on that amount is calculated using the 2026 tax brackets:
+        The IRS uses annualized wages and a standard deduction to calculate withholding. For a single filer in 2026, the standard deduction is <strong>$16,100</strong>, leaving $48,900 of taxable income. The federal tax on that amount is calculated using the 2026 tax brackets:
       </p>
 
       <div style={{ overflowX: 'auto', marginBottom: '1.5rem' }}>
@@ -276,10 +278,9 @@ export default function UnderstandingYourW4() {
           </thead>
           <tbody>
             {[
-              ['$0 – $11,925', '10%', '$11,925', '$1,192.50'],
-              ['$11,925 – $48,475', '12%', '$36,550', '$4,386.00'],
-              ['$48,475 – $50,000', '22%', '$1,525', '$335.50'],
-              ['Above $50,000', '22%', '$0', '$0.00'],
+              ['$0 – $12,400', '10%', '$12,400', '$1,240.00'],
+              ['$12,400 – $48,900', '12%', '$36,500', '$4,380.00'],
+              ['Above $48,900 (22% bracket starts at $50,400)', '22%', '$0', '$0.00'],
             ].map(([bracket, rate, amount, tax], i) => (
               <tr key={bracket} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.875rem' }}>{bracket}</td>
@@ -290,14 +291,14 @@ export default function UnderstandingYourW4() {
             ))}
             <tr style={{ background: '#eff6ff' }}>
               <td colSpan={3} style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', fontWeight: 700, color: '#1e293b' }}>Total Annual Federal Tax</td>
-              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#1e293b' }}>$5,914.00</td>
+              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#1e293b' }}>$5,620.00</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1rem' }}>
-        That comes to <strong>$227.46 per biweekly paycheck</strong> ($5,914 &divide; 26). Now see how Alex&rsquo;s W-4 choices change that number:
+        That comes to <strong>$216.15 per biweekly paycheck</strong> ($5,620 &divide; 26). Now see how Alex&rsquo;s W-4 choices change that number:
       </p>
 
       <div style={{ overflowX: 'auto', marginBottom: '1.5rem' }}>
@@ -319,11 +320,11 @@ export default function UnderstandingYourW4() {
           </thead>
           <tbody>
             {[
-              ['Single, no adjustments (baseline)', '$5,914', '$227.46', '—'],
-              ['Single + 2 qualifying children (Step 3)', '$1,914', '$73.62', '−$153.85/check'],
-              ['Single + $3,000 extra deductions (Step 4b)', '$5,254', '$202.08', '−$25.38/check'],
-              ['Single + $50/check extra withheld (Step 4c)', '$7,214', '$277.46', '+$50.00/check'],
-              ['Married, one earner, no adjustments', '$2,854', '$109.77', '−$117.69/check'],
+              ['Single, no adjustments (baseline)', '$5,620', '$216.15', '—'],
+              ['Single + 2 qualifying children (Step 3)', '$1,620', '$62.31', '−$153.85/check'],
+              ['Single + $3,000 extra deductions (Step 4b)', '$5,260', '$202.31', '−$13.85/check'],
+              ['Single + $50/check extra withheld (Step 4c)', '$6,920', '$266.15', '+$50.00/check'],
+              ['Married, one earner, no adjustments', '$3,440', '$132.31', '−$83.85/check'],
             ].map(([scenario, annual, perCheck, diff], i) => (
               <tr key={scenario} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569' }}>{scenario}</td>
@@ -337,7 +338,7 @@ export default function UnderstandingYourW4() {
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The &ldquo;Married, one earner&rdquo; scenario assumes Alex&rsquo;s spouse has no income. With the married filing jointly status and a $30,000 standard deduction, the taxable income drops to $35,000, which is taxed at lower rates. This explains why married employees often see significantly more money in each check &mdash; not because they are being taxed less, but because their withholding more accurately reflects their lower expected tax bill.
+        The &ldquo;Married, one earner&rdquo; scenario assumes Alex&rsquo;s spouse has no income. With the married filing jointly status and a $32,200 standard deduction, the taxable income drops to $32,800, which is taxed at lower rates. This explains why married employees often see significantly more money in each check &mdash; not because they are being taxed less, but because their withholding more accurately reflects their lower expected tax bill.
       </p>
 
       {/* Section 5: Common Mistakes */}

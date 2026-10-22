@@ -4,6 +4,8 @@ import { blogPostingSchema, breadcrumbSchema, canonicalUrl } from '@/lib/seo'
 interface Props {
   /** Slug of the post currently being read, so it is excluded from suggestions. */
   current: string
+  /** Optional hand-picked related slugs (shown first, in order); the newest guides fill any remaining slots. */
+  related?: string[]
 }
 
 function formatDate(d: string): string {
@@ -15,13 +17,16 @@ function formatDate(d: string): string {
  * post's BlogPosting and BreadcrumbList JSON-LD. Rendered inside the post's
  * <article>, so each post gets structured data without editing the post file.
  */
-export default function ArticleFooter({ current }: Props) {
+export default function ArticleFooter({ current, related: picked = [] }: Props) {
   const post = blogPosts.find((p) => p.slug === current)
 
-  const related = [...blogPosts]
-    .filter((p) => p.slug !== current)
+  const chosen = picked
+    .map((slug) => blogPosts.find((p) => p.slug === slug))
+    .filter((p): p is (typeof blogPosts)[number] => !!p && p.slug !== current)
+  const newest = [...blogPosts]
+    .filter((p) => p.slug !== current && !chosen.some((c) => c.slug === p.slug))
     .sort((a, b) => (a.publishDate < b.publishDate ? 1 : -1))
-    .slice(0, 3)
+  const related = [...chosen, ...newest].slice(0, Math.max(3, chosen.length))
 
   return (
     <>

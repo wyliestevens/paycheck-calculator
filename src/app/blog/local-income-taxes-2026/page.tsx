@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Local Income Taxes: How NYC, Philadelphia, and City Taxes Affect Your Paycheck (2026)',
+  title: { absolute: 'Local Income Taxes: How NYC, Philadelphia, and City Taxes Affect Your Paycheck (2026)' },
   description:
     'NYC city tax costs $2,000–$2,800 a year on a $70,000 salary. Philadelphia\'s wage tax hits commuters too. Here\'s how local income taxes work and what you actually owe.',
   alternates: { canonical: '/blog/local-income-taxes-2026' },
   keywords:
     'local income tax 2026, NYC city tax, Philadelphia wage tax 2026, Ohio municipal income tax, city income tax paycheck, local tax withholding, city tax on paycheck, local income tax by state',
   openGraph: {
+    type: 'article',
+    url: '/blog/local-income-taxes-2026',
+    images: [{ url: '/og/blog/local-income-taxes-2026', width: 1200, height: 630 }],
     title: 'Local Income Taxes: How NYC, Philadelphia, and City Taxes Affect Your Paycheck (2026)',
     description:
       'NYC city tax costs $2,000–$2,800 a year on a $70,000 salary. Philadelphia\'s wage tax hits commuters too. Here\'s exactly how local income taxes work.',
@@ -77,9 +81,7 @@ export default function LocalIncomeTaxes2026() {
         Local Income Taxes: How NYC, Philadelphia, and City Taxes Affect Your Paycheck (2026)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published October 20, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="local-income-taxes-2026" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         You already know about federal income tax and state income tax. But roughly <strong>4,700 cities, counties, and school districts</strong> in the United States charge their own income tax on top of both. If you live or work in New York City, Philadelphia, Columbus, Detroit, or dozens of other places, a third line item quietly drains your paycheck every pay period &mdash; and many workers never notice it until they see their first pay stub or owe a surprise balance at tax time.

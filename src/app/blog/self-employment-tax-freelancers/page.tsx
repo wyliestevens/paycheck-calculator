@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Self-Employment Tax: What Freelancers Pay in 2026',
+  title: { absolute: 'Self-Employment Tax: What Freelancers Pay in 2026' },
   description:
     'Freelancers pay 15.3% self-employment tax on top of income taxes. Here\'s exactly how it works, how to calculate it, and strategies to legally reduce what you owe.',
   alternates: { canonical: '/blog/self-employment-tax-freelancers' },
   keywords:
     'self-employment tax 2026, freelancer taxes, self-employment tax rate, SE tax calculator, quarterly estimated taxes, 1099 self-employment tax, freelance tax rate 2026',
   openGraph: {
+    type: 'article',
+    url: '/blog/self-employment-tax-freelancers',
+    images: [{ url: '/og/blog/self-employment-tax-freelancers', width: 1200, height: 630 }],
     title: 'Self-Employment Tax: What Freelancers Pay in 2026',
     description:
       'Freelancers pay 15.3% self-employment tax on top of income taxes. Here\'s the full breakdown with a worked example at $75,000 in freelance income.',
@@ -80,9 +84,7 @@ export default function SelfEmploymentTaxFreelancers() {
         Self-Employment Tax: What Freelancers Pay in 2026
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published June 22, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="self-employment-tax-freelancers" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         When you work for an employer, your taxes get split in a way you might not even notice. You pay half of Social Security and Medicare taxes, and your employer quietly pays the other half. But the moment you go freelance, you become both the employee and the employer — and you owe <strong>both halves yourself</strong>.
@@ -159,8 +161,8 @@ export default function SelfEmploymentTaxFreelancers() {
           </thead>
           <tbody>
             {[
-              ['Social Security (employee)', '6.2%', '$176,100'],
-              ['Social Security (employer)', '6.2%', '$176,100'],
+              ['Social Security (employee)', '6.2%', '$184,500'],
+              ['Social Security (employer)', '6.2%', '$184,500'],
               ['Medicare (employee)', '1.45%', 'No cap'],
               ['Medicare (employer)', '1.45%', 'No cap'],
             ].map(([label, rate, cap], i) => (
@@ -173,14 +175,14 @@ export default function SelfEmploymentTaxFreelancers() {
             <tr style={{ background: '#faf5ff' }}>
               <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', fontWeight: 700, color: '#1e293b' }}>Total SE Tax</td>
               <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#7c3aed' }}>15.3%</td>
-              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', color: '#475569' }}>12.4% capped at $176,100</td>
+              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', color: '#475569' }}>12.4% capped at $184,500</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The Social Security portion (12.4%) only applies to the first <strong>$176,100</strong> of net self-employment income in 2026. Once you earn above that threshold, only Medicare (2.9%) continues — and if you earn above <strong>$200,000</strong>, an additional 0.9% Medicare surtax kicks in.{' '}
+        The Social Security portion (12.4%) only applies to the first <strong>$184,500</strong> of net self-employment income in 2026. Once you earn above that threshold, only Medicare (2.9%) continues — and if you earn above <strong>$200,000</strong>, an additional 0.9% Medicare surtax kicks in.{' '}
         <a href="https://www.ssa.gov/oact/cola/cbb.html" target="_blank" rel="noopener noreferrer" style={{ color: '#7c3aed', textDecoration: 'underline' }}>
           (SSA.gov &mdash; 2026 Contribution and Benefit Base)
         </a>
@@ -288,10 +290,10 @@ export default function SelfEmploymentTaxFreelancers() {
               ['Net self-employment income', '$75,000', false],
               ['SE tax (15.3% × 92.35%)', '−$10,597', true],
               ['Deduction: half of SE tax', '−$5,299', false],
-              ['Standard deduction (single, 2026)', '−$15,000', false],
-              ['Federal taxable income', '$54,104', false],
-              ['Federal income tax (estimated)', '−$6,726', true],
-              ['Total federal taxes (SE + income)', '−$17,323', true],
+              ['Standard deduction (single, 2026)', '−$16,100', false],
+              ['Federal taxable income', '$53,601', false],
+              ['Federal income tax (estimated)', '−$6,504', true],
+              ['Total federal taxes (SE + income)', '−$17,101', true],
             ].map(([label, amount, isDeduction], i) => (
               <tr key={label as string} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569' }}>{label}</td>
@@ -300,14 +302,14 @@ export default function SelfEmploymentTaxFreelancers() {
             ))}
             <tr style={{ background: '#ecfdf5' }}>
               <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', fontWeight: 700, color: '#1e293b' }}>Estimated take-home (federal only)</td>
-              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>$57,677</td>
+              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>$57,899</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        So on $75,000 of freelance income, roughly <strong>$17,323 goes to federal taxes alone</strong> — that is about 23.1% of total income. State income tax would add more on top of that, depending on where you live. A freelancer in{' '}
+        So on $75,000 of freelance income, roughly <strong>$17,101 goes to federal taxes alone</strong> — that is about 22.8% of total income. State income tax would add more on top of that, depending on where you live. A freelancer in{' '}
         <a href="/california" style={{ color: '#7c3aed', textDecoration: 'underline' }}>California</a>{' '}
         could pay another $4,000 to $5,000 in state taxes, while a freelancer in{' '}
         <a href="/texas" style={{ color: '#7c3aed', textDecoration: 'underline' }}>Texas</a>,{' '}
@@ -417,7 +419,7 @@ export default function SelfEmploymentTaxFreelancers() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        A <strong>Solo 401(k)</strong> is even more flexible. It allows you to contribute both as an &ldquo;employee&rdquo; (up to $23,500 in 2026) and as an &ldquo;employer&rdquo; (up to 25% of net SE income), with a combined cap of $70,000.{' '}
+        A <strong>Solo 401(k)</strong> is even more flexible. It allows you to contribute both as an &ldquo;employee&rdquo; (up to $24,500 in 2026) and as an &ldquo;employer&rdquo; (up to 25% of net SE income), with a combined cap of $72,000.{' '}
         <a href="https://www.irs.gov/retirement-plans/one-participant-401k-plans" target="_blank" rel="noopener noreferrer" style={{ color: '#7c3aed', textDecoration: 'underline' }}>
           (IRS &mdash; One-Participant 401(k) Plans)
         </a>
@@ -484,7 +486,7 @@ export default function SelfEmploymentTaxFreelancers() {
               ['Funds', 'Social Security & Medicare', 'General federal programs'],
               ['Rate', '15.3% (flat)', '10% – 37% (progressive)'],
               ['Applies to', 'Net SE income × 92.35%', 'Adjusted gross income minus deductions'],
-              ['Standard deduction?', 'No', 'Yes ($15,000 single in 2026)'],
+              ['Standard deduction?', 'No', 'Yes ($16,100 single in 2026)'],
               ['State version?', 'No (federal only)', 'Yes (most states)'],
             ].map(([feature, se, income], i) => (
               <tr key={feature} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>

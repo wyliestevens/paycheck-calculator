@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Military Pay and Taxes: A Complete Guide (2026)',
+  title: { absolute: 'Military Pay and Taxes: A Complete Guide (2026)' },
   description:
     'Military compensation includes taxable basic pay plus tax-free allowances like BAH and BAS. Learn exactly what gets taxed, how combat zones change everything, and see a full worked example for an E-5 sergeant.',
   alternates: { canonical: '/blog/military-pay-and-taxes' },
   keywords:
     'military pay taxes 2026, military tax exemption, BAH taxable, BAS taxable, combat zone tax exclusion, armed forces taxes, military pay guide, military TSP, military allowances tax',
   openGraph: {
+    type: 'article',
+    url: '/blog/military-pay-and-taxes',
+    images: [{ url: '/og/blog/military-pay-and-taxes', width: 1200, height: 630 }],
     title: 'Military Pay and Taxes: A Complete Guide (2026)',
     description:
       'Military pay includes taxable and tax-free components. See the full breakdown — with a worked example showing how an E-5 sergeant pays less than 6% in federal taxes on total compensation.',
@@ -90,9 +94,7 @@ export default function MilitaryPayAndTaxes() {
         Military Pay and Taxes: A Complete Guide (2026)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published July 7, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="military-pay-and-taxes" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         Military compensation is not a single paycheck &mdash; it is a package made up of several components, some of which are fully taxable, and others that are completely tax-free. Understanding the difference is essential for service members who want to know what they are actually earning and how taxes affect their take-home pay.
@@ -363,9 +365,9 @@ export default function MilitaryPayAndTaxes() {
         }}
       >
         <div>Taxable Income (Basic Pay):&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$35,772</div>
-        <div style={{ color: '#dc2626' }}>&minus; Standard Deduction (MFJ 2026):&nbsp;&nbsp;$30,000</div>
-        <div style={{ borderTop: '1px solid #e2e8f0', paddingTop: '0.5rem', marginTop: '0.25rem' }}>Federal Taxable Income:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$5,772</div>
-        <div style={{ color: '#dc2626' }}>Federal Income Tax (10% bracket):&nbsp;&nbsp;$577</div>
+        <div style={{ color: '#dc2626' }}>&minus; Standard Deduction (MFJ 2026):&nbsp;&nbsp;$32,200</div>
+        <div style={{ borderTop: '1px solid #e2e8f0', paddingTop: '0.5rem', marginTop: '0.25rem' }}>Federal Taxable Income:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$3,572</div>
+        <div style={{ color: '#dc2626' }}>Federal Income Tax (10% bracket):&nbsp;&nbsp;$357</div>
       </div>
 
       <h3 style={{ fontSize: '1.125rem', fontWeight: 600, color: '#1e293b', marginTop: '1.5rem', marginBottom: '0.75rem' }}>
@@ -416,7 +418,7 @@ export default function MilitaryPayAndTaxes() {
           </thead>
           <tbody>
             {[
-              ['Federal Income Tax', '$577', '0.9%'],
+              ['Federal Income Tax', '$357', '0.5%'],
               ['FICA (Social Security + Medicare)', '$2,736', '4.2%'],
             ].map(([tax, amount, pct], i) => (
               <tr key={tax} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
@@ -427,7 +429,7 @@ export default function MilitaryPayAndTaxes() {
             ))}
             <tr style={{ background: '#fef2f2' }}>
               <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', fontWeight: 700, color: '#1e293b' }}>Total Federal Taxes</td>
-              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>$3,313</td>
+              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>$3,093</td>
               <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>5.1%</td>
             </tr>
           </tbody>
@@ -435,7 +437,7 @@ export default function MilitaryPayAndTaxes() {
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        This E-5 Sergeant earns <strong>$65,388 in total annual compensation</strong> but pays only <strong>$3,313 in federal taxes</strong> &mdash; an effective rate of just 5.1% on total compensation. A civilian earning $65,388 with no special allowances (filing MFJ) would owe roughly $6,200 in federal income tax and $5,002 in FICA, for a combined $11,202 in federal taxes &mdash; more than three times as much.
+        This E-5 Sergeant earns <strong>$65,388 in total annual compensation</strong> but pays only <strong>$3,093 in federal taxes</strong> &mdash; an effective rate of just 4.7% on total compensation. A civilian earning $65,388 with no special allowances (filing MFJ) would owe roughly $3,500 in federal income tax and $5,002 in FICA, for a combined $8,502 in federal taxes &mdash; nearly three times as much.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
@@ -496,24 +498,24 @@ export default function MilitaryPayAndTaxes() {
             <tr style={{ background: '#ffffff' }}>
               <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569' }}>No combat zone (12 months stateside)</td>
               <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$81,468</td>
-              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>$9,537</td>
+              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>$9,093</td>
             </tr>
             <tr style={{ background: '#f8fafc' }}>
               <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569' }}>6 months in combat zone (6 months excluded)</td>
               <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$40,734</td>
-              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>$2,850</td>
+              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>$2,708</td>
             </tr>
             <tr style={{ background: '#ecfdf5' }}>
               <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', fontWeight: 700, color: '#1e293b' }}>Tax savings from 6-month deployment</td>
               <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#1e293b' }}>&mdash;</td>
-              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>$6,687</td>
+              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>$6,385</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <p style={{ fontSize: '0.875rem', lineHeight: 1.6, color: '#94a3b8', marginBottom: '1.5rem' }}>
-        Both scenarios assume single filing status. Federal income tax calculated after $15,000 standard deduction.
+        Both scenarios assume single filing status. Federal income tax calculated after $16,100 standard deduction.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
@@ -585,7 +587,7 @@ export default function MilitaryPayAndTaxes() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        In 2026, the TSP contribution limit is <strong>$23,500</strong> (the same as the 401(k) limit for civilian employees). Service members aged 50 and older can make an additional catch-up contribution of $7,500.{' '}
+        In 2026, the TSP contribution limit is <strong>$24,500</strong> (the same as the 401(k) limit for civilian employees). Service members aged 50 and older can make an additional catch-up contribution of $8,000.{' '}
         <a href="https://www.tsp.gov/making-contributions/contribution-limits/" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (TSP.gov &mdash; Contribution Limits)
         </a>

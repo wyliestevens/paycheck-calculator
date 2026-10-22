@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Tax Extension 2026: How to Get More Time to File Your Federal Taxes',
+  title: { absolute: 'Tax Extension 2026: How to Get More Time to File Your Federal Taxes' },
   description:
     'Need more time to file your 2026 tax return? Form 4868 gives you an automatic 6-month extension — but it does NOT extend the time to pay. Here\'s exactly how it works.',
   alternates: { canonical: '/blog/tax-extension-how-to-file-2026' },
   keywords:
     'tax extension 2026, how to file tax extension, Form 4868, IRS extension deadline, October 15 tax deadline, automatic tax extension, state tax extension 2026',
   openGraph: {
+    type: 'article',
+    url: '/blog/tax-extension-how-to-file-2026',
+    images: [{ url: '/og/blog/tax-extension-how-to-file-2026', width: 1200, height: 630 }],
     title: 'Tax Extension 2026: How to Get More Time to File Your Federal Taxes',
     description:
       'Form 4868 gives you an automatic 6-month extension to file — but you still must pay by April 15. Here\'s the full guide with penalties and worked examples.',
@@ -75,9 +79,7 @@ export default function TaxExtension2026() {
         Tax Extension 2026: How to Get More Time to File Your Federal Taxes
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published October 5, 2026 &middot; 8 min read
-      </p>
+      <ArticleMeta slug="tax-extension-how-to-file-2026" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         Life gets busy. If you cannot finish your tax return by the April 15 deadline, the IRS gives you an easy way out: <strong>Form 4868</strong>, the Application for Automatic Extension of Time to File. Filing it takes about two minutes and buys you until <strong>October 15</strong> — a full six extra months.

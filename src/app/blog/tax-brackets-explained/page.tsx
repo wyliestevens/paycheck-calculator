@@ -1,12 +1,16 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Tax Brackets Explained: Why a Raise Won\'t Make You Poorer',
+  title: { absolute: 'Tax Brackets Explained: Why a Raise Won\'t Make You Poorer' },
   description: 'Worried a raise will push you into a higher tax bracket and lower your take-home pay? Learn how marginal tax brackets actually work — and why more income always means more money.',
   alternates: { canonical: '/blog/tax-brackets-explained' },
   keywords: 'tax brackets explained 2026, higher tax bracket raise, marginal tax rate, effective tax rate, does a raise increase taxes, tax brackets 2026, marginal vs effective tax rate',
   openGraph: {
+    type: 'article',
+    url: '/blog/tax-brackets-explained',
+    images: [{ url: '/og/blog/tax-brackets-explained', width: 1200, height: 630 }],
     title: 'Tax Brackets Explained: Why a Raise Won\'t Make You Poorer',
     description: 'Worried a raise will push you into a higher tax bracket? Here\'s how marginal taxation actually works — and why more income always means more take-home pay.',
   },
@@ -75,9 +79,7 @@ export default function TaxBracketsExplained() {
         Tax Brackets Explained: Why a Raise Won&rsquo;t Make You Poorer
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published May 28, 2026 &middot; 7 min read
-      </p>
+      <ArticleMeta slug="tax-brackets-explained" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         Every year, thousands of people turn down raises, avoid overtime, or make career decisions based on a fear that earning more will push them into a higher tax bracket &mdash; and leave them with <em>less</em> money than before. This fear is one of the most widespread myths in personal finance, and it is completely wrong.
@@ -118,13 +120,13 @@ export default function TaxBracketsExplained() {
           </thead>
           <tbody>
             {[
-              ['10%', '$0 – $11,925', 'Up to $1,192.50'],
-              ['12%', '$11,926 – $48,475', 'Up to $4,386.00'],
-              ['22%', '$48,476 – $103,350', 'Up to $12,075.68'],
-              ['24%', '$103,351 – $197,300', 'Up to $22,543.76'],
-              ['32%', '$197,301 – $250,525', 'Up to $17,031.68'],
-              ['35%', '$250,526 – $626,350', 'Up to $131,531.10'],
-              ['37%', 'Over $626,350', '37¢ on every dollar above'],
+              ['10%', '$0 – $12,400', 'Up to $1,240.00'],
+              ['12%', '$12,401 – $50,400', 'Up to $4,560.00'],
+              ['22%', '$50,401 – $105,700', 'Up to $12,166.00'],
+              ['24%', '$105,701 – $201,775', 'Up to $23,058.00'],
+              ['32%', '$201,776 – $256,225', 'Up to $17,424.00'],
+              ['35%', '$256,226 – $640,600', 'Up to $134,531.25'],
+              ['37%', 'Over $640,600', '37¢ on every dollar above'],
             ].map(([rate, range, max], i) => (
               <tr key={rate} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', fontFamily: "'JetBrains Mono', monospace", color: '#0891b2', fontWeight: 600 }}>{rate}</td>
@@ -137,7 +139,7 @@ export default function TaxBracketsExplained() {
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Before the brackets apply, you subtract the <strong>standard deduction</strong> &mdash; $15,000 for a single filer in 2026. This means if you earn $60,000, only $45,000 is even subject to federal income tax. The brackets above apply to that $45,000, not to your $60,000 gross salary.
+        Before the brackets apply, you subtract the <strong>standard deduction</strong> &mdash; $16,100 for a single filer in 2026. This means if you earn $60,000, only $43,900 is even subject to federal income tax. The brackets above apply to that $45,000, not to your $60,000 gross salary.
       </p>
 
       {/* Section 2 */}
@@ -146,23 +148,23 @@ export default function TaxBracketsExplained() {
       </h2>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Let&rsquo;s say you earn <strong>$65,000</strong> as a single filer in 2026. After the $15,000 standard deduction, your <strong>taxable income is $50,000</strong>. Here is how the IRS calculates your federal income tax:
+        Let&rsquo;s say you earn <strong>$68,000</strong> as a single filer in 2026. After the $16,100 standard deduction, your <strong>taxable income is $51,900</strong>. Here is how the IRS calculates your federal income tax:
       </p>
 
       <div style={{ background: '#f0f9ff', border: '1px solid #bae6fd', borderRadius: '12px', padding: '1.25rem 1.5rem', marginBottom: '1.5rem' }}>
         <p style={{ fontSize: '1rem', lineHeight: 1.8, color: '#1e293b', margin: 0 }}>
-          <strong>Step 1:</strong> 10% on the first $11,925 &rarr; <span style={{ fontFamily: "'JetBrains Mono', monospace", color: '#0891b2' }}>$1,192.50</span>
+          <strong>Step 1:</strong> 10% on the first $12,400 &rarr; <span style={{ fontFamily: "'JetBrains Mono', monospace", color: '#0891b2' }}>$1,240.00</span>
           <br />
-          <strong>Step 2:</strong> 12% on $11,926 to $48,475 ($36,550) &rarr; <span style={{ fontFamily: "'JetBrains Mono', monospace", color: '#0891b2' }}>$4,386.00</span>
+          <strong>Step 2:</strong> 12% on $12,401 to $50,400 ($38,000) &rarr; <span style={{ fontFamily: "'JetBrains Mono', monospace", color: '#0891b2' }}>$4,560.00</span>
           <br />
-          <strong>Step 3:</strong> 22% on $48,476 to $50,000 ($1,525) &rarr; <span style={{ fontFamily: "'JetBrains Mono', monospace", color: '#0891b2' }}>$335.50</span>
+          <strong>Step 3:</strong> 22% on $50,401 to $51,900 ($1,500) &rarr; <span style={{ fontFamily: "'JetBrains Mono', monospace", color: '#0891b2' }}>$330.00</span>
           <br />
-          <strong style={{ fontSize: '1.0625rem' }}>Total federal tax: <span style={{ fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>$5,914.00</span></strong>
+          <strong style={{ fontSize: '1.0625rem' }}>Total federal tax: <span style={{ fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>$6,130.00</span></strong>
         </p>
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Notice what happened. Although $50,000 in taxable income puts you in the &ldquo;22% bracket,&rdquo; you do not pay 22% on all of it. You pay 10% on the first $11,925, then 12% on the next chunk, and only 22% on the small sliver that pushed you past the 12% threshold. The brackets are walls, not floors &mdash; you only pay the higher rate above that wall.
+        Notice what happened. Although $51,900 in taxable income puts you in the &ldquo;22% bracket,&rdquo; you do not pay 22% on all of it. You pay 10% on the first $12,400, then 12% on the next chunk, and only 22% on the small sliver that pushed you past the 12% threshold. The brackets are walls, not floors &mdash; you only pay the higher rate above that wall.
       </p>
 
       {/* Section 3 */}
@@ -179,7 +181,7 @@ export default function TaxBracketsExplained() {
           <strong>Marginal tax rate:</strong> The rate that applies to your <em>last (highest) dollar</em> of income. In the example above, the marginal rate is 22% because the top of the income falls in the 22% bracket.
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
-          <strong>Effective tax rate:</strong> The actual percentage of your total income paid in federal taxes. In the example above, $5,914 paid on $65,000 gross income = an effective rate of <strong>9.1%</strong>.
+          <strong>Effective tax rate:</strong> The actual percentage of your total income paid in federal taxes. In the example above, $6,130 paid on $68,000 gross income = an effective rate of <strong>9.0%</strong>.
         </li>
       </ul>
 
@@ -204,7 +206,7 @@ export default function TaxBracketsExplained() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1rem' }}>
-        Let&rsquo;s test that with real math. Both examples assume a single filer with no pre-tax deductions beyond the $15,000 standard deduction:
+        Let&rsquo;s test that with real math. Both examples assume a single filer with no pre-tax deductions beyond the $16,100 standard deduction:
       </p>
 
       <div style={{ overflowX: 'auto', marginBottom: '1.5rem' }}>
@@ -219,11 +221,11 @@ export default function TaxBracketsExplained() {
           <tbody>
             {[
               ['Gross Salary', '$63,000', '$67,000'],
-              ['Standard Deduction', '−$15,000', '−$15,000'],
-              ['Taxable Income', '$48,000', '$52,000'],
-              ['10% bracket tax', '$1,192.50', '$1,192.50'],
-              ['12% bracket tax', '$4,329.00', '$4,386.00'],
-              ['22% bracket tax', '$0', '$775.50'],
+              ['Standard Deduction', '−$16,100', '−$16,100'],
+              ['Taxable Income', '$46,900', '$50,900'],
+              ['10% bracket tax', '$1,240.00', '$1,240.00'],
+              ['12% bracket tax', '$4,140.00', '$4,560.00'],
+              ['22% bracket tax', '$0', '$110.00'],
             ].map(([label, before, after], i) => (
               <tr key={label} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569' }}>{label}</td>
@@ -233,25 +235,25 @@ export default function TaxBracketsExplained() {
             ))}
             <tr style={{ background: '#fff7ed' }}>
               <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', fontWeight: 700, color: '#1e293b' }}>Total Federal Tax</td>
-              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>$5,521.50</td>
-              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>$6,354.00</td>
+              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>$5,380.00</td>
+              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>$5,910.00</td>
             </tr>
             <tr style={{ background: '#ecfdf5' }}>
               <td style={{ padding: '0.75rem 1rem', borderBottom: '1px solid #e2e8f0', fontWeight: 700, color: '#1e293b' }}>Extra Tax from Raise</td>
               <td style={{ padding: '0.75rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', color: '#475569' }}>—</td>
-              <td style={{ padding: '0.75rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>+$832.50</td>
+              <td style={{ padding: '0.75rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>+$530.00</td>
             </tr>
             <tr style={{ background: '#ecfdf5' }}>
               <td style={{ padding: '0.75rem 1rem', fontWeight: 700, color: '#1e293b' }}>Net Gain After Federal Tax</td>
               <td style={{ padding: '0.75rem 1rem', textAlign: 'right', color: '#475569' }}>—</td>
-              <td style={{ padding: '0.75rem 1rem', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>+$3,167.50</td>
+              <td style={{ padding: '0.75rem 1rem', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>+$3,470.00</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Even crossing a bracket boundary, the $4,000 raise generated <strong>$3,167.50 more in after-federal-tax income</strong>. The raise cost $832.50 in extra taxes. It never cost more than the raise was worth. It never will &mdash; because the marginal tax rate is always less than 100%.
+        Even crossing a bracket boundary, the $4,000 raise generated <strong>$3,470.00 more in after-federal-tax income</strong>. The raise cost $530.00 in extra taxes. It never cost more than the raise was worth. It never will &mdash; because the marginal tax rate is always less than 100%.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
@@ -268,7 +270,7 @@ export default function TaxBracketsExplained() {
       </p>
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
-        <li style={{ marginBottom: '0.5rem' }}><strong>6.2%</strong> for Social Security (on earnings up to $168,600)</li>
+        <li style={{ marginBottom: '0.5rem' }}><strong>6.2%</strong> for Social Security (on earnings up to $184,500)</li>
         <li style={{ marginBottom: '0.5rem' }}><strong>1.45%</strong> for Medicare (on all earnings, no cap)</li>
       </ul>
 
@@ -373,13 +375,13 @@ export default function TaxBracketsExplained() {
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
         <li style={{ marginBottom: '0.75rem' }}>
-          <strong>Traditional 401(k):</strong> In 2026, you can contribute up to $23,500 per year (or $31,000 if you are 50 or older). Every dollar you contribute comes off your taxable income before brackets are applied, saving you your marginal rate on each contributed dollar.
+          <strong>Traditional 401(k):</strong> In 2026, you can contribute up to $24,500 per year (or $32,500 if you are 50 or older). Every dollar you contribute comes off your taxable income before brackets are applied, saving you your marginal rate on each contributed dollar.
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
-          <strong>Health Savings Account (HSA):</strong> If you have a high-deductible health plan, contributing to your HSA lowers taxable income. The 2026 contribution limit is $4,300 for individuals.
+          <strong>Health Savings Account (HSA):</strong> If you have a high-deductible health plan, contributing to your HSA lowers taxable income. The 2026 contribution limit is $4,400 for individuals.
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
-          <strong>Flexible Spending Account (FSA):</strong> Up to $3,300 in pre-tax dollars for medical expenses in 2026.
+          <strong>Flexible Spending Account (FSA):</strong> Up to $3,400 in pre-tax dollars for medical expenses in 2026.
         </li>
       </ul>
 

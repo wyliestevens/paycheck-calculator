@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'W-2 vs 1099: How Your Taxes Are Different (2026)',
+  title: { absolute: 'W-2 vs 1099: How Your Taxes Are Different (2026)' },
   description:
     'W-2 employees and 1099 contractors pay taxes very differently. Learn what self-employment tax costs, when to pay estimated taxes, and which setup nets more take-home pay.',
   alternates: { canonical: '/blog/w2-vs-1099-taxes' },
   keywords:
     'W-2 vs 1099 taxes, 1099 contractor taxes, self-employment tax 2026, W-2 employee vs contractor, 1099 vs W-2 take-home pay, freelancer taxes 2026',
   openGraph: {
+    type: 'article',
+    url: '/blog/w2-vs-1099-taxes',
+    images: [{ url: '/og/blog/w2-vs-1099-taxes', width: 1200, height: 630 }],
     title: 'W-2 vs 1099: How Your Taxes Are Different (2026)',
     description:
       "W-2 employees and 1099 contractors pay taxes very differently. Here's the exact breakdown — with real dollar examples for 2026.",
@@ -69,9 +73,7 @@ export default function W2Vs1099Taxes() {
         W-2 vs 1099: How Your Taxes Are Different (2026)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published June 4, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="w2-vs-1099-taxes" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         Imagine two people, both earning $80,000 this year. One is a regular employee who receives a W-2. The other is a freelance contractor who receives 1099s. Their gross income is identical &mdash; but their tax bills can differ by several thousand dollars. The reason comes down to one fundamental difference: <strong>who pays the payroll taxes</strong>.
@@ -156,7 +158,7 @@ export default function W2Vs1099Taxes() {
       </ul>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        As a 1099 contractor, <strong>you pay both halves</strong>. This is called the <strong>self-employment (SE) tax</strong>, and it totals <strong>15.3%</strong> (12.4% Social Security on income up to $176,100 + 2.9% Medicare on all income).
+        As a 1099 contractor, <strong>you pay both halves</strong>. This is called the <strong>self-employment (SE) tax</strong>, and it totals <strong>15.3%</strong> (12.4% Social Security on income up to $184,500 + 2.9% Medicare on all income).
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
@@ -270,7 +272,7 @@ export default function W2Vs1099Taxes() {
           <strong>Software, equipment, and tools:</strong> Computers, professional subscriptions, and business equipment are fully deductible. Large purchases can often be written off entirely in the year of purchase under <strong>Section 179</strong>.
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
-          <strong>Retirement contributions:</strong> A SEP-IRA lets you contribute up to 25% of net self-employment income (maximum $70,000 in 2026). A Solo 401(k) allows up to $23,500 as the employee contribution, plus 25% of net income as the employer contribution. These can shelter a large chunk of income from taxes.
+          <strong>Retirement contributions:</strong> A SEP-IRA lets you contribute up to 25% of net self-employment income (maximum $72,000 in 2026). A Solo 401(k) allows up to $24,500 as the employee contribution, plus 25% of net income as the employer contribution. These can shelter a large chunk of income from taxes.
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
           <strong>Professional development:</strong> Courses, books, certifications, and conference fees related to your field are deductible.

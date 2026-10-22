@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Side Hustle Taxes: What Gig Workers Need to Know in 2026',
+  title: { absolute: 'Side Hustle Taxes: What Gig Workers Need to Know in 2026' },
   description:
     'Gig workers pay 15.3% self-employment tax plus income tax on every dollar earned. Here\'s exactly what you owe, how quarterly taxes work, and which expenses you can deduct.',
   alternates: { canonical: '/blog/side-hustle-taxes-gig-workers' },
   keywords:
     'side hustle taxes 2026, gig worker taxes, 1099 gig economy, self-employment tax gig work, quarterly estimated taxes, DoorDash taxes, Uber taxes, gig economy tax guide, deductions gig workers',
   openGraph: {
+    type: 'article',
+    url: '/blog/side-hustle-taxes-gig-workers',
+    images: [{ url: '/og/blog/side-hustle-taxes-gig-workers', width: 1200, height: 630 }],
     title: 'Side Hustle Taxes: What Gig Workers Need to Know in 2026',
     description:
       'Gig workers pay 15.3% self-employment tax plus income tax on every dollar earned. Learn quarterly taxes, deductions, and the 1099-K threshold.',
@@ -90,9 +94,7 @@ export default function SideHustleTaxesGigWorkers() {
         Side Hustle Taxes: What Gig Workers Need to Know in 2026
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published July 27, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="side-hustle-taxes-gig-workers" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         Driving for Uber, delivering for DoorDash, freelancing on weekends, or selling on Etsy — side hustle income is real money. But it comes with a tax situation that catches a lot of people off guard: <strong>you are responsible for paying your own taxes</strong>, and the rate is higher than most people expect.
@@ -124,7 +126,7 @@ export default function SideHustleTaxesGigWorkers() {
       </p>
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
-        <li style={{ marginBottom: '0.5rem' }}><strong>Social Security:</strong> 12.4% (on income up to $176,100 in 2026)</li>
+        <li style={{ marginBottom: '0.5rem' }}><strong>Social Security:</strong> 12.4% (on income up to $184,500 in 2026)</li>
         <li style={{ marginBottom: '0.5rem' }}><strong>Medicare:</strong> 2.9% (on all income, no cap)</li>
         <li style={{ marginBottom: '0.5rem' }}><strong>Total SE tax:</strong> 15.3%</li>
       </ul>
@@ -195,13 +197,13 @@ export default function SideHustleTaxesGigWorkers() {
           </thead>
           <tbody>
             {[
-              ['10%', '$0 – $11,925'],
-              ['12%', '$11,926 – $48,475'],
-              ['22%', '$48,476 – $103,350'],
-              ['24%', '$103,351 – $197,300'],
-              ['32%', '$197,301 – $250,525'],
-              ['35%', '$250,526 – $626,350'],
-              ['37%', 'Over $626,350'],
+              ['10%', '$0 – $12,400'],
+              ['12%', '$12,401 – $50,400'],
+              ['22%', '$50,401 – $105,700'],
+              ['24%', '$105,701 – $201,775'],
+              ['32%', '$201,776 – $256,225'],
+              ['35%', '$256,226 – $640,600'],
+              ['37%', 'Over $640,600'],
             ].map(([rate, range], i) => (
               <tr key={rate} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', fontFamily: "'JetBrains Mono', monospace", color: '#7c3aed', fontWeight: 600 }}>{rate}</td>
@@ -316,7 +318,7 @@ export default function SideHustleTaxesGigWorkers() {
           <strong>Self-employed health insurance:</strong> If you pay for your own health insurance and are not eligible for coverage through a spouse&rsquo;s employer plan, 100% of the premium is deductible.
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
-          <strong>Retirement contributions:</strong> A SEP-IRA lets self-employed workers contribute up to 25% of net self-employment income (max $70,000 in 2026), all pre-tax. This is one of the most powerful tax-reduction tools available to gig workers.
+          <strong>Retirement contributions:</strong> A SEP-IRA lets self-employed workers contribute up to 25% of net self-employment income (max $72,000 in 2026), all pre-tax. This is one of the most powerful tax-reduction tools available to gig workers.
         </li>
       </ul>
 

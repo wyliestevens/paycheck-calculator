@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: "Pre-Tax vs Post-Tax Deductions: What's the Difference? (2026)",
+  title: { absolute: "Pre-Tax vs Post-Tax Deductions: What's the Difference? (2026)" },
   description:
     "Pre-tax deductions reduce your taxable income before the IRS takes its cut — post-tax ones don't. Here's exactly how each type works, with a worked dollar example showing $714 in annual tax savings.",
   alternates: { canonical: '/blog/pre-tax-vs-post-tax-deductions' },
   keywords:
     'pre-tax deductions, post-tax deductions, pre-tax vs post-tax 2026, 401k pre-tax, HSA pre-tax, Section 125 cafeteria plan, paycheck deductions explained',
   openGraph: {
+    type: 'article',
+    url: '/blog/pre-tax-vs-post-tax-deductions',
+    images: [{ url: '/og/blog/pre-tax-vs-post-tax-deductions', width: 1200, height: 630 }],
     title: "Pre-Tax vs Post-Tax Deductions: What's the Difference? (2026)",
     description:
       'Pre-tax deductions lower your taxable income. Post-tax ones do not. Full breakdown with real dollar examples.',
@@ -76,9 +80,7 @@ export default function PreTaxVsPostTaxDeductions() {
         Pre-Tax vs Post-Tax Deductions: What&rsquo;s the Difference? (2026 Guide)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published June 12, 2026 &middot; 8 min read
-      </p>
+      <ArticleMeta slug="pre-tax-vs-post-tax-deductions" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         Two deductions that look identical on your pay stub can work in completely different ways. One shrinks your taxable income <em>before</em> the IRS calculates what you owe. The other comes out after taxes have already been applied. That timing &mdash; <strong>pre-tax vs post-tax</strong> &mdash; can save you hundreds or even thousands of dollars every year without any extra effort at tax time.
@@ -126,9 +128,9 @@ export default function PreTaxVsPostTaxDeductions() {
       </p>
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
-        <li style={{ marginBottom: '0.5rem' }}><strong>Traditional 401(k) and 403(b) contributions</strong> &mdash; up to $23,500 in 2026 ($31,000 if you are 50 or older with the catch-up contribution)</li>
-        <li style={{ marginBottom: '0.5rem' }}><strong>Health Savings Account (HSA) contributions via payroll</strong> &mdash; up to $4,300 (self-only) or $8,550 (family) in 2026, if enrolled in a qualifying high-deductible health plan</li>
-        <li style={{ marginBottom: '0.5rem' }}><strong>Flexible Spending Account (FSA) contributions</strong> &mdash; up to $3,300 in 2026 for healthcare FSAs</li>
+        <li style={{ marginBottom: '0.5rem' }}><strong>Traditional 401(k) and 403(b) contributions</strong> &mdash; up to $24,500 in 2026 ($32,500 if you are 50 or older with the catch-up contribution)</li>
+        <li style={{ marginBottom: '0.5rem' }}><strong>Health Savings Account (HSA) contributions via payroll</strong> &mdash; up to $4,400 (self-only) or $8,750 (family) in 2026, if enrolled in a qualifying high-deductible health plan</li>
+        <li style={{ marginBottom: '0.5rem' }}><strong>Flexible Spending Account (FSA) contributions</strong> &mdash; up to $3,400 in 2026 for healthcare FSAs</li>
         <li style={{ marginBottom: '0.5rem' }}><strong>Employer-sponsored health, dental, and vision insurance premiums</strong> &mdash; typically paid through a Section 125 cafeteria plan</li>
         <li style={{ marginBottom: '0.5rem' }}><strong>Dependent care FSA</strong> &mdash; up to $5,000 per household annually for qualifying childcare expenses</li>
         <li style={{ marginBottom: '0.5rem' }}><strong>Commuter benefits</strong> &mdash; up to $315 per month in 2026 for transit passes and qualified parking</li>
@@ -249,8 +251,8 @@ export default function PreTaxVsPostTaxDeductions() {
               ['Pre-Tax Deductions', '$0', '−$4,800'],
               ['FICA-Taxable Wages ①', '$60,000', '$58,200'],
               ['Adjusted Gross Income', '$60,000', '$55,200'],
-              ['Standard Deduction', '−$15,000', '−$15,000'],
-              ['Federal Taxable Income', '$45,000', '$40,200'],
+              ['Standard Deduction', '−$16,100', '−$16,100'],
+              ['Federal Taxable Income', '$43,900', '$39,100'],
             ].map(([label, without, withPre], i) => (
               <tr key={label} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#1e293b' }}>{label}</td>
@@ -265,13 +267,13 @@ export default function PreTaxVsPostTaxDeductions() {
             </tr>
             <tr style={{ background: '#fef2f2' }}>
               <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#1e293b' }}>Federal Income Tax</td>
-              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>−$5,162</td>
-              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>−$4,586</td>
+              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>−$5,020</td>
+              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>−$4,444</td>
             </tr>
             <tr style={{ background: '#f0fdf4' }}>
               <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', fontWeight: 700, color: '#1e293b' }}>Total Annual Tax Bill</td>
-              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#1e293b' }}>$9,752</td>
-              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>$9,038</td>
+              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#1e293b' }}>$9,610</td>
+              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>$8,896</td>
             </tr>
             <tr style={{ background: '#f0fdf4' }}>
               <td style={{ padding: '0.75rem 1rem', borderBottom: '1px solid #e2e8f0', fontWeight: 700, color: '#059669' }}>Annual Tax Savings</td>
@@ -283,7 +285,7 @@ export default function PreTaxVsPostTaxDeductions() {
       </div>
 
       <p style={{ fontSize: '0.875rem', lineHeight: 1.6, color: '#94a3b8', marginBottom: '1.5rem' }}>
-        ① Health insurance ($1,800) is FICA-exempt under Section 125. The 401(k) ($3,000) reduces income tax but not FICA, so FICA-taxable wages = $60,000 &minus; $1,800 = $58,200. Federal taxable income assumes the 2026 standard deduction of $15,000 for a single filer and approximate 2026 federal brackets (10% on the first $11,925; 12% on income above that through ~$49,450).{' '}
+        ① Health insurance ($1,800) is FICA-exempt under Section 125. The 401(k) ($3,000) reduces income tax but not FICA, so FICA-taxable wages = $60,000 &minus; $1,800 = $58,200. Federal taxable income assumes the 2026 standard deduction of $16,100 for a single filer and 2026 federal brackets (10% on the first $12,400; 12% on income above that through $50,400).{' '}
         <a href="https://www.irs.gov/taxtopics/tc551" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS &mdash; Topic 551: Standard Deduction)
         </a>
@@ -294,7 +296,7 @@ export default function PreTaxVsPostTaxDeductions() {
       </p>
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
-        <li style={{ marginBottom: '0.5rem' }}>Federal income tax savings: $5,162 &minus; $4,586 = <strong>$576</strong> (the full $4,800 in pre-tax deductions reduces taxable income, saving at the 12% marginal rate)</li>
+        <li style={{ marginBottom: '0.5rem' }}>Federal income tax savings: $5,020 &minus; $4,444 = <strong>$576</strong> (the full $4,800 in pre-tax deductions reduces taxable income, saving at the 12% marginal rate)</li>
         <li style={{ marginBottom: '0.5rem' }}>FICA savings: $4,590 &minus; $4,452 = <strong>$138</strong> (only the $1,800 health insurance is FICA-exempt; 7.65% &times; $1,800 &asymp; $138)</li>
         <li style={{ marginBottom: '0.5rem' }}>Total: <strong>$714 per year</strong>, or about $59.50 per month</li>
       </ul>
@@ -309,7 +311,7 @@ export default function PreTaxVsPostTaxDeductions() {
       </h2>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The choice between a traditional (pre-tax) 401(k) and a Roth (post-tax) 401(k) is one of the most consequential financial decisions tied to your paycheck. Both have the same annual contribution limit ($23,500 in 2026, or $31,000 if you are 50 or older), but they handle taxes at opposite ends of your career.
+        The choice between a traditional (pre-tax) 401(k) and a Roth (post-tax) 401(k) is one of the most consequential financial decisions tied to your paycheck. Both have the same annual contribution limit ($24,500 in 2026, or $32,500 if you are 50 or older), but they handle taxes at opposite ends of your career.
       </p>
 
       <div style={{ overflowX: 'auto', marginBottom: '1.5rem' }}>
@@ -334,7 +336,7 @@ export default function PreTaxVsPostTaxDeductions() {
               ['Reduces taxable income now?', 'Yes', 'No'],
               ['Withdrawals in retirement', 'Taxed as ordinary income', 'Tax-free (qualified)'],
               ['Best if tax rate will be...', 'Lower in retirement', 'Same or higher in retirement'],
-              ['2026 employee limit', '$23,500 ($31,000 if 50+)', '$23,500 ($31,000 if 50+)'],
+              ['2026 employee limit', '$24,500 ($32,500 if 50+)', '$24,500 ($32,500 if 50+)'],
               ['Required min. distributions?', 'Yes (age 73)', 'No (Roth 401k after rollover)'],
             ].map(([label, trad, roth], i) => (
               <tr key={label} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
@@ -370,14 +372,14 @@ export default function PreTaxVsPostTaxDeductions() {
       </ol>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The catch: you must be enrolled in a <strong>High-Deductible Health Plan (HDHP)</strong> to contribute. In 2026, the HSA contribution limits are <strong>$4,300</strong> for self-only coverage and <strong>$8,550</strong> for family coverage. Unlike an FSA, your HSA balance rolls over indefinitely &mdash; there is no &ldquo;use it or lose it&rdquo; rule. After age 65, you can withdraw HSA funds for any purpose (not just medical) without penalty, though non-medical withdrawals are taxed as ordinary income at that point.{' '}
+        The catch: you must be enrolled in a <strong>High-Deductible Health Plan (HDHP)</strong> to contribute. In 2026, the HSA contribution limits are <strong>$4,400</strong> for self-only coverage and <strong>$8,750</strong> for family coverage. Unlike an FSA, your HSA balance rolls over indefinitely &mdash; there is no &ldquo;use it or lose it&rdquo; rule. After age 65, you can withdraw HSA funds for any purpose (not just medical) without penalty, though non-medical withdrawals are taxed as ordinary income at that point.{' '}
         <a href="https://www.irs.gov/publications/p969" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS Publication 969 &mdash; Health Savings Accounts)
         </a>
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The Flexible Spending Account (FSA) works similarly but is available to employees regardless of their health plan type. The 2026 limit is $3,300, but FSA funds generally must be used by year-end (with a limited grace period or rollover of up to $660 depending on your employer&rsquo;s plan). Because both HSA and FSA contributions reduce income tax and FICA, they are among the most efficient pre-tax deductions available.
+        The Flexible Spending Account (FSA) works similarly but is available to employees regardless of their health plan type. The 2026 limit is $3,400, but FSA funds generally must be used by year-end (with a limited grace period or rollover of up to $660 depending on your employer&rsquo;s plan). Because both HSA and FSA contributions reduce income tax and FICA, they are among the most efficient pre-tax deductions available.
       </p>
 
       {/* Section 8: Disability insurance note */}

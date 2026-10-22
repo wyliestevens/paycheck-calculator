@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Relocation Bonus Taxes: How Much Will You Keep in 2026?',
+  title: { absolute: 'Relocation Bonus Taxes: How Much Will You Keep in 2026?' },
   description:
     'Relocation bonuses are taxable as ordinary income. See how 22% federal withholding, FICA, and state tax affect a $10,000 relocation package — with a full worked example.',
   alternates: { canonical: '/blog/relocation-bonus-taxes-2026' },
   keywords:
     'relocation bonus taxes 2026, relocation assistance taxable, how is relocation bonus taxed, relocation package taxes, employer relocation gross-up, moving allowance taxes 2026',
   openGraph: {
+    type: 'article',
+    url: '/blog/relocation-bonus-taxes-2026',
+    images: [{ url: '/og/blog/relocation-bonus-taxes-2026', width: 1200, height: 630 }],
     title: 'Relocation Bonus Taxes: How Much Will You Keep in 2026?',
     description:
       'Relocation bonuses are taxable as ordinary income. Here&rsquo;s how 22% withholding, FICA, and state tax hit a $10,000 relocation package.',
@@ -78,9 +82,7 @@ export default function RelocationBonusTaxes() {
         Relocation Bonus Taxes: How Much Will You Keep in 2026?
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published October 19, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="relocation-bonus-taxes-2026" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         You accepted the job offer &mdash; congratulations. Your new employer is offering a $10,000 relocation package to help cover moving trucks, travel, and temporary housing. Here&rsquo;s the part recruiters often gloss over: <strong>that money is taxable income</strong>. After federal withholding, Social Security, Medicare, and state taxes, a $10,000 relocation bonus typically puts between $6,500 and $7,500 in your pocket, depending on your income level and state.

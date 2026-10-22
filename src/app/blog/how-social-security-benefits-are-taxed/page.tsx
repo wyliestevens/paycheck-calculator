@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'How Social Security Benefits Are Taxed in 2026',
+  title: { absolute: 'How Social Security Benefits Are Taxed in 2026' },
   description:
     'Up to 85% of your Social Security benefits can be taxable — depending on your total income. Here\'s exactly how the IRS calculates it, with worked examples and the full tier breakdown.',
   alternates: { canonical: '/blog/how-social-security-benefits-are-taxed' },
   keywords:
     'Social Security benefits taxable 2026, how is Social Security taxed, Social Security income tax, combined income Social Security, provisional income, 85 percent Social Security taxable, IRS Publication 915',
   openGraph: {
+    type: 'article',
+    url: '/blog/how-social-security-benefits-are-taxed',
+    images: [{ url: '/og/blog/how-social-security-benefits-are-taxed', width: 1200, height: 630 }],
     title: 'How Social Security Benefits Are Taxed in 2026',
     description:
       'Up to 85% of your Social Security benefits can be taxable. Here\'s the combined income formula, the three tiers, and worked dollar examples.',
@@ -89,9 +93,7 @@ export default function SocialSecurityBenefitsTaxed() {
         How Social Security Benefits Are Taxed in 2026
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published August 11, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="how-social-security-benefits-are-taxed" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         Most retirees are surprised to learn that their Social Security benefits can be taxable. You spent decades paying into the system — and now the IRS wants a cut of what you get back? It feels counterintuitive. But up to <strong>85% of your Social Security benefits</strong> can be counted as taxable income, depending on your total income from all sources.
@@ -256,7 +258,7 @@ export default function SocialSecurityBenefitsTaxed() {
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Maria includes <strong>$2,000</strong> of her $18,000 Social Security benefit as taxable income. The other $16,000 is tax-free. She pays income tax on a total of $22,000 ($20,000 pension + $2,000 SS) — minus her $15,000 standard deduction, her taxable income is just $7,000, and she pays just $700 in federal income tax.
+        Maria includes <strong>$2,000</strong> of her $18,000 Social Security benefit as taxable income. The other $16,000 is tax-free. She pays income tax on a total of $22,000 ($20,000 pension + $2,000 SS) — minus her $16,100 standard deduction, her taxable income is just $5,900, and she pays just $590 in federal income tax.
       </p>
 
       {/* Section 4 */}
@@ -323,7 +325,7 @@ export default function SocialSecurityBenefitsTaxed() {
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        David includes <strong>$15,550</strong> of his $24,000 Social Security benefit as taxable income — about 65% in this case, even though the maximum tier is 85%. His total taxable income before deductions is $35,000 + $15,550 = $50,550. After his $15,000 standard deduction, he pays tax on $35,550.
+        David includes <strong>$15,550</strong> of his $24,000 Social Security benefit as taxable income — about 65% in this case, even though the maximum tier is 85%. His total taxable income before deductions is $35,000 + $15,550 = $50,550. After his $16,100 standard deduction, he pays tax on $34,450.
       </p>
 
       {/* Section 5 — Key insight: IRA withdrawals */}

@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Paycheck Garnishment: What It Is, How It Works, and Your Rights (2026)',
+  title: { absolute: 'Paycheck Garnishment: What It Is, How It Works, and Your Rights (2026)' },
   description:
     "Wage garnishment lets creditors take money directly from your paycheck — but federal law caps how much. Here's how garnishment limits work by type, with a full worked example at $50,000.",
   alternates: { canonical: '/blog/paycheck-garnishment-explained' },
   keywords:
     'wage garnishment 2026, paycheck garnishment, how much can be garnished from paycheck, wage garnishment limits, IRS levy paycheck, child support garnishment, student loan garnishment, CCPA garnishment',
   openGraph: {
+    type: 'article',
+    url: '/blog/paycheck-garnishment-explained',
+    images: [{ url: '/og/blog/paycheck-garnishment-explained', width: 1200, height: 630 }],
     title: 'Paycheck Garnishment: What It Is, How It Works, and Your Rights (2026)',
     description:
       "Wage garnishment lets creditors take money directly from your paycheck — but federal law caps how much. Here's how it works.",
@@ -81,9 +85,7 @@ export default function PaycheckGarnishmentExplained() {
         Paycheck Garnishment: What It Is, How It Works, and Your Rights (2026)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published August 28, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="paycheck-garnishment-explained" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         Most paycheck deductions are voluntary &mdash; you choose your 401(k) contribution, your health insurance plan, your FSA amount. <strong>Wage garnishment is different.</strong> It is a court-ordered or government-authorized deduction that your employer is legally required to withhold from your paycheck and send directly to a creditor, government agency, or court.

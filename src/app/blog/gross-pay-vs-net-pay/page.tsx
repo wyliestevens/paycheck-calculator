@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Gross Pay vs Net Pay: What\'s the Difference? (2026 Guide)',
+  title: { absolute: 'Gross Pay vs Net Pay: What\'s the Difference? (2026 Guide)' },
   description:
     'Gross pay is what your employer agrees to pay you. Net pay is what lands in your bank account. Here\'s exactly what happens between those two numbers — with real examples.',
   alternates: { canonical: '/blog/gross-pay-vs-net-pay' },
   keywords:
     'gross pay vs net pay, what is gross pay, what is net pay, gross income vs net income, difference between gross and net pay, take-home pay 2026',
   openGraph: {
+    type: 'article',
+    url: '/blog/gross-pay-vs-net-pay',
+    images: [{ url: '/og/blog/gross-pay-vs-net-pay', width: 1200, height: 630 }],
     title: 'Gross Pay vs Net Pay: What\'s the Difference? (2026 Guide)',
     description:
       'Gross pay is what your employer promises. Net pay is what you actually receive. Here\'s what happens in between — with a step-by-step worked example.',
@@ -68,9 +72,7 @@ export default function GrossPayVsNetPay() {
         Gross Pay vs Net Pay: What&rsquo;s the Difference? (2026 Guide)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published June 29, 2026 &middot; 7 min read
-      </p>
+      <ArticleMeta slug="gross-pay-vs-net-pay" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         When you accepted your job offer, you saw one number. When your first paycheck arrived, you saw a smaller one. That gap &mdash; sometimes 25% to 35% of your salary &mdash; is the difference between <strong>gross pay</strong> and <strong>net pay</strong>. Understanding exactly what happens between those two numbers is one of the most practical things you can know about your finances.
@@ -167,7 +169,7 @@ export default function GrossPayVsNetPay() {
         1. Federal Income Tax
       </h3>
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.25rem' }}>
-        The federal government withholds income tax from every paycheck based on your W-4 elections and a set of <strong>progressive tax brackets</strong>. For 2026, federal tax rates range from 10% on your lowest income to 37% on income above $626,350 (for single filers). Importantly, only the portion of your income that falls in each bracket is taxed at that rate &mdash; not all of it.{' '}
+        The federal government withholds income tax from every paycheck based on your W-4 elections and a set of <strong>progressive tax brackets</strong>. For 2026, federal tax rates range from 10% on your lowest income to 37% on income above $640,600 (for single filers). Importantly, only the portion of your income that falls in each bracket is taxed at that rate &mdash; not all of it.{' '}
         <a href="https://www.irs.gov/newsroom/irs-provides-tax-inflation-adjustments-for-tax-year-2026" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS &mdash; 2026 Tax Inflation Adjustments)
         </a>
@@ -193,7 +195,7 @@ export default function GrossPayVsNetPay() {
         FICA stands for the Federal Insurance Contributions Act. It is a flat deduction that hits every paycheck regardless of how much you earn:
       </p>
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.25rem', paddingLeft: '1.5rem' }}>
-        <li style={{ marginBottom: '0.5rem' }}><strong>Social Security:</strong> 6.2% of your gross pay, on the first $168,600 you earn in 2026. Your employer pays a matching 6.2%.</li>
+        <li style={{ marginBottom: '0.5rem' }}><strong>Social Security:</strong> 6.2% of your gross pay, on the first $184,500 you earn in 2026. Your employer pays a matching 6.2%.</li>
         <li style={{ marginBottom: '0.5rem' }}><strong>Medicare:</strong> 1.45% of all your earnings, with no cap. Your employer matches this as well. High earners (over $200,000) pay an additional 0.9%.</li>
       </ul>
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.25rem' }}>
@@ -210,9 +212,9 @@ export default function GrossPayVsNetPay() {
         These deductions are taken out <em>before</em> income taxes are calculated, which actually reduces how much tax you owe. Common ones include:
       </p>
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.25rem', paddingLeft: '1.5rem' }}>
-        <li style={{ marginBottom: '0.5rem' }}><strong>Traditional 401(k):</strong> Up to $23,500 per year (2026 limit). Every dollar you contribute reduces your federal and state taxable income.</li>
+        <li style={{ marginBottom: '0.5rem' }}><strong>Traditional 401(k):</strong> Up to $24,500 per year (2026 limit). Every dollar you contribute reduces your federal and state taxable income.</li>
         <li style={{ marginBottom: '0.5rem' }}><strong>Health insurance premiums:</strong> Your share of employer-sponsored health coverage, paid pre-tax through a Section 125 cafeteria plan.</li>
-        <li style={{ marginBottom: '0.5rem' }}><strong>HSA contributions:</strong> Up to $4,300/year (individual, 2026). Triple tax advantage &mdash; pre-tax in, tax-free growth, tax-free out for medical use.</li>
+        <li style={{ marginBottom: '0.5rem' }}><strong>HSA contributions:</strong> Up to $4,400/year (individual, 2026). Triple tax advantage &mdash; pre-tax in, tax-free growth, tax-free out for medical use.</li>
       </ul>
 
       <h3 style={{ fontSize: '1.125rem', fontWeight: 700, color: '#1e293b', marginTop: '1.5rem', marginBottom: '0.5rem' }}>
@@ -387,12 +389,12 @@ export default function GrossPayVsNetPay() {
           </thead>
           <tbody>
             {[
-              ['$40,000', '$33,580', '84%', '$1,291'],
-              ['$55,000', '$44,730', '81%', '$1,720'],
-              ['$70,000', '$55,820', '80%', '$2,147'],
-              ['$85,000', '$66,290', '78%', '$2,550'],
-              ['$100,000', '$75,620', '76%', '$2,908'],
-              ['$150,000', '$106,400', '71%', '$4,092'],
+              ['$40,000', '$34,320', '86%', '$1,320'],
+              ['$55,000', '$46,373', '84%', '$1,784'],
+              ['$70,000', '$58,075', '83%', '$2,234'],
+              ['$85,000', '$68,628', '81%', '$2,640'],
+              ['$100,000', '$79,180', '79%', '$3,045'],
+              ['$150,000', '$113,791', '76%', '$4,377'],
             ].map(([gross, net, pct, biweekly], i) => (
               <tr key={i} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>{gross}</td>
@@ -406,7 +408,7 @@ export default function GrossPayVsNetPay() {
       </div>
 
       <p style={{ fontSize: '0.875rem', color: '#94a3b8', marginBottom: '1.5rem', lineHeight: 1.6 }}>
-        Estimates based on 2026 federal tax brackets and standard deduction of $15,000 for a single filer. FICA is 7.65% applied to all gross pay within the Social Security wage base. Actual amounts depend on your W-4 elections, state, and benefit deductions.{' '}
+        Estimates based on 2026 federal tax brackets and standard deduction of $16,100 for a single filer. FICA is 7.65% applied to all gross pay within the Social Security wage base. Actual amounts depend on your W-4 elections, state, and benefit deductions.{' '}
         <a href="https://www.bls.gov/oes/current/oes_nat.htm" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'none' }}>BLS.gov</a>
       </p>
 

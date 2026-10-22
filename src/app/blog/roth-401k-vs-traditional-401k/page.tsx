@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Roth 401(k) vs. Traditional 401(k): Which Is Better for Your Paycheck? (2026)',
+  title: { absolute: 'Roth 401(k) vs. Traditional 401(k): Which Is Better for Your Paycheck? (2026)' },
   description:
     'Traditional 401(k) saves you money now. Roth 401(k) saves you money in retirement. Here\'s exactly how each affects your paycheck — with a full worked example at $70,000.',
   alternates: { canonical: '/blog/roth-401k-vs-traditional-401k' },
   keywords:
     'Roth 401k vs Traditional 401k, Roth 401k 2026, Traditional 401k paycheck, 401k comparison, Roth vs traditional tax savings, 401k contribution limit 2026, should I do Roth or Traditional 401k',
   openGraph: {
+    type: 'article',
+    url: '/blog/roth-401k-vs-traditional-401k',
+    images: [{ url: '/og/blog/roth-401k-vs-traditional-401k', width: 1200, height: 630 }],
     title: 'Roth 401(k) vs. Traditional 401(k): Which Is Better for Your Paycheck? (2026)',
     description:
       'Traditional 401(k) lowers your taxes today. Roth 401(k) gives you tax-free income in retirement. Here\'s which one is right for your situation — with real dollar examples.',
@@ -56,7 +60,7 @@ export default function Roth401kVsTraditional401k() {
           <text x="460" y="155" textAnchor="middle" fontSize="10" fill="rgba(255,255,255,0.75)" fontFamily="sans-serif">Tax-free in RETIREMENT</text>
 
           {/* Bottom label */}
-          <text x="300" y="185" textAnchor="middle" fontSize="10" fill="rgba(255,255,255,0.6)" fontFamily="sans-serif">Same $23,500 contribution limit in 2026</text>
+          <text x="300" y="185" textAnchor="middle" fontSize="10" fill="rgba(255,255,255,0.6)" fontFamily="sans-serif">Same $24,500 contribution limit in 2026</text>
         </svg>
       </div>
 
@@ -72,9 +76,7 @@ export default function Roth401kVsTraditional401k() {
         Roth 401(k) vs. Traditional 401(k): Which Is Better for Your Paycheck? (2026)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published August 6, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="roth-401k-vs-traditional-401k" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         When your employer offers both a <strong>Roth 401(k)</strong> and a <strong>Traditional 401(k)</strong>, the choice can feel confusing. Both let you save for retirement through payroll deductions. Both have the same contribution limits. But they are taxed very differently &mdash; and that difference has a real impact on how much money lands in your bank account every paycheck.
@@ -143,9 +145,9 @@ export default function Roth401kVsTraditional401k() {
           </thead>
           <tbody>
             {[
-              ['Under age 50', '$23,500'],
-              ['Age 50–59 and 64+ (catch-up)', '$31,000'],
-              ['Age 60–63 (enhanced catch-up)', '$34,750'],
+              ['Under age 50', '$24,500'],
+              ['Age 50–59 and 64+ (catch-up)', '$32,500'],
+              ['Age 60–63 (enhanced catch-up)', '$35,750'],
             ].map(([cat, limit], i) => (
               <tr key={cat} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569' }}>{cat}</td>
@@ -157,7 +159,7 @@ export default function Roth401kVsTraditional401k() {
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        These limits are <em>shared</em> between both accounts. If you contribute $10,000 to a Traditional 401(k) and $10,000 to a Roth 401(k) in the same year, you have used $20,000 of your $23,500 limit.{' '}
+        These limits are <em>shared</em> between both accounts. If you contribute $10,000 to a Traditional 401(k) and $10,000 to a Roth 401(k) in the same year, you have used $20,000 of your $24,500 limit.{' '}
         <a href="https://www.irs.gov/newsroom/401k-limit-increases-to-23500-for-2025-ira-limit-remains-7000" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS &mdash; Retirement Plan Contribution Limits)
         </a>
@@ -185,12 +187,12 @@ export default function Roth401kVsTraditional401k() {
             {[
               ['Annual gross salary', '$70,000', '$70,000'],
               ['401(k) contribution', '$6,000 (pre-tax)', '$6,000 (after-tax)'],
-              ['Taxable income', '$49,000', '$55,000'],
-              ['Standard deduction', '− $15,000', '− $15,000'],
-              ['Income subject to tax', '$34,000', '$40,000'],
-              ['Federal income tax', '$4,401', '$5,721'],
+              ['Taxable income', '$64,000', '$70,000'],
+              ['Standard deduction', '− $16,100', '− $16,100'],
+              ['Income subject to tax', '$47,900', '$53,900'],
+              ['Federal income tax', '$5,500', '$6,570'],
               ['FICA (7.65%)', '$5,355', '$5,355'],
-              ['Annual take-home pay*', '$54,244', '$52,924'],
+              ['Annual take-home pay*', '$53,145', '$52,075'],
               ['Annual retirement savings', '$6,000', '$6,000'],
             ].map(([label, trad, roth], i) => (
               <tr key={label} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
@@ -209,7 +211,7 @@ export default function Roth401kVsTraditional401k() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The bottom line: the Traditional 401(k) puts <strong>$1,320 more per year</strong> in your pocket today (about <strong>$50 more per paycheck</strong>). That&rsquo;s the immediate tax savings. But the Roth 401(k) will give you tax-free income in retirement.
+        The bottom line: the Traditional 401(k) puts <strong>$1,070 more per year</strong> in your pocket today (about <strong>$41 more per paycheck</strong>). That&rsquo;s the immediate tax savings. But the Roth 401(k) will give you tax-free income in retirement.
       </p>
 
       {/* Section 5 */}
@@ -297,7 +299,7 @@ export default function Roth401kVsTraditional401k() {
       </h2>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Yes &mdash; and many financial advisors recommend it. You can split your contributions between Traditional and Roth as long as the combined total stays within the annual limit ($23,500 in 2026 for those under 50).
+        Yes &mdash; and many financial advisors recommend it. You can split your contributions between Traditional and Roth as long as the combined total stays within the annual limit ($24,500 in 2026 for those under 50).
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
@@ -385,7 +387,7 @@ export default function Roth401kVsTraditional401k() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        What matters most is that you contribute. Whether you choose Traditional or Roth, the biggest driver of your retirement security is <em>how much you save</em>, not which account type you pick. Maxing out either option in 2026 ($23,500 if you are under 50) puts you well ahead of most Americans.
+        What matters most is that you contribute. Whether you choose Traditional or Roth, the biggest driver of your retirement security is <em>how much you save</em>, not which account type you pick. Maxing out either option in 2026 ($24,500 if you are under 50) puts you well ahead of most Americans.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>

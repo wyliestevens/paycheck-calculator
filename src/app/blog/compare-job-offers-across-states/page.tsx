@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'How to Compare Job Offers Across States: A Take-Home Pay Guide',
+  title: { absolute: 'How to Compare Job Offers Across States: A Take-Home Pay Guide' },
   description:
     'A $90K offer in Texas might beat a $100K offer in California. Learn how to compare job offers by what you actually keep after taxes and cost of living.',
   alternates: { canonical: '/blog/compare-job-offers-across-states' },
   keywords:
     'compare salary across states, job offer different state, relocate for work taxes, take-home pay comparison, cost of living by state',
   openGraph: {
+    type: 'article',
+    url: '/blog/compare-job-offers-across-states',
+    images: [{ url: '/og/blog/compare-job-offers-across-states', width: 1200, height: 630 }],
     title: 'How to Compare Job Offers Across States: A Take-Home Pay Guide',
     description:
       'Learn how to compare job offers by what you actually keep after taxes and cost of living.',
@@ -77,9 +81,7 @@ export default function CompareJobOffersPage() {
         How to Compare Job Offers Across States: A Take-Home Pay Guide
       </h1>
 
-      <p style={{ color: '#475569', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published June 8, 2026 &middot; 8 min read
-      </p>
+      <ArticleMeta slug="compare-job-offers-across-states" />
 
       <p style={{ color: '#1e293b', fontSize: '1.0625rem', lineHeight: 1.75, marginBottom: '1.5rem' }}>
         You just got two job offers. One pays $100,000 in New York. The other pays $90,000 in Florida. The New York offer is obviously better, right? Not so fast. When you factor in state taxes, cost of living, and other expenses, that lower-paying offer might actually leave more money in your pocket every month.

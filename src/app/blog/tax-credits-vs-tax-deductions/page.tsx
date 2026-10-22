@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Tax Credits vs. Tax Deductions: What\'s the Difference? (2026 Guide)',
+  title: { absolute: 'Tax Credits vs. Tax Deductions: What\'s the Difference? (2026 Guide)' },
   description:
     'A $1,000 tax credit saves you exactly $1,000. A $1,000 deduction saves you $120 to $370, depending on your bracket. Here\'s the full breakdown with worked examples at $60,000.',
   alternates: { canonical: '/blog/tax-credits-vs-tax-deductions' },
   keywords:
     'tax credits vs tax deductions, difference between tax credit and deduction, how tax credits work 2026, how tax deductions work 2026, refundable tax credits, nonrefundable credits, tax savings 2026',
   openGraph: {
+    type: 'article',
+    url: '/blog/tax-credits-vs-tax-deductions',
+    images: [{ url: '/og/blog/tax-credits-vs-tax-deductions', width: 1200, height: 630 }],
     title: 'Tax Credits vs. Tax Deductions: What\'s the Difference? (2026 Guide)',
     description:
       'A $1,000 tax credit saves you exactly $1,000. A $1,000 deduction saves $120–$370. Here\'s the full breakdown with worked examples.',
@@ -43,7 +47,7 @@ export default function TaxCreditsVsDeductions() {
           <line x1="118" y1="94" x2="118" y2="108" stroke="rgba(255,255,255,0.7)" strokeWidth="2" />
           <polygon points="113,108 118,118 123,108" fill="rgba(255,255,255,0.7)" />
           <rect x="68" y="118" width="100" height="28" rx="4" fill="rgba(255,255,255,0.2)" />
-          <text x="118" y="133" textAnchor="middle" fontSize="10" fontWeight="600" fill="#fff" fontFamily="sans-serif">$45,000 taxable</text>
+          <text x="118" y="133" textAnchor="middle" fontSize="10" fontWeight="600" fill="#fff" fontFamily="sans-serif">$43,900 taxable</text>
           <text x="118" y="146" textAnchor="middle" fontSize="9" fill="rgba(255,255,255,0.75)" fontFamily="sans-serif">(-$15k deduction)</text>
           <text x="188" y="92" textAnchor="middle" fontSize="10" fill="rgba(255,255,255,0.8)" fontFamily="sans-serif">saves</text>
           <text x="188" y="106" textAnchor="middle" fontSize="14" fontWeight="700" fill="#fef3c7" fontFamily="monospace">$1,800</text>
@@ -58,7 +62,7 @@ export default function TaxCreditsVsDeductions() {
           <rect x="354" y="54" width="196" height="118" rx="6" fill="rgba(255,255,255,0.12)" />
           <rect x="372" y="66" width="100" height="28" rx="4" fill="rgba(255,255,255,0.25)" />
           <text x="422" y="80" textAnchor="middle" fontSize="10" fontWeight="600" fill="#fff" fontFamily="sans-serif">Tax bill</text>
-          <text x="422" y="92" textAnchor="middle" fontSize="12" fontWeight="700" fill="#fef3c7" fontFamily="monospace">$5,160</text>
+          <text x="422" y="92" textAnchor="middle" fontSize="12" fontWeight="700" fill="#fef3c7" fontFamily="monospace">$5,020</text>
           <line x1="422" y1="94" x2="422" y2="108" stroke="rgba(255,255,255,0.7)" strokeWidth="2" />
           <polygon points="417,108 422,118 427,108" fill="rgba(255,255,255,0.7)" />
           <rect x="372" y="118" width="100" height="28" rx="4" fill="rgba(255,255,255,0.2)" />
@@ -83,9 +87,7 @@ export default function TaxCreditsVsDeductions() {
         Tax Credits vs. Tax Deductions: What&rsquo;s the Difference? (2026 Guide)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published August 18, 2026 &middot; 8 min read
-      </p>
+      <ArticleMeta slug="tax-credits-vs-tax-deductions" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         Tax credits and tax deductions both lower your tax bill &mdash; but they work in completely different ways, and the difference matters a lot. A <strong>$1,000 tax credit</strong> reduces what you owe the IRS by exactly <strong>$1,000</strong>. A <strong>$1,000 tax deduction</strong> reduces your <em>taxable income</em> by $1,000, which only saves you $120 to $370 depending on your tax bracket.
@@ -149,7 +151,7 @@ export default function TaxCreditsVsDeductions() {
           <strong>Above-the-line deductions (adjustments to income)</strong> &mdash; You can claim these regardless of whether you itemize. Examples include 401(k) contributions, traditional IRA contributions, student loan interest, and the self-employment tax deduction. They reduce your <strong>Adjusted Gross Income (AGI)</strong>.
         </li>
         <li style={{ marginBottom: '0.625rem' }}>
-          <strong>Below-the-line deductions (the standard deduction or itemized deductions)</strong> &mdash; Every taxpayer chooses either the <strong>standard deduction</strong> ($15,000 for single filers in 2026; $30,000 for married filing jointly) or <strong>itemized deductions</strong> on Schedule A. You take whichever is larger.{' '}
+          <strong>Below-the-line deductions (the standard deduction or itemized deductions)</strong> &mdash; Every taxpayer chooses either the <strong>standard deduction</strong> ($16,100 for single filers in 2026; $32,200 for married filing jointly) or <strong>itemized deductions</strong> on Schedule A. You take whichever is larger.{' '}
           <a href="https://www.irs.gov/taxtopics/tc501" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
             (IRS &mdash; Topic 501: Standard Deduction)
           </a>
@@ -240,11 +242,11 @@ export default function TaxCreditsVsDeductions() {
           <tbody>
             {[
               ['Gross income', '$60,000'],
-              ['Standard deduction (single, 2026)', '− $15,000'],
-              ['Taxable income', '$45,000'],
-              ['Federal tax on $45,000 (10%/12%)', '$5,160'],
+              ['Standard deduction (single, 2026)', '− $16,100'],
+              ['Taxable income', '$43,900'],
+              ['Federal tax on $43,900 (10%/12%)', '$5,020'],
               ['FICA (7.65% of $60,000)', '$4,590'],
-              ['Total federal + payroll tax', '$9,750'],
+              ['Total federal + payroll tax', '$9,610'],
             ].map(([label, value], i) => (
               <tr key={label} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: i === 5 ? '#1e293b' : '#475569', fontWeight: i === 5 ? 700 : 400 }}>{label}</td>
@@ -256,7 +258,7 @@ export default function TaxCreditsVsDeductions() {
       </div>
 
       <p style={{ fontSize: '0.875rem', lineHeight: 1.6, color: '#94a3b8', marginBottom: '1.5rem' }}>
-        Federal income tax calculated on $45,000 taxable income: first $11,925 at 10% ($1,192.50) + remaining $33,075 at 12% ($3,969) = $5,161.50, rounded to $5,160 for this example. The 12% bracket is the marginal rate.
+        Federal income tax calculated on $43,900 taxable income: first $12,400 at 10% ($1,240) + remaining $31,500 at 12% ($3,780) = $5,020 for this example. The 12% bracket is the marginal rate.
       </p>
 
       <h3 style={{ fontSize: '1.125rem', fontWeight: 600, color: '#1e293b', marginTop: '1.5rem', marginBottom: '0.75rem' }}>
@@ -287,9 +289,9 @@ export default function TaxCreditsVsDeductions() {
               ['Gross income', '$60,000'],
               ['IRA deduction', '− $1,000'],
               ['AGI', '$59,000'],
-              ['Standard deduction', '− $15,000'],
-              ['Taxable income', '$44,000'],
-              ['Federal tax on $44,000', '$5,040'],
+              ['Standard deduction', '− $16,100'],
+              ['Taxable income', '$42,900'],
+              ['Federal tax on $42,900', '$4,900'],
               ['Tax savings from $1,000 deduction', '$120'],
             ].map(([label, value], i) => (
               <tr key={label} style={{ background: i === 6 ? '#ecfdf5' : i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
@@ -326,8 +328,8 @@ export default function TaxCreditsVsDeductions() {
           </thead>
           <tbody>
             {[
-              ['Taxable income (same as baseline)', '$45,000'],
-              ['Federal tax on $45,000', '$5,160'],
+              ['Taxable income (same as baseline)', '$43,900'],
+              ['Federal tax on $43,900', '$5,020'],
               ['Tax credit applied', '− $1,000'],
               ['Tax owed after credit', '$4,160'],
               ['Tax savings from $1,000 credit', '$1,000'],
@@ -496,13 +498,13 @@ export default function TaxCreditsVsDeductions() {
           </thead>
           <tbody>
             {[
-              ['Standard deduction (single)', '$15,000', 'Below-line'],
-              ['Standard deduction (married filing jointly)', '$30,000', 'Below-line'],
-              ['401(k) / 403(b) contributions', '$23,500', 'Above-line (payroll)'],
-              ['Traditional IRA contribution', '$7,000 ($8,000 if 50+)', 'Above-line'],
+              ['Standard deduction (single)', '$16,100', 'Below-line'],
+              ['Standard deduction (married filing jointly)', '$32,200', 'Below-line'],
+              ['401(k) / 403(b) contributions', '$24,500', 'Above-line (payroll)'],
+              ['Traditional IRA contribution', '$7,500 ($8,600 if 50+)', 'Above-line'],
               ['Student loan interest', '$2,500', 'Above-line'],
               ['Self-employed health insurance', '100% of premiums', 'Above-line'],
-              ['HSA contributions', '$4,300 (self-only)', 'Above-line'],
+              ['HSA contributions', '$4,400 (self-only)', 'Above-line'],
               ['Mortgage interest (itemize)', 'Up to $750k loan', 'Below-line (Schedule A)'],
               ['State & local taxes (SALT)', 'Capped at $10,000', 'Below-line (Schedule A)'],
               ['Charitable contributions (itemize)', 'Up to 60% of AGI', 'Below-line (Schedule A)'],
@@ -574,7 +576,7 @@ export default function TaxCreditsVsDeductions() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Consider a single filer earning $180,000. Their marginal rate is 24%. If they max out a traditional 401(k) at $23,500, the deduction saves them:
+        Consider a single filer earning $180,000. Their marginal rate is 24%. If they max out a traditional 401(k) at $24,500, the deduction saves them:
       </p>
 
       <div
@@ -589,7 +591,7 @@ export default function TaxCreditsVsDeductions() {
           color: '#1e293b',
         }}
       >
-        $23,500 &times; 24% = <strong>$5,640</strong> saved in federal income tax
+        $24,500 &times; 24% = <strong>$5,880</strong> saved in federal income tax
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
@@ -620,7 +622,7 @@ export default function TaxCreditsVsDeductions() {
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
         <li style={{ marginBottom: '0.5rem' }}>$3,000 HSA contribution (above-the-line deduction, saves $360 in taxes at 12%)</li>
-        <li style={{ marginBottom: '0.5rem' }}>$15,000 standard deduction (reduces taxable income)</li>
+        <li style={{ marginBottom: '0.5rem' }}>$16,100 standard deduction (reduces taxable income)</li>
         <li style={{ marginBottom: '0.5rem' }}>$2,000 Child Tax Credit for one child (saves $2,000 directly)</li>
       </ul>
 

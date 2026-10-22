@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Lottery Winnings and Taxes: How Much Do You Actually Keep? (2026)',
+  title: { absolute: 'Lottery Winnings and Taxes: How Much Do You Actually Keep? (2026)' },
   description:
     'Win $1 million in the lottery and you might keep $425,000 — or less. Here\'s exactly how federal and state taxes hit your jackpot, with a full worked example.',
   alternates: { canonical: '/blog/lottery-winnings-taxes' },
   keywords:
     'lottery winnings taxes 2026, how much tax on lottery winnings, lottery lump sum tax, Powerball tax rate, Mega Millions taxes, state lottery tax, jackpot take-home pay',
   openGraph: {
+    type: 'article',
+    url: '/blog/lottery-winnings-taxes',
+    images: [{ url: '/og/blog/lottery-winnings-taxes', width: 1200, height: 630 }],
     title: 'Lottery Winnings and Taxes: How Much Do You Actually Keep? (2026)',
     description:
       'Win $1 million in the lottery and you might keep $425,000 — or less. Here\'s the full breakdown of federal and state taxes on jackpot winnings.',
@@ -74,9 +78,7 @@ export default function LotteryWinningsTaxes() {
         Lottery Winnings and Taxes: How Much Do You Actually Keep? (2026)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published September 3, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="lottery-winnings-taxes" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         You just won $1 million in the lottery. Before you start planning your vacation, here is the reality: after federal taxes and your state&rsquo;s cut, you could end up with anywhere from <strong>$337,000 to $426,000</strong> &mdash; or even less if you live in a high-tax city like New York. Winning the lottery is genuinely life-changing, but the tax bill is real and larger than most people expect.
@@ -96,7 +98,7 @@ export default function LotteryWinningsTaxes() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        This matters because a big jackpot pushes almost all of your income into the top federal bracket of <strong>37%</strong>. That is the marginal rate that applies to taxable income above $626,350 for single filers in 2026. Even a modest $50,000 win can push a middle-income earner into a higher bracket for the year.{' '}
+        This matters because a big jackpot pushes almost all of your income into the top federal bracket of <strong>37%</strong>. That is the marginal rate that applies to taxable income above $640,600 for single filers in 2026. Even a modest $50,000 win can push a middle-income earner into a higher bracket for the year.{' '}
         <a href="https://www.irs.gov/taxtopics/tc419" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS Topic 419 &mdash; Gambling Income and Losses)
         </a>
@@ -271,11 +273,11 @@ export default function LotteryWinningsTaxes() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1rem' }}>
-        <strong>Step 2 &mdash; Federal income tax calculation:</strong> You subtract the standard deduction ($15,000 for a single filer in 2026) before applying the brackets.
+        <strong>Step 2 &mdash; Federal income tax calculation:</strong> You subtract the standard deduction ($16,100 for a single filer in 2026) before applying the brackets.
       </p>
 
       <p style={{ fontSize: '1rem', lineHeight: 1.75, color: '#475569', marginBottom: '1rem', fontFamily: "'JetBrains Mono', monospace", background: '#f8fafc', padding: '0.75rem 1rem', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
-        $600,000 &minus; $15,000 = $585,000 taxable income
+        $600,000 &minus; $16,100 = $583,900 taxable income
       </p>
 
       <div style={{ overflowX: 'auto', marginBottom: '1.5rem' }}>
@@ -296,12 +298,12 @@ export default function LotteryWinningsTaxes() {
           </thead>
           <tbody>
             {[
-              ['10%', '$0 – $11,925', '$1,193'],
-              ['12%', '$11,926 – $48,475', '$4,386'],
-              ['22%', '$48,476 – $103,350', '$12,073'],
-              ['24%', '$103,351 – $197,300', '$22,548'],
-              ['32%', '$197,301 – $250,525', '$17,032'],
-              ['35%', '$250,526 – $585,000', '$117,066'],
+              ['10%', '$0 – $12,400', '$1,240'],
+              ['12%', '$12,401 – $50,400', '$4,560'],
+              ['22%', '$50,401 – $105,700', '$12,166'],
+              ['24%', '$105,701 – $201,775', '$23,058'],
+              ['32%', '$201,776 – $256,225', '$17,424'],
+              ['35%', '$256,226 – $583,900', '$114,686'],
             ].map(([rate, range, tax], i) => (
               <tr key={rate} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.5rem 1rem', borderBottom: '1px solid #e2e8f0', fontFamily: "'JetBrains Mono', monospace", color: '#2563eb', fontWeight: 600 }}>{rate}</td>
@@ -311,7 +313,7 @@ export default function LotteryWinningsTaxes() {
             ))}
             <tr style={{ background: '#fef2f2' }}>
               <td colSpan={2} style={{ padding: '0.625rem 1rem', borderTop: '2px solid #e2e8f0', fontWeight: 700, color: '#1e293b' }}>Total Federal Income Tax</td>
-              <td style={{ padding: '0.625rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>$174,298</td>
+              <td style={{ padding: '0.625rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>$173,134</td>
             </tr>
           </tbody>
         </table>
@@ -323,12 +325,12 @@ export default function LotteryWinningsTaxes() {
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
         <li style={{ marginBottom: '0.5rem' }}>Lottery organization withheld: $600,000 &times; 24% = <strong>$144,000</strong></li>
-        <li style={{ marginBottom: '0.5rem' }}>Actual federal tax owed: <strong>$174,298</strong></li>
-        <li style={{ marginBottom: '0.5rem' }}>Additional tax due when you file: <strong>$30,298</strong></li>
+        <li style={{ marginBottom: '0.5rem' }}>Actual federal tax owed: <strong>$173,134</strong></li>
+        <li style={{ marginBottom: '0.5rem' }}>Additional tax due when you file: <strong>$29,134</strong></li>
       </ul>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The 24% withholding only covered part of the bill. You will owe an additional ~$30,000 when you file your federal return. This surprises many winners who spent the withheld amount thinking their taxes were done.
+        The 24% withholding only covered part of the bill. You will owe an additional ~$29,000 when you file your federal return. This surprises many winners who spent the withheld amount thinking their taxes were done.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1rem' }}>
@@ -356,10 +358,10 @@ export default function LotteryWinningsTaxes() {
           <tbody>
             {[
               ['Lump Sum Cash Value', '$600,000', '$600,000', false],
-              ['Federal Income Tax', '−$174,298', '−$174,298', true],
+              ['Federal Income Tax', '−$173,134', '−$173,134', true],
               ['State Income Tax', '$0', '−$65,400 (10.9%)', true],
               ['NYC Local Tax', '$0', '−$23,256 (3.876%)', true],
-              ['Take-Home Pay', '$425,702', '$337,046', false],
+              ['Take-Home Pay', '$426,866', '$338,210', false],
             ].map(([label, tx, nyc, isDed], i) => {
               const isTotal = label === 'Take-Home Pay'
               return (
@@ -440,7 +442,7 @@ export default function LotteryWinningsTaxes() {
           <strong>Choose the annuity:</strong> Spreading payments over 30 years keeps each annual payment in lower tax brackets. You lose access to the lump sum today but potentially keep more money overall, especially if tax rates stay the same.
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
-          <strong>Max out deductible contributions immediately:</strong> In the year you win, you can contribute up to $23,500 to a 401(k), $7,000 to an IRA, and the full annual limit to an HSA. These reduce your taxable income and cut into the 35% or 37% bracket.
+          <strong>Max out deductible contributions immediately:</strong> In the year you win, you can contribute up to $24,500 to a 401(k), $7,500 to an IRA, and the full annual limit to an HSA. These reduce your taxable income and cut into the 35% or 37% bracket.
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
           <strong>Make charitable contributions:</strong> Cash donations to qualifying charities are deductible if you itemize. Donating a meaningful portion to a donor-advised fund in the winning year lets you take a large deduction now and distribute the funds to charities over time.

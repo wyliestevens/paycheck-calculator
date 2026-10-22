@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'The Alternative Minimum Tax (AMT): Do You Owe It in 2026?',
+  title: { absolute: 'The Alternative Minimum Tax (AMT): Do You Owe It in 2026?' },
   description:
     'The AMT is a parallel tax system designed to ensure high earners pay a minimum amount. Here\'s who owes it in 2026, how to calculate it, and strategies to reduce your exposure.',
   alternates: { canonical: '/blog/alternative-minimum-tax-2026' },
   keywords:
     'alternative minimum tax 2026, AMT tax, who pays AMT, AMT exemption 2026, AMT calculation, ISO and AMT, AMTI, how to avoid AMT',
   openGraph: {
+    type: 'article',
+    url: '/blog/alternative-minimum-tax-2026',
+    images: [{ url: '/og/blog/alternative-minimum-tax-2026', width: 1200, height: 630 }],
     title: 'The Alternative Minimum Tax (AMT): Do You Owe It in 2026?',
     description:
       'The AMT is a parallel tax system ensuring high earners pay a minimum amount. Here\'s who owes it, how it\'s calculated, and how to reduce your exposure.',
@@ -78,9 +82,7 @@ export default function AlternativeMinimumTax2026() {
         The Alternative Minimum Tax (AMT): Do You Owe It in 2026?
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published August 21, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="alternative-minimum-tax-2026" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         Most Americans calculate their federal income tax once and pay that amount. But for a subset of taxpayers &mdash; primarily higher earners, people who exercise stock options, or those with large deductions &mdash; the IRS requires a second calculation using an entirely different set of rules. If that second calculation produces a higher number, they pay the difference. This is the <strong>Alternative Minimum Tax</strong>, or <strong>AMT</strong>.
@@ -151,9 +153,9 @@ export default function AlternativeMinimumTax2026() {
           </thead>
           <tbody>
             {[
-              ['Single / Head of Household', '$88,100', '$626,350', '$978,750'],
-              ['Married Filing Jointly', '$137,000', '$1,252,700', '$1,800,700'],
-              ['Married Filing Separately', '$68,500', '$626,350', '$900,350'],
+              ['Single / Head of Household', '$90,100', '$500,000', '$680,200'],
+              ['Married Filing Jointly', '$140,200', '$1,000,000', '$1,280,400'],
+              ['Married Filing Separately', '$70,100', '$500,000', '$640,200'],
             ].map(([status, exemption, phaseStart, phaseEnd], i) => (
               <tr key={status} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569' }}>{status}</td>
@@ -167,7 +169,7 @@ export default function AlternativeMinimumTax2026() {
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The phase-out is critical: once your AMTI exceeds the threshold, your exemption shrinks by <strong>25 cents for every dollar</strong> of AMTI above the threshold. At the &ldquo;fully phased out&rdquo; level, the exemption is gone entirely and every dollar of AMTI above zero is exposed to AMT. This creates a hidden &ldquo;bump zone&rdquo; where your marginal AMT rate is effectively 32.5% (26% &times; 1.25) instead of 26%.{' '}
+        The phase-out is critical: once your AMTI exceeds the threshold, your exemption shrinks by <strong>50 cents for every dollar</strong> of AMTI above the threshold. At the &ldquo;fully phased out&rdquo; level, the exemption is gone entirely and every dollar of AMTI above zero is exposed to AMT. This creates a hidden &ldquo;bump zone&rdquo; where your marginal AMT rate is effectively 42% (28% &times; 1.5) instead of 28%.{' '}
         <a href="https://www.irs.gov/pub/irs-pdf/p505.pdf" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS &mdash; Publication 505, Tax Withholding and Estimated Tax)
         </a>
@@ -183,8 +185,8 @@ export default function AlternativeMinimumTax2026() {
       </p>
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
-        <li style={{ marginBottom: '0.5rem' }}><strong>26%</strong> on the first $220,700 of AMTI above the exemption (for single filers; $110,350 for married filing separately)</li>
-        <li style={{ marginBottom: '0.5rem' }}><strong>28%</strong> on AMTI above $220,700</li>
+        <li style={{ marginBottom: '0.5rem' }}><strong>26%</strong> on the first $244,500 of AMTI above the exemption (for single filers; $122,250 for married filing separately)</li>
+        <li style={{ marginBottom: '0.5rem' }}><strong>28%</strong> on AMTI above $244,500</li>
       </ul>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
@@ -247,7 +249,7 @@ export default function AlternativeMinimumTax2026() {
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
         <li style={{ marginBottom: '0.5rem' }}>Salary: <strong>$180,000</strong></li>
         <li style={{ marginBottom: '0.5rem' }}>ISO exercise spread (FMV minus strike price): <strong>$200,000</strong></li>
-        <li style={{ marginBottom: '0.5rem' }}>Standard deduction (single, 2026): <strong>$15,000</strong></li>
+        <li style={{ marginBottom: '0.5rem' }}>Standard deduction (single, 2026): <strong>$16,100</strong></li>
         <li style={{ marginBottom: '0.5rem' }}>Filing status: Single</li>
       </ul>
 
@@ -271,12 +273,12 @@ export default function AlternativeMinimumTax2026() {
             {[
               ['Gross Income', '$180,000', '$180,000'],
               ['ISO Spread (preference item)', 'Not included', '+$200,000'],
-              ['Deductions', '−$15,000 (standard)', '−$15,000 (standard only)'],
-              ['Taxable Income / AMTI', '$165,000', '$365,000'],
-              ['Less exemption', 'n/a (used in brackets)', '−$88,100'],
-              ['Net amount subject to tax', '$165,000', '$276,900'],
-              ['Tax calculation', '10/12/22/24% brackets', '26% on $220,700; 28% on $56,200'],
-              ['Estimated tax', '$33,918', '$57,377 + $15,736 = $73,113'],
+              ['Deductions', '−$16,100 (standard)', '−$16,100 (standard only)'],
+              ['Taxable Income / AMTI', '$163,900', '$363,900'],
+              ['Less exemption', 'n/a (used in brackets)', '−$90,100'],
+              ['Net amount subject to tax', '$163,900', '$273,800'],
+              ['Tax calculation', '10/12/22/24% brackets', '26% on $244,500; 28% on $29,300'],
+              ['Estimated tax', '$31,934', '$63,570 + $8,204 = $71,774'],
             ].map(([step, regular, amt], i) => (
               <tr key={step} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', fontWeight: 600, color: '#1e293b' }}>{step}</td>
@@ -286,15 +288,15 @@ export default function AlternativeMinimumTax2026() {
             ))}
             <tr style={{ background: '#fef3c7' }}>
               <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', fontWeight: 700, color: '#1e293b' }}>Tax Owed</td>
-              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', fontFamily: "'JetBrains Mono', monospace", fontWeight: 700, color: '#475569' }}>$33,918</td>
-              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', fontFamily: "'JetBrains Mono', monospace", fontWeight: 700, color: '#dc2626' }}>$73,113 ← you pay this</td>
+              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', fontFamily: "'JetBrains Mono', monospace", fontWeight: 700, color: '#475569' }}>$31,934</td>
+              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', fontFamily: "'JetBrains Mono', monospace", fontWeight: 700, color: '#dc2626' }}>$71,774 ← you pay this</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The AMT calculation produces <strong>$73,113</strong> versus the regular tax of <strong>$33,918</strong>. This taxpayer would owe the regular $33,918 <em>plus</em> an AMT add-on of <strong>$39,195</strong> &mdash; a painful surprise if they exercised options expecting a much smaller tax bill.
+        The AMT calculation produces <strong>$71,774</strong> versus the regular tax of <strong>$31,934</strong>. This taxpayer would owe the regular $31,934 <em>plus</em> an AMT add-on of <strong>$39,840</strong> &mdash; a painful surprise if they exercised options expecting a much smaller tax bill.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
@@ -331,7 +333,7 @@ export default function AlternativeMinimumTax2026() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        For example: if you pay $39,195 in AMT this year because of ISO exercises, and next year you sell those shares (converting the AMT preference item into regular income) and your regular tax exceeds your tentative minimum tax, you can use your AMT credit carryforward to reduce your regular tax. Over time, you may recover much of the AMT paid.
+        For example: if you pay $39,840 in AMT this year because of ISO exercises, and next year you sell those shares (converting the AMT preference item into regular income) and your regular tax exceeds your tentative minimum tax, you can use your AMT credit carryforward to reduce your regular tax. Over time, you may recover much of the AMT paid.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
@@ -422,10 +424,10 @@ export default function AlternativeMinimumTax2026() {
           <tbody>
             {[
               ['Tax rates', '10% to 37% (marginal)', '26% or 28% (flat)'],
-              ['Standard deduction', '$15,000 (single, 2026)', 'Not allowed'],
+              ['Standard deduction', '$16,100 (single, 2026)', 'Not allowed'],
               ['SALT deduction', 'Up to $10,000', 'Not allowed'],
               ['ISO spread at exercise', 'Not taxable', 'Preference item (taxable)'],
-              ['Personal exemption', 'Not applicable (eliminated)', 'AMT exemption: $88,100 (single)'],
+              ['Personal exemption', 'Not applicable (eliminated)', 'AMT exemption: $90,100 (single)'],
               ['Applies to everyone?', 'Yes', 'Only if AMT > regular tax'],
               ['Credit carryforward?', 'No', 'Yes — AMT credit for future years'],
             ].map(([label, regular, amt], i) => (
@@ -474,7 +476,7 @@ export default function AlternativeMinimumTax2026() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The key numbers for 2026: a $88,100 exemption for single filers, 26%/28% flat rates, and a phase-out starting at $626,350. If ISOs are part of your compensation package, model the AMT impact before you exercise &mdash; a surprise five-figure tax bill on stock you haven&rsquo;t sold is one of the most painful (and preventable) tax situations in the code.
+        The key numbers for 2026: a $90,100 exemption for single filers, 26%/28% flat rates, and a phase-out starting at $500,000. If ISOs are part of your compensation package, model the AMT impact before you exercise &mdash; a surprise five-figure tax bill on stock you haven&rsquo;t sold is one of the most painful (and preventable) tax situations in the code.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>

@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'What Is a Good Salary in Each US State? (2026 Cost-Adjusted)',
+  title: { absolute: 'What Is a Good Salary in Each US State? (2026 Cost-Adjusted)' },
   description:
     '$75,000 goes a lot further in Mississippi than in Hawaii. Here\'s what counts as a good salary in every state when you factor in taxes and cost of living.',
   alternates: { canonical: '/blog/good-salary-by-state' },
   keywords:
     'good salary by state 2026, average salary by state, livable wage by state, cost of living by state, median income by state',
   openGraph: {
+    type: 'article',
+    url: '/blog/good-salary-by-state',
+    images: [{ url: '/og/blog/good-salary-by-state', width: 1200, height: 630 }],
     title: 'What Is a Good Salary in Each US State? (2026 Cost-Adjusted)',
     description:
       'What counts as a good salary in every US state after taxes and cost of living adjustments.',
@@ -137,9 +141,7 @@ export default function GoodSalaryByStatePage() {
         What Is a Good Salary in Each US State? (2026 Cost-Adjusted)
       </h1>
 
-      <p style={{ color: '#475569', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published June 11, 2026 &middot; 10 min read
-      </p>
+      <ArticleMeta slug="good-salary-by-state" />
 
       <p style={{ color: '#1e293b', fontSize: '1.0625rem', lineHeight: 1.75, marginBottom: '1.5rem' }}>
         Earning $75,000 sounds like a solid income. But whether it actually gives you a comfortable life depends entirely on <em>where</em> you live. In Mississippi, $75,000 puts you well above the median household income and your money stretches far. In Hawaii, that same salary barely covers the basics.
@@ -516,14 +518,14 @@ export default function GoodSalaryByStatePage() {
           1. Max out your pre-tax retirement contributions
         </h3>
         <p style={{ color: '#475569', fontSize: '0.9375rem', lineHeight: 1.65, marginBottom: '1.25rem' }}>
-          Money you put into a 401(k) or traditional IRA reduces your taxable income. In 2026, you can contribute up to $23,500 to a 401(k). That could save you $3,000 to $7,000 in taxes depending on your bracket.
+          Money you put into a 401(k) or traditional IRA reduces your taxable income. In 2026, you can contribute up to $24,500 to a 401(k). That could save you $3,000 to $7,000 in taxes depending on your bracket.
         </p>
 
         <h3 style={{ fontSize: '1rem', fontWeight: 600, color: '#1e293b', marginBottom: '0.75rem' }}>
           2. Use your HSA if you have a high-deductible health plan
         </h3>
         <p style={{ color: '#475569', fontSize: '0.9375rem', lineHeight: 1.65, marginBottom: '1.25rem' }}>
-          Health Savings Accounts (HSAs) are triple tax-advantaged: your contributions are tax-free, the money grows tax-free, and withdrawals for medical expenses are tax-free. The 2026 contribution limit is $4,300 for individuals.
+          Health Savings Accounts (HSAs) are triple tax-advantaged: your contributions are tax-free, the money grows tax-free, and withdrawals for medical expenses are tax-free. The 2026 contribution limit is $4,400 for individuals.
         </p>
 
         <h3 style={{ fontSize: '1rem', fontWeight: 600, color: '#1e293b', marginBottom: '0.75rem' }}>

@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Moving for a Job? Tax Implications of Relocating States (2026)',
+  title: { absolute: 'Moving for a Job? Tax Implications of Relocating States (2026)' },
   description:
     'Moving to a new state for work changes your taxes in ways most people don\'t expect. Learn about part-year returns, residency rules, remote work taxes, and real dollar examples.',
   alternates: { canonical: '/blog/moving-for-a-job-state-tax-implications' },
   keywords:
     'moving to another state taxes, relocating for a job taxes, part-year resident tax return, state tax when moving, domicile vs residency taxes, remote work state taxes 2026',
   openGraph: {
+    type: 'article',
+    url: '/blog/moving-for-a-job-state-tax-implications',
+    images: [{ url: '/og/blog/moving-for-a-job-state-tax-implications', width: 1200, height: 630 }],
     title: 'Moving for a Job? Tax Implications of Relocating States (2026)',
     description:
       'Moving states for work changes your taxes in ways most people don\'t see coming — part-year returns, dual residency, and remote work complications explained.',
@@ -70,9 +74,7 @@ export default function MovingForAJobStateTaxImplications() {
         Moving for a Job? Here&#39;s How Your Taxes Change
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published June 25, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="moving-for-a-job-state-tax-implications" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         Taking a job in a new state is exciting &mdash; but it comes with tax consequences most people don&#39;t think about until they&#39;re staring at a tax return they don&#39;t understand. When you move across state lines mid-year, you may have to file tax returns in <strong>two states</strong>, deal with complicated residency rules, and figure out which state gets to tax your income. If you work remotely, it gets even more complicated.

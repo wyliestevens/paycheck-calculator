@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'What Is Adjusted Gross Income (AGI)? A Plain-English Guide (2026)',
+  title: { absolute: 'What Is Adjusted Gross Income (AGI)? A Plain-English Guide (2026)' },
   description:
     'AGI is the number that controls your tax brackets, deduction limits, and credit eligibility. Here\'s exactly how it\'s calculated — with a full worked example at $85,000 gross income.',
   alternates: { canonical: '/blog/what-is-adjusted-gross-income' },
   keywords:
     'adjusted gross income, what is AGI, AGI 2026, how to calculate AGI, AGI vs gross income, AGI vs taxable income, above the line deductions, modified adjusted gross income MAGI',
   openGraph: {
+    type: 'article',
+    url: '/blog/what-is-adjusted-gross-income',
+    images: [{ url: '/og/blog/what-is-adjusted-gross-income', width: 1200, height: 630 }],
     title: 'What Is Adjusted Gross Income (AGI)? A Plain-English Guide (2026)',
     description:
       'AGI is the number that controls your tax brackets, deduction limits, and credit eligibility. Here\'s exactly how it\'s calculated.',
@@ -79,9 +83,7 @@ export default function AdjustedGrossIncomeExplained() {
         What Is Adjusted Gross Income (AGI)? A Plain-English Guide (2026)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published September 4, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="what-is-adjusted-gross-income" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         You have probably seen the acronym <strong>AGI</strong> on your tax return without ever stopping to understand what it actually means. Adjusted Gross Income is one of the most important numbers in the entire tax system &mdash; it determines your tax bracket, controls whether you can deduct your IRA contribution, sets the threshold for claiming dozens of credits and deductions, and even affects your Medicare premiums.
@@ -177,7 +179,7 @@ export default function AdjustedGrossIncomeExplained() {
         1. Traditional IRA Contributions
       </h3>
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        If you contribute to a traditional IRA, you may be able to deduct up to <strong>$7,000</strong> ($8,000 if you are 50 or older) from your gross income. However, if you (or your spouse) are covered by a workplace retirement plan, the deduction phases out at higher income levels.{' '}
+        If you contribute to a traditional IRA, you may be able to deduct up to <strong>$7,500</strong> ($8,600 if you are 50 or older) from your gross income. However, if you (or your spouse) are covered by a workplace retirement plan, the deduction phases out at higher income levels.{' '}
         <a href="https://www.irs.gov/retirement-plans/ira-deduction-limits" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS &mdash; IRA Deduction Limits)
         </a>
@@ -197,7 +199,7 @@ export default function AdjustedGrossIncomeExplained() {
         3. Health Savings Account (HSA) Contributions
       </h3>
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Contributions you make directly to an HSA (not through payroll) are deductible. In 2026, the limit is <strong>$4,300</strong> for self-only coverage and <strong>$8,550</strong> for family coverage. Employer contributions are already pre-tax and do not count toward your deduction.{' '}
+        Contributions you make directly to an HSA (not through payroll) are deductible. In 2026, the limit is <strong>$4,400</strong> for self-only coverage and <strong>$8,750</strong> for family coverage. Employer contributions are already pre-tax and do not count toward your deduction.{' '}
         <a href="https://www.irs.gov/publications/p969" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS &mdash; Publication 969: HSAs)
         </a>
@@ -227,7 +229,7 @@ export default function AdjustedGrossIncomeExplained() {
         6. Contributions to SEP-IRA, SIMPLE IRA, or Solo 401(k)
       </h3>
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Self-employed workers can contribute to a SEP-IRA (up to 25% of net self-employment income, max $70,000 in 2026), a SIMPLE IRA ($16,500 limit), or a Solo 401(k). These contributions reduce your AGI dollar-for-dollar.{' '}
+        Self-employed workers can contribute to a SEP-IRA (up to 25% of net self-employment income, max $72,000 in 2026), a SIMPLE IRA ($16,500 limit), or a Solo 401(k). These contributions reduce your AGI dollar-for-dollar.{' '}
         <a href="https://www.irs.gov/retirement-plans/retirement-plans-for-self-employed-people" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS &mdash; Retirement Plans for Self-Employed People)
         </a>
@@ -322,7 +324,7 @@ export default function AdjustedGrossIncomeExplained() {
           </thead>
           <tbody>
             {[
-              ['Traditional IRA contribution', '−$7,000'],
+              ['Traditional IRA contribution', '−$7,500'],
               ['Student loan interest paid', '−$1,800'],
               ['Half of self-employment tax paid on $11,500 freelance', '−$813'],
               ['Self-employed health insurance (Jordan pays own dental)', '−$600'],
@@ -334,7 +336,7 @@ export default function AdjustedGrossIncomeExplained() {
             ))}
             <tr style={{ background: '#fef2f2' }}>
               <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', fontWeight: 700, color: '#1e293b' }}>Total Adjustments</td>
-              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>−$10,213</td>
+              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>−$10,713</td>
             </tr>
           </tbody>
         </table>
@@ -358,18 +360,18 @@ export default function AdjustedGrossIncomeExplained() {
         }}
       >
         <div>Gross Income: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$84,000</strong></div>
-        <div style={{ color: '#dc2626' }}>Total Adjustments: &nbsp;&nbsp;&nbsp;&nbsp;&minus;$10,213</div>
+        <div style={{ color: '#dc2626' }}>Total Adjustments: &nbsp;&nbsp;&nbsp;&nbsp;&minus;$10,713</div>
         <div style={{ borderTop: '1px solid #e2e8f0', paddingTop: '0.5rem', marginTop: '0.5rem' }}>
-          <strong>AGI: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$73,787</strong>
+          <strong>AGI: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$73,287</strong>
         </div>
-        <div style={{ marginTop: '0.75rem', color: '#475569' }}>Standard deduction (single, 2026): &minus;$15,000</div>
+        <div style={{ marginTop: '0.75rem', color: '#475569' }}>Standard deduction (single, 2026): &minus;$16,100</div>
         <div style={{ borderTop: '1px solid #e2e8f0', paddingTop: '0.5rem', marginTop: '0.5rem' }}>
-          <strong>Taxable Income: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$58,787</strong>
+          <strong>Taxable Income: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$57,187</strong>
         </div>
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Jordan started with $84,000 in total income and ended up with a taxable income of <strong>$58,787</strong>. That is a reduction of more than $25,000 before any credits are applied &mdash; and most of it came from above-the-line deductions that reduced AGI.
+        Jordan started with $84,000 in total income and ended up with a taxable income of <strong>$57,187</strong>. That is a reduction of more than $26,000 before any credits are applied &mdash; and most of it came from above-the-line deductions that reduced AGI.
       </p>
 
       {/* Section 5 */}
@@ -477,7 +479,7 @@ export default function AdjustedGrossIncomeExplained() {
         Maximize Traditional Retirement Contributions
       </h3>
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Your traditional 401(k) contributions come out of your paycheck pre-tax, which reduces the W-2 wages reported to the IRS. In 2026, you can contribute up to <strong>$23,500</strong> ($31,000 if age 50 or older). This is the single most powerful way most employees reduce their AGI &mdash; every dollar contributed reduces your gross income before the IRS even sees it.{' '}
+        Your traditional 401(k) contributions come out of your paycheck pre-tax, which reduces the W-2 wages reported to the IRS. In 2026, you can contribute up to <strong>$24,500</strong> ($32,500 if age 50 or older). This is the single most powerful way most employees reduce their AGI &mdash; every dollar contributed reduces your gross income before the IRS even sees it.{' '}
         <a href="https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-401k-and-profit-sharing-plan-contribution-limits" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS &mdash; 401(k) Contribution Limits)
         </a>
@@ -487,7 +489,7 @@ export default function AdjustedGrossIncomeExplained() {
         Fund a Traditional IRA
       </h3>
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        If you are eligible to deduct IRA contributions, adding up to $7,000 ($8,000 if 50+) directly reduces your AGI. Even if you are covered by a workplace plan, the deduction may be fully or partially available depending on your income. You have until the April tax deadline to make prior-year IRA contributions.
+        If you are eligible to deduct IRA contributions, adding up to $7,500 ($8,600 if 50+) directly reduces your AGI. Even if you are covered by a workplace plan, the deduction may be fully or partially available depending on your income. You have until the April tax deadline to make prior-year IRA contributions.
       </p>
 
       <h3 style={{ fontSize: '1.125rem', fontWeight: 600, color: '#1e293b', marginTop: '1.5rem', marginBottom: '0.5rem' }}>
@@ -514,7 +516,7 @@ export default function AdjustedGrossIncomeExplained() {
       </p>
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
-        <li style={{ marginBottom: '0.5rem' }}><strong>Standard deduction ($15,000 single in 2026):</strong> Reduces taxable income, not AGI</li>
+        <li style={{ marginBottom: '0.5rem' }}><strong>Standard deduction ($16,100 single in 2026):</strong> Reduces taxable income, not AGI</li>
         <li style={{ marginBottom: '0.5rem' }}><strong>Itemized deductions</strong> (mortgage interest, state taxes, charitable gifts): Also reduce taxable income, not AGI</li>
         <li style={{ marginBottom: '0.5rem' }}><strong>Tax credits</strong> (Child Tax Credit, Earned Income Credit, EV credit): Reduce the tax you owe, not your income</li>
         <li style={{ marginBottom: '0.5rem' }}><strong>Roth 401(k) or Roth IRA contributions:</strong> These are after-tax contributions &mdash; no AGI benefit, but no taxes on the growth either</li>

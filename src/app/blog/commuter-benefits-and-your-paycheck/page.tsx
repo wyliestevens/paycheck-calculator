@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Commuter Benefits: How Transit and Parking Deductions Save You Money (2026)',
+  title: { absolute: 'Commuter Benefits: How Transit and Parking Deductions Save You Money (2026)' },
   description:
     'Commuter benefits let you pay for transit passes and parking with pre-tax dollars — cutting your tax bill by $1,000+ per year. Here\'s how the 2026 limits work, with a full worked example.',
   alternates: { canonical: '/blog/commuter-benefits-and-your-paycheck' },
   keywords:
     'commuter benefits 2026, transit benefit pre-tax, qualified transportation fringe benefit, pre-tax parking, Section 132 commuter benefit, transit pass tax savings 2026, commuter benefit limit 2026',
   openGraph: {
+    type: 'article',
+    url: '/blog/commuter-benefits-and-your-paycheck',
+    images: [{ url: '/og/blog/commuter-benefits-and-your-paycheck', width: 1200, height: 630 }],
     title: 'Commuter Benefits: How Transit and Parking Deductions Save You Money (2026)',
     description:
       'Commuter benefits let you pay for transit passes and parking with pre-tax dollars — cutting your tax bill by $1,000+ per year.',
@@ -83,9 +87,7 @@ export default function CommuterBenefitsPage() {
         Commuter Benefits: How Transit and Parking Deductions Save You Money (2026)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published August 14, 2026 &middot; 8 min read
-      </p>
+      <ArticleMeta slug="commuter-benefits-and-your-paycheck" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         If you take the subway, bus, train, or commuter rail to work &mdash; or pay to park near your office &mdash; the IRS lets you cover those costs with <strong>pre-tax dollars</strong>. This is called a <strong>qualified transportation fringe benefit</strong>, and it reduces your federal income tax, state income tax, <em>and</em> FICA taxes on every dollar you set aside.
@@ -336,7 +338,7 @@ export default function CommuterBenefitsPage() {
               ['Reduces FICA?', 'Yes', 'Yes', 'Yes'],
               ['Use-it-or-lose-it?', 'Varies*', 'Yes (mostly)', 'No'],
               ['Election locked in?', 'Monthly changes OK', 'Annual', 'Anytime'],
-              ['2026 limit', '$330/mo each', '$3,300/yr', '$4,300/yr single'],
+              ['2026 limit', '$330/mo each', '$3,400/yr', '$4,400/yr single'],
               ['Requires HDHP?', 'No', 'No', 'Yes'],
             ].map(([label, commuter, fsa, hsa], i) => (
               <tr key={label} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>

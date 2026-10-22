@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Part-Time vs Full-Time: How Your Tax Bill Changes (2026 Guide)',
+  title: { absolute: 'Part-Time vs Full-Time: How Your Tax Bill Changes (2026 Guide)' },
   description:
     'Part-time and full-time workers pay the same tax rates — but fewer hours means lower income, which changes your bracket, benefits, and withholding. Here\'s the full breakdown.',
   alternates: { canonical: '/blog/part-time-vs-full-time-taxes' },
   keywords:
     'part-time vs full-time taxes, part-time work taxes 2026, do part-time workers pay taxes, two part-time jobs taxes, part-time tax bracket, part-time employee benefits taxes',
   openGraph: {
+    type: 'article',
+    url: '/blog/part-time-vs-full-time-taxes',
+    images: [{ url: '/og/blog/part-time-vs-full-time-taxes', width: 1200, height: 630 }],
     title: 'Part-Time vs Full-Time: How Your Tax Bill Changes (2026 Guide)',
     description:
       'Part-time and full-time workers pay the same tax rates — but fewer hours means lower income, different brackets, and no employer benefits. Here\'s what changes.',
@@ -80,9 +84,7 @@ export default function PartTimeVsFullTimeTaxes() {
         Part-Time vs Full-Time: How Your Tax Bill Changes (2026 Guide)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published July 9, 2026 &middot; 8 min read
-      </p>
+      <ArticleMeta slug="part-time-vs-full-time-taxes" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         A common question among part-time workers: &ldquo;Do I pay less in taxes than someone who works full-time?&rdquo; The answer is yes — but not for the reason most people think. Part-time workers do not get a special low tax rate. They simply earn less income, which naturally puts them lower in the tax brackets. Meanwhile, the lack of employer benefits can quietly cost them more out of pocket.
@@ -140,13 +142,13 @@ export default function PartTimeVsFullTimeTaxes() {
           </thead>
           <tbody>
             {[
-              ['10%', '$0 – $11,925', 'Very low-hour part-time workers'],
-              ['12%', '$11,926 – $48,475', 'Many part-time workers'],
-              ['22%', '$48,476 – $103,350', 'Full-time workers, higher-earning PT'],
-              ['24%', '$103,351 – $197,300', 'Full-time at higher salaries'],
-              ['32%', '$197,301 – $250,525', 'Senior professionals, dual earners'],
-              ['35%', '$250,526 – $626,350', 'High earners'],
-              ['37%', 'Over $626,350', 'Top earners'],
+              ['10%', '$0 – $12,400', 'Very low-hour part-time workers'],
+              ['12%', '$12,401 – $50,400', 'Many part-time workers'],
+              ['22%', '$50,401 – $105,700', 'Full-time workers, higher-earning PT'],
+              ['24%', '$105,701 – $201,775', 'Full-time at higher salaries'],
+              ['32%', '$201,776 – $256,225', 'Senior professionals, dual earners'],
+              ['35%', '$256,226 – $640,600', 'High earners'],
+              ['37%', 'Over $640,600', 'Top earners'],
             ].map(([rate, range, who], i) => (
               <tr key={rate} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', fontFamily: "'JetBrains Mono', monospace", color: '#2563eb', fontWeight: 600 }}>{rate}</td>
@@ -159,7 +161,7 @@ export default function PartTimeVsFullTimeTaxes() {
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Remember, the standard deduction reduces your taxable income first. For 2026, a single filer gets a <strong>$15,000 standard deduction</strong>. That means if you earn $25,000 part-time, only $10,000 is actually taxable — putting you entirely in the 10% bracket.
+        Remember, the standard deduction reduces your taxable income first. For 2026, a single filer gets a <strong>$16,100 standard deduction</strong>. That means if you earn $25,000 part-time, only $8,900 is actually taxable — putting you entirely in the 10% bracket.
       </p>
 
       {/* Section 3 */}
@@ -172,7 +174,7 @@ export default function PartTimeVsFullTimeTaxes() {
       </p>
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
-        <li style={{ marginBottom: '0.5rem' }}><strong>Social Security: 6.2%</strong> on every dollar earned (up to the $176,100 wage base in 2026)</li>
+        <li style={{ marginBottom: '0.5rem' }}><strong>Social Security: 6.2%</strong> on every dollar earned (up to the $184,500 wage base in 2026)</li>
         <li style={{ marginBottom: '0.5rem' }}><strong>Medicare: 1.45%</strong> on every dollar earned, with no cap</li>
       </ul>
 
@@ -218,7 +220,7 @@ export default function PartTimeVsFullTimeTaxes() {
         HSA Eligibility
       </h3>
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Health Savings Accounts (HSAs) require enrollment in a qualifying high-deductible health plan. If a part-time worker has no employer health plan and buys a standard plan on the marketplace, they typically cannot use an HSA. Full-time workers with employer HDHPs can contribute up to <strong>$4,300</strong> in 2026 — completely pre-tax — to an HSA.
+        Health Savings Accounts (HSAs) require enrollment in a qualifying high-deductible health plan. If a part-time worker has no employer health plan and buys a standard plan on the marketplace, they typically cannot use an HSA. Full-time workers with employer HDHPs can contribute up to <strong>$4,400</strong> in 2026 — completely pre-tax — to an HSA.
       </p>
 
       {/* Section 5 */}
@@ -239,7 +241,7 @@ export default function PartTimeVsFullTimeTaxes() {
           <strong>Seasonal or irregular hours:</strong> If you work 35 hours per week in the summer and 10 hours per week in the fall, your employer may over-withhold during busy periods and under-withhold during slow ones. The annualized estimate shifts every pay period.
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
-          <strong>Low earners under the filing threshold:</strong> If your total annual income is below the standard deduction ($15,000 in 2026 for single filers), you owe zero federal income tax. But your employer may still be withholding some. If so, you will get it back as a refund when you file — but you can also file a W-4 claiming &ldquo;Exempt&rdquo; from withholding if you expect to owe nothing.
+          <strong>Low earners under the filing threshold:</strong> If your total annual income is below the standard deduction ($16,100 in 2026 for single filers), you owe zero federal income tax. But your employer may still be withholding some. If so, you will get it back as a refund when you file — but you can also file a W-4 claiming &ldquo;Exempt&rdquo; from withholding if you expect to owe nothing.
         </li>
       </ul>
 
@@ -257,7 +259,7 @@ export default function PartTimeVsFullTimeTaxes() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Here is why that causes trouble: Say you earn $25,000 at Job A and $25,000 at Job B. Each employer sees a $25,000-a-year worker and withholds accordingly — at the lower 10%/12% rates. But when you combine both incomes at tax time, your real taxable income is $35,000 (after the $15,000 standard deduction). Part of that hits the 22% bracket, and you may owe more than either employer withheld.
+        Here is why that causes trouble: Say you earn $25,000 at Job A and $25,000 at Job B. Each employer sees a $25,000-a-year worker and withholds accordingly — at the lower 10%/12% rates. But when you combine both incomes at tax time, your real taxable income is $33,900 (after the $16,100 standard deduction). Far more of it lands in the 12% bracket than either employer assumed, and you may owe more than either employer withheld.
       </p>
 
       <div
@@ -302,9 +304,9 @@ export default function PartTimeVsFullTimeTaxes() {
           <tbody>
             {[
               ['Gross Annual Income', '$50,000', '$25,000'],
-              ['Standard Deduction', '−$15,000', '−$15,000'],
-              ['Taxable Income', '$35,000', '$10,000'],
-              ['Federal Income Tax', '−$3,733', '−$1,000'],
+              ['Standard Deduction', '−$16,100', '−$16,100'],
+              ['Taxable Income', '$33,900', '$8,900'],
+              ['Federal Income Tax', '−$3,820', '−$890'],
               ['Social Security (6.2%)', '−$3,100', '−$1,550'],
               ['Medicare (1.45%)', '−$725', '−$363'],
               ['State Income Tax (TX)', '$0', '$0'],
@@ -317,8 +319,8 @@ export default function PartTimeVsFullTimeTaxes() {
             ))}
             <tr style={{ background: '#ecfdf5' }}>
               <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', fontWeight: 700, color: '#1e293b' }}>Annual Take-Home Pay</td>
-              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>$42,442</td>
-              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>$22,087</td>
+              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>$42,355</td>
+              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>$22,197</td>
             </tr>
             <tr style={{ background: '#f0f9ff' }}>
               <td style={{ padding: '0.75rem 1rem', borderTop: '1px solid #e2e8f0', fontWeight: 600, color: '#1e293b' }}>Effective Tax Rate</td>
@@ -365,7 +367,7 @@ export default function PartTimeVsFullTimeTaxes() {
       </h2>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        For 2026, the filing threshold for a single filer under 65 is roughly equal to the standard deduction: <strong>$15,000</strong>. If your total income (from all sources) is below that, you are generally not required to file a federal return.
+        For 2026, the filing threshold for a single filer under 65 is roughly equal to the standard deduction: <strong>$16,100</strong>. If your total income (from all sources) is below that, you are generally not required to file a federal return.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
@@ -389,11 +391,11 @@ export default function PartTimeVsFullTimeTaxes() {
       </h2>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        One area where part-time workers lose a significant tax advantage: retirement savings. Full-time employees with 401(k) access can shelter up to <strong>$23,500 per year</strong> (2026 limit) from income tax. That can cut a federal tax bill by $2,585 or more per year for someone in the 22% bracket.
+        One area where part-time workers lose a significant tax advantage: retirement savings. Full-time employees with 401(k) access can shelter up to <strong>$24,500 per year</strong> (2026 limit) from income tax. That can cut a federal tax bill by $5,390 or more per year for someone in the 22% bracket.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Part-time workers who lack a workplace plan still have options: they can open a <strong>Traditional IRA</strong> (up to $7,000 in 2026, or $8,000 if you are 50+) and get the same pre-tax deduction — as long as their income is below the IRA deductibility phase-out ($79,000 for a single filer in 2026 who has no workplace retirement plan). A <strong>Roth IRA</strong> is also available and while contributions are post-tax, the tax-free growth can be very valuable for lower earners.{' '}
+        Part-time workers who lack a workplace plan still have options: they can open a <strong>Traditional IRA</strong> (up to $7,500 in 2026, or $8,600 if you are 50+) and get the same pre-tax deduction — as long as their income is below the IRA deductibility phase-out ($79,000 for a single filer in 2026 who has no workplace retirement plan). A <strong>Roth IRA</strong> is also available and while contributions are post-tax, the tax-free growth can be very valuable for lower earners.{' '}
         <a
           href="https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-ira-contribution-limits"
           target="_blank"

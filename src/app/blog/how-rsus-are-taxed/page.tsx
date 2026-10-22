@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'How RSUs Are Taxed in 2026: A Complete Guide',
+  title: { absolute: 'How RSUs Are Taxed in 2026: A Complete Guide' },
   description:
     'RSUs are taxed as ordinary income when they vest — not when they\'re granted. Here\'s exactly how RSU taxation works at vesting and at sale, with a full worked example and capital gains breakdown.',
   alternates: { canonical: '/blog/how-rsus-are-taxed' },
   keywords:
     'how RSUs are taxed, RSU taxation 2026, restricted stock units taxes, RSU vesting tax, RSU withholding, RSU capital gains, stock compensation taxes 2026, equity compensation taxes',
   openGraph: {
+    type: 'article',
+    url: '/blog/how-rsus-are-taxed',
+    images: [{ url: '/og/blog/how-rsus-are-taxed', width: 1200, height: 630 }],
     title: 'How RSUs Are Taxed in 2026: A Complete Guide',
     description:
       'RSUs are taxed as ordinary income when they vest — not when they\'re granted. Here\'s the exact breakdown with worked examples.',
@@ -82,9 +86,7 @@ export default function HowRSUsAreTaxed() {
         How RSUs Are Taxed in 2026: A Complete Guide
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published August 7, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="how-rsus-are-taxed" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         Restricted Stock Units (RSUs) are one of the most common forms of equity compensation at tech companies, startups, and large corporations. But when your RSU grant starts vesting, the tax implications can be surprising. Many employees are caught off guard when a large amount of income appears on their W-2 in the year shares vest &mdash; and then face capital gains taxes when they eventually sell.
@@ -215,13 +217,13 @@ export default function HowRSUsAreTaxed() {
       </p>
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
-        <li style={{ marginBottom: '0.5rem' }}><strong>Social Security:</strong> 6.2% on wages up to $168,600 (the 2026 wage base)</li>
+        <li style={{ marginBottom: '0.5rem' }}><strong>Social Security:</strong> 6.2% on wages up to $184,500 (the 2026 wage base)</li>
         <li style={{ marginBottom: '0.5rem' }}><strong>Medicare:</strong> 1.45% on all wages, no income cap</li>
         <li style={{ marginBottom: '0.5rem' }}><strong>Additional Medicare Tax:</strong> 0.9% on wages above $200,000 (single) or $250,000 (married filing jointly)</li>
       </ul>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        If your year-to-date salary has already passed $168,600 by the time RSUs vest, no additional Social Security tax is owed on that RSU income. But Medicare always applies with no cap. High earners whose RSU income pushes total wages above $200,000 will also trigger the 0.9% Additional Medicare Tax.{' '}
+        If your year-to-date salary has already passed $184,500 by the time RSUs vest, no additional Social Security tax is owed on that RSU income. But Medicare always applies with no cap. High earners whose RSU income pushes total wages above $200,000 will also trigger the 0.9% Additional Medicare Tax.{' '}
         <a href="https://www.irs.gov/taxtopics/tc751" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS &mdash; Topic 751: Social Security and Medicare Withholding Rates)
         </a>
@@ -267,9 +269,9 @@ export default function HowRSUsAreTaxed() {
           </thead>
           <tbody>
             {[
-              ['0%', 'Up to $48,350', 'Up to $96,700'],
-              ['15%', '$48,351 – $533,400', '$96,701 – $600,050'],
-              ['20%', 'Over $533,400', 'Over $600,050'],
+              ['0%', 'Up to $49,450', 'Up to $98,900'],
+              ['15%', '$49,451 – $545,500', '$98,901 – $613,700'],
+              ['20%', 'Over $545,500', 'Over $613,700'],
             ].map(([rate, single, mfj], i) => (
               <tr key={rate} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', fontWeight: 600, color: '#1e293b' }}>{rate}</td>
@@ -529,7 +531,7 @@ export default function HowRSUsAreTaxed() {
       </h3>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        While RSU income itself cannot be directed into a 401(k), you can increase your regular paycheck contributions to your traditional 401(k) (up to $23,500 in 2026) or HSA (up to $4,300 single / $8,550 family) to lower your overall taxable income. Every pre-tax dollar contributed reduces the income on which your RSU vesting is taxed.
+        While RSU income itself cannot be directed into a 401(k), you can increase your regular paycheck contributions to your traditional 401(k) (up to $24,500 in 2026) or HSA (up to $4,400 single / $8,750 family) to lower your overall taxable income. Every pre-tax dollar contributed reduces the income on which your RSU vesting is taxed.
       </p>
 
       <h3 style={{ fontSize: '1.125rem', fontWeight: 600, color: '#1e293b', marginTop: '1.5rem', marginBottom: '0.75rem' }}>

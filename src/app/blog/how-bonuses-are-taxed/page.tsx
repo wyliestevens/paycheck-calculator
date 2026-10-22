@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'How Bonuses Are Taxed: The 22% Rule Explained (2026)',
+  title: { absolute: 'How Bonuses Are Taxed: The 22% Rule Explained (2026)' },
   description:
     'Your employer withholds 22% from most bonuses — but that\'s just withholding, not your final tax bill. Here\'s exactly how bonus taxation works in 2026.',
   alternates: { canonical: '/blog/how-bonuses-are-taxed' },
   keywords:
     'how bonuses are taxed, bonus tax rate 2026, 22 percent bonus tax, supplemental wage withholding, aggregate method bonus, bonus take home pay',
   openGraph: {
+    type: 'article',
+    url: '/blog/how-bonuses-are-taxed',
+    images: [{ url: '/og/blog/how-bonuses-are-taxed', width: 1200, height: 630 }],
     title: 'How Bonuses Are Taxed: The 22% Rule Explained (2026)',
     description:
       'Your employer withholds 22% from most bonuses — but that\'s just withholding, not your final tax bill. Here\'s exactly how bonus taxation works.',
@@ -70,9 +74,7 @@ export default function HowBonusesAreTaxed() {
         How Bonuses Are Taxed: The 22% Rule Explained (2026)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published June 1, 2026 &middot; 8 min read
-      </p>
+      <ArticleMeta slug="how-bonuses-are-taxed" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         You just found out you are getting a $5,000 bonus at work. Exciting — until it hits your bank account and the number is closer to $3,300. What happened to the other $1,700?
@@ -216,7 +218,7 @@ export default function HowBonusesAreTaxed() {
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
         <li style={{ marginBottom: '0.5rem' }}>
-          <strong>Social Security (6.2%):</strong> Applies to the first $176,100 of wages in 2026. If you have already exceeded that threshold from your regular salary, your bonus will not have Social Security withheld.{' '}
+          <strong>Social Security (6.2%):</strong> Applies to the first $184,500 of wages in 2026. If you have already exceeded that threshold from your regular salary, your bonus will not have Social Security withheld.{' '}
           <a href="https://www.ssa.gov/oact/cola/cbb.html" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
             (SSA.gov)
           </a>
@@ -349,7 +351,7 @@ export default function HowBonusesAreTaxed() {
       </h3>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.25rem' }}>
-        If your employer allows it, you can direct some or all of your bonus into your <a href="/blog/how-401k-contributions-affect-your-paycheck" style={{ color: '#2563eb', textDecoration: 'underline' }}>traditional 401(k)</a>. Pre-tax 401(k) contributions reduce your taxable income dollar for dollar. In 2026, you can contribute up to $23,500 total ($31,000 if you are 50 or older). A $5,000 bonus put into a traditional 401(k) saves you the full federal and state income tax on that amount — only FICA still applies.
+        If your employer allows it, you can direct some or all of your bonus into your <a href="/blog/how-401k-contributions-affect-your-paycheck" style={{ color: '#2563eb', textDecoration: 'underline' }}>traditional 401(k)</a>. Pre-tax 401(k) contributions reduce your taxable income dollar for dollar. In 2026, you can contribute up to $24,500 total ($32,500 if you are 50 or older). A $5,000 bonus put into a traditional 401(k) saves you the full federal and state income tax on that amount — only FICA still applies.
       </p>
 
       <h3 style={{ fontSize: '1.125rem', fontWeight: 700, color: '#1e293b', marginTop: '1.5rem', marginBottom: '0.5rem' }}>
@@ -357,7 +359,7 @@ export default function HowBonusesAreTaxed() {
       </h3>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.25rem' }}>
-        If you have a high-deductible health plan, contributing bonus money to a Health Savings Account (HSA) is triple tax-advantaged: the contribution is pre-tax, growth is tax-free, and withdrawals for qualified medical expenses are tax-free. The 2026 individual HSA limit is $4,300.
+        If you have a high-deductible health plan, contributing bonus money to a Health Savings Account (HSA) is triple tax-advantaged: the contribution is pre-tax, growth is tax-free, and withdrawals for qualified medical expenses are tax-free. The 2026 individual HSA limit is $4,400.
       </p>
 
       <h3 style={{ fontSize: '1.125rem', fontWeight: 700, color: '#1e293b', marginTop: '1.5rem', marginBottom: '0.5rem' }}>

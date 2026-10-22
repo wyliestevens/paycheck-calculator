@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'HSA and FSA: How They Affect Your Paycheck (2026 Guide)',
+  title: { absolute: 'HSA and FSA: How They Affect Your Paycheck (2026 Guide)' },
   description:
     'HSAs and FSAs let you pay for medical expenses with pre-tax dollars — cutting your tax bill by $500 to $1,500 or more each year. Here\'s exactly how they work, with 2026 limits and a worked dollar example.',
   alternates: { canonical: '/blog/hsa-fsa-how-they-affect-your-paycheck' },
   keywords:
     'HSA paycheck 2026, FSA paycheck 2026, health savings account contribution limit 2026, flexible spending account 2026, HSA vs FSA, pre-tax health benefits, HDHP HSA',
   openGraph: {
+    type: 'article',
+    url: '/blog/hsa-fsa-how-they-affect-your-paycheck',
+    images: [{ url: '/og/blog/hsa-fsa-how-they-affect-your-paycheck', width: 1200, height: 630 }],
     title: 'HSA and FSA: How They Affect Your Paycheck (2026 Guide)',
     description:
       'HSAs and FSAs let you pay for medical expenses with pre-tax dollars — cutting your tax bill by $500 to $1,500 or more each year.',
@@ -75,9 +79,7 @@ export default function HsaFsaPaycheck() {
         HSA and FSA: How They Affect Your Paycheck (2026 Guide)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published June 16, 2026 &middot; 8 min read
-      </p>
+      <ArticleMeta slug="hsa-fsa-how-they-affect-your-paycheck" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         Two of the most underused benefits on any benefits enrollment form are the <strong>HSA</strong> (Health Savings Account) and the <strong>FSA</strong> (Flexible Spending Account). Both let you pay for medical expenses with pre-tax dollars — meaning the government effectively subsidizes your healthcare spending. For a worker in the 22% federal tax bracket, that can translate to <strong>$500 to $1,500 in annual tax savings</strong> or more.
@@ -172,7 +174,7 @@ export default function HsaFsaPaycheck() {
               ['HSA — Self-Only Coverage', '$4,400', 'Must be enrolled in HDHP'],
               ['HSA — Family Coverage', '$8,750', 'Must be enrolled in HDHP'],
               ['HSA Catch-Up (age 55+)', '+$1,000', 'Additional per eligible individual'],
-              ['Healthcare FSA', '$3,350', 'Per employee; no HDHP required'],
+              ['Healthcare FSA', '$3,400', 'Per employee; no HDHP required'],
               ['FSA Rollover Maximum', '$660', 'Maximum unused funds that carry over'],
               ['Dependent Care FSA', '$5,000', '$2,500 if married filing separately'],
             ].map(([account, limit, notes], i) => (
@@ -382,7 +384,7 @@ export default function HsaFsaPaycheck() {
           <tbody>
             {[
               ['HDHP required?', 'Yes', 'No'],
-              ['2026 individual limit', '$4,400', '$3,350'],
+              ['2026 individual limit', '$4,400', '$3,400'],
               ['Unused funds roll over?', 'Yes — unlimited', 'Limited ($660 max)'],
               ['Funds available January 1?', 'Only what you\'ve contributed', 'Full annual election'],
               ['Can you invest the balance?', 'Yes', 'No'],

@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Tuition Reimbursement and Education Benefits: How the $5,250 Tax Break Works (2026)',
+  title: { absolute: 'Tuition Reimbursement and Education Benefits: How the $5,250 Tax Break Works (2026)' },
   description:
     "Employer tuition reimbursement up to $5,250/year is tax-free — no income tax, no FICA. Here's exactly how Section 127 works and how much you save in 2026.",
   alternates: { canonical: '/blog/tuition-reimbursement-taxes-2026' },
   keywords:
     'tuition reimbursement taxes 2026, employer education assistance, Section 127, is tuition reimbursement taxable, tuition reimbursement tax-free, employer tuition assistance, educational assistance program paycheck',
   openGraph: {
+    type: 'article',
+    url: '/blog/tuition-reimbursement-taxes-2026',
+    images: [{ url: '/og/blog/tuition-reimbursement-taxes-2026', width: 1200, height: 630 }],
     title: 'Tuition Reimbursement and Education Benefits: How the $5,250 Tax Break Works (2026)',
     description:
       "Employer tuition reimbursement up to $5,250/year is completely tax-free. Here's exactly how the Section 127 benefit works — with a full worked example.",
@@ -76,9 +80,7 @@ export default function TuitionReimbursementTaxes2026() {
         Tuition Reimbursement and Education Benefits: How the $5,250 Tax Break Works (2026)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published October 18, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="tuition-reimbursement-taxes-2026" />
 
       {/* Summary */}
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>

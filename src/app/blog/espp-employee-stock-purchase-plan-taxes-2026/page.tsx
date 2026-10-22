@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'How ESPP (Employee Stock Purchase Plans) Are Taxed in 2026',
+  title: { absolute: 'How ESPP (Employee Stock Purchase Plans) Are Taxed in 2026' },
   description:
     'ESPPs let you buy company stock at a 15% discount — but the tax rules are complicated. Here\'s exactly how ESPP income is taxed, with a full worked example.',
   alternates: { canonical: '/blog/espp-employee-stock-purchase-plan-taxes-2026' },
   keywords:
     'ESPP taxes 2026, employee stock purchase plan taxes, ESPP qualifying disposition, ESPP disqualifying disposition, how ESPP is taxed, ESPP ordinary income, ESPP capital gains',
   openGraph: {
+    type: 'article',
+    url: '/blog/espp-employee-stock-purchase-plan-taxes-2026',
+    images: [{ url: '/og/blog/espp-employee-stock-purchase-plan-taxes-2026', width: 1200, height: 630 }],
     title: 'How ESPP (Employee Stock Purchase Plans) Are Taxed in 2026',
     description:
       'ESPPs let you buy company stock at a 15% discount — but the tax rules are complicated. Here\'s exactly how ESPP income is taxed, with a full worked example.',
@@ -68,9 +72,7 @@ export default function ESPPTaxes2026() {
         How ESPP (Employee Stock Purchase Plans) Are Taxed in 2026
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published October 8, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="espp-employee-stock-purchase-plan-taxes-2026" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         An Employee Stock Purchase Plan (ESPP) sounds like a great deal: your employer lets you buy company stock at a discount — usually <strong>15% below market price</strong>. But when it comes time to sell, the tax rules can be surprisingly complicated. If you sell at the wrong time, you could pay ordinary income tax rates instead of the lower long-term capital gains rates — and that difference can cost you thousands.

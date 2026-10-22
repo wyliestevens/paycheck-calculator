@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Federal Tax Brackets Explained for 2026 (All 7 Rates)',
+  title: { absolute: 'Federal Tax Brackets Explained for 2026 (All 7 Rates)' },
   description:
     'The US has 7 federal income tax brackets in 2026, ranging from 10% to 37%. Learn exactly which bracket your income falls into, how much tax you actually owe, and see a full worked example at $75,000.',
   alternates: { canonical: '/blog/federal-tax-brackets-2026' },
   keywords:
     'federal tax brackets 2026, income tax brackets 2026, tax rates 2026, IRS tax brackets, marginal tax rate 2026, federal income tax 2026, 22 percent tax bracket, 24 percent tax bracket',
   openGraph: {
+    type: 'article',
+    url: '/blog/federal-tax-brackets-2026',
+    images: [{ url: '/og/blog/federal-tax-brackets-2026', width: 1200, height: 630 }],
     title: 'Federal Tax Brackets Explained for 2026 (All 7 Rates)',
     description:
       'Learn exactly which tax bracket your income falls into in 2026, how marginal rates work, and how much federal tax you actually owe — with a full $75,000 worked example.',
@@ -87,9 +91,7 @@ export default function FederalTaxBrackets2026() {
         Federal Tax Brackets Explained for 2026 (All 7 Rates)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published July 28, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="federal-tax-brackets-2026" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         The United States federal income tax system has <strong>seven brackets</strong>, with rates of 10%, 12%, 22%, 24%, 32%, 35%, and 37%. But those rates work very differently from what most people assume. A $70,000 salary doesn&rsquo;t mean you pay 22% on all $70,000 &mdash; you only pay 22% on the slice of income that falls within the 22% bracket.
@@ -143,13 +145,13 @@ export default function FederalTaxBrackets2026() {
           </thead>
           <tbody>
             {[
-              ['10%', '$0 – $11,925', '10% of the amount'],
-              ['12%', '$11,926 – $48,475', '$1,192.50 + 12% over $11,925'],
-              ['22%', '$48,476 – $103,350', '$5,578.50 + 22% over $48,475'],
-              ['24%', '$103,351 – $197,300', '$17,651.50 + 24% over $103,350'],
-              ['32%', '$197,301 – $250,525', '$40,199.50 + 32% over $197,300'],
-              ['35%', '$250,526 – $626,350', '$57,231.50 + 35% over $250,525'],
-              ['37%', 'Over $626,350', '$188,769.75 + 37% over $626,350'],
+              ['10%', '$0 – $12,400', '10% of the amount'],
+              ['12%', '$12,401 – $50,400', '$1,240.00 + 12% over $12,400'],
+              ['22%', '$50,401 – $105,700', '$5,800.00 + 22% over $50,400'],
+              ['24%', '$105,701 – $201,775', '$17,966.00 + 24% over $105,700'],
+              ['32%', '$201,776 – $256,225', '$41,024.00 + 32% over $201,775'],
+              ['35%', '$256,226 – $640,600', '$58,448.00 + 35% over $256,225'],
+              ['37%', 'Over $640,600', '$192,979.25 + 37% over $640,600'],
             ].map(([rate, range, calc], i) => (
               <tr key={rate} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', fontWeight: 700, color: '#dc2626', fontFamily: "'JetBrains Mono', monospace" }}>{rate}</td>
@@ -194,13 +196,13 @@ export default function FederalTaxBrackets2026() {
           </thead>
           <tbody>
             {[
-              ['10%', '$0 – $23,850'],
-              ['12%', '$23,851 – $96,950'],
-              ['22%', '$96,951 – $206,700'],
-              ['24%', '$206,701 – $394,600'],
-              ['32%', '$394,601 – $501,050'],
-              ['35%', '$501,051 – $751,600'],
-              ['37%', 'Over $751,600'],
+              ['10%', '$0 – $24,800'],
+              ['12%', '$24,801 – $100,800'],
+              ['22%', '$100,801 – $211,400'],
+              ['24%', '$211,401 – $403,550'],
+              ['32%', '$403,551 – $512,450'],
+              ['35%', '$512,451 – $768,700'],
+              ['37%', 'Over $768,700'],
             ].map(([rate, range], i) => (
               <tr key={rate} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', fontWeight: 700, color: '#dc2626', fontFamily: "'JetBrains Mono', monospace" }}>{rate}</td>
@@ -212,7 +214,7 @@ export default function FederalTaxBrackets2026() {
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Notice how the 37% bracket for MFJ starts at $751,600 &mdash; more than double the single-filer threshold of $626,350. The MFJ brackets were designed to roughly eliminate the &ldquo;marriage penalty&rdquo; at most income levels.{' '}
+        Notice how the 37% bracket for MFJ starts at $768,700 &mdash; well short of double the single-filer threshold of $640,600. The MFJ brackets were designed to roughly eliminate the &ldquo;marriage penalty&rdquo; at most income levels.{' '}
         <a href="https://www.irs.gov/taxtopics/tc409" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS &mdash; Topic 409: Capital Gains and Losses)
         </a>
@@ -248,10 +250,10 @@ export default function FederalTaxBrackets2026() {
           </thead>
           <tbody>
             {[
-              ['Single', '$15,000'],
-              ['Married Filing Jointly', '$30,000'],
-              ['Married Filing Separately', '$15,000'],
-              ['Head of Household', '$22,500'],
+              ['Single', '$16,100'],
+              ['Married Filing Jointly', '$32,200'],
+              ['Married Filing Separately', '$16,100'],
+              ['Head of Household', '$24,150'],
             ].map(([status, amount], i) => (
               <tr key={status} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569' }}>{status}</td>
@@ -263,7 +265,7 @@ export default function FederalTaxBrackets2026() {
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The standard deduction means that a single person earning $15,000 or less pays <strong>zero federal income tax</strong> &mdash; because after subtracting the deduction, their taxable income is $0 or less. This is one of the most important facts about the US tax system that many people miss.{' '}
+        The standard deduction means that a single person earning $16,100 or less pays <strong>zero federal income tax</strong> &mdash; because after subtracting the deduction, their taxable income is $0 or less. This is one of the most important facts about the US tax system that many people miss.{' '}
         <a href="https://www.irs.gov/taxtopics/tc551" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS &mdash; Topic 551: Standard Deduction)
         </a>
@@ -296,8 +298,8 @@ export default function FederalTaxBrackets2026() {
         }}
       >
         Gross income: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$75,000<br />
-        Standard deduction: &nbsp;&nbsp;&nbsp;&mdash;$15,000<br />
-        <strong>Taxable income: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$60,000</strong>
+        Standard deduction: &nbsp;&nbsp;&nbsp;&mdash;$16,100<br />
+        <strong>Taxable income: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$58,900</strong>
       </div>
 
       <h3 style={{ fontSize: '1.125rem', fontWeight: 600, color: '#1e293b', marginTop: '1.5rem', marginBottom: '0.75rem' }}>
@@ -305,7 +307,7 @@ export default function FederalTaxBrackets2026() {
       </h3>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1rem' }}>
-        Now apply each bracket in turn to the $60,000 taxable income:
+        Now apply each bracket in turn to the $58,900 taxable income:
       </p>
 
       <div style={{ overflowX: 'auto', marginBottom: '1.5rem' }}>
@@ -328,32 +330,32 @@ export default function FederalTaxBrackets2026() {
           <tbody>
             <tr style={{ background: '#ffffff' }}>
               <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569' }}>10% bracket</td>
-              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$11,925</td>
+              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$12,400</td>
               <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#dc2626', fontWeight: 700 }}>10%</td>
-              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>$1,192.50</td>
+              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>$1,240.00</td>
             </tr>
             <tr style={{ background: '#f8fafc' }}>
               <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569' }}>12% bracket</td>
-              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$36,550<br /><span style={{ fontSize: '0.8rem', color: '#94a3b8' }}>($48,475 − $11,925)</span></td>
+              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$38,000<br /><span style={{ fontSize: '0.8rem', color: '#94a3b8' }}>($50,400 − $12,400)</span></td>
               <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#dc2626', fontWeight: 700 }}>12%</td>
-              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>$4,386.00</td>
+              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>$4,560.00</td>
             </tr>
             <tr style={{ background: '#ffffff' }}>
               <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569' }}>22% bracket</td>
-              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$11,525<br /><span style={{ fontSize: '0.8rem', color: '#94a3b8' }}>($60,000 − $48,475)</span></td>
+              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$8,500<br /><span style={{ fontSize: '0.8rem', color: '#94a3b8' }}>($58,900 − $50,400)</span></td>
               <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#dc2626', fontWeight: 700 }}>22%</td>
-              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>$2,535.50</td>
+              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>$1,870.00</td>
             </tr>
             <tr style={{ background: '#fef2f2' }}>
               <td colSpan={3} style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', fontWeight: 700, color: '#1e293b' }}>Total Federal Income Tax</td>
-              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#1e293b', fontSize: '1rem' }}>$8,114.00</td>
+              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#1e293b', fontSize: '1rem' }}>$7,670.00</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        A $75,000 salary puts you in the <strong>22% marginal tax bracket</strong> &mdash; but your <strong>effective federal income tax rate</strong> is only about <strong>10.82%</strong> ($8,114 &divide; $75,000). That&rsquo;s because only the top slice of your income is taxed at 22%.
+        A $75,000 salary puts you in the <strong>22% marginal tax bracket</strong> &mdash; but your <strong>effective federal income tax rate</strong> is only about <strong>10.23%</strong> ($7,670 &divide; $75,000). That&rsquo;s because only the top slice of your income is taxed at 22%.
       </p>
 
       {/* Section 6 */}
@@ -370,7 +372,7 @@ export default function FederalTaxBrackets2026() {
           <strong>Marginal tax rate:</strong> The rate applied to your next dollar of income &mdash; in other words, the bracket your highest income sits in. In the example above, it&rsquo;s 22%. This is the rate that matters when you&rsquo;re thinking about the tax cost of a raise, freelance gig, or Roth IRA conversion.
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
-          <strong>Effective tax rate:</strong> The percentage of your <em>total</em> gross income paid in federal income tax. Because the lower brackets apply first, your effective rate is always lower than your marginal rate. At $75,000 it&rsquo;s 10.82%, even though the top bracket is 22%.
+          <strong>Effective tax rate:</strong> The percentage of your <em>total</em> gross income paid in federal income tax. Because the lower brackets apply first, your effective rate is always lower than your marginal rate. At $75,000 it&rsquo;s 10.23%, even though the top bracket is 22%.
         </li>
       </ul>
 
@@ -407,13 +409,13 @@ export default function FederalTaxBrackets2026() {
           </thead>
           <tbody>
             {[
-              ['$30,000', '$15,000', '$1,500', '10%', '5.0%'],
-              ['$50,000', '$35,000', '$3,858', '12%', '7.7%'],
-              ['$75,000', '$60,000', '$8,114', '22%', '10.8%'],
-              ['$100,000', '$85,000', '$13,661', '22%', '13.7%'],
-              ['$150,000', '$135,000', '$25,261', '22%', '16.8%'],
-              ['$200,000', '$185,000', '$38,861', '32%', '19.4%'],
-              ['$300,000', '$285,000', '$73,853', '35%', '24.6%'],
+              ['$30,000', '$13,900', '$1,420', '12%', '4.7%'],
+              ['$50,000', '$33,900', '$3,820', '12%', '7.6%'],
+              ['$75,000', '$58,900', '$7,670', '22%', '10.2%'],
+              ['$100,000', '$83,900', '$13,170', '22%', '13.2%'],
+              ['$150,000', '$133,900', '$24,734', '24%', '16.5%'],
+              ['$200,000', '$183,900', '$36,734', '24%', '18.4%'],
+              ['$300,000', '$283,900', '$68,134', '35%', '22.7%'],
             ].map(([salary, taxable, tax, marginal, effective], i) => (
               <tr key={salary} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", fontWeight: 700, color: '#1e293b' }}>{salary}</td>
@@ -502,9 +504,9 @@ export default function FederalTaxBrackets2026() {
           </thead>
           <tbody>
             {[
-              ['0%', 'Up to $48,350'],
-              ['15%', '$48,351 – $533,400'],
-              ['20%', 'Over $533,400'],
+              ['0%', 'Up to $49,450'],
+              ['15%', '$49,451 – $545,500'],
+              ['20%', 'Over $545,500'],
             ].map(([rate, range], i) => (
               <tr key={rate} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', fontWeight: 700, color: '#059669', fontFamily: "'JetBrains Mono', monospace" }}>{rate}</td>
@@ -561,30 +563,30 @@ export default function FederalTaxBrackets2026() {
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
         <li style={{ marginBottom: '0.75rem' }}>
-          <strong>Traditional 401(k) contributions:</strong> Up to $23,500 in 2026 ($31,000 if age 50+). Every dollar contributed reduces your taxable income dollar-for-dollar.{' '}
+          <strong>Traditional 401(k) contributions:</strong> Up to $24,500 in 2026 ($32,500 if age 50+). Every dollar contributed reduces your taxable income dollar-for-dollar.{' '}
           <a href="https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-401k-and-profit-sharing-plan-contribution-limits" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
             (IRS &mdash; 401(k) Contribution Limits)
           </a>
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
-          <strong>Traditional IRA contributions:</strong> Up to $7,000 ($8,000 if age 50+), deductible depending on your income and whether you have a workplace plan.{' '}
+          <strong>Traditional IRA contributions:</strong> Up to $7,500 ($8,600 if age 50+), deductible depending on your income and whether you have a workplace plan.{' '}
           <a href="https://www.irs.gov/retirement-plans/ira-deduction-limits" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
             (IRS &mdash; IRA Deduction Limits)
           </a>
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
-          <strong>Health Savings Account (HSA):</strong> Up to $4,300 (single) or $8,550 (family) in 2026 for those with a High-Deductible Health Plan. Contributions are fully pre-tax.
+          <strong>Health Savings Account (HSA):</strong> Up to $4,400 (single) or $8,750 (family) in 2026 for those with a High-Deductible Health Plan. Contributions are fully pre-tax.
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
-          <strong>Flexible Spending Account (FSA):</strong> Up to $3,300 in 2026 for medical expenses. Also pre-tax.
+          <strong>Flexible Spending Account (FSA):</strong> Up to $3,400 in 2026 for medical expenses. Also pre-tax.
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
-          <strong>Itemized deductions:</strong> If your mortgage interest, state taxes, charitable contributions, and other eligible expenses exceed the $15,000 standard deduction, itemizing can reduce your taxable income further.
+          <strong>Itemized deductions:</strong> If your mortgage interest, state taxes, charitable contributions, and other eligible expenses exceed the $16,100 standard deduction, itemizing can reduce your taxable income further.
         </li>
       </ul>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        A practical example: a single earner with a $90,000 salary who contributes $15,000 to a traditional 401(k) reduces their taxable income from $75,000 to $60,000 &mdash; saving $3,300 in federal income tax (roughly 22% of the $15,000 contribution). The 401(k) contribution effectively &ldquo;costs&rdquo; them only $11,700 in take-home pay, not $15,000.
+        A practical example: a single earner with a $90,000 salary who contributes $15,000 to a traditional 401(k) reduces their taxable income from $73,900 to $58,900 &mdash; saving $3,300 in federal income tax (roughly 22% of the $15,000 contribution). The 401(k) contribution effectively &ldquo;costs&rdquo; them only $11,700 in take-home pay, not $15,000.
       </p>
 
       {/* Section 12 */}
@@ -598,7 +600,7 @@ export default function FederalTaxBrackets2026() {
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
         <li style={{ marginBottom: '0.5rem' }}>
-          <strong>FICA taxes:</strong> 6.2% for Social Security (up to $168,600) + 1.45% for Medicare, totaling 7.65% of your gross wages. Unlike income tax, FICA is not affected by the standard deduction.
+          <strong>FICA taxes:</strong> 6.2% for Social Security (up to $184,500) + 1.45% for Medicare, totaling 7.65% of your gross wages. Unlike income tax, FICA is not affected by the standard deduction.
         </li>
         <li style={{ marginBottom: '0.5rem' }}>
           <strong>State income tax:</strong> Varies from 0% (no-income-tax states like Texas and Florida) to 13.3% (California&rsquo;s top rate). Most states have their own bracket system.
@@ -618,7 +620,7 @@ export default function FederalTaxBrackets2026() {
       </h2>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The 2026 federal income tax system has seven brackets: 10%, 12%, 22%, 24%, 32%, 35%, and 37%. Each rate applies only to the slice of income within its range &mdash; not to your entire income. After subtracting the $15,000 standard deduction (for single filers), most middle-income earners end up with effective federal income tax rates between 8% and 17%.
+        The 2026 federal income tax system has seven brackets: 10%, 12%, 22%, 24%, 32%, 35%, and 37%. Each rate applies only to the slice of income within its range &mdash; not to your entire income. After subtracting the $16,100 standard deduction (for single filers), most middle-income earners end up with effective federal income tax rates between 8% and 17%.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>

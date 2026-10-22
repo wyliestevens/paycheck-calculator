@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Home Office Deduction 2026: Who Can Claim It (and Who Cannot)',
+  title: { absolute: 'Home Office Deduction 2026: Who Can Claim It (and Who Cannot)' },
   description:
     'The home office deduction saves self-employed workers up to $1,500 per year — but employees cannot claim it since 2018. Here\'s who qualifies, the two calculation methods, and a full worked example.',
   alternates: { canonical: '/blog/home-office-deduction-2026' },
   keywords:
     'home office deduction 2026, can I deduct home office, home office tax deduction, self-employed home office, Form 8829, simplified home office method, remote work tax deduction 2026',
   openGraph: {
+    type: 'article',
+    url: '/blog/home-office-deduction-2026',
+    images: [{ url: '/og/blog/home-office-deduction-2026', width: 1200, height: 630 }],
     title: 'Home Office Deduction 2026: Who Can Claim It (and Who Cannot)',
     description:
       'Self-employed workers can deduct their home office. Employees cannot — a rule that caught millions of remote workers off guard after 2018. Here\'s the full breakdown.',
@@ -76,9 +80,7 @@ export default function HomeOfficeDeduction2026() {
         Home Office Deduction 2026: Who Can Claim It (and Who Cannot)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published August 27, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="home-office-deduction-2026" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         When millions of office workers were sent home in 2020, a lot of them assumed they could finally deduct their home office on their taxes. Many were wrong. The home office deduction is one of the most misunderstood tax breaks in the U.S. tax code — because a major rule change in 2018 eliminated it for <strong>most employees</strong>.

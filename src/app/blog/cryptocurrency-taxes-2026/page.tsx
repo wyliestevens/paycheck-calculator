@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Cryptocurrency Taxes 2026: How Crypto Is Taxed (Plain-English Guide)',
+  title: { absolute: 'Cryptocurrency Taxes 2026: How Crypto Is Taxed (Plain-English Guide)' },
   description:
     'The IRS taxes crypto as property — so every sale, trade, or payment triggers a capital gain or loss. Here\'s exactly how crypto taxes work in 2026, with a full worked example and a tax-rate table.',
   alternates: { canonical: '/blog/cryptocurrency-taxes-2026' },
   keywords:
     'cryptocurrency taxes 2026, how is crypto taxed, bitcoin taxes, crypto capital gains, crypto tax rate 2026, Form 8949 crypto, staking taxes, mining taxes, crypto income tax',
   openGraph: {
+    type: 'article',
+    url: '/blog/cryptocurrency-taxes-2026',
+    images: [{ url: '/og/blog/cryptocurrency-taxes-2026', width: 1200, height: 630 }],
     title: 'Cryptocurrency Taxes 2026: How Crypto Is Taxed (Plain-English Guide)',
     description:
       'The IRS taxes crypto as property — every sale, trade, or payment triggers a capital gain or loss. Full guide with 2026 rates and a worked example.',
@@ -88,9 +92,7 @@ export default function CryptocurrencyTaxes2026() {
         Cryptocurrency Taxes 2026: How Crypto Is Taxed (Plain-English Guide)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published September 25, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="cryptocurrency-taxes-2026" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         Whether you bought Bitcoin, traded Ethereum for Solana, or got paid in crypto by a client, the IRS wants its share. The key rule &mdash; in place since{' '}
@@ -225,7 +227,7 @@ export default function CryptocurrencyTaxes2026() {
         <strong>Short-term capital gain: $16,000</strong><br />
         <br />
         Your taxable income: $70,000 wages + $16,000 gain = $86,000<br />
-        After standard deduction ($15,000): $71,000 taxable income<br />
+        After standard deduction ($16,100): $69,900 taxable income<br />
         <br />
         The $16,000 gain falls in the 22% bracket<br />
         <strong>Tax on the gain: $3,520</strong>

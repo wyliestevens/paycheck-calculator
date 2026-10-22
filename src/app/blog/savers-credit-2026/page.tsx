@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: "The Saver's Credit: The Tax Credit Most Low-Income Workers Miss (2026)",
+  title: { absolute: "The Saver's Credit: The Tax Credit Most Low-Income Workers Miss (2026)" },
   description:
     "The Saver's Credit gives low- and moderate-income workers up to $1,000 back for contributing to a retirement account — but most eligible people never claim it. Here's how it works.",
   alternates: { canonical: '/blog/savers-credit-2026' },
   keywords:
     "saver's credit 2026, retirement savings credit, saver's credit income limit, Form 8880, saver's credit eligible contributions, IRA tax credit, 401k tax credit low income",
   openGraph: {
+    type: 'article',
+    url: '/blog/savers-credit-2026',
+    images: [{ url: '/og/blog/savers-credit-2026', width: 1200, height: 630 }],
     title: "The Saver's Credit: The Tax Credit Most Low-Income Workers Miss (2026)",
     description:
       "Contribute to a 401(k) or IRA and earn under $39,500 (single)? The IRS will give you up to $1,000 back. Here's exactly how the Saver's Credit works.",
@@ -81,9 +85,7 @@ export default function SaversCredit2026() {
         The Saver&apos;s Credit: The Tax Credit Most Low-Income Workers Miss (2026)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published September 17, 2026 &middot; 8 min read
-      </p>
+      <ArticleMeta slug="savers-credit-2026" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         Every year, millions of Americans leave free money on the table. It is not because they are careless — it is because they have never heard of the <strong>Retirement Savings Contributions Credit</strong>, better known as the <strong>Saver&apos;s Credit</strong>.

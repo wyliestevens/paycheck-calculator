@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Payroll Tax vs Income Tax: What\'s the Difference? (2026)',
+  title: { absolute: 'Payroll Tax vs Income Tax: What\'s the Difference? (2026)' },
   description:
     'Payroll taxes and income taxes both come out of your paycheck — but they work completely differently. Here\'s the clear breakdown, with a $70,000 worked example.',
   alternates: { canonical: '/blog/payroll-tax-vs-income-tax' },
   keywords:
     'payroll tax vs income tax, what is payroll tax, FICA vs income tax, Social Security tax vs income tax, payroll taxes explained 2026, difference between payroll and income tax',
   openGraph: {
+    type: 'article',
+    url: '/blog/payroll-tax-vs-income-tax',
+    images: [{ url: '/og/blog/payroll-tax-vs-income-tax', width: 1200, height: 630 }],
     title: 'Payroll Tax vs Income Tax: What\'s the Difference? (2026)',
     description:
       'Payroll taxes and income taxes both come out of your paycheck — but they fund different programs and follow different rules. Here\'s the full breakdown.',
@@ -71,9 +75,7 @@ export default function PayrollTaxVsIncomeTax() {
         Payroll Tax vs Income Tax: What&rsquo;s the Difference? (2026)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published July 2, 2026 &middot; 8 min read
-      </p>
+      <ArticleMeta slug="payroll-tax-vs-income-tax" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         Look at your pay stub and you will see more than one tax line. There is federal income tax, and then there are separate lines for Social Security and Medicare. These are all taxes &mdash; but they are not the same thing. <strong>Payroll taxes</strong> and <strong>income taxes</strong> work in completely different ways, fund different programs, and follow different rules.
@@ -105,13 +107,13 @@ export default function PayrollTaxVsIncomeTax() {
           </thead>
           <tbody>
             {[
-              ['10%', '$0 – $11,925'],
-              ['12%', '$11,926 – $48,475'],
-              ['22%', '$48,476 – $103,350'],
-              ['24%', '$103,351 – $197,300'],
-              ['32%', '$197,301 – $250,525'],
-              ['35%', '$250,526 – $626,350'],
-              ['37%', 'Over $626,350'],
+              ['10%', '$0 – $12,400'],
+              ['12%', '$12,401 – $50,400'],
+              ['22%', '$50,401 – $105,700'],
+              ['24%', '$105,701 – $201,775'],
+              ['32%', '$201,776 – $256,225'],
+              ['35%', '$256,226 – $640,600'],
+              ['37%', 'Over $640,600'],
             ].map(([rate, range], i) => (
               <tr key={rate} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', fontFamily: "'JetBrains Mono', monospace", color: '#4338ca', fontWeight: 600 }}>{rate}</td>
@@ -123,7 +125,7 @@ export default function PayrollTaxVsIncomeTax() {
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Before any income is taxed, you first subtract the <strong>standard deduction</strong> &mdash; $15,000 for a single filer in 2026. So if you earn $70,000, only $55,000 is actually subject to federal income tax.{' '}
+        Before any income is taxed, you first subtract the <strong>standard deduction</strong> &mdash; $16,100 for a single filer in 2026. So if you earn $70,000, only $53,900 is actually subject to federal income tax.{' '}
         <a href="https://www.irs.gov/newsroom/irs-provides-tax-inflation-adjustments-for-tax-year-2026" target="_blank" rel="noopener noreferrer" style={{ color: '#4338ca', textDecoration: 'underline' }}>
           (IRS &mdash; 2026 Tax Inflation Adjustments)
         </a>
@@ -157,7 +159,7 @@ export default function PayrollTaxVsIncomeTax() {
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
         <li style={{ marginBottom: '0.75rem' }}>
-          <strong>Social Security tax:</strong> 6.2% on wages up to the <strong>wage base of $168,600</strong>. Your employer also pays 6.2%, so the total Social Security contribution is 12.4% of your wages. Once you earn more than $168,600 in a year, you stop paying Social Security tax on any additional earnings.{' '}
+          <strong>Social Security tax:</strong> 6.2% on wages up to the <strong>wage base of $184,500</strong>. Your employer also pays 6.2%, so the total Social Security contribution is 12.4% of your wages. Once you earn more than $184,500 in a year, you stop paying Social Security tax on any additional earnings.{' '}
           <a href="https://www.ssa.gov/oact/cola/cbb.html" target="_blank" rel="noopener noreferrer" style={{ color: '#4338ca', textDecoration: 'underline' }}>
             (SSA.gov &mdash; Contribution and Benefit Base)
           </a>
@@ -196,7 +198,7 @@ export default function PayrollTaxVsIncomeTax() {
               ['Tax structure', 'Progressive brackets', 'Flat percentage rates'],
               ['Standard deduction?', 'Yes — reduces taxable income', 'No — applies to all wages'],
               ['Employer pays?', 'No', 'Yes — employer matches FICA'],
-              ['Income cap?', 'No cap', 'SS cap at $168,600'],
+              ['Income cap?', 'No cap', 'SS cap at $184,500'],
               ['Funds', 'General government budget', 'Social Security & Medicare'],
               ['Rate (2026)', '10% to 37%', '7.65% total (6.2% + 1.45%)'],
               ['Pay stub label', 'Federal Withholding / FIT', 'OASDI / SS / MED'],
@@ -224,7 +226,7 @@ export default function PayrollTaxVsIncomeTax() {
       </h3>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '0.75rem' }}>
-        Subtract the standard deduction first: $70,000 &minus; $15,000 = <strong>$55,000 taxable income</strong>
+        Subtract the standard deduction first: $70,000 &minus; $16,100 = <strong>$53,900 taxable income</strong>
       </p>
 
       <div style={{ overflowX: 'auto', marginBottom: '1.5rem' }}>
@@ -238,9 +240,9 @@ export default function PayrollTaxVsIncomeTax() {
           </thead>
           <tbody>
             {[
-              ['10%', '$0 – $11,925', '$1,192.50'],
-              ['12%', '$11,926 – $48,475 ($36,550)', '$4,386.00'],
-              ['22%', '$48,476 – $55,000 ($6,525)', '$1,435.50'],
+              ['10%', '$0 – $12,400', '$1,240.00'],
+              ['12%', '$12,401 – $50,400 ($38,000)', '$4,560.00'],
+              ['22%', '$50,401 – $53,900 ($3,500)', '$770.00'],
             ].map(([bracket, income, tax], i) => (
               <tr key={bracket} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', fontFamily: "'JetBrains Mono', monospace", color: '#4338ca', fontWeight: 600 }}>{bracket}</td>
@@ -250,7 +252,7 @@ export default function PayrollTaxVsIncomeTax() {
             ))}
             <tr style={{ background: '#fef2f2' }}>
               <td colSpan={2} style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', fontWeight: 700, color: '#1e293b' }}>Total Federal Income Tax</td>
-              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>$7,014</td>
+              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>$6,570</td>
             </tr>
           </tbody>
         </table>
@@ -305,7 +307,7 @@ export default function PayrollTaxVsIncomeTax() {
           <tbody>
             {[
               ['Gross Pay', '$70,000', '#1e293b'],
-              ['Federal Income Tax', '−$7,014', '#dc2626'],
+              ['Federal Income Tax', '−$6,570', '#dc2626'],
               ['Social Security (6.2%)', '−$4,340', '#dc2626'],
               ['Medicare (1.45%)', '−$1,015', '#dc2626'],
               ['State Income Tax (Texas)', '$0', '#059669'],
@@ -317,14 +319,14 @@ export default function PayrollTaxVsIncomeTax() {
             ))}
             <tr style={{ background: '#ecfdf5' }}>
               <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', fontWeight: 700, color: '#1e293b' }}>Annual Take-Home Pay</td>
-              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>$57,631</td>
+              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>$58,075</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Notice that payroll taxes ($5,355) took almost as much as federal income tax ($7,014) &mdash; yet most people only think about income tax. That is a big oversight. Your employer also quietly paid another $5,355 in FICA on your behalf. Your total labor cost to your employer was $75,355, not $70,000.
+        Notice that payroll taxes ($5,355) took almost as much as federal income tax ($6,570) &mdash; yet most people only think about income tax. That is a big oversight. Your employer also quietly paid another $5,355 in FICA on your behalf. Your total labor cost to your employer was $75,355, not $70,000.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
@@ -397,7 +399,7 @@ export default function PayrollTaxVsIncomeTax() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        For someone earning $250,000, income taxes take a much bigger share &mdash; but their Social Security tax stops entirely once they pass $168,600. Every dollar above that cap is free from Social Security tax. So their effective FICA rate on total income is actually lower than someone earning $50,000.
+        For someone earning $250,000, income taxes take a much bigger share &mdash; but their Social Security tax stops entirely once they pass $184,500. Every dollar above that cap is free from Social Security tax. So their effective FICA rate on total income is actually lower than someone earning $50,000.
       </p>
 
       <h2 style={{ fontSize: '1.375rem', fontWeight: 700, color: '#1e293b', marginTop: '2.5rem', marginBottom: '0.75rem' }}>

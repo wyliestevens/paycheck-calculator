@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'How 401(k) and IRA Withdrawals Are Taxed in Retirement (2026)',
+  title: { absolute: 'How 401(k) and IRA Withdrawals Are Taxed in Retirement (2026)' },
   description:
     'Traditional 401(k) and IRA withdrawals are taxed as ordinary income in retirement. Here\'s how RMDs, early withdrawal penalties, Roth rules, and state taxes work — with a full worked example.',
   alternates: { canonical: '/blog/retirement-withdrawal-taxes-2026' },
   keywords:
     'retirement withdrawal taxes 2026, 401k withdrawal tax, IRA withdrawal taxes, RMD taxes, early withdrawal penalty, Roth IRA withdrawal tax-free, retirement income tax 2026, required minimum distributions',
   openGraph: {
+    type: 'article',
+    url: '/blog/retirement-withdrawal-taxes-2026',
+    images: [{ url: '/og/blog/retirement-withdrawal-taxes-2026', width: 1200, height: 630 }],
     title: 'How 401(k) and IRA Withdrawals Are Taxed in Retirement (2026)',
     description:
       'Traditional 401(k) and IRA withdrawals are taxed as ordinary income. Here\'s the full tax picture for retirees in 2026 — Roth rules, RMDs, early penalties, and a full worked example.',
@@ -70,9 +74,7 @@ export default function RetirementWithdrawalTaxes() {
         How 401(k) and IRA Withdrawals Are Taxed in Retirement (2026 Guide)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published September 7, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="retirement-withdrawal-taxes-2026" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         You spent decades building up your 401(k) or IRA. Now that it&rsquo;s time to use it, here&rsquo;s the part nobody warns you about: <strong>the IRS still wants a cut</strong>. How much you pay — and when you pay it — depends on the type of account you have, your other income, and which state you live in.
@@ -134,13 +136,13 @@ export default function RetirementWithdrawalTaxes() {
           </thead>
           <tbody>
             {[
-              ['10%', '$0 – $11,925', '$0 – $23,850'],
-              ['12%', '$11,926 – $48,475', '$23,851 – $96,950'],
-              ['22%', '$48,476 – $103,350', '$96,951 – $206,700'],
-              ['24%', '$103,351 – $197,300', '$206,701 – $394,600'],
-              ['32%', '$197,301 – $250,525', '$394,601 – $501,050'],
-              ['35%', '$250,526 – $626,350', '$501,051 – $751,600'],
-              ['37%', 'Over $626,350', 'Over $751,600'],
+              ['10%', '$0 – $12,400', '$0 – $24,800'],
+              ['12%', '$12,401 – $50,400', '$24,801 – $100,800'],
+              ['22%', '$50,401 – $105,700', '$100,801 – $211,400'],
+              ['24%', '$105,701 – $201,775', '$211,401 – $403,550'],
+              ['32%', '$201,776 – $256,225', '$403,551 – $512,450'],
+              ['35%', '$256,226 – $640,600', '$512,451 – $768,700'],
+              ['37%', 'Over $640,600', 'Over $768,700'],
             ].map(([rate, single, mfj], i) => (
               <tr key={rate} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', fontFamily: "'JetBrains Mono', monospace", color: '#2563eb', fontWeight: 600 }}>{rate}</td>
@@ -313,8 +315,8 @@ export default function RetirementWithdrawalTaxes() {
               ['Roth IRA withdrawal', '$12,000', 'No — tax-free'],
               ['Total gross income', '$72,000', ''],
               ['Total taxable income (before deductions)', '$56,400', ''],
-              ['Standard deduction (single, age 65+)', '− $17,000', ''],
-              ['Taxable income after deductions', '$39,400', ''],
+              ['Standard deduction (single, age 65+)', '− $18,150', ''],
+              ['Taxable income after deductions', '$38,250', ''],
             ].map(([label, amount, note], i) => (
               <tr key={label} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569' }}>{label}</td>
@@ -324,7 +326,7 @@ export default function RetirementWithdrawalTaxes() {
             ))}
             <tr style={{ background: '#eff6ff' }}>
               <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', fontWeight: 700, color: '#1e293b' }}>Federal Income Tax Owed</td>
-              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>~$3,967</td>
+              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>~$4,342</td>
               <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', color: '#475569', fontSize: '0.875rem' }}>Effective rate ~5.5%</td>
             </tr>
           </tbody>
@@ -343,7 +345,7 @@ export default function RetirementWithdrawalTaxes() {
           <strong>Social Security is partially taxable.</strong> Because Maria&rsquo;s &ldquo;combined income&rdquo; (AGI + half of Social Security) exceeds $34,000, up to 85% of her Social Security is taxable. Only the $20,400 taxable portion is included.
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
-          <strong>The standard deduction is higher at 65+.</strong> Single filers age 65 and older get an extra $1,950 added to the standard deduction — $17,000 total for 2026 instead of $15,000.
+          <strong>The standard deduction is higher at 65+.</strong> Single filers age 65 and older get an extra $2,050 added to the standard deduction — $18,150 total for 2026 instead of $16,100.
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
           <strong>Georgia gives retirees a break.</strong> Georgia excludes up to $65,000 per person in retirement income from state taxes for taxpayers 65 and older. Maria owes $0 in Georgia state income tax.

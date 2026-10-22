@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Earned Income Tax Credit (EITC) 2026: Who Qualifies and How Much You Can Get',
+  title: { absolute: 'Earned Income Tax Credit (EITC) 2026: Who Qualifies and How Much You Can Get' },
   description:
     'The EITC can put up to $8,250 back in your pocket in 2026 — but only if you claim it. Here\'s who qualifies, the exact income limits, and a worked example at $28,000 with two qualifying children.',
   alternates: { canonical: '/blog/earned-income-tax-credit-2026' },
   keywords:
     'earned income tax credit 2026, EITC 2026, who qualifies for EITC, EITC income limit 2026, earned income credit amount 2026, EITC with children, how to claim EITC, EITC refund 2026',
   openGraph: {
+    type: 'article',
+    url: '/blog/earned-income-tax-credit-2026',
+    images: [{ url: '/og/blog/earned-income-tax-credit-2026', width: 1200, height: 630 }],
     title: 'Earned Income Tax Credit (EITC) 2026: Who Qualifies and How Much You Can Get',
     description:
       'The EITC can put up to $8,250 back in your pocket in 2026. Here\'s who qualifies and the exact income limits.',
@@ -74,9 +78,7 @@ export default function EarnedIncomeTaxCredit2026() {
         Earned Income Tax Credit (EITC) 2026: Who Qualifies and How Much You Can Get
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published July 24, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="earned-income-tax-credit-2026" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         The <strong>Earned Income Tax Credit</strong> is one of the largest anti-poverty programs in the United States &mdash; and one of the most overlooked benefits available to working Americans. In 2026, it can put up to <strong>$8,250</strong> back into the pockets of working families with three or more qualifying children, and even workers without children can claim up to <strong>$700</strong>.
@@ -329,12 +331,12 @@ export default function EarnedIncomeTaxCredit2026() {
           <tbody>
             {[
               ['Gross wages', 'W-2 earned income', '$28,000', '#1e293b'],
-              ['Standard deduction (HoH)', '2026 Head of Household deduction', '−$22,500', '#dc2626'],
-              ['Taxable income', '$28,000 − $22,500', '$5,500', '#1e293b'],
-              ['Federal income tax', '10% × $5,500', '−$550', '#dc2626'],
+              ['Standard deduction (HoH)', '2026 Head of Household deduction', '−$24,150', '#dc2626'],
+              ['Taxable income', '$28,000 − $24,150', '$3,850', '#1e293b'],
+              ['Federal income tax', '10% × $3,850', '−$385', '#dc2626'],
               ['FICA withheld (all year)', '7.65% × $28,000', '−$2,142', '#dc2626'],
               ['EITC (2 children, per IRS table)', 'Income $28,000 → in phase-out range', '+$6,718', '#059669'],
-              ['Net federal refund', 'EITC ($6,718) − income tax ($550)', '+$6,168', '#059669'],
+              ['Net federal refund', 'EITC ($6,718) − income tax ($385)', '+$6,333', '#059669'],
             ].map(([item, details, amount, color], i) => (
               <tr key={item} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', fontWeight: 600, color: '#1e293b' }}>{item}</td>
@@ -351,7 +353,7 @@ export default function EarnedIncomeTaxCredit2026() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Because the EITC is refundable and far exceeds her income tax bill of $550, she receives a federal refund of approximately <strong>$6,168</strong>. This does not offset her FICA taxes ($2,142), which are collected separately throughout the year and not refundable &mdash; but combined with her refund, the EITC significantly improves her annual financial picture.
+        Because the EITC is refundable and far exceeds her income tax bill of $385, she receives a federal refund of approximately <strong>$6,333</strong>. This does not offset her FICA taxes ($2,142), which are collected separately throughout the year and not refundable &mdash; but combined with her refund, the EITC significantly improves her annual financial picture.
       </p>
 
       <div
@@ -366,11 +368,11 @@ export default function EarnedIncomeTaxCredit2026() {
           color: '#1e293b',
         }}
       >
-        Net effective federal tax burden = Income tax ($550) − EITC ($6,718) = <strong style={{ color: '#059669' }}>−$6,168</strong> (net refund)
+        Net effective federal tax burden = Income tax ($385) − EITC ($6,718) = <strong style={{ color: '#059669' }}>−$6,333</strong> (net refund)
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        In plain terms: not only does Sarah pay <em>no</em> federal income tax, the government effectively pays her $6,168 back through the EITC &mdash; making the total tax benefit worth more than a week&rsquo;s gross wages.
+        In plain terms: not only does Sarah pay <em>no</em> federal income tax, the government effectively pays her $6,333 back through the EITC &mdash; making the total tax benefit worth more than a week&rsquo;s gross wages.
       </p>
 
       {/* Section 7 */}

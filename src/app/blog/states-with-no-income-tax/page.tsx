@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'The 9 States With No Income Tax in 2026 (Ranked by Total Tax Burden)',
+  title: { absolute: 'The 9 States With No Income Tax in 2026 (Ranked by Total Tax Burden)' },
   description:
     'Nine states charge zero income tax, but that doesn\'t mean your overall taxes are low. We rank all 9 by total tax burden and show what you\'ll actually pay.',
   alternates: { canonical: '/blog/states-with-no-income-tax' },
   keywords:
     'states with no income tax 2026, no state tax states, tax-free states, lowest tax states, Alaska taxes, Florida taxes, Texas taxes, Washington taxes',
   openGraph: {
+    type: 'article',
+    url: '/blog/states-with-no-income-tax',
+    images: [{ url: '/og/blog/states-with-no-income-tax', width: 1200, height: 630 }],
     title: 'The 9 States With No Income Tax in 2026',
     description:
       'Nine states don\'t tax your income — but "no income tax" doesn\'t always mean low taxes. Here\'s the full picture for 2026.',
@@ -90,9 +94,7 @@ export default function StatesWithNoIncomeTaxPost() {
       </div>
 
       {/* Publication info */}
-      <div style={{ fontSize: '0.8125rem', color: '#94a3b8', marginBottom: '1.5rem' }}>
-        Published June 1, 2026 &middot; 9 min read
-      </div>
+      <ArticleMeta slug="states-with-no-income-tax" />
 
       <h1
         style={{

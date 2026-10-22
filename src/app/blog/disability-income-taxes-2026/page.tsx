@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'How Disability Income Is Taxed in 2026',
+  title: { absolute: 'How Disability Income Is Taxed in 2026' },
   description:
     'Short-term and long-term disability benefits may be fully taxable, partly taxable, or completely tax-free — it depends on who paid the premiums. Full guide with worked examples.',
   alternates: { canonical: '/blog/disability-income-taxes-2026' },
   keywords:
     'disability income taxes 2026, is short-term disability taxable, is long-term disability taxable, SSDI taxes, workers compensation taxable, disability insurance tax, STD LTD taxes',
   openGraph: {
+    type: 'article',
+    url: '/blog/disability-income-taxes-2026',
+    images: [{ url: '/og/blog/disability-income-taxes-2026', width: 1200, height: 630 }],
     title: 'How Disability Income Is Taxed in 2026',
     description:
       'Short-term and long-term disability benefits may be fully taxable, partly taxable, or completely tax-free — it depends on who paid the premiums.',
@@ -78,9 +82,7 @@ export default function DisabilityIncomeTaxes2026() {
         How Disability Income Is Taxed in 2026
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published September 14, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="disability-income-taxes-2026" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         If you become unable to work due to illness or injury, disability insurance is supposed to replace part of your lost income. But there is a catch: depending on how your coverage is set up, those disability benefits may be <strong>fully taxable</strong>, <strong>completely tax-free</strong>, or something in between.

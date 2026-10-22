@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Form 1099-K Explained: Venmo, PayPal, and Cash App Taxes in 2026',
+  title: { absolute: 'Form 1099-K Explained: Venmo, PayPal, and Cash App Taxes in 2026' },
   description:
     'Received a 1099-K from Venmo, PayPal, or Cash App? Here\'s exactly what it means, what you owe, and how to report it — under the $600 rule.',
   alternates: { canonical: '/blog/form-1099-k-venmo-paypal-taxes-2026' },
   keywords:
     'form 1099-K 2026, Venmo taxes, PayPal taxes, Cash App taxes, 1099-K $600 rule, third party payment taxes, gig worker 1099-K, marketplace payments taxes',
   openGraph: {
+    type: 'article',
+    url: '/blog/form-1099-k-venmo-paypal-taxes-2026',
+    images: [{ url: '/og/blog/form-1099-k-venmo-paypal-taxes-2026', width: 1200, height: 630 }],
     title: 'Form 1099-K Explained: Venmo, PayPal, and Cash App Taxes in 2026',
     description:
       'Received a 1099-K from Venmo, PayPal, or Cash App? Here\'s what it means, what you owe, and how to avoid a surprise tax bill.',
@@ -83,9 +87,7 @@ export default function Form1099KExplained() {
         Form 1099-K Explained: Venmo, PayPal, and Cash App Taxes in 2026
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published October 1, 2026 &middot; 8 min read
-      </p>
+      <ArticleMeta slug="form-1099-k-venmo-paypal-taxes-2026" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         You got paid through Venmo, PayPal, or Cash App this year. Now you have received a <strong>Form 1099-K</strong> in the mail — and you are wondering if you owe the IRS money. The short answer: it depends on what that money was for. The long answer is what this guide covers.

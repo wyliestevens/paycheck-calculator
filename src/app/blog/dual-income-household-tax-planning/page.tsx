@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Dual Income Household Tax Planning for 2026',
+  title: { absolute: 'Dual Income Household Tax Planning for 2026' },
   description:
     'Two incomes can create a $5,000+ tax surprise if your W-4s aren\'t coordinated. Here\'s how dual-income couples avoid under-withholding, reduce their tax bill, and file correctly in 2026.',
   alternates: { canonical: '/blog/dual-income-household-tax-planning' },
   keywords:
     'dual income household taxes 2026, two income tax planning, married filing jointly two jobs, under-withholding dual income, W-4 married both work, spouse works W-4, dual income tax bracket 2026',
   openGraph: {
+    type: 'article',
+    url: '/blog/dual-income-household-tax-planning',
+    images: [{ url: '/og/blog/dual-income-household-tax-planning', width: 1200, height: 630 }],
     title: 'Dual Income Household Tax Planning for 2026',
     description:
       'Two incomes can create a $5,000+ tax surprise if your W-4s aren\'t coordinated. Here\'s exactly how dual-income couples plan smarter in 2026.',
@@ -80,9 +84,7 @@ export default function DualIncomeHouseholdTaxPlanning() {
         Dual Income Household Tax Planning for 2026
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published July 17, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="dual-income-household-tax-planning" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         When two people in the same household each have a job, tax season can deliver an unpleasant surprise: a bill instead of a refund. The root cause is almost always the same &mdash; each employer withheld taxes as if the other income did not exist, leaving the couple under-withheld by thousands of dollars when their returns are filed jointly.
@@ -102,7 +104,7 @@ export default function DualIncomeHouseholdTaxPlanning() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        These MFJ withholding tables apply the full $30,000 married standard deduction and the wider MFJ bracket thresholds to just your income. Meanwhile, your spouse&rsquo;s employer does the exact same thing for their income. The result: the $30,000 standard deduction is effectively applied twice &mdash; once per employer &mdash; when in reality a married couple only gets it once. And the combined income pushes more dollars into higher brackets than either employer anticipated.
+        These MFJ withholding tables apply the full $32,200 married standard deduction and the wider MFJ bracket thresholds to just your income. Meanwhile, your spouse&rsquo;s employer does the exact same thing for their income. The result: the $32,200 standard deduction is effectively applied twice &mdash; once per employer &mdash; when in reality a married couple only gets it once. And the combined income pushes more dollars into higher brackets than either employer anticipated.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
@@ -139,18 +141,18 @@ export default function DualIncomeHouseholdTaxPlanning() {
             <tr style={{ background: '#ffffff' }}>
               <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569' }}>Partner A</td>
               <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$80,000</td>
-              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$50,000</td>
-              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>$5,523</td>
+              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$47,800</td>
+              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>$5,240</td>
             </tr>
             <tr style={{ background: '#f8fafc' }}>
               <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569' }}>Partner B</td>
               <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$60,000</td>
-              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$30,000</td>
-              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>$3,123</td>
+              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#475569' }}>$27,800</td>
+              <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'right', fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>$2,840</td>
             </tr>
             <tr style={{ background: '#fef9c3' }}>
               <td colSpan={3} style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', fontWeight: 700, color: '#1e293b' }}>Total Withheld</td>
-              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#1e293b' }}>$8,646</td>
+              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#1e293b' }}>$8,080</td>
             </tr>
           </tbody>
         </table>
@@ -179,9 +181,9 @@ export default function DualIncomeHouseholdTaxPlanning() {
           </thead>
           <tbody>
             {[
-              ['$0 – $23,850', '$23,850', '10%', '$2,385'],
-              ['$23,851 – $96,950', '$73,100', '12%', '$8,772'],
-              ['$96,951 – $110,000', '$13,050', '22%', '$2,871'],
+              ['$0 – $24,800', '$24,800', '10%', '$2,480'],
+              ['$24,801 – $100,800', '$76,000', '12%', '$9,120'],
+              ['$100,801 – $107,800', '$7,000', '22%', '$1,540'],
             ].map(([range, slice, rate, tax], i) => (
               <tr key={range} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', color: '#475569' }}>{range}</td>
@@ -191,15 +193,15 @@ export default function DualIncomeHouseholdTaxPlanning() {
               </tr>
             ))}
             <tr style={{ background: '#fef2f2' }}>
-              <td colSpan={3} style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', fontWeight: 700, color: '#1e293b' }}>Actual Tax Owed (MFJ on $110,000 taxable)</td>
-              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>$14,028</td>
+              <td colSpan={3} style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', fontWeight: 700, color: '#1e293b' }}>Actual Tax Owed (MFJ on $107,800 taxable)</td>
+              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#dc2626' }}>$13,140</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <p style={{ fontSize: '0.875rem', lineHeight: 1.6, color: '#94a3b8', marginBottom: '1.5rem' }}>
-        Combined income: $140,000. MFJ standard deduction: $30,000. Taxable income: $110,000. 2026 MFJ brackets: 10% to $23,850; 12% to $96,950; 22% to $206,700.
+        Combined income: $140,000. MFJ standard deduction: $32,200. Taxable income: $107,800. 2026 MFJ brackets: 10% to $24,800; 12% to $100,800; 22% to $211,400.
       </p>
 
       <div
@@ -211,14 +213,14 @@ export default function DualIncomeHouseholdTaxPlanning() {
           marginBottom: '1.5rem',
         }}
       >
-        <p style={{ fontSize: '1rem', fontWeight: 700, color: '#dc2626', marginBottom: '0.375rem' }}>The gap: $14,028 owed &minus; $8,646 withheld = <strong>$5,382 under-withheld</strong></p>
+        <p style={{ fontSize: '1rem', fontWeight: 700, color: '#dc2626', marginBottom: '0.375rem' }}>The gap: $13,140 owed &minus; $8,080 withheld = <strong>$5,060 under-withheld</strong></p>
         <p style={{ fontSize: '0.9375rem', color: '#1e293b', margin: 0 }}>
-          Without any changes to their W-4s, this couple would face a $5,382 tax bill at filing time, plus a potential underpayment penalty.
+          Without any changes to their W-4s, this couple would face a $5,060 tax bill at filing time, plus a potential underpayment penalty.
         </p>
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The math behind the gap: each employer applied the full $30,000 MFJ standard deduction and pretended the couple&rsquo;s income topped out at $80,000 or $60,000 respectively. In reality, the combined $140,000 pushes $13,050 into the 22% bracket &mdash; a rate neither employer anticipated &mdash; and the standard deduction is counted only once, not twice.
+        The math behind the gap: each employer applied the full $32,200 MFJ standard deduction and pretended the couple&rsquo;s income topped out at $80,000 or $60,000 respectively. In reality, the combined $140,000 pushes $7,000 into the 22% bracket &mdash; a rate neither employer anticipated &mdash; and the standard deduction is counted only once, not twice.
       </p>
 
       {/* Section 3: The Fix */}
@@ -281,7 +283,7 @@ export default function DualIncomeHouseholdTaxPlanning() {
           </thead>
           <tbody>
             {[
-              ['Standard deduction 2026', '$30,000', '$15,000 each'],
+              ['Standard deduction 2026', '$32,200', '$16,100 each'],
               ['Tax brackets', 'Wider (generally 2× single)', 'Same as single'],
               ['Child Tax Credit', 'Fully available', 'Partially restricted'],
               ['Earned Income Credit', 'Available', 'Not available'],
@@ -313,7 +315,7 @@ export default function DualIncomeHouseholdTaxPlanning() {
       </h2>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        A <strong>marriage penalty</strong> occurs when a couple pays more in combined taxes filing jointly than they would as two single filers. For most income levels in 2026, the MFJ brackets are exactly double the single brackets, so there is no penalty. The exception is at the top: the 37% bracket begins at $626,350 for single filers but only at $751,600 for married couples &mdash; not $1,252,700 (which would be double).
+        A <strong>marriage penalty</strong> occurs when a couple pays more in combined taxes filing jointly than they would as two single filers. For most income levels in 2026, the MFJ brackets are exactly double the single brackets, so there is no penalty. The exception is at the top: the 37% bracket begins at $640,600 for single filers but only at $768,700 for married couples &mdash; not $1,281,700 (which would be double).
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
@@ -377,7 +379,7 @@ export default function DualIncomeHouseholdTaxPlanning() {
       </h2>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Each working spouse has their own 401(k) contribution limit. In 2026, the limit is <strong>$23,500 per person</strong> ($31,000 if age 50 or older). A dual-income household where both spouses max out their 401(k)s can shelter up to <strong>$47,000</strong> of combined income from federal income tax each year.
+        Each working spouse has their own 401(k) contribution limit. In 2026, the limit is <strong>$24,500 per person</strong> ($32,500 if age 50 or older). A dual-income household where both spouses max out their 401(k)s can shelter up to <strong>$49,000</strong> of combined income from federal income tax each year.
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1rem' }}>
@@ -397,11 +399,11 @@ export default function DualIncomeHouseholdTaxPlanning() {
           lineHeight: 1.8,
         }}
       >
-        Both spouses contribute $23,500: total sheltered = $47,000<br />
-        Tax savings at 22%: $47,000 &times; 22% = <strong>$10,340/year</strong><br />
+        Both spouses contribute $24,500: total sheltered = $49,000<br />
+        Tax savings at 22%: $49,000 &times; 22% = <strong>$10,780/year</strong><br />
         FICA does not apply to 401(k) contributions<br />
         <span style={{ borderTop: '1px solid #cbd5e1', display: 'block', paddingTop: '0.5rem', marginTop: '0.5rem', color: '#475569', fontSize: '0.875rem', fontFamily: 'sans-serif' }}>
-          Combined taxable income drops from $140K to $93K — staying entirely in the 12% bracket.
+          Combined taxable income drops from $140K to $91K — staying entirely in the 12% bracket.
         </span>
       </div>
 
@@ -418,7 +420,7 @@ export default function DualIncomeHouseholdTaxPlanning() {
       </h2>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        If both spouses are enrolled in qualifying High-Deductible Health Plans (HDHPs) &mdash; whether through their own employer or the same family plan &mdash; the household may be able to contribute to Health Savings Accounts (HSAs). The 2026 HSA contribution limit for a family plan is <strong>$8,550</strong>. If each spouse has their own individual HDHP, they can each contribute up to the individual limit of <strong>$4,300</strong> (for a combined $8,600).
+        If both spouses are enrolled in qualifying High-Deductible Health Plans (HDHPs) &mdash; whether through their own employer or the same family plan &mdash; the household may be able to contribute to Health Savings Accounts (HSAs). The 2026 HSA contribution limit for a family plan is <strong>$8,750</strong>. If each spouse has their own individual HDHP, they can each contribute up to the individual limit of <strong>$4,400</strong> (for a combined $8,800).
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
@@ -483,7 +485,7 @@ export default function DualIncomeHouseholdTaxPlanning() {
             {[
               ['Update W-4 for both spouses using IRS estimator', 'Prevents year-end tax bill', 'January / after income change'],
               ['Enroll in DCFSA if you have qualifying dependents', 'Saves FICA + income tax on up to $5,000', 'Open enrollment'],
-              ['Max both 401(k)s to $23,500 each', 'Reduces taxable income by up to $47,000', 'Year-round, increase early'],
+              ['Max both 401(k)s to $24,500 each', 'Reduces taxable income by up to $49,000', 'Year-round, increase early'],
               ['Contribute to HSA if both enrolled in HDHPs', 'Triple tax benefit, no expiration', 'Year-round'],
               ['Run IRS withholding estimator mid-year', 'Catch gaps before December', 'July or August'],
               ['File MFJ unless one has large medical deductions or IDR loans', 'Almost always lower combined tax', 'Tax season'],
@@ -508,7 +510,7 @@ export default function DualIncomeHouseholdTaxPlanning() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Beyond withholding, dual-income couples have access to powerful tax reduction tools: a DCFSA that saves over $1,700 per year on childcare, two 401(k)s that can shelter up to $47,000 of income, and potentially two HSAs stacked side by side. Used together, these accounts can dramatically lower what you actually owe &mdash; and dramatically increase what you actually keep.
+        Beyond withholding, dual-income couples have access to powerful tax reduction tools: a DCFSA that saves over $1,700 per year on childcare, two 401(k)s that can shelter up to $49,000 of income, and potentially two HSAs stacked side by side. Used together, these accounts can dramatically lower what you actually owe &mdash; and dramatically increase what you actually keep.
       </p>
 
       {/* CTA */}

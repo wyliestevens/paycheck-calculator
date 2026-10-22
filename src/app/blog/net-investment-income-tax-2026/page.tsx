@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'Net Investment Income Tax (NIIT) 2026: Do You Owe the Extra 3.8%?',
+  title: { absolute: 'Net Investment Income Tax (NIIT) 2026: Do You Owe the Extra 3.8%?' },
   description:
     "The NIIT adds a 3.8% surtax on investment income for earners above $200K. Here's who owes it, what counts as investment income, and a full worked example showing a $950 NIIT bill.",
   alternates: { canonical: '/blog/net-investment-income-tax-2026' },
   keywords:
     'net investment income tax 2026, NIIT, 3.8 percent investment tax, NIIT threshold, net investment income, Form 8960, passive income tax, capital gains surtax, investment income surtax, NIIT calculation',
   openGraph: {
+    type: 'article',
+    url: '/blog/net-investment-income-tax-2026',
+    images: [{ url: '/og/blog/net-investment-income-tax-2026', width: 1200, height: 630 }],
     title: 'Net Investment Income Tax (NIIT) 2026: Do You Owe the Extra 3.8%?',
     description:
       "The NIIT adds a 3.8% surtax on investment income for high earners — here's who owes it, what counts, and how to minimize it.",
@@ -82,9 +86,7 @@ export default function NetInvestmentIncomeTax2026() {
         Net Investment Income Tax (NIIT) 2026: Do You Owe the Extra 3.8%?
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published September 11, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="net-investment-income-tax-2026" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         If you earn dividends, capital gains, or rental income — and your total income exceeds certain thresholds — you may owe an additional tax that many investors overlook: the <strong>Net Investment Income Tax (NIIT)</strong>. It adds a flat <strong>3.8%</strong> surcharge on top of your regular income tax, and it can cost thousands of dollars a year if you don&rsquo;t plan for it.
@@ -347,7 +349,7 @@ export default function NetInvestmentIncomeTax2026() {
         1. Maximize Retirement Account Contributions
       </h3>
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Traditional 401(k) and IRA contributions reduce your MAGI, which in turn reduces your MAGI over the NIIT threshold. The 2026 401(k) employee contribution limit is $23,500 ($31,000 if you are 50 or older). Every dollar you contribute moves you closer to — or further below — the threshold.{' '}
+        Traditional 401(k) and IRA contributions reduce your MAGI, which in turn reduces your MAGI over the NIIT threshold. The 2026 401(k) employee contribution limit is $24,500 ($32,500 if you are 50 or older). Every dollar you contribute moves you closer to — or further below — the threshold.{' '}
         <a href="https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-401k-and-profit-sharing-plan-contribution-limits" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS — 401(k) Contribution Limits)
         </a>
@@ -378,7 +380,7 @@ export default function NetInvestmentIncomeTax2026() {
         5. Contribute to an HSA
       </h3>
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Health Savings Account contributions reduce your MAGI on a dollar-for-dollar basis (up to $4,300 for self-only coverage or $8,550 for family coverage in 2026). Lower MAGI means less income above the NIIT threshold.{' '}
+        Health Savings Account contributions reduce your MAGI on a dollar-for-dollar basis (up to $4,400 for self-only coverage or $8,750 for family coverage in 2026). Lower MAGI means less income above the NIIT threshold.{' '}
         <a href="https://www.irs.gov/publications/p969" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS — Publication 969: HSAs)
         </a>

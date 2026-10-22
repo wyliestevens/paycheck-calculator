@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'How Student Loan Payments Affect Your Take-Home Pay (2026 Guide)',
+  title: { absolute: 'How Student Loan Payments Affect Your Take-Home Pay (2026 Guide)' },
   description:
     'Student loan payments come out after taxes — so a $400/month payment costs you far more than $400 in gross pay. Here\'s the full picture, with worked examples.',
   alternates: { canonical: '/blog/student-loan-payments-and-your-paycheck' },
   keywords:
     'student loan payments take-home pay, student loans paycheck 2026, income-driven repayment paycheck, student loan interest deduction 2026, employer student loan repayment, student loan tax benefit',
   openGraph: {
+    type: 'article',
+    url: '/blog/student-loan-payments-and-your-paycheck',
+    images: [{ url: '/og/blog/student-loan-payments-and-your-paycheck', width: 1200, height: 630 }],
     title: 'How Student Loan Payments Affect Your Take-Home Pay (2026 Guide)',
     description:
       'Student loan payments come out after taxes — so a $400/month payment costs you far more than $400 in gross pay. Here\'s the full picture with real dollar examples.',
@@ -70,9 +74,7 @@ export default function StudentLoanPaymentsAndYourPaycheck() {
         How Student Loan Payments Affect Your Take-Home Pay (2026 Guide)
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published June 18, 2026 &middot; 8 min read
-      </p>
+      <ArticleMeta slug="student-loan-payments-and-your-paycheck" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         If you have student loans, you already know that the bill hits hard every month. But here is something many borrowers miss: because student loan payments come out of your paycheck <strong>after taxes</strong>, you actually need to earn significantly more than your payment amount just to cover it. A $400 monthly payment does not cost you $400 in gross pay &mdash; it costs you $400 plus whatever you would have paid in taxes on that $400.

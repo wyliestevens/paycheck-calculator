@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'What Are Paycheck Deductions? A Complete Breakdown for 2026',
+  title: { absolute: 'What Are Paycheck Deductions? A Complete Breakdown for 2026' },
   description:
     'Your gross pay and take-home pay are two very different numbers. Learn exactly what gets taken out of your paycheck — federal tax, state tax, FICA, and more — with a worked example.',
   alternates: { canonical: '/blog/paycheck-deductions-explained' },
   keywords:
     'paycheck deductions explained, what comes out of my paycheck, paycheck deductions 2026, federal income tax withholding, FICA tax, state income tax, pre-tax deductions',
   openGraph: {
+    type: 'article',
+    url: '/blog/paycheck-deductions-explained',
+    images: [{ url: '/og/blog/paycheck-deductions-explained', width: 1200, height: 630 }],
     title: 'What Are Paycheck Deductions? A Complete Breakdown for 2026',
     description:
       'Learn exactly what gets taken out of your paycheck — federal tax, state tax, FICA, and more — with worked examples for Texas and California.',
@@ -73,9 +77,7 @@ export default function PaycheckDeductionsExplained() {
         What Are Paycheck Deductions? A Complete Breakdown for 2026
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published May 26, 2026 &middot; 8 min read
-      </p>
+      <ArticleMeta slug="paycheck-deductions-explained" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         If you have ever looked at your paycheck and wondered, &ldquo;Where did all my money go?&rdquo; you are not alone. The number your employer promises you (your <strong>gross pay</strong>) and the number that actually hits your bank account (your <strong>net pay</strong> or <strong>take-home pay</strong>) can be surprisingly different. The gap between those two numbers is made up of <strong>paycheck deductions</strong>.
@@ -141,13 +143,13 @@ export default function PaycheckDeductionsExplained() {
           </thead>
           <tbody>
             {[
-              ['10%', '$0 – $11,925'],
-              ['12%', '$11,926 – $48,475'],
-              ['22%', '$48,476 – $103,350'],
-              ['24%', '$103,351 – $197,300'],
-              ['32%', '$197,301 – $250,525'],
-              ['35%', '$250,526 – $626,350'],
-              ['37%', 'Over $626,350'],
+              ['10%', '$0 – $12,400'],
+              ['12%', '$12,401 – $50,400'],
+              ['22%', '$50,401 – $105,700'],
+              ['24%', '$105,701 – $201,775'],
+              ['32%', '$201,776 – $256,225'],
+              ['35%', '$256,226 – $640,600'],
+              ['37%', 'Over $640,600'],
             ].map(([rate, range], i) => (
               <tr key={rate} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', fontFamily: "'JetBrains Mono', monospace", color: '#2563eb', fontWeight: 600 }}>{rate}</td>
@@ -159,7 +161,7 @@ export default function PaycheckDeductionsExplained() {
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Before your income is taxed, you get to subtract the <strong>standard deduction</strong>. For 2026, the standard deduction for a single filer is <strong>$15,000</strong>. This means if you earn $60,000, only $45,000 is subject to federal income tax.{' '}
+        Before your income is taxed, you get to subtract the <strong>standard deduction</strong>. For 2026, the standard deduction for a single filer is <strong>$16,100</strong>. This means if you earn $60,000, only $43,900 is subject to federal income tax.{' '}
         <a href="https://www.irs.gov/newsroom/irs-provides-tax-inflation-adjustments-for-tax-year-2026" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS &mdash; 2026 Tax Inflation Adjustments)
         </a>
@@ -210,7 +212,7 @@ export default function PaycheckDeductionsExplained() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        In 2026, the Social Security tax rate is <strong>6.2%</strong> of your gross pay, up to a <strong>wage base of $168,600</strong>. Your employer also pays 6.2%, so the total going toward Social Security is 12.4% of your salary. Once you earn more than $168,600 in a calendar year, you stop paying Social Security tax on any additional earnings.{' '}
+        In 2026, the Social Security tax rate is <strong>6.2%</strong> of your gross pay, up to a <strong>wage base of $184,500</strong>. Your employer also pays 6.2%, so the total going toward Social Security is 12.4% of your salary. Once you earn more than $184,500 in a calendar year, you stop paying Social Security tax on any additional earnings.{' '}
         <a href="https://www.ssa.gov/oact/cola/cbb.html" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (SSA.gov &mdash; Contribution and Benefit Base)
         </a>
@@ -259,16 +261,16 @@ export default function PaycheckDeductionsExplained() {
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
         <li style={{ marginBottom: '0.75rem' }}>
-          <strong>Traditional 401(k) contributions:</strong> Money you put into a traditional 401(k) retirement account is not taxed now. You pay taxes later when you withdraw it in retirement. In 2026, you can contribute up to <strong>$23,500</strong> per year if you are under 50.
+          <strong>Traditional 401(k) contributions:</strong> Money you put into a traditional 401(k) retirement account is not taxed now. You pay taxes later when you withdraw it in retirement. In 2026, you can contribute up to <strong>$24,500</strong> per year if you are under 50.
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
           <strong>Health insurance premiums:</strong> If your employer offers health insurance, your share of the premium is usually taken out pre-tax. This can save you hundreds of dollars per year in taxes.
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
-          <strong>Health Savings Account (HSA):</strong> If you have a high-deductible health plan, you can contribute to an HSA. The money goes in pre-tax, grows tax-free, and comes out tax-free when used for qualified medical expenses. In 2026, the contribution limit is <strong>$4,300</strong> for individuals.
+          <strong>Health Savings Account (HSA):</strong> If you have a high-deductible health plan, you can contribute to an HSA. The money goes in pre-tax, grows tax-free, and comes out tax-free when used for qualified medical expenses. In 2026, the contribution limit is <strong>$4,400</strong> for individuals.
         </li>
         <li style={{ marginBottom: '0.75rem' }}>
-          <strong>Flexible Spending Accounts (FSA):</strong> Similar to an HSA but with a &ldquo;use it or lose it&rdquo; rule. You can set aside up to <strong>$3,300</strong> pre-tax for healthcare expenses in 2026.
+          <strong>Flexible Spending Accounts (FSA):</strong> Similar to an HSA but with a &ldquo;use it or lose it&rdquo; rule. You can set aside up to <strong>$3,400</strong> pre-tax for healthcare expenses in 2026.
         </li>
       </ul>
 

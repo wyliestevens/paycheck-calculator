@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'How Commission Income Is Taxed in 2026: Withholding, Rates & Worked Examples',
+  title: { absolute: 'How Commission Income Is Taxed in 2026: Withholding, Rates & Worked Examples' },
   description:
     'Commission income is ordinary income taxed at your marginal rate — but withholding rules differ. Learn the flat 22% method, aggregate method, and exact math at $75,000.',
   alternates: { canonical: '/blog/how-commission-income-is-taxed' },
   keywords:
     'how commission income is taxed 2026, commission tax rate, commission withholding, supplemental wages, 22 percent commission tax, commission take home pay, sales commission taxes',
   openGraph: {
+    type: 'article',
+    url: '/blog/how-commission-income-is-taxed',
+    images: [{ url: '/og/blog/how-commission-income-is-taxed', width: 1200, height: 630 }],
     title: 'How Commission Income Is Taxed in 2026: Withholding, Rates & Worked Examples',
     description:
       'Commission income is ordinary income — but withholding works differently. Full guide with flat rate vs. aggregate method and a $75,000 worked example.',
@@ -76,9 +80,7 @@ export default function HowCommissionIncomeTaxed() {
         How Commission Income Is Taxed in 2026
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published October 17, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="how-commission-income-is-taxed" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         Commission income is taxed exactly the same as wages &mdash; it is <strong>ordinary income</strong> subject to federal income tax, Social Security, and Medicare. There is no special &ldquo;commission tax rate.&rdquo; A dollar earned in commissions is taxed identically to a dollar earned as salary.
@@ -121,13 +123,13 @@ export default function HowCommissionIncomeTaxed() {
           </thead>
           <tbody>
             {[
-              ['10%', 'Up to $11,925'],
-              ['12%', '$11,926 &ndash; $48,475'],
-              ['22%', '$48,476 &ndash; $103,350'],
-              ['24%', '$103,351 &ndash; $197,300'],
-              ['32%', '$197,301 &ndash; $250,525'],
-              ['35%', '$250,526 &ndash; $626,350'],
-              ['37%', 'Over $626,350'],
+              ['10%', 'Up to $12,400'],
+              ['12%', '$12,401 &ndash; $50,400'],
+              ['22%', '$50,401 &ndash; $105,700'],
+              ['24%', '$105,701 &ndash; $201,775'],
+              ['32%', '$201,776 &ndash; $256,225'],
+              ['35%', '$256,226 &ndash; $640,600'],
+              ['37%', 'Over $640,600'],
             ].map(([rate, range], i) => (
               <tr key={rate} style={{ background: i % 2 === 0 ? '#ffffff' : '#f8fafc' }}>
                 <td style={{ padding: '0.625rem 1rem', borderBottom: '1px solid #e2e8f0', fontWeight: 600, color: '#1e293b', fontFamily: "'JetBrains Mono', monospace" }}>{rate}</td>
@@ -143,7 +145,7 @@ export default function HowCommissionIncomeTaxed() {
       </p>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        FICA taxes also apply to commissions in full &mdash; <strong>6.2%</strong> for Social Security (up to the $168,600 wage base) and <strong>1.45%</strong> for Medicare with no cap. There is no exclusion for supplemental wages when it comes to FICA.
+        FICA taxes also apply to commissions in full &mdash; <strong>6.2%</strong> for Social Security (up to the $184,500 wage base) and <strong>1.45%</strong> for Medicare with no cap. There is no exclusion for supplemental wages when it comes to FICA.
       </p>
 
       {/* Section 2 */}
@@ -266,8 +268,8 @@ export default function HowCommissionIncomeTaxed() {
         }}
       >
         Gross income:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$75,000<br />
-        Standard deduction:&nbsp;&nbsp;&nbsp;&minus;$15,000<br />
-        <strong>Taxable income:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$60,000</strong>
+        Standard deduction:&nbsp;&nbsp;&nbsp;&minus;$16,100<br />
+        <strong>Taxable income:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$58,900</strong>
       </div>
 
       <h3 style={{ fontSize: '1.125rem', fontWeight: 600, color: '#1e293b', marginTop: '1.5rem', marginBottom: '0.75rem' }}>
@@ -287,10 +289,10 @@ export default function HowCommissionIncomeTaxed() {
           lineHeight: 1.8,
         }}
       >
-        10% &times; $11,925&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= $1,192.50<br />
-        12% &times; ($48,475 &minus; $11,925)&nbsp;&nbsp;&nbsp;&nbsp;= $4,386.00<br />
-        22% &times; ($60,000 &minus; $48,475)&nbsp;&nbsp;&nbsp;&nbsp;= $2,535.50<br />
-        <strong>Total federal income tax:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= $8,114.00</strong>
+        10% &times; $12,400&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= $1,240.00<br />
+        12% &times; ($50,400 &minus; $12,400)&nbsp;&nbsp;&nbsp;&nbsp;= $4,560.00<br />
+        22% &times; ($58,900 &minus; $50,400)&nbsp;&nbsp;&nbsp;&nbsp;= $1,870.00<br />
+        <strong>Total federal income tax:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= $7,670.00</strong>
       </div>
 
       <h3 style={{ fontSize: '1.125rem', fontWeight: 600, color: '#1e293b', marginTop: '1.5rem', marginBottom: '0.75rem' }}>
@@ -337,7 +339,7 @@ export default function HowCommissionIncomeTaxed() {
           <tbody>
             {[
               ['Gross income (base + commission)', '$75,000.00', false],
-              ['Federal income tax', '−$8,114.00', true],
+              ['Federal income tax', '−$7,670.00', true],
               ['Social Security (6.2%)', '−$4,650.00', true],
               ['Medicare (1.45%)', '−$1,087.50', true],
               ['State income tax', 'Varies by state', false],
@@ -349,14 +351,14 @@ export default function HowCommissionIncomeTaxed() {
             ))}
             <tr style={{ background: '#fff7ed' }}>
               <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', fontWeight: 700, color: '#1e293b' }}>Take-home (federal + FICA only)</td>
-              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>$61,148.50</td>
+              <td style={{ padding: '0.75rem 1rem', borderTop: '2px solid #e2e8f0', textAlign: 'right', fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", color: '#059669' }}>$61,592.50</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        The effective federal income tax rate is just <strong>10.82%</strong> ($8,114 &divide; $75,000) &mdash; well below the 22% marginal rate, because lower rates apply to the first $48,475 of taxable income. Adding state income tax will reduce take-home further. In a no-income-tax state like <a href="/texas" style={{ color: '#2563eb', textDecoration: 'underline' }}>Texas</a>, that $61,148 is close to the final number. In a high-tax state like California, expect to keep roughly $54,000&ndash;$56,000. Use the <a href="/california/75000-salary" style={{ color: '#2563eb', textDecoration: 'underline' }}>California $75,000 salary page</a> or the <a href="/texas/75000-salary" style={{ color: '#2563eb', textDecoration: 'underline' }}>Texas $75,000 salary page</a> to see the precise breakdown.
+        The effective federal income tax rate is just <strong>10.23%</strong> ($7,670 &divide; $75,000) &mdash; well below the 22% marginal rate, because lower rates apply to the first $50,400 of taxable income. Adding state income tax will reduce take-home further. In a no-income-tax state like <a href="/texas" style={{ color: '#2563eb', textDecoration: 'underline' }}>Texas</a>, that $61,148 is close to the final number. In a high-tax state like California, expect to keep roughly $54,000&ndash;$56,000. Use the <a href="/california/75000-salary" style={{ color: '#2563eb', textDecoration: 'underline' }}>California $75,000 salary page</a> or the <a href="/texas/75000-salary" style={{ color: '#2563eb', textDecoration: 'underline' }}>Texas $75,000 salary page</a> to see the precise breakdown.
       </p>
 
       {/* Section 5 */}
@@ -422,11 +424,11 @@ export default function HowCommissionIncomeTaxed() {
       </p>
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
-        <li style={{ marginBottom: '0.5rem' }}><strong>True federal tax owed:</strong> $8,114.00</li>
-        <li style={{ marginBottom: '0.5rem' }}><strong>Withheld from base salary ($50K biweekly):</strong> approximately $4,564 (based on Publication 15-T tables)</li>
+        <li style={{ marginBottom: '0.5rem' }}><strong>True federal tax owed:</strong> $7,670.00</li>
+        <li style={{ marginBottom: '0.5rem' }}><strong>Withheld from base salary ($50K biweekly):</strong> approximately $3,820 (based on Publication 15-T tables)</li>
         <li style={{ marginBottom: '0.5rem' }}><strong>Withheld from commissions ($25K &times; 22%):</strong> $5,500</li>
-        <li style={{ marginBottom: '0.5rem' }}><strong>Total withheld:</strong> approximately $10,064</li>
-        <li style={{ marginBottom: '0.5rem' }}><strong>Refund:</strong> approximately $1,950</li>
+        <li style={{ marginBottom: '0.5rem' }}><strong>Total withheld:</strong> approximately $9,320</li>
+        <li style={{ marginBottom: '0.5rem' }}><strong>Refund:</strong> approximately $1,650</li>
       </ul>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
@@ -443,7 +445,7 @@ export default function HowCommissionIncomeTaxed() {
       </p>
 
       <ul style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem', paddingLeft: '1.5rem' }}>
-        <li style={{ marginBottom: '0.5rem' }}>12.4% Social Security (on the first $168,600 of net self-employment income)</li>
+        <li style={{ marginBottom: '0.5rem' }}>12.4% Social Security (on the first $184,500 of net self-employment income)</li>
         <li style={{ marginBottom: '0.5rem' }}>2.9% Medicare (no cap)</li>
       </ul>
 
@@ -579,7 +581,7 @@ export default function HowCommissionIncomeTaxed() {
       </h3>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        Pre-tax 401(k) contributions reduce your federal taxable income dollar for dollar. The 2026 employee contribution limit is <strong>$23,500</strong> ($31,000 if you are 50 or older). For a salesperson in the 22% bracket, maxing out a 401(k) saves <strong>$5,170</strong> in federal income tax alone &mdash; before considering state tax savings. Read our full guide on <a href="/blog/how-401k-contributions-affect-your-paycheck" style={{ color: '#2563eb', textDecoration: 'underline' }}>how 401(k) contributions affect your paycheck</a>.
+        Pre-tax 401(k) contributions reduce your federal taxable income dollar for dollar. The 2026 employee contribution limit is <strong>$24,500</strong> ($32,500 if you are 50 or older). For a salesperson in the 22% bracket, maxing out a 401(k) saves <strong>$5,390</strong> in federal income tax alone &mdash; before considering state tax savings. Read our full guide on <a href="/blog/how-401k-contributions-affect-your-paycheck" style={{ color: '#2563eb', textDecoration: 'underline' }}>how 401(k) contributions affect your paycheck</a>.
       </p>
 
       <h3 style={{ fontSize: '1.125rem', fontWeight: 600, color: '#1e293b', marginTop: '1.5rem', marginBottom: '0.75rem' }}>
@@ -595,7 +597,7 @@ export default function HowCommissionIncomeTaxed() {
       </h3>
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
-        If you have a qualifying high-deductible health plan, HSA contributions are deductible above the line and reduce your AGI &mdash; which in turn reduces both income tax and, if you are self-employed, your self-employment tax base. The 2026 limit is <strong>$4,300</strong> for individuals, <strong>$8,550</strong> for families.{' '}
+        If you have a qualifying high-deductible health plan, HSA contributions are deductible above the line and reduce your AGI &mdash; which in turn reduces both income tax and, if you are self-employed, your self-employment tax base. The 2026 limit is <strong>$4,400</strong> for individuals, <strong>$8,750</strong> for families.{' '}
         <a href="https://www.irs.gov/publications/p969" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
           (IRS Publication 969 &mdash; Health Savings Accounts)
         </a>

@@ -1,14 +1,18 @@
 import type { Metadata } from 'next'
 import ArticleFooter from '@/components/ArticleFooter'
+import ArticleMeta from '@/components/ArticleMeta'
 
 export const metadata: Metadata = {
-  title: 'How Rental Income Is Taxed: A Landlord\'s Guide for 2026',
+  title: { absolute: 'How Rental Income Is Taxed: A Landlord\'s Guide for 2026' },
   description:
     'Rental income is taxable — but landlords can deduct mortgage interest, depreciation, repairs, and more. Here\'s exactly how rental income is taxed in 2026, with a full worked example.',
   alternates: { canonical: '/blog/rental-income-taxes-2026' },
   keywords:
     'rental income taxes 2026, how is rental income taxed, landlord taxes 2026, Schedule E, rental property tax deductions, passive income tax, depreciation rental property, net investment income tax',
   openGraph: {
+    type: 'article',
+    url: '/blog/rental-income-taxes-2026',
+    images: [{ url: '/og/blog/rental-income-taxes-2026', width: 1200, height: 630 }],
     title: 'How Rental Income Is Taxed: A Landlord\'s Guide for 2026',
     description:
       'Rental income is taxable — but landlords can deduct mortgage interest, depreciation, repairs, and more. Here\'s exactly how rental income is taxed in 2026.',
@@ -77,9 +81,7 @@ export default function RentalIncomeTaxes2026() {
         How Rental Income Is Taxed: A Landlord&apos;s Guide for 2026
       </h1>
 
-      <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '2rem' }}>
-        Published September 10, 2026 &middot; 9 min read
-      </p>
+      <ArticleMeta slug="rental-income-taxes-2026" />
 
       <p style={{ fontSize: '1.0625rem', lineHeight: 1.75, color: '#1e293b', marginBottom: '1.5rem' }}>
         Owning a rental property can be a solid way to build wealth. But when rent checks start rolling in, the IRS wants its share. The good news: landlords get some of the most generous deductions in the tax code, which can dramatically reduce &mdash; or even eliminate &mdash; the taxes you owe on rental income.
