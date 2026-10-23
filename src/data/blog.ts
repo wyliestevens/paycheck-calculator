@@ -1020,6 +1020,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#be185d',
     heroIcon: '☾',
   },
+  {
+    title: 'The Social Security Wage Base: What Happens When You Hit the $184,500 Cap in 2026',
+    slug: 'social-security-wage-base-2026',
+    publishDate: '2026-10-23',
+    excerpt: 'Once your wages hit $184,500 in 2026, Social Security tax stops — and your paycheck gets noticeably bigger. Here\'s exactly when the cap kicks in at your salary level and how much extra you keep.',
+    keywords: 'Social Security wage base 2026, Social Security tax cap, when does Social Security tax stop, OASDI wage limit, paycheck bigger end of year',
+    readingTime: '8 min read',
+    heroColor: '#2563eb',
+    heroIcon: '⬆',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
