@@ -1030,6 +1030,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#2563eb',
     heroIcon: '⬆',
   },
+  {
+    title: 'Final Paycheck Laws 2026: When Your Employer Must Pay You After You Leave',
+    slug: 'final-paycheck-laws-2026',
+    publishDate: '2026-10-24',
+    excerpt: 'State law — not federal — sets when you receive your final paycheck. Timing ranges from the same day (California, Massachusetts) to the next regular payday. Full state-by-state guide with worked tax example.',
+    keywords: 'final paycheck laws 2026, when do I get my last paycheck, final paycheck timing by state, how is final paycheck taxed, last paycheck laws, employer final paycheck deadline',
+    readingTime: '9 min read',
+    heroColor: '#7c3aed',
+    heroIcon: '$',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
