@@ -1040,6 +1040,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#7c3aed',
     heroIcon: '$',
   },
+  {
+    title: 'State Tax Reciprocity Agreements: How Commuters Avoid Double Taxation (2026)',
+    slug: 'state-tax-reciprocity-agreements',
+    publishDate: '2026-10-25',
+    excerpt: 'Live in one state, work in another? Reciprocity agreements let commuters pay income tax only to their home state — saving hundreds per year and eliminating the two-state filing headache.',
+    keywords: 'state tax reciprocity agreements 2026, reciprocal tax agreements, work in different state taxes, commuter state taxes, live in one state work in another taxes, withholding reciprocity',
+    readingTime: '9 min read',
+    heroColor: '#0891b2',
+    heroIcon: '↔',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
