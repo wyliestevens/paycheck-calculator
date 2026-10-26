@@ -1050,6 +1050,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#0891b2',
     heroIcon: '↔',
   },
+  {
+    title: '$60,000 Salary After Taxes: What You Keep in Every State (2026)',
+    slug: '60000-salary-after-taxes-by-state',
+    publishDate: '2026-10-26',
+    excerpt: 'On a $60,000 salary in 2026, you keep $50,390 in a no-tax state — or as little as $46,368 in Hawaii. Full federal breakdown, state-by-state comparison, and per-paycheck figures.',
+    keywords: '$60000 salary after taxes, 60k salary take home pay 2026, $60000 net pay by state, sixty thousand salary taxes, 60000 a year after taxes',
+    readingTime: '9 min read',
+    heroColor: '#059669',
+    heroIcon: '$',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
