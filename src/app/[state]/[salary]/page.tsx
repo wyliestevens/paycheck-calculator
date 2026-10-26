@@ -45,6 +45,11 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
     description,
     keywords: `${formatted} salary ${state.name}, ${formatted} after taxes ${state.abbreviation}, take home pay ${formatted} ${state.name}, ${state.name} salary calculator ${taxYear}`,
     alternates: { canonical: `/${state.slug}/${salaryToSlug(amount)}` },
+    // Salary snapshot pages are computed variants of the state page (same template,
+    // different numbers). They stay live for users but are kept out of the index
+    // so the site is judged on its 50 state calculators and its guides, not on
+    // 1,200 near-duplicate pages. Flip to index: true once the domain has authority.
+    robots: { index: false, follow: true },
     openGraph: {
       title: `${formatted} Salary After Taxes in ${state.name} (${taxYear})`,
       description: `${formatted} salary in ${state.name} = ${takeHome} take-home pay after all taxes. See the full breakdown.`,
@@ -144,8 +149,6 @@ export default async function SalaryPage({ params }: { params: Promise<{ state: 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageLd) }} />
 
       <div>
-        <div className="ad-slot ad-slot-horizontal" style={{ margin: '0 auto 1.5rem' }}>Advertisement</div>
-
         <nav className="crumbs" aria-label="Breadcrumb">
           <a href="/">Home</a>
           <span className="sep">/</span>
@@ -303,7 +306,6 @@ export default async function SalaryPage({ params }: { params: Promise<{ state: 
         </div>
       </div>
 
-      <div className="ad-slot ad-slot-horizontal" style={{ margin: 0 }}>Advertisement</div>
 
       {/* Explanation */}
       <section className="container-narrow" style={{ paddingLeft: 0, paddingRight: 0 }}>
@@ -540,7 +542,6 @@ export default async function SalaryPage({ params }: { params: Promise<{ state: 
         </div>
       </section>
 
-      <div className="ad-slot ad-slot-horizontal" style={{ margin: 0 }}>Advertisement</div>
     </div>
   )
 }

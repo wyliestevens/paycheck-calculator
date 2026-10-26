@@ -109,8 +109,6 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageLd) }} />
 
       <div>
-        <div className="ad-slot ad-slot-horizontal" style={{ margin: '0 auto 1.5rem' }}>Advertisement</div>
-
         <nav className="crumbs" aria-label="Breadcrumb">
           <a href="/">Home</a>
           <span className="sep">/</span>
@@ -138,7 +136,6 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
         <PaycheckCalculator state={state} />
       </div>
 
-      <div className="ad-slot ad-slot-horizontal" style={{ margin: 0 }}>Advertisement</div>
 
       {/* ---------------- Salary snapshots ---------------- */}
       <section>
@@ -298,7 +295,6 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
         </div>
       </section>
 
-      <div className="ad-slot ad-slot-horizontal" style={{ margin: 0 }}>Advertisement</div>
     </div>
   )
 }

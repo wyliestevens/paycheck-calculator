@@ -1,5 +1,5 @@
 # Paycheck Calculator — Project CLAUDE.md
-# LAST UPDATED: 2026-10-22
+# LAST UPDATED: 2026-10-26
 
 ## PROJECT OVERVIEW
 - **Site:** paycheck.center
@@ -22,10 +22,11 @@
 - `llms.txt` added for AI crawler discoverability
 
 ### AdSense & Monetization
-- Google AdSense integrated (publisher ID: ca-pub-1449862684379914)
+- Google AdSense script integrated (publisher ID `ca-pub-8731434749249918`, same as `ads.txt`; an older note here listed a different ID, which was wrong)
 - `ads.txt` added for ad verification
 - Rotating ad banners component (`RotatingBanner.tsx`)
   - Fixed: each ad is a separate link element to prevent wrong URL on click
+- **Status (2026-10-26):** site is NOT approved. AdSense rejected it for "Low value content." No real ad units have ever been placed. See the 2026-10-26 entry below.
 
 ### Backlinks
 - Footer backlinks for AI Peak Biz, Frontline Legal Nurse, usedslotshop.com
@@ -100,6 +101,19 @@ Wylie asked for the whole `seo-reports/2026-10-17/SUMMARY.md` plan to be done. E
 - **Daily routine:** should now add `<ArticleMeta slug="..." />` under the H1 (it clones `fica-taxes-explained`, which has it) and may pass `related={[...]}` to `ArticleFooter`. If a routine post adds `updatedDate` later, do it in `blog.ts`.
 - **Dev notes:** `npx next build` takes ~4-5 min on the external drive (1,360 pages); run it in the background. `/opt/homebrew/bin/python3.13` is the Python to use for scripts (system python3 is 3.9). The `/seo` skill scripts need a venv with `requests`/`beautifulsoup4`.
 
+### AdSense "Low value content" response (2026-10-26)
+Wylie received an AdSense rejection: "Low value content." His first guess was the blog. The audit said otherwise:
+- **Measured:** 1,352 sitemap URLs; 1,201 were `/[state]/[amount]-salary` pages (89% of the site). With digits masked, `/texas/75000-salary` and `/texas/80000-salary` were 100% identical line for line; Texas vs Ohio at the same salary 75% identical. About 1,060 visible words each. That is the "thin / scaled content" pattern the rejection links to.
+- **Measured:** every page rendered empty boxes containing the literal word "Advertisement" (`.ad-slot` placeholder divs: 2 on home, 3 per state page, 3 per salary page, the first above the H1). Zero real AdSense units existed. Reviewers read that as an unfinished site.
+- **Measured:** the blog was NOT thin. 97 posts, median 1,818 words (min 1,087), every post with .gov/.edu citations (median 12) and at least one table, no repeated boilerplate sentences across posts.
+- **Shipped:**
+  1. `src/app/[state]/[salary]/page.tsx`: `robots: { index: false, follow: true }` on all 1,201 salary pages. They stay live and linked from state pages for users. **To reverse later:** delete that one `robots` line and re-add the `salaryPages` block to `sitemap.ts`.
+  2. `src/app/sitemap.ts`: salary pages removed. Sitemap is now 153 URLs (home, 50 states, 98 guides, about, author, contact, blog).
+  3. All `.ad-slot` placeholder divs removed from `page.tsx`, `[state]/page.tsx`, `[state]/[salary]/page.tsx`. The `.ad-slot` CSS in `globals.css` is now unused (left in place). The AdSense `<Script>` in `layout.tsx` and `ads.txt` are unchanged. When approved, add real `<ins class="adsbygoogle">` units with reserved heights; do not bring back text placeholders.
+  4. Scheduled task rewritten (see AUTOMATED BLOG PUBLISHING): three runs a week instead of seven. Mon/Wed publish one new guide; Fri upgrades the weakest existing guide. Every guide must include a table computed from the site's own tax engine, an answer-first box, worked math, question H2s, an FAQ, primary-source links, and Wylie's voice rules (no em dashes, no semicolons).
+- **Not changed, flagged:** footer link to usedslotshop.com (nofollow). Unrelated to the site's topic; a reviewer may read it as a link scheme. Wylie's call.
+- **Next for Wylie:** wait about 7 days after the deploy so Google recrawls and the salary pages drop from the index (watch Search Console > Pages), then tick "I confirm I have fixed the issues" and click Request review in AdSense. Reviews commonly take 2 to 4 weeks. If rejected again with the same reason, the remaining lever is traffic, not code.
+
 ### Salary-Specific Pages (2026-05-27)
 - `/[state]/[salary]` dynamic route for salary-specific paycheck breakdowns
 - Tax calculator library (`src/lib/tax-calculator.ts`)
@@ -134,20 +148,23 @@ Wylie asked for the whole `seo-reports/2026-10-17/SUMMARY.md` plan to be done. E
 - `cluster-map.html` — Visual cluster map
 
 ## AUTOMATED BLOG PUBLISHING
-- **Routine:** "Daily Blog Publisher — paycheck.center" (trig_013KLX1hcKWxpdk7YedCo8MA), cloud routine on claude.ai
-- **Schedule:** every day at 13:00 UTC (9am ET / 6am Phoenix), cron `0 13 * * *`
+- **Scheduled task:** "Blog Editor — paycheck.center (Mon/Wed new, Fri refresh)" (trig_013KLX1hcKWxpdk7YedCo8MA), cloud task on claude.ai. Renamed 2026-10-26; same task ID and run history as the old "Daily Blog Publisher."
+- **Schedule:** Mon, Wed, Fri at 12:47 UTC (5:47am Phoenix), cron `47 12 * * 1,3,5`. Was daily at 13:00 UTC until 2026-10-26.
 - **Manage:** https://claude.ai/code/routines/trig_013KLX1hcKWxpdk7YedCo8MA
-- **How:** reads `src/data/blog.ts`, uses `src/app/blog/fica-taxes-explained/page.tsx` as the template, writes one new post, appends to `blog.ts`, runs `npx next build`, commits and pushes to main. Vercel deploys.
-- **Template rules baked into the prompt:** breadcrumb nav at top, inline-styled body, green calculator CTA, Sources list, `<ArticleFooter current="slug" />` at the end, never touch AdSense or existing files.
+- **MODE A (Mon/Wed):** one new guide. **MODE B (Fri):** picks the shortest existing guide not refreshed in 90 days and upgrades it in place (sets `updatedDate` in `blog.ts`). Mode is chosen by `date -u +%u`.
+- **Quality bar in the prompt:** a table computed from `src/lib/tax-calculator.ts` via a scratch `scripts/_calc.ts` (deleted before commit), an "In short" answer box under `<ArticleMeta>`, step-by-step worked math, at least two question H2s, a 3-5 question FAQ, inline primary-source links, a WebSearch gap check against the top results, 1,800-2,800 words, no em dashes/semicolons/ellipses, no figures from memory (STEP 0 constants from `states.ts`).
+- **Template:** `src/app/blog/fica-taxes-explained/page.tsx`. Breadcrumb at top, inline-styled body, green calculator CTA, Sources list, `<ArticleFooter current="slug" />` at the end, never touch AdSense, config, components, or other guides.
 - **Paused routine:** "Paycheck Blog Post Writer" (trig_01JVyH5eJ8RSJ5rq2satQGUG) ran Mon/Thu and is now disabled so there is exactly one post per day. Delete it at https://claude.ai/code/routines if desired.
 - **Topic selection:** the prompt carries a long idea list plus permission to pick long-tail angles; it must check `blog.ts` for duplicates first.
 
 ## WHAT'S NEXT
-- Wylie: Vercel Domains → make apex→www redirect permanent (308); verify www.paycheck.center in Google Search Console + Bing Webmaster Tools and submit the sitemap; decide on AdSense items (preconnect, first ad slot position, real `<ins>` units)
+- Wylie: about 7 days after 2026-10-26, confirm in Search Console that salary pages are leaving the index, then request the AdSense review. Decide on the usedslotshop.com footer link.
+- Wylie: Vercel Domains → make apex→www redirect permanent (308). (Search Console is already verified per Wylie, 2026-10-26.) Bing Webmaster Tools still unverified.
+- After AdSense approval: place real `<ins>` units with reserved heights (no text placeholders), add the preconnect hint.
 - Re-verify the 50 state tax tables in `src/data/states.ts` against each Department of Revenue for 2026
 - Publish the comparison/roundup pages and the content brief from `seo-reports/2026-10-17/` (templates ready), or feed them to the daily routine
 - Add PageSpeed/CrUX API key and GSC OAuth so `/seo google` and `/seo drift compare` give real field data; re-run `/seo audit` in 4-6 weeks and compare against the 2026-10-17 baseline
-- Watch Search Console for "Crawled, not indexed" on the 1,200 salary pages now that they carry unique content
+- Salary pages are noindex as of 2026-10-26. Revisit indexing them only after the domain has real organic traffic, and only if each page can carry content a reviewer would call unique, not computed variants
 - Spot-check www.paycheck.center on a real phone (header, calculator, salary page tables)
 - Consider a blog post layout wrapper so new posts no longer need inline styles
 

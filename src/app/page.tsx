@@ -130,7 +130,6 @@ export default function HomePage() {
       </section>
 
       <div className="container page stack-lg">
-        <div className="ad-slot ad-slot-horizontal" style={{ margin: 0 }}>Advertisement</div>
 
         {/* ---------------- No tax states ---------------- */}
         <section id="states">
@@ -182,7 +181,6 @@ export default function HomePage() {
           </div>
         </section>
 
-        <div className="ad-slot ad-slot-horizontal" style={{ margin: 0 }}>Advertisement</div>
 
         {/* ---------------- Latest guides ---------------- */}
         <section>
