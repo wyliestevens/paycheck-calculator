@@ -1060,6 +1060,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#059669',
     heroIcon: '$',
   },
+  {
+    title: '$100,000 Salary After Taxes in 2026: Take-Home Pay in Every State',
+    slug: '100000-salary-after-taxes-by-state',
+    publishDate: '2026-10-28',
+    excerpt: 'A single filer earning $100,000 keeps $79,180 in 2026 in a state with no income tax, about $3,045 every two weeks. See all 50 states, married vs single, and what a 401(k) really costs.',
+    keywords: '$100000 salary after taxes, 100k salary take home pay 2026, $100k after taxes by state, 100000 a year biweekly paycheck, how much is 100k after taxes',
+    readingTime: '11 min read',
+    heroColor: '#4f46e5',
+    heroIcon: '$',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
