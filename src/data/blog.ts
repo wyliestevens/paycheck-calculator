@@ -1071,6 +1071,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#4f46e5',
     heroIcon: '$',
   },
+  {
+    title: '$20 an Hour Is How Much a Year After Taxes? (2026, All 50 States)',
+    slug: '20-an-hour-after-taxes',
+    publishDate: '2026-11-02',
+    excerpt: '$20 an hour is $41,600 a year before taxes. A single filer keeps $35,606 in 2026 in a no-tax state, about $685 a week. See all 50 states, overtime, part-time hours, and the 401(k) cost.',
+    keywords: '$20 an hour is how much a year after taxes, 20 an hour after taxes, $20 an hour weekly paycheck, 20 dollars an hour annual salary, $41600 after taxes',
+    readingTime: '10 min read',
+    heroColor: '#0891b2',
+    heroIcon: '$',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
