@@ -1081,6 +1081,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#0891b2',
     heroIcon: '$',
   },
+  {
+    title: '401(k) Loan Repayment: How It Changes Your Paycheck (2026)',
+    slug: '401k-loan-repayment-paycheck',
+    publishDate: '2026-11-04',
+    excerpt: 'A $10,000 401(k) loan at 7% over five years takes $91.27 from every biweekly paycheck, after taxes. See payments by loan size, the share of take-home it uses, and the $2,550 to $3,600 cost of a default.',
+    keywords: '401k loan repayment paycheck, 401k loan payroll deduction, is 401k loan repayment pre-tax, 401k loan double taxation, 401k loan default tax, 401k loan leave job',
+    readingTime: '10 min read',
+    heroColor: '#7c3aed',
+    heroIcon: 'L',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
