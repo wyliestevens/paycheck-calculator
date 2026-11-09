@@ -1092,6 +1092,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#7c3aed',
     heroIcon: 'L',
   },
+  {
+    title: 'Additional Medicare Tax: When the 0.9% Hits Your Paycheck (2026)',
+    slug: 'additional-medicare-tax-paycheck',
+    publishDate: '2026-11-09',
+    excerpt: 'Employers withhold an extra 0.9% Medicare tax once your wages pass $200,000. At $300,000 it starts on check 18 and costs $900 a year, and two-earner couples can owe $450 or more with nothing withheld.',
+    keywords: 'additional medicare tax, 0.9 medicare tax, additional medicare tax withholding, additional medicare tax married filing jointly, form 8959, medicare surtax paycheck',
+    readingTime: '10 min read',
+    heroColor: '#dc2626',
+    heroIcon: '+',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
