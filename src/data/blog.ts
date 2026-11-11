@@ -1102,6 +1102,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#dc2626',
     heroIcon: '+',
   },
+  {
+    title: 'Jury Duty Pay: Will Your Paycheck Shrink, and Is It Taxed? (2026)',
+    slug: 'jury-duty-pay-and-your-paycheck',
+    publishDate: '2026-11-11',
+    excerpt: 'A week of unpaid jury duty on a $60,000 salary costs $927 in take-home pay, not the full $1,154 of gross. See who must pay you, the $50 federal juror fee, and how to avoid paying tax twice on jury pay.',
+    keywords: 'jury duty pay, do employers have to pay for jury duty, is jury duty pay taxable, jury duty paycheck, jury duty salaried employee, give jury pay to employer',
+    readingTime: '10 min read',
+    heroColor: '#4f46e5',
+    heroIcon: 'J',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
