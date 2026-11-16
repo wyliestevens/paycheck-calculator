@@ -1113,6 +1113,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#4f46e5',
     heroIcon: 'J',
   },
+  {
+    title: 'Your First Paycheck at a New Job: Why It Is Smaller and When It Comes (2026)',
+    slug: 'first-paycheck-new-job',
+    publishDate: '2026-11-16',
+    excerpt: 'Start mid-period on a $60,000 salary and six days of work nets about $1,196, not the $1,938 of a full check. See why the tax rate on a short check is lower, when the first check arrives, and how late-year hires avoid over-withholding of $1,000 or more.',
+    keywords: 'first paycheck new job, why is my first paycheck smaller, prorated first paycheck, first paycheck taxes, when will I get my first paycheck, part-year employment method',
+    readingTime: '11 min read',
+    heroColor: '#0891b2',
+    heroIcon: '1',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
