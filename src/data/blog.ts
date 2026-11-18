@@ -1123,6 +1123,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#0891b2',
     heroIcon: '1',
   },
+  {
+    title: 'Overtime Exempt Salary Threshold 2026: Does Your Salary Earn Overtime?',
+    slug: 'overtime-exempt-salary-threshold-2026',
+    publishDate: '2026-11-18',
+    excerpt: 'The 2026 federal overtime exempt line is $684 a week ($35,568 a year), and ten paid overtime hours at that salary add about $206 a week to take-home pay in Texas. See the California and Washington lines and what misclassification costs.',
+    keywords: 'overtime exempt salary threshold 2026, exempt salary threshold, $684 per week, do salaried employees get overtime, exempt vs non-exempt, California exempt salary 2026, Washington exempt salary 2026',
+    readingTime: '11 min read',
+    heroColor: '#d97706',
+    heroIcon: 'O',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
