@@ -1134,6 +1134,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#d97706',
     heroIcon: 'O',
   },
+  {
+    title: '$75,000 Salary After Taxes in 2026: Take-Home Pay in All 50 States',
+    slug: '75000-salary-after-taxes-by-state',
+    publishDate: '2026-11-23',
+    excerpt: 'A single filer earning $75,000 keeps $61,592.50 in 2026 in a no-tax state, or $2,368.94 every two weeks, and $55,571.19 in Oregon. See all 50 states, the step-by-step math, and what a 401(k) really costs.',
+    keywords: '$75000 salary after taxes, 75k salary take home pay 2026, $75000 a year biweekly paycheck, 75000 after taxes by state, how much is 75k after taxes, 75000 a year hourly after taxes',
+    readingTime: '10 min read',
+    heroColor: '#0891b2',
+    heroIcon: '$',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
