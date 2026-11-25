@@ -1144,6 +1144,16 @@ export const blogPosts: BlogPost[] = [
     heroColor: '#0891b2',
     heroIcon: '$',
   },
+  {
+    title: 'Holiday Pay Rules 2026: Is It Required, and How Is It Taxed?',
+    slug: 'holiday-pay-rules-and-taxes',
+    publishDate: '2026-11-25',
+    excerpt: 'No federal law requires holiday pay, but 81% of private industry workers get it. Eight holiday hours at time and a half on a $25 wage add $241.05 to take-home pay in Texas. See 12 states, the overtime rules, and what unpaid holidays cost.',
+    keywords: 'holiday pay rules, is holiday pay required by law, how is holiday pay taxed, holiday pay time and a half, do holiday hours count toward overtime, salaried holiday pay, holiday pay 2026',
+    readingTime: '11 min read',
+    heroColor: '#dc2626',
+    heroIcon: 'H',
+  },
 ]
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
